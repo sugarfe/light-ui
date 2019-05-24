@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Form",
+        "items": [
+            "button",
+            "radio",
+            "checkbox",
+            "switch",
+            "input",
+            "calendar"
+        ]
+    },
+    {
+        "name": "Popup",
+        "items": [
+            "popup",
+            "toast",
+            "dialog",
+            "actionSheet",
+            "picker",
+            "loading"
+        ]
+    },
+    {
+        "name": "Layout",
+        "items": [
+            "tab",
+            "grid"
+        ]
+    },
+    {
+      "name": "Scroll",
+      "items": [
+          "scroll"
+      ]
+    }
+]

@@ -1,0 +1,37 @@
+
+.run-dialog{
+  background: #fff;
+  .run-dialog-header{
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+  }
+  .run-dialog-section{
+    padding: 8px 0;
+    &.center{
+      text-align: center
+    }
+  }
+  .run-dialog-footer{
+    border-top: #e5e5e5 solid 1px;
+    >div{
+      padding: 8px 0;
+      text-align: center;
+      &.button-cancel{
+        @include flex();
+        border-right: #e5e5e5 solid 1px
+      }
+      &.button-submit{
+        @include flex();
+        color:$run-theme-primary;
+      }
+    }
+    
+  }
+}
+.run-dialog-theme-ios{
+  border-radius: 8px;
+}
+.run-dialog-theme-default{
+
+}

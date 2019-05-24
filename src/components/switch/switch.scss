@@ -1,0 +1,65 @@
+@import "./switch.variables.scss";
+/*选中的颜色*/
+.run-switch{
+	position: relative;
+	width: $switch-width+2;
+	height: $switch-height+2;
+	border: 1px solid currentcolor;
+	outline: 0;
+	overflow: hidden;
+	color: $switch-cancle-color;
+	border-radius: 16px;
+	box-sizing: border-box;
+	transform: all .1s;
+	background-color: currentcolor;
+	 -webkit-appearance: none;
+	appearance: none;
+}
+/*未选中的颜色*/
+.run-switch:before{
+	content: " ";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: $switch-width;
+	height: $switch-height;
+	border-radius: 15px;
+	color:#fff;
+	background-color: currentcolor;
+	border: 1px solid currentcolor;
+	transition:transform .35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+/*圆圈的颜色*/
+.run-switch:after{  
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: $switch-height;
+	height: $switch-height;
+	color: $switch-round-color;
+	border-radius: 15px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+	background-color: currentcolor;
+	transition:transform .35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+.run-switch:checked{
+	color: $switch-select-color;
+}
+.run-switch:checked:before{
+	transform: scale(0);
+}
+.run-switch:checked:after{
+	transform: translateX($switch-width - $switch-height);
+}
+.run-switch:disabled{
+	opacity: .5;
+}
+.run-switch-wrap{
+	position: relative;
+	width: $switch-width+2;
+	height: $switch-height+2;
+	.preventDefault{
+		position: absolute;left: 0;top: 0;bottom: 0;right: 0;
+	}
+}

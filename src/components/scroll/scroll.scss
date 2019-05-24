@@ -1,0 +1,32 @@
+.run-scroll{
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  .run-scroll-content{
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    .list-content{
+      
+    }
+    .pullup-wrapper{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+    }
+  }
+  .pulldown-wrapper{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all;
+    .after-trigger{
+      margin-top: 10px;
+    }
+  }
+}

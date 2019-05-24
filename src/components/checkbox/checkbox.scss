@@ -1,0 +1,82 @@
+@import "./checkbox.variables.scss";
+.run-checkbox-group {
+    &.run-flex-direction-column {
+        padding: 0 5px;
+        .run-checkbox:not(:last-child)::before {
+            @include border-1px($run-color-light, bottom, 0)
+        }
+    }
+    &.run-flex-direction-row {
+        .run-checkbox:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+    &-right .run-checkbox{
+        .run-checkbox-mark{
+            @include flex-order(2);
+        }
+        .run-checkbox-label{
+            @include flex(1);
+            margin: 0;
+        }
+    }
+    &-row-right .run-checkbox{
+        .run-checkbox-label{
+            margin-right: 5px;
+        }
+    }
+}
+
+.run-checkbox {
+    position: relative;
+    height: 36px;
+    &-disabled {
+        .run-checkbox-label,
+        .run-checkbox-mark {
+            opacity: .5;
+        }
+    }
+    &>input[type="checkbox"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 1;
+    }
+    .run-checkbox-label {
+        font-size: 14px;
+        margin-left: 5px;
+        color: $run-color-gray-dark;
+    }
+    .run-checkbox-mark {
+        width: $run-checkbox-mark-size;
+        height: $run-checkbox-mark-size;
+        border-radius: 2px;
+        position: relative;
+        &::before {
+            @include border-1px($run-color-gray, all, 2px);
+        }
+        &::after {
+            content: "";
+            width: calc(100% - 8px);
+            height: calc(100% - 8px);
+            background-color: $run-theme-primary;
+            transform: scale(.3);
+            opacity: 0;
+            transition: all .2s;
+        }
+    }
+    &-checked {
+        .run-checkbox-mark {
+            &::before {
+                border-color: $run-theme-primary;
+            }
+            &::after {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}

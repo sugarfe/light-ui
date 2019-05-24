@@ -1,0 +1,52 @@
+[
+    [
+        {
+            "text": "Javascript",
+            "value": "javascript"
+        },
+        {
+            "text": "Html",
+            "value": "html"
+        },
+        {
+            "text": "Css",
+            "value": "css"
+        }
+    ],
+    [
+        {
+            "text": "北京",
+            "value": "beijing"
+        },
+        {
+            "text": "上海",
+            "value": "shanghai"
+        },
+        {
+            "text": "广州",
+            "value": "guangzhou"
+        },
+        {
+            "text": "深圳",
+            "value": "shenzhen"
+        }
+    ],
+    [
+        {
+            "text": "技术",
+            "value": "technology"
+        },
+        {
+            "text": "产品",
+            "value": "product"
+        },
+        {
+            "text": "测试",
+            "value": "test"
+        },
+        {
+            "text": "设计",
+            "value": "design"
+        }
+    ]
+]

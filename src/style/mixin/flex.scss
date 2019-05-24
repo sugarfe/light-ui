@@ -1,0 +1,174 @@
+@mixin display-flex {
+    /*! autoprefixer: off */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin display-inline-flex {
+    /*! autoprefixer: off */
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+@mixin flex-direction($value: row) {
+    /*! autoprefixer: off */
+    @if $value==row-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: horizontal;
+    }
+    @else if $value==column {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+    }
+    @else if $value==column-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: vertical;
+    }
+    @else {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+    }
+    -webkit-flex-direction: $value;
+    -moz-flex-direction: $value;
+    -ms-flex-direction: $value;
+    flex-direction: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+    /*! autoprefixer: off */
+    -webkit-flex-wrap: $value;
+    -moz-flex-wrap: $value;
+    @if $value==nowrap {
+        -ms-flex-wrap: none;
+    }
+    @else {
+        -ms-flex-wrap: $value;
+    }
+    flex-wrap: $value;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+    /*! autoprefixer: off */
+    -webkit-box-flex: $fg;
+    -webkit-flex: $fg $fs $fb;
+    -moz-box-flex: $fg;
+    -moz-flex: $fg $fs $fb;
+    -ms-flex: $fg $fs $fb;
+    flex: $fg $fs $fb;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+    /*! autoprefixer: off */
+    -webkit-flex-flow: $values;
+    -moz-flex-flow: $values;
+    -ms-flex-flow: $values;
+    flex-flow: $values;
+}
+
+@mixin align-items($value: stretch) {
+    /*! autoprefixer: off */
+    @if $value==flex-start {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+    }
+    @else if $value==flex-end {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+    }
+    @else {
+        -webkit-box-align: $value;
+        -ms-flex-align: $value;
+    }
+    -webkit-align-items: $value;
+    -moz-align-items: $value;
+    align-items: $value;
+}
+
+@mixin align-self($value: auto) {
+    /*! autoprefixer: off */
+    -webkit-align-self: $value;
+    -moz-align-self: $value;
+    @if $value==flex-start {
+        -ms-flex-item-align: start;
+    }
+    @else if $value==flex-end {
+        -ms-flex-item-align: end;
+    }
+    @else {
+        -ms-flex-item-align: $value;
+    }
+    align-self: $value;
+}
+
+@mixin align-content($value: stretch) {
+    /*! autoprefixer: off */
+    -webkit-align-content: $value;
+    -moz-align-content: $value;
+    @if $value==flex-start {
+        -ms-flex-line-pack: start;
+    }
+    @else if $value==flex-end {
+        -ms-flex-line-pack: end;
+    }
+    @else {
+        -ms-flex-line-pack: $value;
+    }
+    align-content: $value;
+}
+
+@mixin justify-content($value: stretch) {
+    /*! autoprefixer: off */
+    @if $value==flex-start {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    }
+    @else if $value==flex-end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    }
+    @else if $value==space-between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    }
+    @else {
+        -webkit-box-pack: $value;
+        -ms-flex-pack: $value;
+    }
+    -webkit-justify-content: $value;
+    -moz-justify-content: $value;
+    justify-content: $value;
+}
+
+@mixin flex-order($n) {
+    /*! autoprefixer: off */
+    -webkit-order: $n;
+    -ms-flex-order: $n;
+    order: $n;
+    -webkit-box-ordinal-group: $n;
+}
+
+@mixin flex-center {
+    /*! autoprefixer: off */
+    display: $webkit-box;
+    display: $displayFlex;
+    display: $webkit-displayFlex;
+    display: $webkit-display-ms;
+    -webkit-box-align: $webkit-box-align;
+    -webkit-align-items: $webkit-align-items;
+    align-items: $align-items;
+}
+
+@mixin more-flex {
+    /*! autoprefixer: off */
+    -webkit-box-flex: $webkit-box-flex;
+    -webkit-flex: $webkit-flex;
+    -ms-flex: $ms-flex;
+    flex: $flex;
+}

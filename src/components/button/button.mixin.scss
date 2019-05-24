@@ -1,0 +1,17 @@
+@mixin size($size:default) {
+    @if($size==large) {
+        height: $run-button-height-large;
+        line-height: $run-button-height-large;
+        font-size: $fontsize-large;
+    }
+    @else if($size==small) {
+        height: $run-button-height-small;
+        line-height: $run-button-height-small;
+        font-size: $fontsize-small;
+    }
+    @else {
+        height: $run-button-height;
+        line-height: $run-button-height;
+        font-size: $fontsize-medium;
+    }
+}

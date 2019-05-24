@@ -1,0 +1,53 @@
+@import "./input.variables.scss";
+.run-input-warp{
+    position: relative;
+    &::before {
+        @include border-1px($run-input-border-color)
+    }
+    &-textarea{
+        padding:$run-input-padding;
+    }
+    input,textarea{
+        font-size: $run-input-fontsize;
+    }
+    .run-input{
+        min-height:$run-input-height;
+        padding:0 $run-input-padding;
+        font-size: 14px;
+    }
+    .run-input-textarea-wrapper{
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: normal;
+        .run-textarea{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+            outline: 0 none;
+            border: none;
+            font-size: 14px;
+        }
+        .run-textarea-block{
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            visibility: hidden;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    }
+    .run-input-tool{
+        // padding:0 $run-input-padding;
+    }
+}

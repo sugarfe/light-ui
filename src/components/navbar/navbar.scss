@@ -1,0 +1,14 @@
+.run-navbar{
+    height: 44px;
+    position: relative;
+    padding:0 10px;
+    .run-navbar-title{
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+        text-align: center;
+        top:50%;
+        transform: translateY(-50%);
+    }
+}

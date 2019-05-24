@@ -1,0 +1,101 @@
+@import "./button.mixin.scss";
+@import "./button.variables.scss";
+.run-button {
+    white-space: nowrap;
+    background-color: $run-button-theme-default;
+    color: #ffffff;
+    text-align: center;
+    border: 0;
+    padding: 0 $run-button-padding;
+    position: relative;
+    outline: none;
+    border-radius: 2px;
+    transition: all .2s;
+    &-block {
+        width: 100%;
+    }
+    &-size-default {
+        @include size();
+    }
+    &-size-small {
+        @include size(small);
+    }
+    &-size-large {
+        @include size(large);
+    }
+    &:active {
+        background-color: $run-color-gray-dark
+    }
+    &-light {
+        background-color: #ffffff;
+        color: $run-button-theme-default;
+        &::before {
+            @include border-1px($run-button-theme-default)
+        }
+        &:active {
+            color: #ffffff;
+            &::before {
+                border: 0;
+            }
+            background-color: $run-color-gray;
+        }
+        &-theme-primary {
+            color: $run-theme-primary;
+            &::before {
+                border-color: $run-theme-primary;
+            }
+        }
+        &-theme-success {
+            color: $run-theme-success;
+            &::before {
+                border-color: $run-theme-success;
+            }
+        }
+        &-theme-warning {
+            color: $run-theme-warning;
+            &::before {
+                border-color: $run-theme-warning;
+            }
+        }
+        &-theme-alert {
+            color: $run-theme-alert;
+            &::before {
+                border-color: $run-theme-alert;
+            }
+        }
+    }
+    &-theme-primary {
+        background-color: $run-theme-primary;
+    }
+    &-theme-success {
+        background-color: $run-theme-success;
+    }
+    &-theme-warning {
+        background-color: $run-theme-warning;
+        &:active {
+            background-color: $run-theme-warning-active;
+        }
+    }
+    &-theme-alert {
+        background-color: $run-theme-alert;
+        &:active {
+            background-color: $run-theme-alert-active;
+        }
+    }
+    &-theme-primary:active,
+    &-light-theme-primary:active {
+        background-color: $run-theme-primary-active;
+    }
+    &-theme-success:active,
+    &-light-theme-success:active {
+        background-color: $run-theme-success-active;
+    }
+    &-theme-warning:active,
+    &-light-theme-warning:active {
+        background-color: $run-theme-warning-active;
+    }
+    &-theme-alert:active,
+    &-light-theme-alert:active {
+        background-color: $run-theme-alert-active;
+    }
+}
