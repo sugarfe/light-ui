@@ -2,7 +2,10 @@
   <run-page-content class="popup-model run-display-flex run-flex-direction-column run-align-center">
     <run-navbar>Content</run-navbar>
     <template v-slot:content>
-      <run-button theme="primary" @click="close">关闭</run-button>
+      <run-button
+        theme="primary"
+        @click="close"
+      >关闭</run-button>
     </template>
   </run-page-content>
 </template>
@@ -10,7 +13,6 @@
 export default {
   props: {},
   created() {
-    console.log("popupModel", this);
   },
   methods: {
     close() {
@@ -18,7 +20,6 @@ export default {
     }
   },
   beforeRouteLeave(to, from, next) {
-    debugger;
   }
 };
 </script>
