@@ -68,7 +68,6 @@ export default {
       }
     }
   },
-
   computed: {
     displayMask() {
       return this.isMask;

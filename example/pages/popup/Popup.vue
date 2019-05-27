@@ -1,18 +1,12 @@
 <template>
-  <run-page-content
-    class="example-popup-page"
-    contentClass="run-flex-box-column"
-  >
+  <run-page-content class="example-popup-page" contentClass="run-flex-box-column">
     <run-navbar>Popup</run-navbar>
     <template v-slot:content>
       <div class="run-flex-1">
         <example-group contentClass="group-content">
           position
           <template v-slot:content>
-            <run-radio-group
-              v-model="option.position"
-              right
-            >
+            <run-radio-group v-model="option.position" right>
               <run-radio
                 :value="item"
                 v-for="(item,index) in optionData.position"
@@ -24,25 +18,14 @@
         <example-group contentClass="group-content">
           size
           <template v-slot:content>
-            <run-radio-group
-              v-model="option.size"
-              right
-            >
-              <run-radio
-                :value="item"
-                v-for="(item,index) in optionData.size"
-                :key="index"
-              >{{item}}</run-radio>
+            <run-radio-group v-model="option.size" right>
+              <run-radio :value="item" v-for="(item,index) in optionData.size" :key="index">{{item}}</run-radio>
             </run-radio-group>
           </template>
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button
-          block
-          theme="primary"
-          @click="open"
-        >打开</run-button>
+        <run-button block theme="primary" @click="open">打开</run-button>
       </div>
     </template>
   </run-page-content>
@@ -80,8 +63,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     next();
   },
-  beforeRouteUpdate() {
-  }
+  beforeRouteUpdate() {}
 };
 </script>
 <style lang="scss">
