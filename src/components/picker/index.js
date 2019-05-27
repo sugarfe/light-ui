@@ -3,6 +3,17 @@ import PickerTemplate from "./Picker.vue";
 
 class Picker {
     constructor(option = {}) {
+        option.data = option.data.map((item) => {
+            if (item.length > 0 && typeof item[0] !== "object") {
+                item = item.map((o) => {
+                    return {
+                        text: o,
+                        value: o
+                    }
+                })
+            }
+            return item;
+        })
         this.option = option;
         this.init(option);
     }
@@ -25,6 +36,9 @@ export default {
     name: "Picker",
     component: Picker,
     install(Vue, option) {
-        Picker.prototype.$vue = Vue;
+        !Picker.prototype.$vue && (Picker.prototype.$vue = Vue);
     }
 };
+export {
+    Picker
+}

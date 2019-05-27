@@ -1,5 +1,5 @@
 import components from './components/component.js'
-const dynamicCallComponent = ["Popup", "Toast", "Dialog", "Picker", "ActionSheet","Loading"]
+const dynamicCallComponent = ["Popup", "Toast", "Dialog", "Picker", "ActionSheet", "Loading", "DatePicker"]
 export default {
     install: (Vue, option) => {
         components.map((module) => {

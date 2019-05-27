@@ -18,6 +18,7 @@
             "dialog",
             "actionSheet",
             "picker",
+            "datePicker",
             "loading"
         ]
     },
@@ -29,9 +30,9 @@
         ]
     },
     {
-      "name": "Scroll",
-      "items": [
-          "scroll"
-      ]
+        "name": "Scroll",
+        "items": [
+            "scroll"
+        ]
     }
 ]

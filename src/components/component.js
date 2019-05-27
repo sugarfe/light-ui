@@ -18,7 +18,8 @@ import Dialog from "./dialog/index.js";
 import Picker from "./picker/index.js"
 import ActionSheet from "./actionSheet/index.js";
 import Loading from "./loading/index.js";
-import Scroll from './scroll/Scroll.vue'
+import Scroll from "./scroll/Scroll.vue";
+import DatePicker from "./datePicker/index.js"
 const components = [
     Button,
     Radio,
@@ -41,4 +42,13 @@ const components = [
         name: `run-${component.name}`
     }
 })
-export default [...components, Popup, Toast, Dialog, Picker, ActionSheet,Loading];
+export default [
+    ...components,
+    Popup,
+    Toast,
+    Dialog,
+    Picker,
+    ActionSheet,
+    Loading,
+    DatePicker
+];
