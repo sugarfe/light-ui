@@ -9,14 +9,13 @@
 <script>
 export default {
   props: {},
-  created() {
-    console.log("popupModel", this);
-  },
+  created() {},
   methods: {
     close() {
       this.$emit("popup-close");
     }
-  }
+  },
+  beforeRouteLeave(to, from, next) {}
 };
 </script>
 <style lang="scss">

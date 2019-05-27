@@ -1,7 +1,14 @@
 <template>
-  <div class="run-popup" :class="this.position=='center'?'center':''">
+  <div
+    class="run-popup"
+    :class="this.position=='center'?'center':''"
+  >
     <transition name="run-mask">
-      <div class="run-popup-mask" v-if="isPageRead && displayMask" @click.self="maskClickHanlde"></div>
+      <div
+        class="run-popup-mask"
+        v-if="isPageRead && displayMask"
+        @click.self="maskClickHanlde"
+      ></div>
     </transition>
     <transition
       :name="'run-popup-' + position"
@@ -21,6 +28,7 @@
   </div>
 </template>
 <script>
+import { debuglog } from 'util';
 export default {
   name: "run-popup",
   data() {
@@ -71,42 +79,33 @@ export default {
       return ["run-popup-" + this.position];
     },
     dynamicStyle() {
-      let style;
-      if (this.size == "full") {
-        style = `height:100%;width:100%;top:0;left:0`;
-      } else {
-        switch (this.position) {
-          case "left":
-            style = `height:${this.size == "auto" ? this.size : "100%"};width:${
-              this.size
-            };top:0;left:0`;
-            break;
-          case "right":
-            style = `height:${this.size == "auto" ? this.size : "100%"};width:${
-              this.size
-            };top:0;right:0`;
-            break;
-          case "top":
-            style = `height:${this.size};width:${
-              this.size == "auto" ? this.size : "100%"
-            };top:0;left:0`;
-            break;
-          case "bottom":
-            style = `height:${this.size};width:${
-              this.size == "auto" ? this.size : "100%"
-            };bottom:0;left:0`;
-            break;
-          case "center":
-            style = `height:auto;width:${this.size};`;
-            break;
-          case "opacity":
-            style = `height:auto;width:${
-              this.size
-            };left:50%;transform: translateX(-50%);${this.positionStyle()}`;
-            break;
-        }
+      let styleObject = [], size;
+      if (this.size && this.size !== "full") {
+        size = this.size;
+      } else if (this.size === "full") {
+        size = "100%";
       }
-      return style;
+      switch (this.position) {
+        case "top":
+        case "bottom":
+          styleObject.push({
+            "width": "100%",
+            "height": size,
+            "left": 0,
+            [this.position]: 0
+          });
+          break;
+        case "left":
+        case "right":
+          styleObject.push({
+            "height": "100%",
+            "width": size,
+            "top": 0,
+            [this.position]: 0
+          });
+          break;
+      }
+      return styleObject;
     }
   },
   mounted() {
@@ -117,14 +116,13 @@ export default {
   },
   methods: {
     popupContainerAfterLeave() {
-      this.$destroy();
       this.$emit("onAfterLeave", "afterLeave");
+      this.$destroy();
     },
     popupContainerAfterEnter() {
       this.$emit("onAfterEnter", "afterEnter");
     },
     maskClickHanlde() {
-      console.log(this.isMaskClose);
       !!this.isMaskClose && this.close();
     },
     close() {

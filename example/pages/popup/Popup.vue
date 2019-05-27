@@ -38,7 +38,7 @@ export default {
       positionIndex: 0,
       sizeIndex: 0,
       optionData: {
-        size: ["100px", "300px", "500px"],
+        size: ["100px", "300px", "500px", "full"],
         position: ["top", "bottom", "left", "right", "center"]
       },
       option: {
@@ -47,14 +47,7 @@ export default {
       }
     };
   },
-  mounted() {},
   methods: {
-    generateColor() {
-      return (
-        "#" +
-        ("00000" + ((Math.random() * 0x1000000) << 0).toString(16)).slice(-6)
-      );
-    },
     open() {
       new this.$RunPopup(PopupModel, {
         ...this.option,
@@ -67,10 +60,9 @@ export default {
   beforeRouteLeave(to, from, next) {
     next();
   },
-  // beforeRouteEnter(to, from, next) {
-  //   console.log("beforeRouteEnter");
-  //   next();
-  // },
+  beforeRouteEnter(to, from, next) {
+    next();
+  },
   beforeRouteUpdate() {}
 };
 </script>

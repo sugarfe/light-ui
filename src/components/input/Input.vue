@@ -1,5 +1,8 @@
 <template>
-  <div class="run-input-warp run-display-flex" :class="dynamicClass">
+  <div
+    class="run-input-warp run-display-flex"
+    :class="dynamicClass"
+  >
     <input
       ref="$input"
       :type="type"
@@ -11,7 +14,10 @@
       v-model="currentValue"
       v-if="!textarea"
     >
-    <div class="run-input-textarea-wrapper run-flex-1" v-else>
+    <div
+      class="run-input-textarea-wrapper run-flex-1"
+      v-else
+    >
       <textarea
         ref="$textarea"
         spellcheck="false"
@@ -81,7 +87,7 @@ export default {
       currentValue: ""
     };
   },
-  mounted() {},
+  mounted() { },
   methods: {
     onFocusHandle(e) {
       this.$emit("onFocus", e);
