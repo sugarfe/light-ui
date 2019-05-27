@@ -60,7 +60,6 @@ export default {
       }
     }
   },
-
   computed: {
     displayMask() {
       return this.isMask;
@@ -112,7 +111,6 @@ export default {
   },
   mounted() {
     this.state = 1;
-    console.log("mounted->", this.$store);
   },
   destroyed() {
     this.$el.remove();

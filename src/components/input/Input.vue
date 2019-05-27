@@ -84,7 +84,6 @@ export default {
   mounted() {},
   methods: {
     onFocusHandle(e) {
-      debugger;
       this.$emit("onFocus", e);
     }
   },

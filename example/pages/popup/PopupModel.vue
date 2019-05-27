@@ -16,9 +16,6 @@ export default {
     close() {
       this.$emit("popup-close");
     }
-  },
-  beforeRouteLeave(to, from, next) {
-    debugger;
   }
 };
 </script>

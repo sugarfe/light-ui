@@ -1,6 +1,9 @@
 import PopupView from './Popup.vue'
 class Popup {
+    static  instance = [];
     constructor(component = {}, option = {}) {
+        Popup.instance.push(this);
+        this.id = `popup-${Date.now()}`
         this.popupViewOptionScope = [
             "position",
             "isMaskClose",
@@ -61,6 +64,10 @@ class Popup {
         popupOption = sorting(popupOption);
         componentOption = sorting(componentOption);
         componentOption.on["popup-close"] = () => {
+            Popup.instance = Popup.instance.filter((item)=>{
+                return item.id !== this.id;
+            })
+            console.log(Popup.instance)
             this.close();
         };
         return {

@@ -65,15 +65,13 @@ export default {
     }
   },
   beforeRouteLeave(to, from, next) {
-    debugger;
     next();
   },
-  beforeRouteEnter(to, from, next) {
-    next();
-  },
-  beforeRouteUpdate() {
-    debugger;
-  }
+  // beforeRouteEnter(to, from, next) {
+  //   console.log("beforeRouteEnter");
+  //   next();
+  // },
+  beforeRouteUpdate() {}
 };
 </script>
 <style lang="scss">
