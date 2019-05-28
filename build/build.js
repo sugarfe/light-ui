@@ -5,6 +5,7 @@ var ora = require('ora')
 var webpack = require('webpack')
 var webpackPublishConfig = require('./webpack/publish.config.js')
 const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 //删除并创建library文件夹
 let assetsPath = path.join(__dirname, "../library")
@@ -22,22 +23,32 @@ class BuildStart {
                         output: {
                             path: path.resolve(__dirname, '../library'),
                             filename: '[name]/index.js',
-                            library: 'runuix',
+                            library: 'lightUI',
                             libraryTarget: 'umd'
-                        }
+                        },
+                        plugins: [
+                            new MiniCssExtractPlugin({
+                                filename: '[name]/[name].css'
+                            })
+                        ]
                     })
                     break;
                 case "any":
                     config = merge(webpackConfig, {
                         entry: {
-                            "runuix": path.join(__dirname, "../src/index.js")
+                            "lightUI": path.join(__dirname, "../src/index.js")
                         },
                         output: {
                             path: path.resolve(__dirname, '../library'),
                             filename: '[name].js',
-                            library: 'runuix',
+                            library: 'lightUI',
                             libraryTarget: 'umd'
-                        }
+                        },
+                        plugins: [
+                            new MiniCssExtractPlugin({
+                                filename: '[name].css'
+                            })
+                        ]
                     })
                     break;
             }

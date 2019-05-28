@@ -1,9 +1,10 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 function resolve(dir) {
     return path.join(__dirname, '../../', dir)
 }
 
-let sassLoader = ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader', {
+let sassLoader = [MiniCssExtractPlugin.loader, 'css-loader?minimize', 'postcss-loader', 'sass-loader', {
     loader: 'sass-resources-loader',
     options: {
         resources: [

@@ -1,7 +1,8 @@
 import components from './components/component.js'
 const dynamicCallComponent = ["Popup", "Toast", "Dialog", "Picker", "ActionSheet", "Loading", "DatePicker"]
+// import Style from "./style/index.scss";
 export default {
-    install: (Vue, option) => {
+    install: (Vue, option = {}) => {
         components.map((module) => {
             if (!!module.mark && !!option[module.mark]) {
                 let obj = option[module.mark];
