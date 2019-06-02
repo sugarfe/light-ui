@@ -1,38 +1,38 @@
 @import "./checkbox.variables.scss";
-.run-checkbox-group {
+.l-checkbox-group {
     &.flex-column {
         padding: 0 5px;
-        .run-checkbox:not(:last-child)::before {
+        .l-checkbox:not(:last-child)::before {
             @include border-1px($run-color-light, bottom, 0)
         }
     }
     &.flex-row {
-        .run-checkbox:not(:last-child) {
+        .l-checkbox:not(:last-child) {
             margin-right: 10px;
         }
     }
-    &-right .run-checkbox{
-        .run-checkbox-mark{
+    &-right .l-checkbox{
+        .l-checkbox-mark{
             @include flex-order(2);
         }
-        .run-checkbox-label{
+        .l-checkbox-label{
             @include flex(1);
             margin: 0;
         }
     }
-    &-row-right .run-checkbox{
-        .run-checkbox-label{
+    &-row-right .l-checkbox{
+        .l-checkbox-label{
             margin-right: 5px;
         }
     }
 }
 
-.run-checkbox {
+.l-checkbox {
     position: relative;
     height: 36px;
     &-disabled {
-        .run-checkbox-label,
-        .run-checkbox-mark {
+        .l-checkbox-label,
+        .l-checkbox-mark {
             opacity: .5;
         }
     }
@@ -45,33 +45,33 @@
         opacity: 0;
         z-index: 1;
     }
-    .run-checkbox-label {
+    .l-checkbox-label {
         font-size: 14px;
         margin-left: 5px;
-        color: $run-color-gray-dark;
+        color: $l-color-gray-dark;
     }
-    .run-checkbox-mark {
-        width: $run-checkbox-mark-size;
-        height: $run-checkbox-mark-size;
+    .l-checkbox-mark {
+        width: $l-checkbox-mark-size;
+        height: $l-checkbox-mark-size;
         border-radius: 2px;
         position: relative;
         &::before {
-            @include border-1px($run-color-gray, all, 2px);
+            @include border-1px($l-color-gray, all, 2px);
         }
         &::after {
             content: "";
             width: calc(100% - 8px);
             height: calc(100% - 8px);
-            background-color: $run-theme-primary;
+            background-color: $l-theme-primary;
             transform: scale(.3);
             opacity: 0;
             transition: all .2s;
         }
     }
     &-checked {
-        .run-checkbox-mark {
+        .l-checkbox-mark {
             &::before {
-                border-color: $run-theme-primary;
+                border-color: $l-theme-primary;
             }
             &::after {
                 transform: scale(1);

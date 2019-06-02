@@ -1,7 +1,7 @@
 @import "@runSrc/style/variables/color.scss";
 .index-page {
     .title{
-        color:$run-theme-primary;
+        color:$l-theme-primary;
         font-size: 26px;
         font-family: -webkit-pictograph;
         height: 60px;
@@ -10,7 +10,7 @@
     }
     &-component-list{
        .component-item{
-           background-color: $run-theme-primary;
+           background-color: $l-theme-primary;
            color:#fff;
            font-size: 18px;
        }

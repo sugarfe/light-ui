@@ -1,6 +1,6 @@
 @import "./switch.variables.scss";
 /*选中的颜色*/
-.run-switch{
+.l-switch{
 	position: relative;
 	width: $switch-width+2;
 	height: $switch-height+2;
@@ -16,7 +16,7 @@
 	appearance: none;
 }
 /*未选中的颜色*/
-.run-switch:before{
+.l-switch:before{
 	content: " ";
 	position: absolute;
 	top: 0px;
@@ -30,7 +30,7 @@
 	transition:transform .35s cubic-bezier(0.45, 1, 0.4, 1);
 }
 /*圆圈的颜色*/
-.run-switch:after{  
+.l-switch:after{  
 	content: " ";
 	position: absolute;
 	top: 0;
@@ -43,19 +43,19 @@
 	background-color: currentcolor;
 	transition:transform .35s cubic-bezier(0.45, 1, 0.4, 1);
 }
-.run-switch:checked{
+.l-switch:checked{
 	color: $switch-select-color;
 }
-.run-switch:checked:before{
+.l-switch:checked:before{
 	transform: scale(0);
 }
-.run-switch:checked:after{
+.l-switch:checked:after{
 	transform: translateX($switch-width - $switch-height);
 }
-.run-switch:disabled{
+.l-switch:disabled{
 	opacity: .5;
 }
-.run-switch-wrap{
+.l-switch-wrap{
 	position: relative;
 	width: $switch-width+2;
 	height: $switch-height+2;

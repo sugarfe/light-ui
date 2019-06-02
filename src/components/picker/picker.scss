@@ -5,17 +5,17 @@
         padding:0 10px;
         height: 44px;
         font-size: 16px;
-        color:$run-color-gray;
+        color:$l-color-gray;
         background-color: #fbfbfb;
         &>span{
             &:nth-child(1){
-                color:$run-color-gray;
+                color:$l-color-gray;
             }
             &:nth-child(2){
                 text-align: center;
             }
             &:nth-child(3){
-                color:$run-theme-primary;
+                color:$l-theme-primary;
             }
         }
     }

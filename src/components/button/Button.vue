@@ -1,6 +1,6 @@
 <template>
   <button
-    class="run-button"
+    class="l-button"
     :class="styleClass"
     @click="clickHandle"
   >
@@ -46,11 +46,11 @@ export default {
   computed: {
     styleClass() {
       let styleClassArray = [
-        `run-button-size-${this.size}`,
-        `run-button-${this.light ? "light-" : ""}theme-${this.theme}`
+        `l-button-size-${this.size}`,
+        `l-button-${this.light ? "light-" : ""}theme-${this.theme}`
       ];
-      this.block && styleClassArray.push("run-button-block");
-      this.light && styleClassArray.push("run-button-light");
+      this.block && styleClassArray.push("l-button-block");
+      this.light && styleClassArray.push("l-button-light");
       return styleClassArray.join(" ");
     }
   },
@@ -59,7 +59,7 @@ export default {
       this.$emit("click");
     },
     styleChangeByType(value) {
-      let mark = `run-button-${value}`;
+      let mark = `l-button-${value}`;
       value ? styleClassArray.push(mark) : (styleClassArray = styleClassArray.filter((item) => {
         return item !== mark
       }))

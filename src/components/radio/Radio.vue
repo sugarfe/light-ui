@@ -1,6 +1,6 @@
 <template>
   <div
-    class="run-radio flex-box flex-align-center"
+    class="l-radio flex-box flex-align-center"
     :class="dynamicClass"
   >
     <input
@@ -10,8 +10,8 @@
       :name="name"
       @change="change"
     >
-    <div class="run-radio-mark flex-box-center"></div>
-    <div class="run-radio-label">
+    <div class="l-radio-mark flex-box-center"></div>
+    <div class="l-radio-label flex-1">
       <slot></slot>
     </div>
   </div>
@@ -40,8 +40,8 @@ export default {
     },
     dynamicClass() {
       return {
-        "run-radio-checked": this.checked,
-        "run-radio-disabled": this.disabled
+        "l-radio-checked": this.checked,
+        "l-radio-disabled": this.disabled
       };
     }
   },

@@ -1,8 +1,17 @@
 <template>
-  <div class="run-switch-wrap">
-		<input class="run-switch" type="checkbox" v-model="switchValue" :disabled="switchDisabled" />
-		<div class="preventDefault" v-if="preventDefault" @click="_click"></div>
-	</div>
+  <div class="l-switch-wrap">
+    <input
+      class="l-switch"
+      type="checkbox"
+      v-model="switchValue"
+      :disabled="switchDisabled"
+    />
+    <div
+      class="preventDefault"
+      v-if="preventDefault"
+      @click="_click"
+    ></div>
+  </div>
 </template>
 
 <script>
@@ -17,10 +26,10 @@ export default {
       type: Boolean,
       default: false
     },
-		preventDefault:{
-			type: Boolean,
-			default: false
-		}
+    preventDefault: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -28,11 +37,11 @@ export default {
       switchDisabled: this.disabled
     };
   },
-	methods:{
-		_click(){
-			this.$emit('preventClick',this.switchValue)
-		}
-	},
+  methods: {
+    _click() {
+      this.$emit('preventClick', this.switchValue)
+    }
+  },
   watch: {
     switchValue(newVal) {
       this.$emit("input", newVal);

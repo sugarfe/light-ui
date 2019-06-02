@@ -1,41 +1,49 @@
 @import "./radio.variables.scss";
-.run-radio-group {
+
+.l-radio-group {
     &.flex-column {
         padding: 0 5px;
-        .run-radio:not(:last-child)::before {
+
+        .l-radio:not(:last-child)::before {
             @include border-1px($run-color-light, bottom, 0)
         }
     }
+
     &.flex-row {
-        .run-radio:not(:last-child) {
+        .l-radio:not(:last-child) {
             margin-right: 10px;
         }
     }
-    &-right .run-radio{
-        .run-radio-mark{
+
+    &-right .l-radio {
+        .l-radio-mark {
             @include flex-order(2);
         }
-        .run-radio-label{
-            @include flex(1);
+
+        .l-radio-label {
             margin: 0;
         }
     }
-    &-row-right .run-radio{
-        .run-radio-label{
+
+    &-row-right .l-radio {
+        .l-radio-label {
             margin-right: 5px;
         }
     }
 }
 
-.run-radio {
+.l-radio {
     position: relative;
     height: 36px;
+
     &-disabled {
-        .run-radio-label,
-        .run-radio-mark {
+
+        .l-radio-label,
+        .l-radio-mark {
             opacity: .5;
         }
     }
+
     &>input[type="radio"] {
         position: absolute;
         top: 0;
@@ -45,35 +53,41 @@
         opacity: 0;
         z-index: 1;
     }
-    .run-radio-label {
+
+    .l-radio-label {
         font-size: 14px;
         margin-left: 5px;
-        color: $run-color-gray-dark;
+        color: $l-color-gray-dark;
     }
-    .run-radio-mark {
-        width: $run-radio-mark-size;
-        height: $run-radio-mark-size;
+
+    .l-radio-mark {
+        width: $l-radio-mark-size;
+        height: $l-radio-mark-size;
         border-radius: 50%;
         position: relative;
+
         &::before {
-            @include border-1px($run-color-gray, all, 50%);
+            @include border-1px($l-color-gray, all, 50%);
         }
+
         &::after {
             content: "";
             width: calc(100% - 8px);
             height: calc(100% - 8px);
             border-radius: 50%;
-            background-color: $run-theme-primary;
+            background-color: $l-theme-primary;
             transform: scale(.3);
             opacity: 0;
             transition: all .2s;
         }
     }
+
     &-checked {
-        .run-radio-mark {
+        .l-radio-mark {
             &::before {
-                border-color: $run-theme-primary;
+                border-color: $l-theme-primary;
             }
+
             &::after {
                 transform: scale(1);
                 opacity: 1;

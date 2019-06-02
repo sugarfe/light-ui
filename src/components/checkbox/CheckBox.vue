@@ -1,6 +1,6 @@
 <template>
   <div
-    class="run-checkbox flex-box flex-align-center"
+    class="l-checkbox flex-box flex-align-center"
     :class="dynamicClass"
   >
     <input
@@ -9,8 +9,8 @@
       :disabled="disabled"
       @change="change"
     >
-    <div class="run-checkbox-mark flex-box-center"></div>
-    <div class="run-checkbox-label">
+    <div class="l-checkbox-mark flex-box-center"></div>
+    <div class="l-checkbox-label">
       <slot></slot>
     </div>
   </div>
@@ -34,8 +34,8 @@ export default {
     },
     dynamicClass() {
       return {
-        "run-checkbox-checked": this.checked,
-        "run-checkbox-disabled": this.disabled
+        "l-checkbox-checked": this.checked,
+        "l-checkbox-disabled": this.disabled
       };
     }
   },

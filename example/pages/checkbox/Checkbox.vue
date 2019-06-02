@@ -17,7 +17,10 @@
       <example-group contentClass="group-content">
         right
         <template v-slot:content>
-          <run-checkbox-group v-model="value2" right>
+          <run-checkbox-group
+            v-model="value2"
+            right
+          >
             <run-checkbox
               :value="item.value"
               v-for="(item,index) in data"
@@ -29,7 +32,10 @@
       <example-group contentClass="group-content">
         horizontal
         <template v-slot:content>
-          <run-checkbox-group v-model="value3" horizontal>
+          <run-checkbox-group
+            v-model="value3"
+            horizontal
+          >
             <run-checkbox
               :value="item.value"
               v-for="(item,index) in data"
@@ -41,7 +47,11 @@
       <example-group contentClass="group-content">
         horizontal + right
         <template v-slot:content>
-          <run-checkbox-group v-model="value4" horizontal right>
+          <run-checkbox-group
+            v-model="value4"
+            horizontal
+            right
+          >
             <run-checkbox
               :value="item.value"
               v-for="(item,index) in data"
@@ -53,7 +63,11 @@
       <example-group contentClass="group-content">
         horizontal + disabled
         <template v-slot:content>
-          <run-checkbox-group v-model="value5" horizontal right>
+          <run-checkbox-group
+            v-model="value5"
+            horizontal
+            right
+          >
             <run-checkbox
               :value="item.value"
               v-for="(item,index) in data"
