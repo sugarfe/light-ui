@@ -9,6 +9,9 @@ function generateData({ scope = 1, max, min, col = scope } = {}) {
     if (scope > 1) {
         data.push(Array.from({ length: 12 }, (v, k) => k + 1))
     }
+    if (scope > 2) {
+        data.push(Array.from({ length: 31 }, (v, k) => k + 1))
+    }
     return data;
 }
 

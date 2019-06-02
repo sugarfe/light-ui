@@ -11,9 +11,13 @@ class DatePicker {
     }
     init() {
         this.data = generateData(this.option);
-        new Picker({
-            data: this.data
+        let pickerInstance = new Picker({
+            data: this.data,
+            onOk: (...a) => {
+                console.log(a)
+            }
         })
+        // console.log(pickerInstance.popup.instance.$children[0].$children[0])
     }
 }
 

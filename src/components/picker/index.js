@@ -2,6 +2,7 @@ import PickerTemplate from "./Picker.vue";
 
 
 class Picker {
+    popup = undefined;
     constructor(option = {}) {
         option.data = option.data.map((item) => {
             if (item.length > 0 && typeof item[0] !== "object") {
@@ -18,17 +19,19 @@ class Picker {
         this.init(option);
     }
     init() {
-        let popup = new this.$vue.prototype.$RunPopup(PickerTemplate, {
+        this.popup = new this.$vue.prototype.$RunPopup(PickerTemplate, {
             position: "bottom",
             size: "200px",
             ...this.option,
+            onFinish: () => {
+
+            },
             onOk: ({ values, text, selectedIndex }) => {
                 typeof this.option.onOk === "function" && this.option.onOk([...values], [...text], [...selectedIndex]);
-                popup.close();
+                this.popup.close();
             }
         });
     }
-    install() { }
 }
 
 

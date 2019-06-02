@@ -10,9 +10,17 @@
       ref="run-picker-scroll-wrapper"
       v-show="data.length > 0"
     >
-      <div v-for="(item, index) in data" :key="index">
+      <div
+        v-for="(item, index) in data"
+        :key="index"
+      >
         <ul class="run-picker-wheel-scroll">
-          <li v-for="(o,i) in item" class="wheel-item" :key="i" v-text="o[dataText]"></li>
+          <li
+            v-for="(o,i) in item"
+            class="wheel-item"
+            :key="i"
+            v-text="o[dataText]"
+          ></li>
         </ul>
       </div>
       <span class="run-picker-mask run-picker-mask-top"></span>
@@ -59,7 +67,6 @@ export default {
       values: undefined,
       selectedIndex: []
     };
-    console.warn(this.value);
   },
   mounted() {
     this.data.length && this.init();
@@ -72,7 +79,6 @@ export default {
   methods: {
     init() {
       this.initSelectedIndex();
-      console.log(option.selectedIndex);
       this.data.forEach((item, index) => {
         option.wheels[index] = new BScroll(
           this.$refs["run-picker-scroll-wrapper"].children[index],
@@ -80,10 +86,17 @@ export default {
             wheel: {
               selectedIndex: option.selectedIndex[index]
             },
+            pullUpLoad: {
+              threshold: 50
+            },
+            pullingUp: () => {
+              console.log(pullingUp)
+            },
             probeType: 3
           }
         );
       });
+      this.$emit("onFinish", option.wheels)
     },
     initSelectedIndex() {
       let values = [];
@@ -117,6 +130,9 @@ export default {
     },
     cancel() {
       this.$emit("popup-close");
+    },
+    getWheelsInstance() {
+      return option.wheels
     }
   }
 };
