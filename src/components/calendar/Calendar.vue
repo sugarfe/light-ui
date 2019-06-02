@@ -1,18 +1,26 @@
 <template>
   <div class="run-calendar">
-    <div class="calendar-toolbar run-display-flex">
+    <div class="calendar-toolbar flex-box">
       <div class></div>
-      <div class="run-flex-1"></div>
+      <div class="flex-1"></div>
       <div class></div>
-      <div
-        class="calendar-title run-flex-box-center"
-      >{{`${currentDate.fullYear}-${currentDate.month}`}}</div>
+      <div class="calendar-title flex-box-center">{{`${currentDate.fullYear}-${currentDate.month}`}}</div>
     </div>
-    <ul class="calendar-week-header run-display-flex run-justify-space-around">
-      <li v-for="(w, index) in week" :key="index" v-text="w.text"></li>
+    <ul class="calendar-week-header flex-box flex-justify-space-around">
+      <li
+        v-for="(w, index) in week"
+        :key="index"
+        v-text="w.text"
+      ></li>
     </ul>
-    <div class="calendar-contant" ref="calendar">
-      <div class="calendar-contant-scroll-warp" ref="calendar-warp">
+    <div
+      class="calendar-contant"
+      ref="calendar"
+    >
+      <div
+        class="calendar-contant-scroll-warp"
+        ref="calendar-warp"
+      >
         <CalendarItem
           :style="dynamicStyle"
           v-for="(item, pageIndex) in pages"
@@ -85,7 +93,7 @@ export default {
     todayString() {
       return `${this.currentDate.fullYear}${this.currentDate.month}${
         this.currentDate.day
-      }`;
+        }`;
     }
   },
   mounted() {

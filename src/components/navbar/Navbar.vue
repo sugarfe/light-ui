@@ -1,9 +1,9 @@
 <template>
-  <div class="run-navbar run-display-flex run-align-center">
+  <div class="run-navbar flex-box flex-align-center">
     <div>
       <slot name="left"></slot>
     </div>
-    <div class="run-flex-1">
+    <div class="flex-1">
       <span class="run-navbar-title">
         <slot></slot>
       </span>
@@ -19,7 +19,7 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  created() { },
   methods: {}
 };
 </script>

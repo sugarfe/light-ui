@@ -1,7 +1,15 @@
 <template>
-  <div class="run-checkbox run-display-flex run-align-center" :class="dynamicClass">
-    <input type="checkbox" :value="value" :disabled="disabled" @change="change">
-    <div class="run-checkbox-mark run-flex-box-center"></div>
+  <div
+    class="run-checkbox flex-box flex-align-center"
+    :class="dynamicClass"
+  >
+    <input
+      type="checkbox"
+      :value="value"
+      :disabled="disabled"
+      @change="change"
+    >
+    <div class="run-checkbox-mark flex-box-center"></div>
     <div class="run-checkbox-label">
       <slot></slot>
     </div>

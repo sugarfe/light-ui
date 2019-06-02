@@ -1,5 +1,8 @@
 <template>
-  <div class="run-checkbox-group run-display-flex" :class="dynamicClass">
+  <div
+    class="run-checkbox-group flex-box"
+    :class="dynamicClass"
+  >
     <slot></slot>
   </div>
 </template>
@@ -34,8 +37,8 @@ export default {
   computed: {
     dynamicClass() {
       return {
-        "run-flex-direction-row": this.horizontal,
-        "run-flex-direction-column": !this.horizontal,
+        "flex-row": this.horizontal,
+        "flex-column": !this.horizontal,
         "run-checkbox-group-small": this.size === "small",
         "run-checkbox-group-right": this.right,
         "run-checkbox-group-row-right": this.horizontal && this.right

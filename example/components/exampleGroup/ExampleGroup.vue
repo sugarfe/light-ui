@@ -1,9 +1,12 @@
 <template>
   <div class="example-group">
-    <div class="example-group-title run-display-flex run-align-center">
+    <div class="example-group-title flex-box flex-align-center">
       <slot></slot>
     </div>
-    <div class="example-group-content" :class="contentClass">
+    <div
+      class="example-group-content"
+      :class="contentClass"
+    >
       <slot name="content"></slot>
     </div>
   </div>

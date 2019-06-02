@@ -1,11 +1,11 @@
 <template>
   <run-page-content
     class="example-button-page"
-    contentClass="content run-flex-box-column"
+    contentClass="content flex-box-column"
   >
     <run-navbar>DatePicker</run-navbar>
     <template v-slot:content>
-      <div class="run-flex-1">
+      <div class="flex-1">
         <example-group contentClass="group-content">
           scope
           <template v-slot:content>

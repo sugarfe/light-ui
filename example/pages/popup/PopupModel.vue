@@ -1,21 +1,24 @@
 <template>
-  <run-page-content class="popup-model run-display-flex run-flex-direction-column run-align-center">
+  <run-page-content class="popup-model flex-box flex-column flex-align-center">
     <run-navbar>Content</run-navbar>
     <template v-slot:content>
-      <run-button theme="primary" @click="close">关闭</run-button>
+      <run-button
+        theme="primary"
+        @click="close"
+      >关闭</run-button>
     </template>
   </run-page-content>
 </template>
 <script>
 export default {
   props: {},
-  created() {},
+  created() { },
   methods: {
     close() {
       this.$emit("popup-close");
     }
   },
-  beforeRouteLeave(to, from, next) {}
+  beforeRouteLeave(to, from, next) { }
 };
 </script>
 <style lang="scss">

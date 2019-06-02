@@ -1,6 +1,6 @@
 <template>
   <div
-    class="run-input-warp run-display-flex"
+    class="run-input-warp flex-box"
     :class="dynamicClass"
   >
     <input
@@ -10,12 +10,12 @@
       :disabled="disabled"
       :readonly="readonly"
       @focus="onFocusHandle"
-      class="run-input run-flex-1"
+      class="run-input flex-1"
       v-model="currentValue"
       v-if="!textarea"
     >
     <div
-      class="run-input-textarea-wrapper run-flex-1"
+      class="run-input-textarea-wrapper flex-1"
       v-else
     >
       <textarea
@@ -29,7 +29,7 @@
       ></textarea>
       <pre class="run-textarea-block">%{{currentValue}}</pre>
     </div>
-    <div class="run-input-tool run-display-flex run-align-center">
+    <div class="run-input-tool flex-box flex-align-center">
       <slot></slot>
     </div>
   </div>

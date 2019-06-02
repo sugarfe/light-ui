@@ -1,8 +1,12 @@
 <template>
   <div class="calendar-page">
-    <ul class="calendar-item run-display-flex" v-for="(item, i) in items" :key="i">
+    <ul
+      class="calendar-item flex-box"
+      v-for="(item, i) in items"
+      :key="i"
+    >
       <li
-        class="calendar-day run-flex-1"
+        class="calendar-day flex-1"
         v-for="(d, j) in item"
         :class="dynamicClass(d)"
         :key="j"

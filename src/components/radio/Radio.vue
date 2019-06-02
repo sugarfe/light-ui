@@ -1,7 +1,16 @@
 <template>
-  <div class="run-radio run-display-flex run-align-center" :class="dynamicClass">
-    <input type="radio" :value="value" :disabled="disabled" :name="name" @change="change">
-    <div class="run-radio-mark run-flex-box-center"></div>
+  <div
+    class="run-radio flex-box flex-align-center"
+    :class="dynamicClass"
+  >
+    <input
+      type="radio"
+      :value="value"
+      :disabled="disabled"
+      :name="name"
+      @change="change"
+    >
+    <div class="run-radio-mark flex-box-center"></div>
     <div class="run-radio-label">
       <slot></slot>
     </div>
@@ -36,7 +45,7 @@ export default {
       };
     }
   },
-  created: function() {
+  created: function () {
     this.init();
   },
   methods: {

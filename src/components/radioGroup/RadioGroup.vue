@@ -1,5 +1,8 @@
 <template>
-  <div class="run-radio-group run-display-flex" :class="dynamicClass">
+  <div
+    class="run-radio-group flex-box"
+    :class="dynamicClass"
+  >
     <slot></slot>
   </div>
 </template>
@@ -33,8 +36,8 @@ export default {
     },
     dynamicClass() {
       return {
-        "run-flex-direction-row": this.horizontal,
-        "run-flex-direction-column": !this.horizontal,
+        "flex-row": this.horizontal,
+        "flex-column": !this.horizontal,
         "run-radio-group-small": this.size === "small",
         "run-radio-group-right": this.right,
         "run-radio-group-row-right": this.horizontal && this.right

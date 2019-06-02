@@ -1,5 +1,5 @@
 <template>
-  <div class="run-grid-box run-display-flex run-flex-wrap-wrap">
+  <div class="run-grid-box flex-box flex-wrap">
     <slot></slot>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
       row: 0
     };
   },
-  created() {},
+  created() { },
   mounted() {
     this.init();
   },

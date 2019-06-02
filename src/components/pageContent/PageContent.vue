@@ -1,7 +1,13 @@
 <template>
-  <div class="run-page-content" :class="dynamic.class">
+  <div
+    class="run-page-content"
+    :class="dynamic.class"
+  >
     <slot></slot>
-    <div class="run-flex-1 run-scroll-y" :class="contentClass">
+    <div
+      class="flex-1 run-scroll-y"
+      :class="contentClass"
+    >
       <slot name="content"></slot>
     </div>
   </div>
@@ -40,13 +46,13 @@ export default {
       dynamic: {
         class: {
           "run-page-content-full-height": this.fullHeight,
-          "run-display-flex": this.flex,
-          "run-flex-direction-column": this.flexDirectionColumn
+          "flex-box": this.flex,
+          "flex-column": this.flexDirectionColumn
         }
       }
     };
   },
-  created() {},
+  created() { },
   methods: {}
 };
 </script>

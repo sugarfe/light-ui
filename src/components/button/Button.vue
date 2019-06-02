@@ -1,5 +1,9 @@
 <template>
-  <button class="run-button" :class="styleClass" @click="clickHandle">
+  <button
+    class="run-button"
+    :class="styleClass"
+    @click="clickHandle"
+  >
     <slot></slot>
   </button>
 </template>
@@ -53,6 +57,20 @@ export default {
   methods: {
     clickHandle() {
       this.$emit("click");
+    },
+    styleChangeByType(value) {
+      let mark = `run-button-${value}`;
+      value ? styleClassArray.push(mark) : (styleClassArray = styleClassArray.filter((item) => {
+        return item !== mark
+      }))
+    }
+  },
+  watch: {
+    "block"(value) {
+      this.styleChangeByType("block")
+    },
+    "light"(value) {
+      this.styleChangeByType("light")
     }
   }
 };

@@ -1,12 +1,18 @@
 <template>
-  <run-page-content class="example-button-page" contentClass="content run-flex-box-column">
+  <run-page-content
+    class="example-button-page"
+    contentClass="content flex-box-column"
+  >
     <run-navbar>Picker</run-navbar>
     <template v-slot:content>
-      <div class="run-flex-1">
+      <div class="flex-1">
         <example-group contentClass="group-content">
           basic
           <template v-slot:content>
-            <run-radio-group v-model="column" right>
+            <run-radio-group
+              v-model="column"
+              right
+            >
               <run-radio :value="1">一列</run-radio>
               <run-radio :value="2">二列</run-radio>
               <run-radio :value="3">三列</run-radio>
@@ -23,7 +29,11 @@
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button block theme="primary" @click="open">打开</run-button>
+        <run-button
+          block
+          theme="primary"
+          @click="open"
+        >打开</run-button>
       </div>
     </template>
   </run-page-content>
@@ -38,7 +48,7 @@ export default {
       column: 1
     };
   },
-  mounted() {},
+  mounted() { },
   methods: {
     open() {
       new this.$RunPicker({

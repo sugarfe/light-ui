@@ -1,65 +1,57 @@
 @import "./mixin/flex.scss";
 
-.run-display-flex {
+.flex-box {
     @include display-flex();
 }
 
-.run-flex-direction-row {
+.flex-row {
     @include flex-direction();
 }
 
-.run-flex-direction-column {
+.flex-column {
     @include flex-direction(column);
 }
 
-.run-flex-wrap-nowrap {
+.flex-nowrap {
     @include flex-wrap(nowrap);
 }
 
-.run-flex-wrap-wrap {
+.flex-wrap {
     @include flex-wrap(wrap);
 }
 
-.run-justify-center {
+.flex-justify-center {
     @include justify-content(center);
 }
 
-.run-justify-end {
+.flex-justify-end {
     @include justify-content(flex-end);
 }
 
-.run-justify-space-around {
+.flex-justify-space-around {
     @include justify-content(space-around);
 }
 
-.run-align-center {
+.flex-align-center {
     @include align-items(center);
 }
 
-.run-align-end {
+.flex-align-end {
     @include align-items(flex-end);
 }
 
-.run-flex-box {
-    @extend .run-display-flex;
-    @extend .run-flex-direction-row;
-    @extend .run-flex-wrap-nowrap;
-}
 
-.run-flex-box-column {
+.flex-box-column {
     @include display-flex();
-    @extend .run-flex-direction-column;
-    @extend .run-flex-wrap-nowrap;
+    @extend .flex-column;
 }
 
-.run-flex-box-center {
-    @extend .run-flex-box;
-    @extend .run-align-center;
-    @extend .run-justify-center;
+.flex-box-center {
+    @extend .flex-box;
+    @extend .flex-align-center;
+    @extend .flex-justify-center;
 }
 
-.run-flex-1 {
+.flex-1 {
     @include flex();
 }
-
-

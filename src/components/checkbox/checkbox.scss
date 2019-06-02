@@ -1,12 +1,12 @@
 @import "./checkbox.variables.scss";
 .run-checkbox-group {
-    &.run-flex-direction-column {
+    &.flex-column {
         padding: 0 5px;
         .run-checkbox:not(:last-child)::before {
             @include border-1px($run-color-light, bottom, 0)
         }
     }
-    &.run-flex-direction-row {
+    &.flex-row {
         .run-checkbox:not(:last-child) {
             margin-right: 10px;
         }

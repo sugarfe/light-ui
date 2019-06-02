@@ -1,12 +1,12 @@
 <template>
-  <div class="run-picker run-flex-box-column">
-    <div class="run-picker-top run-display-flex run-align-center">
+  <div class="run-picker flex-box-column">
+    <div class="run-picker-top flex-box flex-align-center">
       <span @click="cancel">取消</span>
-      <span class="run-picker-title run-flex-1"></span>
+      <span class="run-picker-title flex-1"></span>
       <span @click="ok">确定</span>
     </div>
     <div
-      class="run-picker-contant run-flex-1 run-display-flex"
+      class="run-picker-contant flex-1 flex-box"
       ref="run-picker-scroll-wrapper"
       v-show="data.length > 0"
     >
