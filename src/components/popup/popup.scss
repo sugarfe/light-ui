@@ -1,15 +1,15 @@
 @import "@runSrc/style/mixin/flex.scss";
 @import "./popup.variables.scss";
 
-.run-popup {
+.l-popup {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0px;
     overflow: hidden;
-    z-index: $run-popup-zindex;
+    z-index: $l-popup-zindex;
 
-    .run-popup-mask {
+    .l-popup-mask {
         height: 100%;
         width: 100%;
         background: rgba(0, 0, 0, .1);
@@ -17,21 +17,21 @@
         overflow: hidden;
     }
 
-    .run-popup-mask-enter-active {}
+    .l-popup-mask-enter-active {}
 
-    .run-mask-enter {
+    .l-mask-enter {
         opacity: 0;
     }
 
-    .run-mask-enter-to {
+    .l-mask-enter-to {
         opacity: 1;
     }
 
-    .run-mask-leave {
+    .l-mask-leave {
         opacity: 0;
     }
 
-    .run-popup-container {
+    .l-popup-container {
         position: absolute;
         overflow: hidden;
         max-width: 100%;
@@ -41,23 +41,23 @@
         transition-timing-function: cubic-bezier(0.395, 0.225, 0.170, 1);
     }
 
-    .run-popup-null {}
+    .l-popup-null {}
 
     // center
 
-    .run-popup-center-enter-active {
+    .l-popup-center-enter-active {
         transition-timing-function: cubic-bezier(0.395, 0.225, 0.170, 1.320);
     }
 
-    .run-popup-center-enter {
+    .l-popup-center-enter {
         transform: scale(0)
     }
 
-    .run-popup-center-leave {
+    .l-popup-center-leave {
         transform: scale(1)
     }
 
-    .run-popup-center-leave-to {
+    .l-popup-center-leave-to {
         transform: scale(.5);
         opacity: 0;
     }
@@ -68,15 +68,15 @@
   position:left
   */
 
-    .run-popup-left-enter {
+    .l-popup-left-enter {
         transform: translate3d(-100%, 0, 0)
     }
 
-    .run-popup-left-leave {
+    .l-popup-left-leave {
         transform: translate3d(0, 0, 0)
     }
 
-    .run-popup-left-leave-to {
+    .l-popup-left-leave-to {
         transform: translate3d(-100%, 0, 0)
     }
 
@@ -85,15 +85,15 @@
   position:right
   */
 
-    .run-popup-right-enter {
+    .l-popup-right-enter {
         transform: translate3d(100%, 0, 0)
     }
 
-    .run-popup-right-leave {
+    .l-popup-right-leave {
         transform: translate3d(0, 0, 0)
     }
 
-    .run-popup-right-leave-to {
+    .l-popup-right-leave-to {
         transform: translate3d(100%, 0, 0)
     }
 
@@ -101,15 +101,15 @@
   position:top
   */
 
-    .run-popup-top-enter {
+    .l-popup-top-enter {
         transform: translate3d(0, -100%, 0)
     }
 
-    .run-popup-top-leave {
+    .l-popup-top-leave {
         transform: translate3d(0, 0, 0)
     }
 
-    .run-popup-top-leave-to {
+    .l-popup-top-leave-to {
         transform: translate3d(0, -100%, 0)
     }
 
@@ -118,15 +118,15 @@
   position:bottom
   */
 
-    .run-popup-bottom-enter {
+    .l-popup-bottom-enter {
         transform: translate3d(0, 100%, 0)
     }
 
-    .run-popup-bottom-leave {
+    .l-popup-bottom-leave {
         transform: translate3d(0, 0, 0)
     }
 
-    .run-popup-bottom-leave-to {
+    .l-popup-bottom-leave-to {
         transform: translate3d(0, 100%, 0)
     }
 

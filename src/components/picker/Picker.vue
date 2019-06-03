@@ -1,20 +1,20 @@
 <template>
-  <div class="run-picker flex-box-column">
-    <div class="run-picker-top flex-box flex-align-center">
+  <div class="l-picker flex-box-column">
+    <div class="l-picker-top flex-box flex-align-center">
       <span @click="cancel">取消</span>
-      <span class="run-picker-title flex-1"></span>
+      <span class="l-picker-title flex-1"></span>
       <span @click="ok">确定</span>
     </div>
     <div
-      class="run-picker-contant flex-1 flex-box"
-      ref="run-picker-scroll-wrapper"
+      class="l-picker-contant flex-1 flex-box"
+      ref="l-picker-scroll-wrapper"
       v-show="data.length > 0"
     >
       <div
         v-for="(item, index) in data"
         :key="index"
       >
-        <ul class="run-picker-wheel-scroll">
+        <ul class="l-picker-wheel-scroll">
           <li
             v-for="(o,i) in item"
             class="wheel-item"
@@ -23,8 +23,8 @@
           ></li>
         </ul>
       </div>
-      <span class="run-picker-mask run-picker-mask-top"></span>
-      <span class="run-picker-mask run-picker-mask-bottom"></span>
+      <span class="l-picker-mask l-picker-mask-top"></span>
+      <span class="l-picker-mask l-picker-mask-bottom"></span>
     </div>
   </div>
 </template>
@@ -81,7 +81,7 @@ export default {
       this.initSelectedIndex();
       this.data.forEach((item, index) => {
         option.wheels[index] = new BScroll(
-          this.$refs["run-picker-scroll-wrapper"].children[index],
+          this.$refs["l-picker-scroll-wrapper"].children[index],
           {
             wheel: {
               selectedIndex: option.selectedIndex[index]

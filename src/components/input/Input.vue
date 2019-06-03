@@ -1,6 +1,6 @@
 <template>
   <div
-    class="run-input-warp flex-box"
+    class="l-input-warp flex-box"
     :class="dynamicClass"
   >
     <input
@@ -10,12 +10,12 @@
       :disabled="disabled"
       :readonly="readonly"
       @focus="onFocusHandle"
-      class="run-input flex-1"
+      class="l-input flex-1"
       v-model="currentValue"
       v-if="!textarea"
     >
     <div
-      class="run-input-textarea-wrapper flex-1"
+      class="l-input-textarea-wrapper flex-1"
       v-else
     >
       <textarea
@@ -25,11 +25,11 @@
         :readonly="readonly"
         :placeholder="placeholder"
         v-model="currentValue"
-        class="run-textarea"
+        class="l-textarea"
       ></textarea>
-      <pre class="run-textarea-block">%{{currentValue}}</pre>
+      <pre class="l-textarea-block">%{{currentValue}}</pre>
     </div>
-    <div class="run-input-tool flex-box flex-align-center">
+    <div class="l-input-tool flex-box flex-align-center">
       <slot></slot>
     </div>
   </div>
@@ -78,7 +78,7 @@ export default {
   computed: {
     dynamicClass() {
       return {
-        "run-input-warp-textarea": this.textarea
+        "l-input-warp-textarea": this.textarea
       };
     }
   },

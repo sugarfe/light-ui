@@ -1,13 +1,16 @@
 <template>
   <div ref="runTabWrap">
-    <div class="run-tab" :style="{width:wrapWitch}">
+    <div
+      class="l-tab"
+      :style="{width:wrapWitch}"
+    >
       <slot class="item"></slot>
       <div
-        class="run-scroll-bar"
-        :class="track?`run-scroll-bar-${track}`:'',currentBarClass"
+        class="l-scroll-bar"
+        :class="track?`l-scroll-bar-${track}`:'',currentBarClass"
         :style="{left:leftNums,right:rightNums}"
       >
-        <span class="run-scroll-bar-chilren"></span>
+        <span class="l-scroll-bar-chilren"></span>
       </div>
     </div>
   </div>

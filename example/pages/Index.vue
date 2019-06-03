@@ -3,7 +3,7 @@
     class="index-page"
     contentClass="index-page-component-list"
   >
-    <div class="title">RUNUI</div>
+    <div class="title">LightUI</div>
     <template v-slot:content>
       <example-group
         contentClass="group-content"

@@ -1,6 +1,6 @@
 <template>
-  <div class="run-loading" >
-     <div class="loading">
+  <div class="l-loading">
+    <div class="loading">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -14,20 +14,23 @@
       <div class="line11"></div>
       <div class="line12"></div>
     </div>
-    <div class="run-loading-text"  v-if="text">
+    <div
+      class="l-loading-text"
+      v-if="text"
+    >
       {{text}}
     </div>
   </div>
 </template>
 <script>
 export default {
-  data(){
+  data() {
     return {}
   },
-  props:{
-    text:{
-      type:String,
-      default:()=>{
+  props: {
+    text: {
+      type: String,
+      default: () => {
         return '加载中'
       }
     }
@@ -35,5 +38,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import './loading.scss';
+@import "./loading.scss";
 </style>

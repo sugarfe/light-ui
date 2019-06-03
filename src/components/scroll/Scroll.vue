@@ -1,36 +1,64 @@
 <template>
-  <div class="run-scroll" ref="runScroll">
-    <div class="run-scroll-content">
+  <div
+    class="l-scroll"
+    ref="runScroll"
+  >
+    <div class="l-scroll-content">
       <div class="list-content">
         <slot></slot>
       </div>
-       <slot name="pullup"
-            :pullUpLoad="pullUpLoad"
-            :isPullUpLoad="isPullUpLoad"
+      <slot
+        name="pullup"
+        :pullUpLoad="pullUpLoad"
+        :isPullUpLoad="isPullUpLoad"
       >
-        <div class="pullup-wrapper" v-if="pullUpLoad">
-          <div class="before-trigger" v-if="!isPullUpLoad">
+        <div
+          class="pullup-wrapper"
+          v-if="pullUpLoad"
+        >
+          <div
+            class="before-trigger"
+            v-if="!isPullUpLoad"
+          >
             <span>{{pullUpTxt}}</span>
           </div>
-          <div class="after-trigger" v-else>
+          <div
+            class="after-trigger"
+            v-else
+          >
             <loading></loading>
           </div>
         </div>
       </slot>
     </div>
-    <slot name="pulldown"
-          :pullDownRefresh="pullDownRefresh"
-          :pullDownStyle="pullDownStyle"
-          :beforePullDown="beforePullDown"
-          :isPullingDown="isPullingDown"
-          :bubbleY="bubbleY"
+    <slot
+      name="pulldown"
+      :pullDownRefresh="pullDownRefresh"
+      :pullDownStyle="pullDownStyle"
+      :beforePullDown="beforePullDown"
+      :isPullingDown="isPullingDown"
+      :bubbleY="bubbleY"
     >
-      <div ref="pulldown" class="pulldown-wrapper" :style="pullDownStyle" v-if="pullDownRefresh">
-        <div class="before-trigger" v-if="beforePullDown">
+      <div
+        ref="pulldown"
+        class="pulldown-wrapper"
+        :style="pullDownStyle"
+        v-if="pullDownRefresh"
+      >
+        <div
+          class="before-trigger"
+          v-if="beforePullDown"
+        >
           下拉更新
         </div>
-        <div class="after-trigger" v-else>
-          <div v-if="isPullingDown" class="loading">
+        <div
+          class="after-trigger"
+          v-else
+        >
+          <div
+            v-if="isPullingDown"
+            class="loading"
+          >
             <loading></loading>
           </div>
           <div v-else><span>{{refreshTxt}}</span></div>
@@ -43,13 +71,13 @@
 import BScroll from 'better-scroll'
 import loading from './loading'
 export default {
-  name:'scroll',
-  components:{
+  name: 'scroll',
+  components: {
     loading
   },
-  data(){
+  data() {
     return {
-      scroll:null,
+      scroll: null,
       beforePullDown: true,
       isRebounding: false,
       isPullingDown: false,
@@ -57,23 +85,23 @@ export default {
       pullUpDirty: true,
       pullDownStyle: '',
       bubbleY: 0,
-      pullDownInitTop:''
+      pullDownInitTop: ''
     }
   },
-  props:{
+  props: {
     data: {
       type: Array,
       default: function () {
         return []
       }
     },
-    startY:{
-      type:Number,
-      default:()=>{
+    startY: {
+      type: Number,
+      default: () => {
         return 0
       }
     },
-    pullDownRefresh:{
+    pullDownRefresh: {
       type: null,
       default: false
     },
@@ -95,30 +123,30 @@ export default {
     },
   },
   computed: {
-      pullUpTxt() {
-        const moreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more) || '数据已加载~'
+    pullUpTxt() {
+      const moreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more) || '数据已加载~'
 
-        const noMoreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.noMore) || '没有更多数据啦~'
+      const noMoreTxt = (this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.noMore) || '没有更多数据啦~'
 
-        return this.pullUpDirty ? moreTxt : noMoreTxt
-      },
-      refreshTxt() {
-        return (this.pullDownRefresh && this.pullDownRefresh.txt) || '更新成功'
-      }
+      return this.pullUpDirty ? moreTxt : noMoreTxt
     },
-  mounted(){
-    this.$nextTick(()=>{
+    refreshTxt() {
+      return (this.pullDownRefresh && this.pullDownRefresh.txt) || '更新成功'
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
       this.pullDownInitTop = -50
       this.pullDownStyle = `top:${this.pullDownInitTop}px`
       this.initScroll()
     })
   },
-  methods:{
+  methods: {
     refresh() {
       this.scroll && this.scroll.refresh()
     },
-    initScroll(){
-      let option={
+    initScroll() {
+      let option = {
         scrollX: false,
         scrollY: true,
         momentum: true,
@@ -126,34 +154,34 @@ export default {
         click: true,
         observeDOM: false,
         pullDownRefresh: this.pullDownRefresh,
-        pullUpLoad:this.pullUpLoad
+        pullUpLoad: this.pullUpLoad
       }
-      if(!this.scroll){
-        this.scroll = new BScroll(this.$refs.runScroll,option)
-      }else{
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.runScroll, option)
+      } else {
         this.scroll.refresh()
       }
       if (this.listenScroll) {
-          this.scroll.on('scroll', (pos) => {
-            this.$emit('scroll', pos)
-          })
-        }
+        this.scroll.on('scroll', (pos) => {
+          this.$emit('scroll', pos)
+        })
+      }
 
-        if (this.listenScrollEnd) {
-          this.scroll.on('scrollEnd', (pos) => {
-            this.$emit('scroll-end', pos)
-          })
-        }
+      if (this.listenScrollEnd) {
+        this.scroll.on('scrollEnd', (pos) => {
+          this.$emit('scroll-end', pos)
+        })
+      }
 
-        if (this.listenBeforeScroll) {
-          this.scroll.on('beforeScrollStart', () => {
-            this.$emit('beforeScrollStart')
-          })
+      if (this.listenBeforeScroll) {
+        this.scroll.on('beforeScrollStart', () => {
+          this.$emit('beforeScrollStart')
+        })
 
-          this.scroll.on('scrollStart', () => {
-            this.$emit('scroll-start')
-          })
-        }
+        this.scroll.on('scrollStart', () => {
+          this.$emit('scroll-start')
+        })
+      }
       if (this.pullDownRefresh) {
         this._initPullDownRefresh()
       }
@@ -206,7 +234,7 @@ export default {
       }
     },
     _reboundPullDown() {
-      const {stopTime = 600} = this.pullDownRefresh
+      const { stopTime = 600 } = this.pullDownRefresh
       return new Promise((resolve) => {
         setTimeout(() => {
           this.isRebounding = true
@@ -224,15 +252,15 @@ export default {
       }, this.scroll.options.bounceTime)
     }
   },
-  watch:{
+  watch: {
     data() {
       setTimeout(() => {
         this.forceUpdate(true)
-      },20)
+      }, 20)
     }
   }
 }
 </script>
 <style lang="scss">
-@import './scroll.scss';
+@import "./scroll.scss";
 </style>

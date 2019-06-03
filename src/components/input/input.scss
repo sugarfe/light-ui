@@ -1,27 +1,27 @@
 @import "./input.variables.scss";
-.run-input-warp{
+.l-input-warp{
     position: relative;
     &::before {
-        @include border-1px($run-input-border-color)
+        @include border-1px($l-input-border-color)
     }
     &-textarea{
-        padding:$run-input-padding;
+        padding:$l-input-padding;
     }
     input,textarea{
-        font-size: $run-input-fontsize;
+        font-size: $l-input-fontsize;
     }
-    .run-input{
-        min-height:$run-input-height;
-        padding:0 $run-input-padding;
+    .l-input{
+        min-height:$l-input-height;
+        padding:0 $l-input-padding;
         font-size: 14px;
     }
-    .run-input-textarea-wrapper{
+    .l-input-textarea-wrapper{
         position: relative;
         width: 100%;
         margin: 0;
         padding: 0;
         line-height: normal;
-        .run-textarea{
+        .l-textarea{
             position: absolute;
             width: 100%;
             height: 100%;
@@ -35,7 +35,7 @@
             border: none;
             font-size: 14px;
         }
-        .run-textarea-block{
+        .l-textarea-block{
             display: block;
             white-space: pre-wrap;
             word-wrap: break-word;
@@ -47,7 +47,7 @@
             font-size: 14px;
         }
     }
-    .run-input-tool{
-        // padding:0 $run-input-padding;
+    .l-input-tool{
+        // padding:0 $l-input-padding;
     }
 }

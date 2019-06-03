@@ -1,43 +1,52 @@
-.run-picker{
+.l-picker {
     background-color: #fff;
     height: 100%;
-    .run-picker-top{
-        padding:0 10px;
+
+    .l-picker-top {
+        padding: 0 10px;
         height: 44px;
         font-size: 16px;
-        color:$l-color-gray;
+        color: $l-color-gray;
         background-color: #fbfbfb;
-        &>span{
-            &:nth-child(1){
-                color:$l-color-gray;
+
+        &>span {
+            &:nth-child(1) {
+                color: $l-color-gray;
             }
-            &:nth-child(2){
+
+            &:nth-child(2) {
                 text-align: center;
             }
-            &:nth-child(3){
-                color:$l-theme-primary;
+
+            &:nth-child(3) {
+                color: $l-theme-primary;
             }
         }
     }
-    .run-picker-contant{
+
+    .l-picker-contant {
         overflow: hidden;
         position: relative;
-        &>div{
+
+        &>div {
             width: 100%;
         }
     }
-    .run-picker-wheel-scroll{
+
+    .l-picker-wheel-scroll {
         padding: 0;
         list-style: none;
         margin-top: 60px;
-        &>li{
+
+        &>li {
             height: 38px;
             line-height: 38px;
             list-style: none;
             text-align: center;
         }
     }
-    .run-picker-mask {
+
+    .l-picker-mask {
         position: absolute;
         background: linear-gradient(0deg, hsla(0, 0%, 100%, .4), hsla(0, 0%, 100%, .8));
         width: 100%;
@@ -45,6 +54,7 @@
         z-index: 1;
         pointer-events: none;
         transform: translateZ(0);
+
         &:before {
             content: '';
             position: absolute;
@@ -55,15 +65,19 @@
             bottom: 0;
             transform-origin: 0 bottom;
         }
+
         &-top {
             top: 0;
+
             &:before {
                 bottom: 0;
                 transform-origin: 0 bottom;
             }
         }
+
         &-bottom {
             bottom: 0;
+
             &:before {
                 top: 0;
                 transform-origin: 0 top;

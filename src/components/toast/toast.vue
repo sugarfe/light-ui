@@ -1,5 +1,8 @@
 <template>
-  <div class="run-toast" :class="className">
+  <div
+    class="l-toast"
+    :class="className"
+  >
     <div>
       {{message}}
     </div>
@@ -7,29 +10,29 @@
 </template>
 <script>
 export default {
-  name:'toast',
-  data(){
+  name: 'toast',
+  data() {
     return {}
   },
-  props:{
-    message:{
-      type:String,
-      default:()=>{
+  props: {
+    message: {
+      type: String,
+      default: () => {
         return ''
       }
     },
-    className:{
-      type:String,
-      default:()=>{
+    className: {
+      type: String,
+      default: () => {
         return 'initClass'
       }
     },
   },
-  methods:{
-    
+  methods: {
+
   }
 }
 </script>
 <style lang="scss">
-@import url('./toast.scss');
+@import url("./toast.scss");
 </style>

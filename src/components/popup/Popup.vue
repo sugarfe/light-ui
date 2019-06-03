@@ -1,23 +1,23 @@
 <template>
   <div
-    class="run-popup"
+    class="l-popup"
     :class="this.position=='center'?'center':''"
   >
-    <transition name="run-mask">
+    <transition name="l-mask">
       <div
-        class="run-popup-mask"
+        class="l-popup-mask"
         v-if="isPageRead && displayMask"
         @click.self="maskClickHanlde"
       ></div>
     </transition>
     <transition
-      :name="'run-popup-' + position"
+      :name="'l-popup-' + position"
       @after-leave="popupContainerAfterLeave"
       @after-enter="popupContainerAfterEnter"
     >
       <div
         :class="dynamicClass"
-        class="run-popup-container"
+        class="l-popup-container"
         @click.self="maskClickHanlde"
         :style="dynamicStyle"
         v-if="isPageRead"
@@ -30,7 +30,7 @@
 <script>
 import { debuglog } from 'util';
 export default {
-  name: "run-popup",
+  name: "l-popup",
   data() {
     return {
       state: -1
@@ -76,7 +76,7 @@ export default {
       return this.state > -1;
     },
     dynamicClass() {
-      return ["run-popup-" + this.position];
+      return ["l-popup-" + this.position];
     },
     dynamicStyle() {
       let styleObject = [], size;

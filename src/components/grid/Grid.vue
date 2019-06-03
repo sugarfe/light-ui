@@ -1,5 +1,5 @@
 <template>
-  <div class="run-grid-box flex-box flex-wrap">
+  <div class="l-grid-box flex-box flex-wrap">
     <slot></slot>
   </div>
 </template>

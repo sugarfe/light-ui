@@ -1,15 +1,15 @@
 <template>
   <div
-    class="run-dialog"
-    :class="mode=='ios'?'run-dialog-theme-ios':'run-dialog-theme-default'"
+    class="l-dialog"
+    :class="mode=='ios'?'l-dialog-theme-ios':'l-dialog-theme-default'"
   >
     <header
-      class="run-dialog-header"
+      class="l-dialog-header"
       v-if="title"
     >
       {{title}}
     </header>
-    <section class="run-dialog-section center">
+    <section class="l-dialog-section center">
       <template v-if="message">
         {{message}}
       </template>
@@ -17,7 +17,7 @@
     </section>
     <footer
       v-if="footer"
-      class="run-dialog-footer flex-box"
+      class="l-dialog-footer flex-box"
     >
       <div
         class="button-cancel"

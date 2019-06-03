@@ -1,5 +1,9 @@
 <template>
-  <div class="run-tab-item" @click="selectIndex" :class="{currentNavCalss:currentIndex == id}">
+  <div
+    class="l-tab-item"
+    @click="selectIndex"
+    :class="{currentNavCalss:currentIndex == id}"
+  >
     <slot></slot>
   </div>
 </template>
@@ -14,7 +18,7 @@ export default {
       currentNavCalss: "" // 选中的样式
     };
   },
-  created() {},
+  created() { },
   methods: {
     setItem(index, currentIndex) {
       // 设置id 和选中下标

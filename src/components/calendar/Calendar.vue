@@ -1,5 +1,5 @@
 <template>
-  <div class="run-calendar">
+  <div class="l-calendar">
     <div class="calendar-toolbar flex-box">
       <div class></div>
       <div class="flex-1"></div>
