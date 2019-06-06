@@ -1,17 +1,17 @@
 @mixin size($size:default) {
     @if($size==large) {
-        height: $run-button-height-large;
-        line-height: $run-button-height-large;
+        height: $l-button-height-large;
+        line-height: $l-button-height-large;
         font-size: $fontsize-large;
     }
     @else if($size==small) {
-        height: $run-button-height-small;
-        line-height: $run-button-height-small;
+        height: $l-button-height-small;
+        line-height: $l-button-height-small;
         font-size: $fontsize-small;
     }
     @else {
-        height: $run-button-height;
-        line-height: $run-button-height;
+        height: $l-button-height;
+        line-height: $l-button-height;
         font-size: $fontsize-medium;
     }
 }
