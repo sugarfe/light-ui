@@ -3,9 +3,7 @@
     class="l-toast"
     :class="className"
   >
-    <div>
-      {{message}}
-    </div>
+    <div v-html="text"></div>
   </div>
 </template>
 <script>
@@ -15,10 +13,10 @@ export default {
     return {}
   },
   props: {
-    message: {
+    text: {
       type: String,
       default: () => {
-        return ''
+        return undefined
       }
     },
     className: {
@@ -34,5 +32,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import url("./toast.scss");
+@import "./toast.scss";
 </style>

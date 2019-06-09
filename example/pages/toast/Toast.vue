@@ -1,49 +1,42 @@
 <template>
-  <div>
-    <run-button block light @click="click('top')" >toast-top</run-button>
-    <run-button block light @click="click('center')" >toast-center</run-button>
-    <run-button block light @click="click('bottom')" >toast-bottom</run-button>
-    <run-button block light @click="distance()" >toast-distance</run-button>
-    <run-button block light @click="isMask()" >toast-isMask</run-button>
-    <run-button block light @click="isMaskClose()" >toast-isMaskClose</run-button>
-  </div>
+  <run-page-content
+    class="example-popup-page"
+    contentClass="flex-box-column"
+  >
+    <run-navbar>Popup</run-navbar>
+    <template v-slot:content>
+      <div class="flex-1">
+        <example-group contentClass="group-content">
+          basic
+          <template v-slot:content>
+
+          </template>
+        </example-group>
+      </div>
+      <div class="action-panel">
+        <run-button
+          block
+          theme="primary"
+          @click="open"
+        >打开</run-button>
+      </div>
+    </template>
+  </run-page-content>
 </template>
 <script>
 export default {
-  name:'toast',
-  data(){
+  name: 'toast',
+  data() {
     return {}
   },
-  props:{},
-  mounted(){},
-  methods:{
-    click(position){
+  props: {},
+  mounted() {
+  },
+  methods: {
+    open(position) {
       new this.$RunToast({
-        message:'你好',
-        distance:position,
-        duration:'2000'
-      })
-    },
-    distance(){
-      new this.$RunToast({
-        message:'你好',
-        duration:'2000',
-        distance:'200px'
-      })
-    },
-    isMask(){
-      new this.$RunToast({
-        message:'没有遮罩',
-        duration:'2000',
-        isMask:false
-      })
-    },
-    isMaskClose(){
-      new this.$RunToast({
-        message:'点击关闭',
-        duration:'2000',
-        // isMask:false,
-        isMaskClose:true
+        text: '你好',
+        time: 2000
       })
     }
   }
