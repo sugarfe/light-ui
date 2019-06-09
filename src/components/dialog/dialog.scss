@@ -1,43 +1,40 @@
+@import './dialog.bariables.scss';
+
 .l-dialog {
-    background: #fff;
-
-    .l-dialog-header {
-        font-weight: bold;
-        text-align: center;
-        padding: 8px 0;
-    }
-
-    .l-dialog-section {
-        padding: 8px 0;
-
-        &.center {
-            text-align: center
-        }
-    }
-
-    .l-dialog-footer {
-        border-top: #e5e5e5 solid 1px;
-
-        >div {
-            padding: 8px 0;
-            text-align: center;
-
-            &.button-cancel {
-                @include flex();
-                border-right: #e5e5e5 solid 1px
-            }
-
-            &.button-submit {
-                @include flex();
-                color: $l-theme-primary;
-            }
-        }
-
-    }
+	width: $l-dialog-width;
+	background-color: #fff;
+	border-radius: $l-dialog-border-radius;
+	text-align: center;
+	& > header {
+		font-size: $l-dialog-header-size;
+		color: #000;
+		padding: 15px 10px;
+	}
+	& > section {
+		font-size: 15px;
+		color: #888;
+		padding: 0 10px 10px 10px;
+	}
+	& > footer {
+		overflow: hidden;
+		position: relative;
+		&::before {
+			@include border-1px($l-dialog-footer-border-color, top, 0);
+		}
+		.l-dialog-button {
+			height: 46px;
+			line-height: 46px;
+			white-space: nowrap;
+			font-size: 16px;
+			color: #000;
+			box-sizing: border-box;
+			position: relative;
+			&-ok {
+				color: $l-theme-primary;
+			}
+		}
+	}
+	&-confirm .l-dialog-button:last-child::before {
+		@include border-1px($l-dialog-footer-border-color, left, 0);
+	}
 }
-
-.l-dialog-theme-ios {
-    border-radius: 8px;
-}
-
-.l-dialog-theme-default {}

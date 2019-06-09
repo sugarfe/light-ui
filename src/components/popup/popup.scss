@@ -1,140 +1,138 @@
-@import "@runSrc/style/mixin/flex.scss";
-@import "./popup.variables.scss";
+@import '@runSrc/style/mixin/flex.scss';
+@import './popup.variables.scss';
 
 .l-popup {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0px;
-    overflow: hidden;
-    z-index: $l-popup-zindex;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	overflow: hidden;
+	z-index: $l-popup-zindex;
 
-    .l-popup-mask {
-        height: 100%;
-        width: 100%;
-        background: rgba(0, 0, 0, .1);
-        transition: all .38s;
-        overflow: hidden;
-    }
+	.l-popup-mask {
+		height: 100%;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		transition: all 0.38s;
+		overflow: hidden;
+	}
 
-    .l-popup-mask-enter-active {}
+	.l-popup-mask-enter-active {
+	}
 
-    .l-mask-enter {
-        opacity: 0;
-    }
+	.l-mask-enter {
+		opacity: 0;
+	}
 
-    .l-mask-enter-to {
-        opacity: 1;
-    }
+	.l-mask-enter-to {
+		opacity: 1;
+	}
 
-    .l-mask-leave {
-        opacity: 0;
-    }
+	.l-mask-leave {
+		opacity: 0;
+	}
 
-    .l-popup-container {
-        position: absolute;
-        overflow: hidden;
-        max-width: 100%;
-        max-height: 100%;
-        transition-property: transform;
-        transition-duration: .38s;
-        transition-timing-function: cubic-bezier(0.395, 0.225, 0.170, 1);
-    }
+	.l-popup-container {
+		position: absolute;
+		overflow: hidden;
+		max-width: 100%;
+		max-height: 100%;
+		transition-property: transform;
+		transition-duration: 0.38s;
+		transition-timing-function: cubic-bezier(0.395, 0.225, 0.17, 1);
+	}
 
-    .l-popup-null {}
+	.l-popup-null {
+	}
 
-    // center
+	// center
 
-    .l-popup-center-enter-active {
-        transition-timing-function: cubic-bezier(0.395, 0.225, 0.170, 1.320);
-    }
+	.l-popup-center-enter-active {
+		transition-timing-function: cubic-bezier(0.395, 0.225, 0.17, 1.32);
+	}
 
-    .l-popup-center-enter {
-        transform: scale(0)
-    }
+	.l-popup-center-enter {
+		transform: scale(0);
+	}
 
-    .l-popup-center-leave {
-        transform: scale(1)
-    }
+	.l-popup-center-leave {
+		transform: scale(1);
+	}
 
-    .l-popup-center-leave-to {
-        transform: scale(.5);
-        opacity: 0;
-    }
+	.l-popup-center-leave-to {
+		transform: scale(0.5);
+		opacity: 0;
+	}
 
-
-
-    /*
+	/*
   position:left
   */
 
-    .l-popup-left-enter {
-        transform: translate3d(-100%, 0, 0)
-    }
+	.l-popup-left-enter {
+		transform: translate3d(-100%, 0, 0);
+	}
 
-    .l-popup-left-leave {
-        transform: translate3d(0, 0, 0)
-    }
+	.l-popup-left-leave {
+		transform: translate3d(0, 0, 0);
+	}
 
-    .l-popup-left-leave-to {
-        transform: translate3d(-100%, 0, 0)
-    }
+	.l-popup-left-leave-to {
+		transform: translate3d(-100%, 0, 0);
+	}
 
-
-    /*
+	/*
   position:right
   */
 
-    .l-popup-right-enter {
-        transform: translate3d(100%, 0, 0)
-    }
+	.l-popup-right-enter {
+		transform: translate3d(100%, 0, 0);
+	}
 
-    .l-popup-right-leave {
-        transform: translate3d(0, 0, 0)
-    }
+	.l-popup-right-leave {
+		transform: translate3d(0, 0, 0);
+	}
 
-    .l-popup-right-leave-to {
-        transform: translate3d(100%, 0, 0)
-    }
+	.l-popup-right-leave-to {
+		transform: translate3d(100%, 0, 0);
+	}
 
-    /*
+	/*
   position:top
   */
 
-    .l-popup-top-enter {
-        transform: translate3d(0, -100%, 0)
-    }
+	.l-popup-top-enter {
+		transform: translate3d(0, -100%, 0);
+	}
 
-    .l-popup-top-leave {
-        transform: translate3d(0, 0, 0)
-    }
+	.l-popup-top-leave {
+		transform: translate3d(0, 0, 0);
+	}
 
-    .l-popup-top-leave-to {
-        transform: translate3d(0, -100%, 0)
-    }
+	.l-popup-top-leave-to {
+		transform: translate3d(0, -100%, 0);
+	}
 
-
-    /*
+	/*
   position:bottom
   */
 
-    .l-popup-bottom-enter {
-        transform: translate3d(0, 100%, 0)
-    }
+	.l-popup-bottom-enter {
+		transform: translate3d(0, 100%, 0);
+	}
 
-    .l-popup-bottom-leave {
-        transform: translate3d(0, 0, 0)
-    }
+	.l-popup-bottom-leave {
+		transform: translate3d(0, 0, 0);
+	}
 
-    .l-popup-bottom-leave-to {
-        transform: translate3d(0, 100%, 0)
-    }
+	.l-popup-bottom-leave-to {
+		transform: translate3d(0, 100%, 0);
+	}
 
-    &.center {
-        @include display-flex();
-        @include flex-direction();
-        @include flex-wrap(nowrap);
-        @include align-items(center);
-        @include justify-content(center);
-    }
+	&.center {
+		@include display-flex();
+		@include flex-direction();
+		@include flex-wrap(nowrap);
+		@include align-items(center);
+		@include justify-content(center);
+	}
 }

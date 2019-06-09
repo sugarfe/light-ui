@@ -1,7 +1,7 @@
 <template>
   <div
     class="l-dialog"
-    :class="mode=='ios'?'l-dialog-theme-ios':'l-dialog-theme-default'"
+    :class="{'l-dialog-confirm':confirm}"
   >
     <header
       class="l-dialog-header"
@@ -9,79 +9,55 @@
     >
       {{title}}
     </header>
-    <section class="l-dialog-section center">
-      <template v-if="message">
-        {{message}}
-      </template>
-      <dialog-content v-else></dialog-content>
+    <section>
+      {{text}}
     </section>
-    <footer
-      v-if="footer"
-      class="l-dialog-footer flex-box"
-    >
+    <footer class="flex-box">
       <div
-        class="button-cancel"
+        class="l-dialog-button flex-1"
         @click="cancel"
-        v-if="cancelText"
+        v-if="confirm"
       >
         {{cancelText}}
       </div>
       <div
-        class="button-submit"
-        @click="submit"
-        v-if="submitText"
+        class="l-dialog-button l-dialog-button-ok flex-1"
+        @click="ok"
       >
-        {{submitText}}
+        {{okText}}
       </div>
     </footer>
   </div>
 </template>
 <script>
 export default {
-  // name:'dialog',
   data() {
     return {}
   },
   props: {
-    mode: {
-      type: String,
+    confirm: {
+      type: Boolean,
       default: () => {
-        return 'ios'
+        return false;
       }
     },
     title: {
-      type: String | Boolean,
-      default: () => {
-        return '温馨提示'
-      },
-    },
-    footer: {
-      type: Boolean,
-      default: () => {
-        return true
-      },
-    },
-    cancelText: {
       type: String,
       default: () => {
-        return '取消'
-      }
+        return ''
+      },
     },
-    submitText: {
-      type: String,
-      default: () => {
-        return '确认'
-      }
-    },
-    message: {
+    cancelText: String,
+    okText: String,
+    text: {
       type: String,
       default: () => {
         return ''
       }
-    },
+    }
   },
   methods: {
-    submit() {
+    ok() {
       this.$emit('onOk', 'ok')
       this.handle()
     },
@@ -98,6 +74,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "./dialog.scss";
+@import './dialog.scss';
 </style>
 
