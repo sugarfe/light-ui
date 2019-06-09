@@ -38,11 +38,14 @@ export default {
       scope: 1
     };
   },
-  mounted() { },
+  mounted() {
+
+  },
   methods: {
     open() {
       new this.$RunDatePicker({
-        scope: this.scope
+        scope: this.scope,
+        mode: ["yyyy-MM-dd", "hh", "mm"]
       });
     }
   }

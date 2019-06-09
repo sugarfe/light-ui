@@ -16,7 +16,7 @@ class Picker {
             return item;
         })
         this.option = option;
-        this.init(option);
+        this.init();
     }
     init() {
         this.popup = new this.$vue.prototype.$RunPopup(PickerTemplate, {
