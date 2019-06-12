@@ -1,71 +1,60 @@
 <template>
-  <div :class="`action-sheet-${mode}`" class="action-sheet">
-    <div class="header" v-if="title">
-      {{title}}
-    </div>
-    <div class="section">
-      <li v-for="(item,index) in data" 
-      :key="'item'+index" 
-      @click="choose(item)"
-      :class="value==item.value?'active':''">
-        {{item.label}}
-      </li>
-    </div>
-    <div class="footer" v-if="footer">
-      取消
-    </div>
+  <div class="action-sheet">
+    <header>{{title}}</header>
+    <ul>
+      <li v-for="(item, index) in items" :key="index" @click="select(index)">{{item[dataText]}}</li>
+    </ul>
+    <footer @click="$emit('popup-close')">{{cancelTxt}}</footer>
   </div>
 </template>
 <script>
 export default {
-  data(){
-    return {}
+  data() {
+    return {
+      items: [],
+    };
   },
-  props:{
-    value:{
-      type:String,
-      default:()=>{
-        return ''
-      }
+  props: {
+    data: {
+      type: Array,
+      default: () => {
+        return [];
+      },
     },
-    data:{
-      type:Array,
-      default:()=>{
-        return []
-      }
+    title: {
+      type: String,
+      default: () => {
+        return '';
+      },
     },
-    title:{
-      type:String,
-      default:()=>{
-        return ''
-      }
-    },
-    footer:{
-      type:Boolean,
-      default:()=>{
-        return true
-      }
-    },
-    mode:{
-      type:String,
-      default:()=>{
-        return 'ios'
-      }
-    }
+    cancelTxt: String,
+    dataText: String,
+    dataValue: String,
   },
-  computed:{
-
+  created() {
+    this.init();
   },
-  mounted(){
-
+  methods: {
+    init() {
+      this.items = this.data.map(item => {
+        let obj = {};
+        if (typeof item === 'string') {
+          obj[this.dataText] = item;
+          obj[this.dataValue] = item;
+        } else {
+          obj = { ...item };
+        }
+        return obj;
+      });
+    },
+    cancel() {
+      this.$emit('onCancel');
+    },
+    select(index) {
+      this.$emit('onSelect', this.items[index]);
+    },
   },
-  methods:{
-    choose(item){
-      this.$emit('onChange',item)
-      this.$emit('popup-close')
-    }
-  }
-}
+};
 </script>
 
 <style lang="scss">

@@ -1,30 +1,35 @@
 import ActionSheetView from './ActionSheet.vue'
 
-class ActionSheet{
+class ActionSheet {
+  static isMaskClose = true;
+  static dataText = "text"
+  static dataValue = "value"
+  static cancelTxt = "取消"
   constructor(option = {}) {
-    //全局参数
-    if (this.$option) {
-      let o = this.$option;
-      for (var key in o) {
-        if (option[key] === undefined) {
-          option[key] = o[key];
-        }
-      }
-    }
-    new this.$vue.prototype.$RunPopup(
+    this.open(option);
+  }
+  open({ data = [], title, cancelTxt = ActionSheet.cancelTxt, dataText = ActionSheet.dataText, dataValue = ActionSheet.dataValue, isMaskClose = ActionSheet.isMaskClose } = {}) {
+    this.popup = new this.$vue.prototype.$RunPopup(
       ActionSheetView,
       {
-      position: 'bottom',//动画方式
-      isMask: option.isMask === undefined ? true : option.isMask,
-      isMaskClose: option.isMaskClose === undefined ? true : option.isMaskClose,
-      ...option,
-      onChange: (val) => {
-        option.onChange && option.onChange(val)
-      },
-      onMaskClose(val) {
-        option.handle && option.handle('handle')
-      }
-    })
+        position: 'bottom',
+        size: "auto",
+        isMaskClose,
+        data,
+        title,
+        dataText,
+        dataValue,
+        cancelTxt,
+        onCancel: (val) => {
+          // option.onChange && option.onChange(val)
+        },
+        onSelect(val) {
+          // option.handle && option.handle('handle')
+        }
+      })
+  }
+  close() {
+    this.popup.close();
   }
 }
 

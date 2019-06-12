@@ -1,74 +1,65 @@
 <template>
-  <run-page-content class="example-button-page">
-    <run-navbar>actionSheet</run-navbar>
+  <run-page-content class="example-dialog-page" contentClass="flex-box-column">
+    <run-navbar>ActionSheet</run-navbar>
     <template v-slot:content>
-      <example-group contentClass="group-content">
-        mode
-        <template v-slot:content>
-          <run-button size="small" @click="click('android')">android</run-button>
-          {{value1}}
-          <hr/>
-          <run-button size="small" @click="click('ios')">ios</run-button>
-          {{value2}}
-        </template>
-      </example-group>
+      <div class="flex-1">
+        <example-group contentClass="group-content">
+          option
+          <template v-slot:content>
+            <!-- <run-checkbox-group right v-model="values">
+              <run-checkbox value="isMaskClose">isMaskClose</run-checkbox>
+              <run-checkbox value="confirm">confirm</run-checkbox>
+              <run-checkbox value="cancelText">cancelText</run-checkbox>
+              <run-checkbox value="okText">okText</run-checkbox>
+              <run-checkbox value="delayClose">delayClose</run-checkbox>
+            </run-checkbox-group>-->
+          </template>
+        </example-group>
+      </div>
+      <div class="action-panel">
+        <run-button block theme="primary" @click="open">打开</run-button>
+      </div>
     </template>
   </run-page-content>
 </template>
 <script>
 export default {
-  data(){
+  data() {
     return {
-      list:[
+      list: [
         {
-          label:'1',
-          value:'1'
+          label: '1',
+          value: '1',
         },
         {
-          label:'2',
-          value:'2'
+          label: '2',
+          value: '2',
         },
         {
-          label:'3',
-          value:'3'
+          label: '3',
+          value: '3',
         },
       ],
-      value1:'1',
-      value2:'1',
-    }
+      value1: '1',
+      value2: '1',
+    };
   },
-  methods:{
-    click(param){
-      switch(param){
-        case 'android':
-          new this.$RunActionSheet({
-            title:'title',
-            data: this.list,
-            value:this.value1,
-            mode:'android',
-            onChange:(val)=>{
-              this.value1 = val.value
-              console.log(val)
-            }
-          })
-        break;
-        case 'ios':
-          new this.$RunActionSheet({
-            title:'title',
-            data: this.list,
-            value:this.value2,
-            mode:'ios',
-            onChange:(val)=>{
-              this.value2 = val.value
-              console.log(val)
-            }
-          })
-        break;
-      }
-    }
-  }
+  methods: {
+    open() {
+      new this.$RunActionSheet({
+        title: 'title',
+        data: this.list,
+        mode: 'android',
+        dataText: 'label',
+        onChange: val => {
+          this.value1 = val.value;
+          console.log(val);
+        },
+      });
+    },
+  },
 };
 </script>
 <style lang="scss">
-@import "./actionSheet.scss";
+@import './actionSheet.scss';
 </style>

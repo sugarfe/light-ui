@@ -1,55 +1,30 @@
 .action-sheet{
-  position: absolute;
-  bottom: 0;
-  .header,.section,.footer{
+  background-color: #fff;
+  width: 100%;
+  header{
+    padding:15px 10px;
+    font-size: 16px;
     text-align: center;
+    position: relative;
+    &::before{
+      @include border-1px(#efefef, bottom, 0);
+    }
   }
-  .header,.footer{
-    background: #fff;
-    height: 40px;
-    line-height: 40px;
+  footer{
+    padding:15px 10px;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
   }
-  .footer{
-    border-top: 1px solid #ccc;
-  }
-  .section{
-    >li{
-      background: #fff;
-      height: 40px;
-      line-height: 40px;
-      border-top: 1px solid #ccc;
-      &.active{
-        color: $l-theme-primary;
+  ul{
+    li{
+      padding:15px 10px;
+      font-size: 16px;
+      text-align: center;
+      position: relative;
+      &::before{
+        @include border-1px(#efefef, bottom, 0);
       }
     }
-  }
-  .default-width{
-    width: 100%
-  }
-  .ios-width{
-    width: 80%;
-  }
-}
-.action-sheet-ios{
-  width: 100%;
-}
-.action-sheet-android{
-  width: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-  .section{
-    >li{
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-  }
-  .header{
-    border: none;
-    border-radius: 5px;
-  }
-  .footer{
-    border: none;
-    border-radius: 5px;
   }
 }
