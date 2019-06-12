@@ -1,5 +1,8 @@
 <template>
-  <run-page-content class="example-dialog-page" contentClass="flex-box-column">
+  <run-page-content
+    class="example-dialog-page"
+    contentClass="flex-box-column"
+  >
     <run-navbar>ActionSheet</run-navbar>
     <template v-slot:content>
       <div class="flex-1">
@@ -17,7 +20,11 @@
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button block theme="primary" @click="open">打开</run-button>
+        <run-button
+          block
+          theme="primary"
+          @click="open"
+        >打开</run-button>
       </div>
     </template>
   </run-page-content>
@@ -47,7 +54,7 @@ export default {
   methods: {
     open() {
       new this.$RunActionSheet({
-        title: 'title',
+        title: "title",
         data: this.list,
         mode: 'android',
         dataText: 'label',

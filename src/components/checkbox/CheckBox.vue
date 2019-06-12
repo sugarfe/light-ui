@@ -1,58 +1,55 @@
 <template>
-  <div
-    class="l-checkbox flex-box flex-align-center"
-    :class="dynamicClass"
-  >
-    <input
-      type="checkbox"
-      :value="value"
-      :disabled="disabled"
-      @change="change"
-    >
-    <div class="l-checkbox-mark flex-box-center"></div>
-    <div class="l-checkbox-label">
-      <slot></slot>
-    </div>
-  </div>
+	<div class="l-checkbox flex-box flex-align-center" :class="dynamicClass">
+		<input
+			type="checkbox"
+			:value="value"
+			:disabled="disabled"
+			@change="change"
+		/>
+		<div class="l-checkbox-mark flex-box-center"></div>
+		<div class="l-checkbox-label">
+			<slot></slot>
+		</div>
+	</div>
 </template>
 <script>
-import { mixinProps } from "@runSrc/components/mixin.js";
+import { mixinProps } from '@runSrc/components/mixin.js'
 export default {
-  name: "checkbox",
-  mixins: [mixinProps],
-  props: {
-    value: {
-      type: [String, Number],
-      default() {
-        return undefined;
-      }
-    }
-  },
-  computed: {
-    checked() {
-      return this.$parent.values.includes(this.value);
-    },
-    dynamicClass() {
-      return {
-        "l-checkbox-checked": this.checked,
-        "l-checkbox-disabled": this.disabled
-      };
-    }
-  },
-  methods: {
-    change(e) {
-      try {
-        this.$parent.change({
-          value: this.value,
-          checked: e.target.checked
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  }
-};
+	name: 'checkbox',
+	mixins: [mixinProps],
+	props: {
+		value: {
+			type: [String, Number],
+			default() {
+				return undefined
+			}
+		}
+	},
+	computed: {
+		checked() {
+			return this.$parent.values.includes(this.value)
+		},
+		dynamicClass() {
+			return {
+				'l-checkbox-checked': this.checked,
+				'l-checkbox-disabled': this.disabled
+			}
+		}
+	},
+	methods: {
+		change(e) {
+			try {
+				this.$parent.change({
+					value: this.value,
+					checked: e.target.checked
+				})
+			} catch (error) {
+				console.error(error)
+			}
+		}
+	}
+}
 </script>
 <style lang="scss">
-@import "./checkbox.scss";
+@import './checkbox.scss';
 </style>

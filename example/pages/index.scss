@@ -1,21 +1,22 @@
-@import "@runSrc/style/variables/color.scss";
+@import '@runSrc/style/variables/color.scss';
+
 .index-page {
-    .title{
-        color:$l-theme-primary;
-        font-size: 26px;
-        font-family: -webkit-pictograph;
-        height: 60px;
-        line-height: 60px;
-        padding:0 10px;
-    }
-    &-component-list{
-       .component-item{
-           background-color: $l-theme-primary;
-           color:#fff;
-           font-size: 18px;
-       }
-    }
-  }
-.action-panel{
-    padding: 5px;
+	.title {
+		color: $l-theme-primary;
+		font-size: 26px;
+		font-family: -webkit-pictograph;
+		height: 60px;
+		line-height: 60px;
+		padding: 0 10px;
+	}
+	&-component-list {
+		.component-item {
+			background-color: $l-theme-primary;
+			color: #fff;
+			font-size: 18px;
+		}
+	}
+}
+.action-panel {
+	padding: 5px;
 }

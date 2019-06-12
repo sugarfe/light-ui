@@ -1,7 +1,7 @@
-import Scroll from "./Scroll.vue";
+import Scroll from './Scroll.vue'
 
-Scroll.install = (Vue) => {
-    Vue.component(Scroll.name, Scroll)
+Scroll.install = Vue => {
+	Vue.component(Scroll.name, Scroll)
 }
 
-export default Scroll;
+export default Scroll

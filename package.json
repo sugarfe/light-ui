@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server --port 9090 --host 0.0.0.0  --progress --config  ./build/webpack/develop.config.js ",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "format": "prettier --config ./.prettierrc --write ./src/components/**/*.vue ./src/components/**/*.js ./src/components/*.js"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-vue": "^5.2.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "markdown-it-imsize": "^2.0.1",
@@ -40,6 +42,7 @@
     "node-sass": "^4.9.2",
     "ora": "^2.1.0",
     "postcss-loader": "^2.1.6",
+    "prettier": "1.18.2",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.3",
     "sass-resources-loader": "^2.0.0",

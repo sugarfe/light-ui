@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
+import "./index.scss";
 // import RUNUIX from '../node_modules/aaa/lightUI.js';
 // import '../library/lightUI.css';
 // import { Button } from 'aaa';

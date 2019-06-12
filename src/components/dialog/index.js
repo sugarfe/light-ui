@@ -1,13 +1,13 @@
-import DialogView from './Dialog.vue';
+import DialogView from './Dialog.vue'
 
 class Dialog {
-	static isMaskClose = false;
-	static confirm = false;
-	static cancelText = '取消';
-	static okText = '确认';
-	static delayClose = false;
+	static isMaskClose = false
+	static confirm = false
+	static cancelText = '取消'
+	static okText = '确认'
+	static delayClose = false
 	constructor(option = {}) {
-		this.open(option);
+		this.open(option)
 	}
 	open({
 		title,
@@ -29,17 +29,17 @@ class Dialog {
 			confirm,
 			cancelText,
 			okText,
-			onHandle: (res) => {
-				let done = delayClose ? this.close.bind(this) : undefined;
-				res && onOk && onOk(done);
-				!res && onCancel && onCancel(done);
-				onHandle && onHandle(done);
-				!done && this.close();
-			},
-		});
+			onHandle: res => {
+				let done = delayClose ? this.close.bind(this) : undefined
+				res && onOk && onOk(done)
+				!res && onCancel && onCancel(done)
+				onHandle && onHandle(done)
+				!done && this.close()
+			}
+		})
 	}
 	close() {
-		this.popup.close();
+		this.popup.close()
 	}
 }
 
@@ -47,7 +47,7 @@ export default {
 	name: 'Dialog',
 	component: Dialog,
 	install(Vue, option) {
-		Dialog.prototype.$vue = Vue;
-		Dialog.prototype.$option = option;
-	},
-};
+		Dialog.prototype.$vue = Vue
+		Dialog.prototype.$option = option
+	}
+}

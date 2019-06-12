@@ -1,7 +1,7 @@
-import Radio from "./Radio.vue";
+import Radio from './Radio.vue'
 
-Radio.install = (Vue) => {
-    Vue.component(Radio.name, Radio)
+Radio.install = Vue => {
+	Vue.component(Radio.name, Radio)
 }
 
-export default Radio;
+export default Radio

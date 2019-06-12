@@ -1,7 +1,7 @@
-import RadioGroup from "./RadioGroup.vue";
+import RadioGroup from './RadioGroup.vue'
 
-RadioGroup.install = (Vue) => {
-    Vue.component(RadioGroup.name, RadioGroup)
+RadioGroup.install = Vue => {
+	Vue.component(RadioGroup.name, RadioGroup)
 }
 
-export default RadioGroup;
+export default RadioGroup

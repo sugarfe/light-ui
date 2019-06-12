@@ -1,28 +1,23 @@
-.action-sheet{
+.action-sheet {
   background-color: #fff;
   width: 100%;
-  header{
-    padding:15px 10px;
+  .action-sheet-item {
+    padding: 15px 10px;
     font-size: 16px;
     text-align: center;
     position: relative;
-    &::before{
+  }
+  header {
+    color: $l-color-gray;
+    &::before {
       @include border-1px(#efefef, bottom, 0);
     }
   }
-  footer{
-    padding:15px 10px;
-    font-size: 16px;
-    text-align: center;
-    position: relative;
+  footer {
   }
-  ul{
-    li{
-      padding:15px 10px;
-      font-size: 16px;
-      text-align: center;
-      position: relative;
-      &::before{
+  ul {
+    li {
+      &::before {
         @include border-1px(#efefef, bottom, 0);
       }
     }
