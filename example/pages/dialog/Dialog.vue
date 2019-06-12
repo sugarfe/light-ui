@@ -1,32 +1,23 @@
 <template>
-  <run-page-content
-    class="example-dialog-page"
-    contentClass="flex-box-column"
-  >
+  <run-page-content class="example-dialog-page" contentClass="flex-box-column">
     <run-navbar>Dialog</run-navbar>
     <template v-slot:content>
       <div class="flex-1">
         <example-group contentClass="group-content">
           option
           <template v-slot:content>
-            <run-checkbox-group
-              right
-              v-model="values"
-            >
+            <run-checkbox-group right v-model="values">
               <run-checkbox value="isMaskClose">isMaskClose</run-checkbox>
               <run-checkbox value="confirm">confirm</run-checkbox>
               <run-checkbox value="cancelText">cancelText</run-checkbox>
               <run-checkbox value="okText">okText</run-checkbox>
+              <run-checkbox value="delayClose">delayClose</run-checkbox>
             </run-checkbox-group>
           </template>
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button
-          block
-          theme="primary"
-          @click="open"
-        >打开</run-button>
+        <run-button block theme="primary" @click="open">打开</run-button>
       </div>
     </template>
   </run-page-content>
@@ -35,36 +26,43 @@
 let option = {
   isMaskClose: true,
   confirm: true,
-  cancelText: "cancel",
-  okText: "ok"
-}
+  cancelText: 'cancel',
+  okText: 'ok',
+  delayClose: true,
+};
 export default {
   data() {
     return {
-      values: []
-    }
+      values: [],
+    };
   },
   computed: {
     options() {
       let obj = {};
-      this.values.forEach((item) => {
-        obj[item] = option[item]
-      })
-      return obj
-    }
-
+      this.values.forEach(item => {
+        obj[item] = option[item];
+      });
+      return obj;
+    },
   },
   methods: {
     open() {
-      console.log(JSON.stringify(this.options))
+      console.log(JSON.stringify(this.options));
       new this.$RunDialog({
-        title: "提示",
+        title: '提示',
         text: 'dialog',
-        isMaskClose: true,
-        ...this.options
-      })
-
+        ...this.options,
+        onOk: this.handle,
+        onCancel: this.handle,
+        onHandle: this.handle,
+      });
     },
-  }
-}
+    handle(done) {
+      done &&
+        setTimeout(() => {
+          done();
+        }, 1500);
+    },
+  },
+};
 </script>

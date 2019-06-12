@@ -5,6 +5,7 @@ class Dialog {
 	static confirm = false;
 	static cancelText = '取消';
 	static okText = '确认';
+	static delayClose = false;
 	constructor(option = {}) {
 		this.open(option);
 	}
@@ -15,6 +16,10 @@ class Dialog {
 		okText = Dialog.okText,
 		isMaskClose = Dialog.isMaskClose,
 		confirm = Dialog.confirm,
+		delayClose = Dialog.delayClose,
+		onOk,
+		onCancel,
+		onHandle
 	}) {
 		this.popup = new this.$vue.prototype.$RunPopup(DialogView, {
 			position: 'center',
@@ -24,8 +29,17 @@ class Dialog {
 			confirm,
 			cancelText,
 			okText,
-			onMaskClose() {},
+			onHandle: (res) => {
+				let done = delayClose ? this.close.bind(this) : undefined;
+				res && onOk && onOk(done);
+				!res && onCancel && onCancel(done);
+				onHandle && onHandle(done);
+				!done && this.close();
+			},
 		});
+	}
+	close() {
+		this.popup.close();
 	}
 }
 
