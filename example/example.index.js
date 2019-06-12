@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
-import RUNUIX from '../node_modules/aaa/lightUI.js';
-import '../library/lightUI.css';
-import { Button } from 'aaa';
-// import RUNUIX from '@runSrc/index.js';
+// import RUNUIX from '../node_modules/aaa/lightUI.js';
+// import '../library/lightUI.css';
+// import { Button } from 'aaa';
+import RUNUIX from '@runSrc/index.js';
 import routes from './router.js';
 import './style/index.scss';
 import store from './vuex/index.js';
@@ -17,7 +17,6 @@ Vue.component(ExampleGroup.name, ExampleGroup);
 [VueRouter].map(plugin => {
 	Vue.use(plugin);
 });
-console.log(Button);
 Vue.use(RUNUIX, {
 	button: {
 		light: false,
@@ -40,5 +39,5 @@ new Vue({
 	store,
 	components: { App },
 	template: '<App/>',
-	created() {},
+	created() { },
 });
