@@ -58,8 +58,7 @@ let getDateInfo = date => {
 
 //获取月份数组
 let getMonthList = (year, month, position, step) => {
-	let date,
-		list = []
+	let list = []
 	for (let i = 0; i < step; i++) {
 		if (position === 0 && month === 1) {
 			month = 12

@@ -50,11 +50,7 @@ module.exports = [
 		test: /\.js$/,
 		loader: 'eslint-loader',
 		enforce: 'pre',
-		exclude: [resolve('node_modules'), resolve('example')]
-		// options: {
-		// 	// 这里的配置项参数将会被传递到 eslint 的 CLIEngine
-		// 	// formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范
-		// }
+		include: [resolve('src')]
 	},
 	{
 		test: /\.scss$/,

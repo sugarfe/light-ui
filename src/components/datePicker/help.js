@@ -1,4 +1,4 @@
-function generateData({ scope = 1, max, min, col = scope } = {}) {
+function generateData({ scope = 1, max, min } = {}) {
 	let minYear = typeof min === 'number' ? min : new Date().getFullYear()
 	let maxYear = typeof max === 'number' ? max : minYear + 10
 	let data = []

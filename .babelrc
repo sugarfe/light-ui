@@ -17,7 +17,8 @@
         "libraryName": "aaa",
         "libraryDirectory": "lib"
       }
-    ]
+    ],
+    ["transform-vue-jsx"]
   ],
   "presets": [
     [

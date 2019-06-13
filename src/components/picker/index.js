@@ -35,7 +35,7 @@ class Picker {
 export default {
 	name: 'Picker',
 	component: Picker,
-	install(Vue, option) {
+	install(Vue) {
 		!Picker.prototype.$vue && (Picker.prototype.$vue = Vue)
 	}
 }

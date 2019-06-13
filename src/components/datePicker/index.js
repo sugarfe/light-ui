@@ -11,7 +11,7 @@ class DatePicker {
 	}
 	init() {
 		this.data = generateData(this.option)
-		let pickerInstance = new Picker({
+		new Picker({
 			data: this.data,
 			onOk: (...a) => {
 				console.log(a)

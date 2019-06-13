@@ -16,15 +16,17 @@ class Popup {
 			'onAfterEnter'
 		]
 		this.option = this.initOption(option)
-		this.init(component, this.option, option.render)
+		this.init(component, this.option, option)
 	}
-	init(component, option, render) {
+	init(component, option, { render, scopedSlots }) {
 		for (let o in this.$option.dependence) {
 			component[o] = this.$option.dependence[o]
 		}
 		this.instance = new this.$vue({
 			el: document.createElement('div'),
 			render(h) {
+				typeof scopedSlots === 'function' &&
+					(option.componentOption['scopedSlots'] = scopedSlots(h))
 				return h(PopupView, option.popupOption, [
 					h(
 						component,
@@ -41,17 +43,26 @@ class Popup {
 		let popupOption = {},
 			componentOption = {}
 		for (let o in option) {
-			if (o === 'render') {
+			if (['render', 'scopedSlots'].includes(o)) {
 				continue
 			}
 			this.popupViewOptionScope.includes(o)
 				? (popupOption[o] = option[o])
 				: (componentOption[o] = option[o])
 		}
+
+		popupOption = sorting(popupOption)
+		componentOption = sorting(componentOption)
+		componentOption.on['popup-close'] = () => {
+			Popup.instance = Popup.instance.filter(item => {
+				return item.id !== this.id
+			})
+			this.close()
+		}
 		function sorting(data) {
 			let props = {}
 			let on = {}
-			Object.keys(data).forEach((key, index) => {
+			Object.keys(data).forEach(key => {
 				key.substr(0, 2) === 'on'
 					? (on[key] = data[key])
 					: (props[key] = data[key])
@@ -60,15 +71,6 @@ class Popup {
 				props,
 				on
 			}
-		}
-		popupOption = sorting(popupOption)
-		componentOption = sorting(componentOption)
-		componentOption.on['popup-close'] = () => {
-			Popup.instance = Popup.instance.filter(item => {
-				return item.id !== this.id
-			})
-			console.log(Popup.instance)
-			this.close()
 		}
 		return {
 			popupOption,
