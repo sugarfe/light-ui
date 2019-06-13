@@ -33,39 +33,31 @@
 export default {
   data() {
     return {
-      list: [
-        {
-          label: '1',
-          value: '1',
-        },
-        {
-          label: '2',
-          value: '2',
-        },
-        {
-          label: '3',
-          value: '3',
-        },
-      ],
-      value1: '1',
-      value2: '1',
-    };
+      list: [1, 2, 3]
+    }
   },
   methods: {
     open() {
       new this.$RunActionSheet({
-        title: "title",
+        title: 'title',
         data: this.list,
         mode: 'android',
         dataText: 'label',
-        onChange: val => {
-          this.value1 = val.value;
-          console.log(val);
+        itemBoxClass: 'aaaa',
+        scopedSlots(h) {
+          return {
+            default: props => {
+              return <div>{props.item.label}</div>
+            }
+          }
         },
-      });
-    },
-  },
-};
+        onChange: val => {
+          console.log(val)
+        }
+      })
+    }
+  }
+}
 </script>
 <style lang="scss">
 @import './actionSheet.scss';

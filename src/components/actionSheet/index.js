@@ -13,7 +13,10 @@ class ActionSheet {
 		cancelTxt = ActionSheet.cancelTxt,
 		dataText = ActionSheet.dataText,
 		dataValue = ActionSheet.dataValue,
-		isMaskClose = ActionSheet.isMaskClose
+		isMaskClose = ActionSheet.isMaskClose,
+		itemBoxClass,
+		scopedSlots,
+		onChange
 	} = {}) {
 		this.popup = new this.$vue.prototype.$RunPopup(ActionSheetView, {
 			position: 'bottom',
@@ -24,8 +27,11 @@ class ActionSheet {
 			dataText,
 			dataValue,
 			cancelTxt,
-			render: h => {
-				return h('div', {}, 'ssss')
+			itemBoxClass,
+			scopedSlots,
+			onSelect: value => {
+				this.close()
+				typeof onChange === 'function' && onChange(value)
 			}
 		})
 	}

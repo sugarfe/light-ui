@@ -1,25 +1,34 @@
 .action-sheet {
-  background-color: #fff;
-  width: 100%;
-  .action-sheet-item {
-    padding: 15px 10px;
-    font-size: 16px;
-    text-align: center;
-    position: relative;
-  }
-  header {
-    color: $l-color-gray;
-    &::before {
-      @include border-1px(#efefef, bottom, 0);
-    }
-  }
-  footer {
-  }
-  ul {
-    li {
-      &::before {
-        @include border-1px(#efefef, bottom, 0);
-      }
-    }
-  }
+	background-color: #fff;
+	width: 100%;
+	.action-sheet-item {
+		padding: 15px 10px;
+		font-size: 16px;
+		text-align: center;
+		position: relative;
+	}
+	header {
+		color: $l-color-gray;
+		&::before {
+			@include border-1px(#efefef, bottom, 0);
+		}
+	}
+	section {
+		position: relative;
+		// &::before {
+		// 	content: '';
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	z-index: 1;
+		// }
+		& > * {
+			@extend .action-sheet-item;
+			&::before {
+				@include border-1px(#efefef, bottom, 0);
+			}
+		}
+	}
 }
