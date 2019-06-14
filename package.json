@@ -1,8 +1,8 @@
 {
-  "name": "runuix",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "name": "light-ui-m",
+  "version": "0.0.1-beta1",
+  "description": "vue2.0 mobile components",
+  "main": "library/lightUI.js",
   "scripts": {
     "dev": "webpack-dev-server --port 9090 --host 0.0.0.0  --progress --config  ./build/webpack/develop.config.js ",
     "docs:dev": "vuepress dev docs",
@@ -11,7 +11,7 @@
     "format": "prettier --config ./.prettierrc --write ./src/components/**/*.vue ./src/components/**/*.js ./src/components/*.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "于鲸浩 <yu_jinghao@126.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.3.4",

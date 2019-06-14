@@ -1,6 +1,9 @@
 <template>
   <div class="action-sheet">
-    <header class="action-sheet-item">{{ title }}</header>
+    <header
+      class="action-sheet-item"
+      v-if="title"
+    >{{ title }}</header>
     <section
       ref="sheet-item"
       @click="select"

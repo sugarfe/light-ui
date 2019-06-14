@@ -41,7 +41,6 @@ export default {
       new this.$RunActionSheet({
         title: 'title',
         data: this.list,
-        mode: 'android',
         dataText: 'label',
         itemBoxClass: 'aaaa',
         scopedSlots(h) {
