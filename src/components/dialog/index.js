@@ -21,7 +21,7 @@ class Dialog {
 		onCancel,
 		onHandle
 	}) {
-		this.popup = new this.$vue.prototype.$RunPopup(DialogView, {
+		this.popup = new this.$vue.prototype.$Popup(DialogView, {
 			position: 'center',
 			title,
 			text,

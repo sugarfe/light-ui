@@ -1,27 +1,25 @@
 <template>
-  <run-page-content
+  <l-page-content
     class="example-popup-page"
     contentClass="flex-box-column"
   >
-    <run-navbar>Popup</run-navbar>
+    <l-navbar>Popup</l-navbar>
     <template v-slot:content>
       <div class="flex-1">
         <example-group contentClass="group-content">
           basic
-          <template v-slot:content>
-
-          </template>
+          <template v-slot:content> </template>
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button
+        <l-button
           block
           theme="primary"
           @click="open"
-        >打开</run-button>
+        >打开</l-button>
       </div>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
 export default {
@@ -30,11 +28,10 @@ export default {
     return {}
   },
   props: {},
-  mounted() {
-  },
+  mounted() { },
   methods: {
     open(position) {
-      new this.$RunToast({
+      new this.$Toast({
         text: '你好',
         time: 2000
       })

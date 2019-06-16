@@ -1,32 +1,35 @@
 <template>
-  <run-page-content class="example-dialog-page">
-    <run-navbar>loading</run-navbar>
+  <l-page-content class="example-dialog-page">
+    <l-navbar>loading</l-navbar>
     <template v-slot:content>
       <example-group contentClass="group-content">
         default
         <template v-slot:content>
-          <run-button size="small" @click="click()" >default</run-button>
+          <l-button
+            size="small"
+            @click="click()"
+          >default</l-button>
         </template>
       </example-group>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
 export default {
-  data(){
+  data() {
     return {}
   },
-  props:{},
-  mounted(){},
-  methods:{
-    click(){
-      let loading = new this.$RunLoading({
-        text:'嘿嘿嘿'
+  props: {},
+  mounted() { },
+  methods: {
+    click() {
+      let loading = new this.$Loading({
+        text: '嘿嘿嘿'
       })
-      setTimeout(()=>{
+      setTimeout(() => {
         loading.close()
-      },2000)
-    },
+      }, 2000)
+    }
   }
 }
 </script>

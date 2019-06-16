@@ -1,5 +1,5 @@
 import components from './components/component.js'
-const dynamicCallComponent = [
+const jsCallComponent = [
 	'Popup',
 	'Toast',
 	'Dialog',
@@ -20,7 +20,7 @@ export default {
 					}
 				}
 			}
-			if (dynamicCallComponent.includes(module.name)) {
+			if (jsCallComponent.includes(module.name)) {
 				let componentOption = option[module.name.toLowerCase()] || {}
 				module.install(Vue, {
 					...componentOption,
@@ -28,7 +28,7 @@ export default {
 						...(option.dependence || {})
 					}
 				})
-				Vue.prototype[`$Run${module.name}`] = module.component
+				Vue.prototype[`$${module.name}`] = module.component
 			} else {
 				Vue.component(module.name, module)
 			}

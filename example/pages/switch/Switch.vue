@@ -1,23 +1,12 @@
 <template>
-  <run-page-content>
-    <run-navbar>switch</run-navbar>
+  <l-page-content>
+    <l-navbar>switch</l-navbar>
     <template v-slot:content>
       <example-group contentClass="group-content">
-        default
+        basic
         <template v-slot:content>
           <div class="river">
-            <run-switch v-model="valueDefault"></run-switch>
-          </div>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        select list
-        <template v-slot:content>
-          <div class="river">
-            <run-switch v-model="selectList1"></run-switch>
-          </div>
-          <div class="river">
-            <run-switch v-model="selectList2"></run-switch>
+            <l-switch v-model="valueDefault"></l-switch>
           </div>
         </template>
       </example-group>
@@ -25,20 +14,15 @@
         disabled
         <template v-slot:content>
           <div class="river">
-            <run-switch v-model="valueDisable" :disabled="disabled"></run-switch>
-          </div>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        preventDefault 延迟执行
-        <template v-slot:content>
-          <div class="river">
-            <run-switch preventDefault v-model="valuePrevent" @preventClick="preventClick"></run-switch>
+            <l-switch
+              v-model="valueDisable"
+              :disabled="disabled"
+            ></l-switch>
           </div>
         </template>
       </example-group>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 
 <script>
@@ -51,17 +35,11 @@ export default {
       valueDisable: false,
       valuePrevent: false,
       disabled: true
-    };
+    }
   },
   methods: {
-    preventClick(val) {
-      console.log(val);
-      setTimeout(() => {
-        this.valuePrevent = !this.valuePrevent;
-      }, 1000);
-    }
   }
-};
+}
 </script>
 
 <style lang="scss">

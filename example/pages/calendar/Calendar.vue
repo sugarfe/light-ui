@@ -1,24 +1,24 @@
 <template>
-  <run-page-content>
-    <run-navbar>Calendar</run-navbar>
+  <l-page-content>
+    <l-navbar>Calendar</l-navbar>
     <template v-slot:content>
       <example-group contentClass="group-content">
         basic
         <template v-slot:content>
-          <run-calendar></run-calendar>
+          <l-calendar></l-calendar>
         </template>
       </example-group>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
 export default {
   components: {},
   data() {
-    return {};
+    return {}
   }
-};
+}
 </script>
 <style lang="scss">
-@import "./calendar.scss";
+@import './calendar.scss';
 </style>

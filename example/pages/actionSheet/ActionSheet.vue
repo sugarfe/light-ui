@@ -1,33 +1,33 @@
 <template>
-  <run-page-content
+  <l-page-content
     class="example-dialog-page"
     contentClass="flex-box-column"
   >
-    <run-navbar>ActionSheet</run-navbar>
+    <l-navbar>ActionSheet</l-navbar>
     <template v-slot:content>
       <div class="flex-1">
         <example-group contentClass="group-content">
           option
           <template v-slot:content>
-            <!-- <run-checkbox-group right v-model="values">
-              <run-checkbox value="isMaskClose">isMaskClose</run-checkbox>
-              <run-checkbox value="confirm">confirm</run-checkbox>
-              <run-checkbox value="cancelText">cancelText</run-checkbox>
-              <run-checkbox value="okText">okText</run-checkbox>
-              <run-checkbox value="delayClose">delayClose</run-checkbox>
-            </run-checkbox-group>-->
+            <!-- <l-checkbox-group right v-model="values">
+              <l-checkbox value="isMaskClose">isMaskClose</l-checkbox>
+              <l-checkbox value="confirm">confirm</l-checkbox>
+              <l-checkbox value="cancelText">cancelText</l-checkbox>
+              <l-checkbox value="okText">okText</l-checkbox>
+              <l-checkbox value="delayClose">delayClose</l-checkbox>
+            </l-checkbox-group>-->
           </template>
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button
+        <l-button
           block
           theme="primary"
           @click="open"
-        >打开</run-button>
+        >打开</l-button>
       </div>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
 export default {
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     open() {
-      new this.$RunActionSheet({
+      new this.$ActionSheet({
         title: 'title',
         data: this.list,
         dataText: 'label',

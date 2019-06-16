@@ -18,7 +18,7 @@ class Picker {
 		this.init()
 	}
 	init() {
-		this.popup = new this.$vue.prototype.$RunPopup(PickerTemplate, {
+		this.popup = new this.$vue.prototype.$Popup(PickerTemplate, {
 			position: 'bottom',
 			size: '200px',
 			...this.option,

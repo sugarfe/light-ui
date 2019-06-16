@@ -7,7 +7,7 @@ class Toast {
 		this.open(option)
 	}
 	open({ time, text, isMaskClose = Toast.isMaskClose, isMask = Toast.isMask }) {
-		this.popup = new this.$vue.prototype.$RunPopup(ToastView, {
+		this.popup = new this.$vue.prototype.$Popup(ToastView, {
 			position: 'center',
 			text,
 			isMaskClose,

@@ -1,49 +1,78 @@
 <template>
-  <run-page-content>
-    <run-navbar>Radio</run-navbar>
+  <l-page-content>
+    <l-navbar>Radio</l-navbar>
     <template v-slot:content>
       <example-group contentClass="group-content">basic
         <template v-slot:content>
-          <run-radio-group v-model="value1">
-            <run-radio :value="item.value" v-for="(item,index) in data" :key="index">{{item.text}}</run-radio>
-          </run-radio-group>
+          <l-radio-group v-model="value1">
+            <l-radio
+              :value="item.value"
+              v-for="(item, index) in data"
+              :key="index"
+            >{{ item.text }}</l-radio>
+          </l-radio-group>
         </template>
       </example-group>
       <example-group contentClass="group-content">basic + right
         <template v-slot:content>
-          <run-radio-group v-model="value2" right>
-            <run-radio :value="item.value" v-for="(item,index) in data" :key="index">{{item.text}}</run-radio>
-          </run-radio-group>
+          <l-radio-group
+            v-model="value2"
+            right
+          >
+            <l-radio
+              :value="item.value"
+              v-for="(item, index) in data"
+              :key="index"
+            >{{ item.text }}</l-radio>
+          </l-radio-group>
         </template>
       </example-group>
       <example-group contentClass="group-content">horizontal
         <template v-slot:content>
-          <run-radio-group v-model="value3" horizontal>
-            <run-radio :value="item.value" v-for="(item,index) in data" :key="index">{{item.text}}</run-radio>
-          </run-radio-group>
+          <l-radio-group
+            v-model="value3"
+            horizontal
+          >
+            <l-radio
+              :value="item.value"
+              v-for="(item, index) in data"
+              :key="index"
+            >{{ item.text }}</l-radio>
+          </l-radio-group>
         </template>
       </example-group>
       <example-group contentClass="group-content">horizontal + right
         <template v-slot:content>
-          <run-radio-group v-model="value4" horizontal right>
-            <run-radio :value="item.value" v-for="(item,index) in data" :key="index">{{item.text}}</run-radio>
-          </run-radio-group>
+          <l-radio-group
+            v-model="value4"
+            horizontal
+            right
+          >
+            <l-radio
+              :value="item.value"
+              v-for="(item, index) in data"
+              :key="index"
+            >{{ item.text }}</l-radio>
+          </l-radio-group>
         </template>
       </example-group>
       <example-group contentClass="group-content">horizontal + disabled
         <template v-slot:content>
-          <run-radio-group v-model="value5" horizontal>
-            <run-radio
+          <l-radio-group
+            v-model="value5"
+            horizontal
+          >
+            <l-radio
               :value="item.value"
-              v-for="(item,index) in data"
+              v-for="(item, index) in data"
               :key="index"
               :disabled="index === 0"
-            >{{item.text}}</run-radio>
-          </run-radio-group>
+            >{{ item.text }}</l-radio>
+          </l-radio-group>
         </template>
       </example-group>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
 export default {
@@ -57,28 +86,28 @@ export default {
       value5: 1,
       data: [
         {
-          text: "JavaScript",
+          text: 'JavaScript',
           value: 1
         },
         {
-          text: "CSS",
+          text: 'CSS',
           value: 2
         },
         {
-          text: "Html",
+          text: 'Html',
           value: 3
         }
       ]
-    };
+    }
   },
   computed: {},
-  created: function() {},
-  beforeMount: function() {},
-  mounted: function() {},
-  beforeDestroy: function() {},
-  destroyed: function() {},
+  created: function () { },
+  beforeMount: function () { },
+  mounted: function () { },
+  beforeDestroy: function () { },
+  destroyed: function () { },
   methods: {},
   watch: {},
   directives: {}
-};
+}
 </script>

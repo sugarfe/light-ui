@@ -1,57 +1,54 @@
 <template>
-  <run-page-content
+  <l-page-content
     class="example-button-page"
     contentClass="content flex-box-column"
   >
-    <run-navbar>DatePicker</run-navbar>
+    <l-navbar>DatePicker</l-navbar>
     <template v-slot:content>
       <div class="flex-1">
         <example-group contentClass="group-content">
           scope
           <template v-slot:content>
-            <run-radio-group
+            <l-radio-group
               v-model="scope"
               right
             >
-              <run-radio :value="1">年</run-radio>
-              <run-radio :value="2">月</run-radio>
-              <run-radio :value="3">日</run-radio>
-            </run-radio-group>
+              <l-radio :value="1">年</l-radio>
+              <l-radio :value="2">月</l-radio>
+              <l-radio :value="3">日</l-radio>
+            </l-radio-group>
           </template>
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button
+        <l-button
           block
           theme="primary"
           @click="open"
-        >打开</run-button>
+        >打开</l-button>
       </div>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
-import { debuglog } from 'util';
+import { debuglog } from 'util'
 export default {
   data() {
     return {
       scope: 1
-    };
+    }
   },
-  mounted() {
-
-  },
+  mounted() { },
   methods: {
     open() {
-      new this.$RunDatePicker({
+      new this.$DatePicker({
         scope: this.scope,
-        mode: ["yyyy-MM-dd", "hh", "mm"]
-      });
+        mode: ['yyyy-MM-dd', 'hh', 'mm']
+      })
     }
   }
-};
+}
 </script>
 <style lang="scss">
-@import "./datePicker.scss";
+@import './datePicker.scss';
 </style>
-

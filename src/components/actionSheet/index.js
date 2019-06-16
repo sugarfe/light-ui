@@ -18,7 +18,7 @@ class ActionSheet {
 		scopedSlots,
 		onChange
 	} = {}) {
-		this.popup = new this.$vue.prototype.$RunPopup(ActionSheetView, {
+		this.popup = new this.$vue.prototype.$Popup(ActionSheetView, {
 			position: 'bottom',
 			size: 'auto',
 			isMaskClose,

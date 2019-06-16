@@ -8,7 +8,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "node build/build.js",
-    "format": "prettier --config ./.prettierrc --write ./src/components/**/*.vue ./src/components/**/*.js ./src/components/*.js"
+    "format": "prettier --config ./.prettierrc --write ./src/components/**/*.vue ./src/components/**/*.js ./src/components/*.js ./example/pages/**/*.vue"
   },
   "keywords": [],
   "author": "于鲸浩 <yu_jinghao@126.com>",
@@ -54,6 +54,7 @@
     "vue-highlight.js": "^3.1.0",
     "vue-loader": "^15.2.4",
     "vue-template-compiler": "^2.5.16",
+    "vuepress": "^1.0.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-middleware": "^3.6.0",

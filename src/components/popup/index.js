@@ -8,10 +8,8 @@ class Popup {
 			'position',
 			'isMaskClose',
 			'isMask',
-			'size',
 			'distance',
-			'onPopupClose',
-			'onMaskClose',
+			'onClose',
 			'onAfterLeave',
 			'onAfterEnter'
 		]

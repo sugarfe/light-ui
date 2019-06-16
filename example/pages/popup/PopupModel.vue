@@ -1,13 +1,13 @@
 <template>
-  <run-page-content class="popup-model flex-box flex-column flex-align-center">
-    <run-navbar>Content</run-navbar>
+  <l-page-content class="popup-model flex-box flex-column flex-align-center">
+    <l-navbar>Content</l-navbar>
     <template v-slot:content>
-      <run-button
+      <l-button
         theme="primary"
         @click="close"
-      >关闭</run-button>
+      >关闭</l-button>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
 export default {
@@ -15,11 +15,11 @@ export default {
   created() { },
   methods: {
     close() {
-      this.$emit("popup-close");
+      this.$emit('popup-close')
     }
   },
   beforeRouteLeave(to, from, next) { }
-};
+}
 </script>
 <style lang="scss">
 .popup-model {

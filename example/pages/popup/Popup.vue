@@ -1,89 +1,69 @@
 <template>
-  <run-page-content
+  <l-page-content
     class="example-popup-page"
     contentClass="flex-box-column"
   >
-    <run-navbar>Popup</run-navbar>
+    <l-navbar>Popup</l-navbar>
     <template v-slot:content>
       <div class="flex-1">
         <example-group contentClass="group-content">
           position
           <template v-slot:content>
-            <run-radio-group
+            <l-radio-group
               v-model="option.position"
               right
             >
-              <run-radio
+              <l-radio
                 :value="item"
-                v-for="(item,index) in optionData.position"
+                v-for="(item, index) in optionData.position"
                 :key="index"
-              >{{item}}</run-radio>
-            </run-radio-group>
-          </template>
-        </example-group>
-        <example-group contentClass="group-content">
-          size
-          <template v-slot:content>
-            <run-radio-group
-              v-model="option.size"
-              right
-            >
-              <run-radio
-                :value="item"
-                v-for="(item,index) in optionData.size"
-                :key="index"
-              >{{item}}</run-radio>
-            </run-radio-group>
+              >{{ item }}</l-radio>
+            </l-radio-group>
           </template>
         </example-group>
       </div>
       <div class="action-panel">
-        <run-button
+        <l-button
           block
           theme="primary"
           @click="open"
-        >打开</run-button>
+        >打开</l-button>
       </div>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
-import PopupModel from "./PopupModel";
+import PopupModel from './PopupModel'
+import { debuglog } from 'util';
 export default {
   data() {
     return {
       positionIndex: 0,
       sizeIndex: 0,
       optionData: {
-        size: ["100px", "300px", "500px", "full"],
-        position: ["top", "bottom", "left", "right", "center"]
+        position: ['top', 'bottom', 'left', 'right', 'center']
       },
       option: {
-        size: "100px",
-        position: "top"
+        position: 'top'
       }
-    };
+    }
   },
   methods: {
     open() {
-      new this.$RunPopup(PopupModel, {
-        ...this.option,
-        onMaskClose: val => {
-          console.log(val);
-        }
-      });
+      new this.$Popup(PopupModel, {
+        ...this.option
+      })
     }
   },
   beforeRouteLeave(to, from, next) {
-    next();
+    next()
   },
   beforeRouteEnter(to, from, next) {
-    next();
+    next()
   },
   beforeRouteUpdate() { }
-};
+}
 </script>
 <style lang="scss">
-@import "./popup";
+@import './popup';
 </style>
-

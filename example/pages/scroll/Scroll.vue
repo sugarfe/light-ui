@@ -1,36 +1,37 @@
 <template>
-  <run-scroll 
-  ref="scroll"
-  :data='list'
-  @pullingDown="onPullingDown"
-  @pullingUp="onPullingUp"
-  :pullUpLoad='pullUpLoad'
-  :pullDownRefresh='pullDownRefresh'>
+  <l-scroll
+    ref="scroll"
+    :data="list"
+    @pullingDown="onPullingDown"
+    @pullingUp="onPullingUp"
+    :pullUpLoad="pullUpLoad"
+    :pullDownRefresh="pullDownRefresh"
+  >
     <ul>
       <li v-for="item in list">
-        {{item}}
+        {{ item }}
       </li>
     </ul>
-  </run-scroll>
+  </l-scroll>
 </template>
 <script>
 export default {
-  data(){
+  data() {
     return {
-      pullDownRefresh:{
+      pullDownRefresh: {
         threshold: 80,
         stop: 40
       },
-      pullUpLoad:{
-        threshold: 0,
+      pullUpLoad: {
+        threshold: 0
       },
-      list:[]
+      list: []
     }
   },
-  mounted(){
+  mounted() {
     this.list = [].concat(this.setList())
   },
-  methods:{
+  methods: {
     onPullingDown() {
       // 更新数据
       console.log('pulling up and load data')
@@ -44,32 +45,32 @@ export default {
         }
       }, 1500)
     },
-    setList(){
-      let arr=[]
-      for(let i=0;i<=20;i++){
-        arr.push(Math.floor(Math.random()*100))
+    setList() {
+      let arr = []
+      for (let i = 0; i <= 20; i++) {
+        arr.push(Math.floor(Math.random() * 100))
       }
       return arr
     },
     onPullingUp() {
-        // 更新数据
-        console.log('pulling up and load data')
-        setTimeout(() => {
-          if (Math.random() > 0.5) {
-            // 如果有新数据
-            this.list = this.list.concat(this.setList())
-          } else {
-            // 如果没有新数据
-            this.$refs.scroll.forceUpdate()
-          }
-        }, 1500)
-      },
+      // 更新数据
+      console.log('pulling up and load data')
+      setTimeout(() => {
+        if (Math.random() > 0.5) {
+          // 如果有新数据
+          this.list = this.list.concat(this.setList())
+        } else {
+          // 如果没有新数据
+          this.$refs.scroll.forceUpdate()
+        }
+      }, 1500)
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
-li{
+li {
   height: 40px;
-  border-bottom: 1px solid #ccc
+  border-bottom: 1px solid #ccc;
 }
 </style>

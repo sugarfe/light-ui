@@ -1,69 +1,127 @@
 <template>
-  <run-page-content class="example-button-page">
-    <run-navbar>Button</run-navbar>
+  <l-page-content class="example-button-page">
+    <l-navbar>Button</l-navbar>
     <template v-slot:content>
       <example-group contentClass="group-content">
         block + size
         <template v-slot:content>
-          <run-button block size="small">block small</run-button>
-          <run-button block>block default</run-button>
-          <run-button block size="large">block large</run-button>
+          <l-button
+            block
+            size="small"
+          >block small</l-button>
+          <l-button block>block default</l-button>
+          <l-button
+            block
+            size="large"
+          >block large</l-button>
         </template>
       </example-group>
       <example-group contentClass="group-content">
         block + theme
         <template v-slot:content>
-          <run-button block theme="primary">primary</run-button>
-          <run-button block theme="success">success</run-button>
-          <run-button block theme="warning">warning</run-button>
-          <run-button block theme="alert">alert</run-button>
+          <l-button
+            block
+            theme="primary"
+          >primary</l-button>
+          <l-button
+            block
+            theme="success"
+          >success</l-button>
+          <l-button
+            block
+            theme="warning"
+          >warning</l-button>
+          <l-button
+            block
+            theme="alert"
+          >alert</l-button>
         </template>
       </example-group>
       <example-group contentClass="group-content">
         block + theme + light
         <template v-slot:content>
-          <run-button block light>light default</run-button>
-          <run-button block light theme="primary">light primary</run-button>
-          <run-button block light theme="success">light success</run-button>
-          <run-button block light theme="warning">light warning</run-button>
-          <run-button block light theme="alert">light alert</run-button>
+          <l-button
+            block
+            light
+          >light default</l-button>
+          <l-button
+            block
+            light
+            theme="primary"
+          >light primary</l-button>
+          <l-button
+            block
+            light
+            theme="success"
+          >light success</l-button>
+          <l-button
+            block
+            light
+            theme="warning"
+          >light warning</l-button>
+          <l-button
+            block
+            light
+            theme="alert"
+          >light alert</l-button>
+        </template>
+      </example-group>
+      <example-group contentClass="group-content">
+        disabled
+        <template v-slot:content>
+          <l-button
+            block
+            disabled
+          >disabled</l-button>
         </template>
       </example-group>
 
       <example-group contentClass="group-content">
         size
         <template v-slot:content>
-          <run-button size="small">small</run-button>
-          <run-button>dufault</run-button>
-          <run-button size="large">large</run-button>
+          <l-button size="small">small</l-button>
+          <l-button>dufault</l-button>
+          <l-button size="large">large</l-button>
         </template>
       </example-group>
       <example-group contentClass="group-content">
         theme
         <template v-slot:content>
-          <run-button>dufault</run-button>
-          <run-button theme="primary">primary</run-button>
-          <run-button theme="success">success</run-button>
-          <run-button theme="warning">warning</run-button>
-          <run-button theme="alert">alert</run-button>
+          <l-button>dufault</l-button>
+          <l-button theme="primary">primary</l-button>
+          <l-button theme="success">success</l-button>
+          <l-button theme="warning">warning</l-button>
+          <l-button theme="alert">alert</l-button>
         </template>
       </example-group>
       <example-group contentClass="group-content">
         theme + light
         <template v-slot:content>
-          <run-button light>dufault</run-button>
-          <run-button theme="primary" light>primary</run-button>
-          <run-button theme="success" light>success</run-button>
-          <run-button theme="warning" light>warning</run-button>
-          <run-button theme="alert" light>alert</run-button>
+          <l-button light>dufault</l-button>
+          <l-button
+            theme="primary"
+            light
+          >primary</l-button>
+          <l-button
+            theme="success"
+            light
+          >success</l-button>
+          <l-button
+            theme="warning"
+            light
+          >warning</l-button>
+          <l-button
+            theme="alert"
+            light
+          >alert</l-button>
         </template>
       </example-group>
     </template>
-  </run-page-content>
+  </l-page-content>
 </template>
 <script>
-export default {};
+export default {}
 </script>
 <style lang="scss">
-@import "./button.scss";
+@import './button.scss';
 </style>

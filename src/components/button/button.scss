@@ -1,130 +1,132 @@
-@import "./button.mixin.scss";
-@import "./button.variables.scss";
+@import './button.mixin.scss';
+@import './button.variables.scss';
 
 .l-button {
-    white-space: nowrap;
-    background-color: $l-button-theme-default;
-    color: #ffffff;
-    text-align: center;
-    border: 0;
-    padding: 0 $l-button-padding;
-    position: relative;
-    outline: none;
-    border-radius: 2px;
-    transition: all .2s;
+	white-space: nowrap;
+	background-color: $l-button-theme-default;
+	color: #ffffff;
+	text-align: center;
+	border: 0;
+	padding: 0 $l-button-padding;
+	position: relative;
+	outline: none;
+	border-radius: 2px;
+	transition: all 0.2s;
+	&:disabled {
+		opacity: 0.8;
+	}
+	&-block {
+		width: 100%;
+	}
 
-    &-block {
-        width: 100%;
-    }
+	&-size-default {
+		@include size();
+	}
 
-    &-size-default {
-        @include size();
-    }
+	&-size-small {
+		@include size(small);
+	}
 
-    &-size-small {
-        @include size(small);
-    }
+	&-size-large {
+		@include size(large);
+	}
 
-    &-size-large {
-        @include size(large);
-    }
+	&:active {
+		background-color: $l-color-gray-dark;
+	}
 
-    &:active {
-        background-color: $l-color-gray-dark
-    }
+	&-light {
+		background-color: #ffffff;
+		color: $l-button-theme-default;
 
-    &-light {
-        background-color: #ffffff;
-        color: $l-button-theme-default;
+		&::before {
+			@include border-1px($l-button-theme-default);
+		}
 
-        &::before {
-            @include border-1px($l-button-theme-default)
-        }
+		&:active {
+			color: #ffffff;
 
-        &:active {
-            color: #ffffff;
+			&::before {
+				border: 0;
+			}
 
-            &::before {
-                border: 0;
-            }
+			background-color: $l-color-gray;
+		}
 
-            background-color: $l-color-gray;
-        }
+		&-theme-primary {
+			color: $l-theme-primary;
 
-        &-theme-primary {
-            color: $l-theme-primary;
+			&::before {
+				border-color: $l-theme-primary;
+			}
+		}
 
-            &::before {
-                border-color: $l-theme-primary;
-            }
-        }
+		&-theme-success {
+			color: $l-theme-success;
 
-        &-theme-success {
-            color: $l-theme-success;
+			&::before {
+				border-color: $l-theme-success;
+			}
+		}
 
-            &::before {
-                border-color: $l-theme-success;
-            }
-        }
+		&-theme-warning {
+			color: $l-theme-warning;
 
-        &-theme-warning {
-            color: $l-theme-warning;
+			&::before {
+				border-color: $l-theme-warning;
+			}
+		}
 
-            &::before {
-                border-color: $l-theme-warning;
-            }
-        }
+		&-theme-alert {
+			color: $l-theme-alert;
 
-        &-theme-alert {
-            color: $l-theme-alert;
+			&::before {
+				border-color: $l-theme-alert;
+			}
+		}
+	}
 
-            &::before {
-                border-color: $l-theme-alert;
-            }
-        }
-    }
+	&-theme-primary {
+		background-color: $l-theme-primary;
+	}
 
-    &-theme-primary {
-        background-color: $l-theme-primary;
-    }
+	&-theme-success {
+		background-color: $l-theme-success;
+	}
 
-    &-theme-success {
-        background-color: $l-theme-success;
-    }
+	&-theme-warning {
+		background-color: $l-theme-warning;
 
-    &-theme-warning {
-        background-color: $l-theme-warning;
+		&:active {
+			background-color: $l-theme-warning-active;
+		}
+	}
 
-        &:active {
-            background-color: $l-theme-warning-active;
-        }
-    }
+	&-theme-alert {
+		background-color: $l-theme-alert;
 
-    &-theme-alert {
-        background-color: $l-theme-alert;
+		&:active {
+			background-color: $l-theme-alert-active;
+		}
+	}
 
-        &:active {
-            background-color: $l-theme-alert-active;
-        }
-    }
+	&-theme-primary:active,
+	&-light-theme-primary:active {
+		background-color: $l-theme-primary-active;
+	}
 
-    &-theme-primary:active,
-    &-light-theme-primary:active {
-        background-color: $l-theme-primary-active;
-    }
+	&-theme-success:active,
+	&-light-theme-success:active {
+		background-color: $l-theme-success-active;
+	}
 
-    &-theme-success:active,
-    &-light-theme-success:active {
-        background-color: $l-theme-success-active;
-    }
+	&-theme-warning:active,
+	&-light-theme-warning:active {
+		background-color: $l-theme-warning-active;
+	}
 
-    &-theme-warning:active,
-    &-light-theme-warning:active {
-        background-color: $l-theme-warning-active;
-    }
-
-    &-theme-alert:active,
-    &-light-theme-alert:active {
-        background-color: $l-theme-alert-active;
-    }
+	&-theme-alert:active,
+	&-light-theme-alert:active {
+		background-color: $l-theme-alert-active;
+	}
 }

@@ -39,7 +39,7 @@ const components = [
 ].map(component => {
 	return {
 		...component,
-		name: `run-${component.name}`
+		name: `l-${component.name}`
 	}
 })
 export default [
