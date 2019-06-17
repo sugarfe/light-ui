@@ -1,14 +1,14 @@
 <template>
   <div
-    class="l-page-content"
+    class="l-page"
     :class="dynamic.class"
   >
-    <slot></slot>
+    <slot name="header"></slot>
     <div
-      class="flex-1 l-scroll-y"
+      class="l-page-content flex-1 l-scroll-y"
       :class="contentClass"
     >
-      <slot name="content"></slot>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -45,14 +45,14 @@ export default {
     return {
       dynamic: {
         class: {
-          'l-page-content-full-height': this.fullHeight,
+          'l-page-full-height': this.fullHeight,
           'flex-box': this.flex,
           'flex-column': this.flexDirectionColumn
         }
       }
     }
   },
-  created() { },
+  created() {},
   methods: {}
 }
 </script>

@@ -59,5 +59,14 @@ module.exports = [
 	{
 		test: /\.css$/,
 		loader: sassLoader
+	},
+	{
+		test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
+		loader: 'url-loader',
+		exclude: [resolve('node_modules')],
+		options: {
+			limit: 10000,
+			name: '[name].[hash:7].[ext]'
+		}
 	}
 ]

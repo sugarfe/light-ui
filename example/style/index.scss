@@ -1,12 +1,7 @@
-@import "./reset.scss";
-@import "@runSrc/style/tools.scss";
+@import './reset.scss';
+@import '@runSrc/style/tools.scss';
 
-html,body{
-    height: 100%;
-}
-
-.run-scroll-y{
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+html,
+body {
+	height: 100%;
 }

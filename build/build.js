@@ -14,7 +14,7 @@ mkdir('-p', assetsPath)
 
 class BuildStart {
 	constructor(webpackConfig) {
-		['modules', 'any'].map(item => {
+		['modules', 'all'].map(item => {
 			let config
 			switch (item) {
 				case 'modules':
@@ -23,7 +23,7 @@ class BuildStart {
 						output: {
 							path: path.resolve(__dirname, '../library'),
 							filename: '[name]/index.js',
-							library: 'lightUI',
+							library: 'light',
 							libraryTarget: 'umd'
 						},
 						plugins: [
@@ -33,15 +33,15 @@ class BuildStart {
 						]
 					})
 					break
-				case 'any':
+				case 'all':
 					config = merge(webpackConfig, {
 						entry: {
-							lightUI: path.join(__dirname, '../src/index.js')
+							light: path.join(__dirname, '../src/index.js')
 						},
 						output: {
 							path: path.resolve(__dirname, '../library'),
 							filename: '[name].js',
-							library: 'lightUI',
+							library: 'light',
 							libraryTarget: 'umd'
 						},
 						plugins: [

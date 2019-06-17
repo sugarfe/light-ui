@@ -1,5 +1,10 @@
-.l-page-content {
+.l-page {
 	&-full-height {
 		height: 100%;
+	}
+	.l-page-content {
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 }

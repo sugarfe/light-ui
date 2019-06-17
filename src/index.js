@@ -1,4 +1,5 @@
 import components from './components/component.js'
+import './style/index.scss'
 const jsCallComponent = [
 	'Popup',
 	'Toast',
@@ -8,7 +9,7 @@ const jsCallComponent = [
 	'Loading',
 	'DatePicker'
 ]
-// import Style from "./style/index.scss";
+
 export default {
 	install: (Vue, option = {}) => {
 		components.map(module => {
