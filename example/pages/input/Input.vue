@@ -1,29 +1,27 @@
 <template>
   <l-page-content class="example-button-page">
-    <l-navbar>Input</l-navbar>
-    <template v-slot:content>
-      <example-group contentClass="group-content">
-        basic
-        <template v-slot:content>
-          <l-input></l-input>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        textarea
-        <template v-slot:content>
-          <l-input
-            v-model="value"
-            textarea
-          ></l-input>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        disabled
-        <template v-slot:content>
-          <l-input disabled></l-input>
-        </template>
-      </example-group>
-    </template>
+    <l-navbar slot="header">Input</l-navbar>
+    <example-group contentClass="group-content">
+      basic
+      <template v-slot:content>
+        <l-input></l-input>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">
+      textarea
+      <template v-slot:content>
+        <l-input
+          v-model="value"
+          textarea
+        ></l-input>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">
+      disabled
+      <template v-slot:content>
+        <l-input disabled></l-input>
+      </template>
+    </example-group>
   </l-page-content>
 </template>
 <script>
@@ -34,7 +32,7 @@ export default {
       value: ''
     }
   },
-  created() { },
+  created() {},
   methods: {}
 }
 </script>

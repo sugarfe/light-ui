@@ -1,77 +1,75 @@
 <template>
   <l-page-content>
-    <l-navbar>Radio</l-navbar>
-    <template v-slot:content>
-      <example-group contentClass="group-content">basic
-        <template v-slot:content>
-          <l-radio-group v-model="value1">
-            <l-radio
-              :value="item.value"
-              v-for="(item, index) in data"
-              :key="index"
-            >{{ item.text }}</l-radio>
-          </l-radio-group>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">basic + right
-        <template v-slot:content>
-          <l-radio-group
-            v-model="value2"
-            right
-          >
-            <l-radio
-              :value="item.value"
-              v-for="(item, index) in data"
-              :key="index"
-            >{{ item.text }}</l-radio>
-          </l-radio-group>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">horizontal
-        <template v-slot:content>
-          <l-radio-group
-            v-model="value3"
-            horizontal
-          >
-            <l-radio
-              :value="item.value"
-              v-for="(item, index) in data"
-              :key="index"
-            >{{ item.text }}</l-radio>
-          </l-radio-group>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">horizontal + right
-        <template v-slot:content>
-          <l-radio-group
-            v-model="value4"
-            horizontal
-            right
-          >
-            <l-radio
-              :value="item.value"
-              v-for="(item, index) in data"
-              :key="index"
-            >{{ item.text }}</l-radio>
-          </l-radio-group>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">horizontal + disabled
-        <template v-slot:content>
-          <l-radio-group
-            v-model="value5"
-            horizontal
-          >
-            <l-radio
-              :value="item.value"
-              v-for="(item, index) in data"
-              :key="index"
-              :disabled="index === 0"
-            >{{ item.text }}</l-radio>
-          </l-radio-group>
-        </template>
-      </example-group>
-    </template>
+    <l-navbar slot="header">Radio</l-navbar>
+    <example-group contentClass="group-content">basic
+      <template v-slot:content>
+        <l-radio-group v-model="value1">
+          <l-radio
+            :value="item.value"
+            v-for="(item, index) in data"
+            :key="index"
+          >{{ item.text }}</l-radio>
+        </l-radio-group>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">basic + right
+      <template v-slot:content>
+        <l-radio-group
+          v-model="value2"
+          right
+        >
+          <l-radio
+            :value="item.value"
+            v-for="(item, index) in data"
+            :key="index"
+          >{{ item.text }}</l-radio>
+        </l-radio-group>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">horizontal
+      <template v-slot:content>
+        <l-radio-group
+          v-model="value3"
+          horizontal
+        >
+          <l-radio
+            :value="item.value"
+            v-for="(item, index) in data"
+            :key="index"
+          >{{ item.text }}</l-radio>
+        </l-radio-group>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">horizontal + right
+      <template v-slot:content>
+        <l-radio-group
+          v-model="value4"
+          horizontal
+          right
+        >
+          <l-radio
+            :value="item.value"
+            v-for="(item, index) in data"
+            :key="index"
+          >{{ item.text }}</l-radio>
+        </l-radio-group>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">horizontal + disabled
+      <template v-slot:content>
+        <l-radio-group
+          v-model="value5"
+          horizontal
+        >
+          <l-radio
+            :value="item.value"
+            v-for="(item, index) in data"
+            :key="index"
+            :disabled="index === 0"
+          >{{ item.text }}</l-radio>
+        </l-radio-group>
+      </template>
+    </example-group>
   </l-page-content>
 </template>
 <script>
@@ -101,11 +99,11 @@ export default {
     }
   },
   computed: {},
-  created: function () { },
-  beforeMount: function () { },
-  mounted: function () { },
-  beforeDestroy: function () { },
-  destroyed: function () { },
+  created: function() {},
+  beforeMount: function() {},
+  mounted: function() {},
+  beforeDestroy: function() {},
+  destroyed: function() {},
   methods: {},
   watch: {},
   directives: {}

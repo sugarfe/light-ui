@@ -1,24 +1,22 @@
 <template>
   <l-page-content class="popup-model flex-box flex-column flex-align-center">
     <l-navbar>Content</l-navbar>
-    <template v-slot:content>
-      <l-button
-        theme="primary"
-        @click="close"
-      >关闭</l-button>
-    </template>
+    <l-button
+      theme="primary"
+      @click="close"
+    >关闭</l-button>
   </l-page-content>
 </template>
 <script>
 export default {
   props: {},
-  created() { },
+  created() {},
   methods: {
     close() {
       this.$emit('popup-close')
     }
   },
-  beforeRouteLeave(to, from, next) { }
+  beforeRouteLeave(to, from, next) {}
 }
 </script>
 <style lang="scss">

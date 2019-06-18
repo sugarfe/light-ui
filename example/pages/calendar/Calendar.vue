@@ -1,14 +1,12 @@
 <template>
   <l-page-content>
-    <l-navbar>Calendar</l-navbar>
-    <template v-slot:content>
-      <example-group contentClass="group-content">
-        basic
-        <template v-slot:content>
-          <l-calendar></l-calendar>
-        </template>
-      </example-group>
-    </template>
+    <l-navbar slot="header">Calendar</l-navbar>
+    <example-group contentClass="group-content">
+      basic
+      <template v-slot:content>
+        <l-calendar></l-calendar>
+      </template>
+    </example-group>
   </l-page-content>
 </template>
 <script>

@@ -3,33 +3,31 @@
     class="example-dialog-page"
     contentClass="flex-box-column"
   >
-    <l-navbar>Dialog</l-navbar>
-    <template v-slot:content>
-      <div class="flex-1">
-        <example-group contentClass="group-content">
-          option
-          <template v-slot:content>
-            <l-checkbox-group
-              right
-              v-model="values"
-            >
-              <l-checkbox value="isMaskClose">isMaskClose</l-checkbox>
-              <l-checkbox value="confirm">confirm</l-checkbox>
-              <l-checkbox value="cancelText">cancelText</l-checkbox>
-              <l-checkbox value="okText">okText</l-checkbox>
-              <l-checkbox value="delayClose">delayClose</l-checkbox>
-            </l-checkbox-group>
-          </template>
-        </example-group>
-      </div>
-      <div class="action-panel">
-        <l-button
-          block
-          theme="primary"
-          @click="open"
-        >打开</l-button>
-      </div>
-    </template>
+    <l-navbar slot="header">Dialog</l-navbar>
+    <div class="flex-1">
+      <example-group contentClass="group-content">
+        option
+        <template v-slot:content>
+          <l-checkbox-group
+            right
+            v-model="values"
+          >
+            <l-checkbox value="isMaskClose">isMaskClose</l-checkbox>
+            <l-checkbox value="confirm">confirm</l-checkbox>
+            <l-checkbox value="cancelText">cancelText</l-checkbox>
+            <l-checkbox value="okText">okText</l-checkbox>
+            <l-checkbox value="delayClose">delayClose</l-checkbox>
+          </l-checkbox-group>
+        </template>
+      </example-group>
+    </div>
+    <div class="action-panel">
+      <l-button
+        block
+        theme="primary"
+        @click="open"
+      >打开</l-button>
+    </div>
   </l-page-content>
 </template>
 <script>

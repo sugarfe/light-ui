@@ -1,27 +1,25 @@
 <template>
   <l-page-content>
-    <l-navbar>switch</l-navbar>
-    <template v-slot:content>
-      <example-group contentClass="group-content">
-        basic
-        <template v-slot:content>
-          <div class="river">
-            <l-switch v-model="valueDefault"></l-switch>
-          </div>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        disabled
-        <template v-slot:content>
-          <div class="river">
-            <l-switch
-              v-model="valueDisable"
-              :disabled="disabled"
-            ></l-switch>
-          </div>
-        </template>
-      </example-group>
-    </template>
+    <l-navbar slot="header">switch</l-navbar>
+    <example-group contentClass="group-content">
+      basic
+      <template v-slot:content>
+        <div class="river">
+          <l-switch v-model="valueDefault"></l-switch>
+        </div>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">
+      disabled
+      <template v-slot:content>
+        <div class="river">
+          <l-switch
+            v-model="valueDisable"
+            :disabled="disabled"
+          ></l-switch>
+        </div>
+      </template>
+    </example-group>
   </l-page-content>
 </template>
 
@@ -37,8 +35,7 @@ export default {
       disabled: true
     }
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 

@@ -2,7 +2,7 @@
   "name": "light-ui-m",
   "version": "0.0.1-beta2",
   "description": "vue2.0 mobile components",
-  "main": "library/lightUI.js",
+  "main": "library/light.js",
   "scripts": {
     "dev": "webpack-dev-server --port 9090 --host 0.0.0.0  --progress --config  ./build/webpack/develop.config.js ",
     "docs:dev": "vuepress dev docs",

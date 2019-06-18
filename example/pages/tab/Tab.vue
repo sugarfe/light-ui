@@ -1,81 +1,79 @@
 <template>
   <l-page-content>
-    <l-navbar>tab</l-navbar>
-    <template v-slot:content>
-      <example-group contentClass="group-content">
-        default
-        <template v-slot:content>
-          <l-tab
-            v-model="currentIndex"
-            currentBarClass="currentBarClass"
-          >
-            <l-tab-item
-              v-for="(item, index) in 7"
-              :key="index"
-            >{{
-              index
-              }}</l-tab-item>
-          </l-tab>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        select animation
-        <template v-slot:content>
-          <l-tab
-            :animation="animation"
-            v-model="currentIndex2"
-            currentBarClass="currentBarClass"
-          >
-            <l-tab-item
-              v-for="(item, index) in 7"
-              :key="index"
-            >{{
-              index
-              }}</l-tab-item>
-          </l-tab>
-          <select v-model="animation">
-            <option value="general">general</option>
-            <option value="none">none</option>
-            <option value="earthworm">earthworm</option>
-          </select>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        prevent isDelay
-        <template v-slot:content>
-          <l-tab
-            @selectIndex="selectIndex"
-            :isDelay="true"
-            :animation="animation"
-            v-model="currentIndex3"
-            currentBarClass="currentBarClass"
-          >
-            <l-tab-item
-              v-for="(item, index) in 4"
-              :key="index"
-            >{{
-              index
-              }}</l-tab-item>
-          </l-tab>
-        </template>
-      </example-group>
-      <example-group contentClass="group-content">
-        scroll
-        <template v-slot:content>
-          <l-tab
-            :scroll="true"
-            v-model="currentIndex4"
-            currentBarClass="currentBarClass"
-          >
-            <l-tab-item
-              class="l-tab-item1"
-              v-for="(item, index) in 10"
-              :key="index"
-            >{{ index }}</l-tab-item>
-          </l-tab>
-        </template>
-      </example-group>
-    </template>
+    <l-navbar slot="header">tab</l-navbar>
+    <example-group contentClass="group-content">
+      default
+      <template v-slot:content>
+        <l-tab
+          v-model="currentIndex"
+          currentBarClass="currentBarClass"
+        >
+          <l-tab-item
+            v-for="(item, index) in 7"
+            :key="index"
+          >{{
+            index
+            }}</l-tab-item>
+        </l-tab>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">
+      select animation
+      <template v-slot:content>
+        <l-tab
+          :animation="animation"
+          v-model="currentIndex2"
+          currentBarClass="currentBarClass"
+        >
+          <l-tab-item
+            v-for="(item, index) in 7"
+            :key="index"
+          >{{
+            index
+            }}</l-tab-item>
+        </l-tab>
+        <select v-model="animation">
+          <option value="general">general</option>
+          <option value="none">none</option>
+          <option value="earthworm">earthworm</option>
+        </select>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">
+      prevent isDelay
+      <template v-slot:content>
+        <l-tab
+          @selectIndex="selectIndex"
+          :isDelay="true"
+          :animation="animation"
+          v-model="currentIndex3"
+          currentBarClass="currentBarClass"
+        >
+          <l-tab-item
+            v-for="(item, index) in 4"
+            :key="index"
+          >{{
+            index
+            }}</l-tab-item>
+        </l-tab>
+      </template>
+    </example-group>
+    <example-group contentClass="group-content">
+      scroll
+      <template v-slot:content>
+        <l-tab
+          :scroll="true"
+          v-model="currentIndex4"
+          currentBarClass="currentBarClass"
+        >
+          <l-tab-item
+            class="l-tab-item1"
+            v-for="(item, index) in 10"
+            :key="index"
+          >{{ index }}</l-tab-item>
+        </l-tab>
+      </template>
+    </example-group>
   </l-page-content>
 </template>
 
@@ -98,7 +96,7 @@ export default {
     }
   },
   watch: {
-    currentIndex(value) { }
+    currentIndex(value) {}
   }
 }
 </script>

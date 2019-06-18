@@ -1,28 +1,26 @@
 <template>
   <l-page-content>
-    <l-navbar>Grid</l-navbar>
-    <template v-slot:content>
-      <example-group contentClass="group-content">
-        col 4 square
-        <template v-slot:content>
-          <div class="index-page">
-            <l-grid
-              ref="grid"
-              :col="4"
-              :square="true"
-              spacing="1px"
-              vertical="1px"
-            >
-              <l-grid-item
-                v-for="item in data"
-                :key="item"
-                style="background-color:#ffb403"
-              ></l-grid-item>
-            </l-grid>
-          </div>
-        </template>
-      </example-group>
-    </template>
+    <l-navbar slot="header">Grid</l-navbar>
+    <example-group contentClass="group-content">
+      col 4 square
+      <template v-slot:content>
+        <div class="index-page">
+          <l-grid
+            ref="grid"
+            :col="4"
+            :square="true"
+            spacing="1px"
+            vertical="1px"
+          >
+            <l-grid-item
+              v-for="item in data"
+              :key="item"
+              style="background-color:#ffb403"
+            ></l-grid-item>
+          </l-grid>
+        </div>
+      </template>
+    </example-group>
   </l-page-content>
 </template>
 <script>
@@ -34,7 +32,7 @@ export default {
     }
   },
   computed: {},
-  created: function () {
+  created: function() {
     // setTimeout(() => {
     //   this.data += 3;
     //   this.$nextTick(() => {
@@ -42,10 +40,10 @@ export default {
     //   });
     // }, 2000);
   },
-  beforeMount: function () { },
-  mounted: function () { },
-  beforeDestroy: function () { },
-  destroyed: function () { },
+  beforeMount: function() {},
+  mounted: function() {},
+  beforeDestroy: function() {},
+  destroyed: function() {},
   methods: {},
   watch: {},
   directives: {}

@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'lic';
+	font-family: 'iconfont';
 	src: url('iconfont.eot?t=1560762571915'); /* IE9 */
 	src: url('iconfont.eot?t=1560762571915#iefix') format('embedded-opentype'),
 		/* IE6-IE8 */
@@ -11,8 +11,9 @@
 			url('iconfont.svg?t=1560762571915#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-.iconfont {
-	font-family: 'lic' !important;
+[class^='icon-'],
+[class*=' icon-'] {
+	font-family: 'iconfont' !important;
 	font-size: 16px;
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;

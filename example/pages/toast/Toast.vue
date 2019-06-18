@@ -3,22 +3,20 @@
     class="example-popup-page"
     contentClass="flex-box-column"
   >
-    <l-navbar>Popup</l-navbar>
-    <template v-slot:content>
-      <div class="flex-1">
-        <example-group contentClass="group-content">
-          basic
-          <template v-slot:content> </template>
-        </example-group>
-      </div>
-      <div class="action-panel">
-        <l-button
-          block
-          theme="primary"
-          @click="open"
-        >打开</l-button>
-      </div>
-    </template>
+    <l-navbar slot="header">Popup</l-navbar>
+    <div class="flex-1">
+      <example-group contentClass="group-content">
+        basic
+        <template v-slot:content> </template>
+      </example-group>
+    </div>
+    <div class="action-panel">
+      <l-button
+        block
+        theme="primary"
+        @click="open"
+      >打开</l-button>
+    </div>
   </l-page-content>
 </template>
 <script>
@@ -28,7 +26,7 @@ export default {
     return {}
   },
   props: {},
-  mounted() { },
+  mounted() {},
   methods: {
     open(position) {
       new this.$Toast({

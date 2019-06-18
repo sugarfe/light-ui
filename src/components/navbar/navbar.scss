@@ -1,14 +1,23 @@
-.run-navbar{
-    height: 44px;
-    position: relative;
-    padding:0 10px;
-    .run-navbar-title{
-        position: absolute;
-        left:0;
-        top:0;
-        width: 100%;
-        text-align: center;
-        top:50%;
-        transform: translateY(-50%);
-    }
+.run-navbar {
+	height: 44px;
+	position: relative;
+	.run-navbar-title {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: $l-color-gray-dark;
+	}
+	.run-navbar-icon {
+		@include display-flex;
+		@include align-items(center);
+		height: 100%;
+		padding-left: 10px;
+	}
+	[class^='icon-'],
+	[class*=' icon-'] {
+		font-size: 22px;
+		position: relative;
+		color: $l-color-gray-dark;
+	}
 }

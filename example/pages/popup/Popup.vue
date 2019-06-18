@@ -3,38 +3,36 @@
     class="example-popup-page"
     contentClass="flex-box-column"
   >
-    <l-navbar>Popup</l-navbar>
-    <template v-slot:content>
-      <div class="flex-1">
-        <example-group contentClass="group-content">
-          position
-          <template v-slot:content>
-            <l-radio-group
-              v-model="option.position"
-              right
-            >
-              <l-radio
-                :value="item"
-                v-for="(item, index) in optionData.position"
-                :key="index"
-              >{{ item }}</l-radio>
-            </l-radio-group>
-          </template>
-        </example-group>
-      </div>
-      <div class="action-panel">
-        <l-button
-          block
-          theme="primary"
-          @click="open"
-        >打开</l-button>
-      </div>
-    </template>
+    <l-navbar slot="header">Popup</l-navbar>
+    <div class="flex-1">
+      <example-group contentClass="group-content">
+        position
+        <template v-slot:content>
+          <l-radio-group
+            v-model="option.position"
+            right
+          >
+            <l-radio
+              :value="item"
+              v-for="(item, index) in optionData.position"
+              :key="index"
+            >{{ item }}</l-radio>
+          </l-radio-group>
+        </template>
+      </example-group>
+    </div>
+    <div class="action-panel">
+      <l-button
+        block
+        theme="primary"
+        @click="open"
+      >打开</l-button>
+    </div>
   </l-page-content>
 </template>
 <script>
 import PopupModel from './PopupModel'
-import { debuglog } from 'util';
+import { debuglog } from 'util'
 export default {
   data() {
     return {
@@ -61,7 +59,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     next()
   },
-  beforeRouteUpdate() { }
+  beforeRouteUpdate() {}
 }
 </script>
 <style lang="scss">

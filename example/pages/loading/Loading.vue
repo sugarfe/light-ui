@@ -1,17 +1,15 @@
 <template>
   <l-page-content class="example-dialog-page">
     <l-navbar>loading</l-navbar>
-    <template v-slot:content>
-      <example-group contentClass="group-content">
-        default
-        <template v-slot:content>
-          <l-button
-            size="small"
-            @click="click()"
-          >default</l-button>
-        </template>
-      </example-group>
-    </template>
+    <example-group contentClass="group-content">
+      default
+      <template v-slot:content>
+        <l-button
+          size="small"
+          @click="click()"
+        >default</l-button>
+      </template>
+    </example-group>
   </l-page-content>
 </template>
 <script>
@@ -20,7 +18,7 @@ export default {
     return {}
   },
   props: {},
-  mounted() { },
+  mounted() {},
   methods: {
     click() {
       let loading = new this.$Loading({
