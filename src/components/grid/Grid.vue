@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+import { setTimeout } from 'timers'
 export default {
   name: 'grid',
   props: {
@@ -46,16 +47,27 @@ export default {
   },
   methods: {
     init() {
-      this.row = Math.ceil(this.$children.length / this.col)
-      this.$children.map((item, index) => {
-        item.setIndex && item.setIndex(index + 1)
-      })
       this.itemWidht = ~this.$children.length
         ? this.$children[0].$el.offsetWidth
         : 0
+      this.row = Math.ceil(this.$children.length / this.col)
+      this.$children.map((item, index) => {
+        item.setIndex && item.setIndex(index + 1)
+        item.init()
+      })
     },
     refresh() {
-      this.init()
+      this.$nextTick(() => {
+        this.init()
+      })
+    }
+  },
+  watch: {
+    col() {
+      this.refresh()
+    },
+    square() {
+      this.refresh()
     }
   }
 }

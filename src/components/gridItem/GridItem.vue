@@ -1,12 +1,13 @@
 <template>
   <div
-    class="run-grid-item"
+    class="l-grid-item"
     :style="style"
   >
     <slot></slot>
   </div>
 </template>
 <script>
+import { debuglog } from 'util'
 export default {
   name: 'grid-item',
   data() {
@@ -41,16 +42,14 @@ export default {
       return this.$parent.row
     }
   },
-  mounted() {
-    this.$nextTick(() => {
+  methods: {
+    init() {
       this.height = this.square ? `${this.$parent.itemWidht}px` : 'auto'
       this.marginBottom =
-        this.vertical && Math.ceil(this.index / this.row) < this.row
+        this.vertical && Math.ceil(this.index / this.col) < this.row
           ? this.vertical
           : 0
-    })
-  },
-  methods: {
+    },
     setIndex(index) {
       this.index = index
     }
