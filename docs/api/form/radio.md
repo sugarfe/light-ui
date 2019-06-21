@@ -56,20 +56,20 @@
 </l-radio-group>
 ```
 
-## group Props
+## Group Props
 
 | 参数       | 类型    | 默认值 | 可选值     | 说明         |
 | ---------- | ------- | ------ | ---------- | ------------ |
 | horizontal | Boolean | false  | true/false | 是否水平样式 |
 | right      | Boolean | false  | true/false | 标记是否靠右 |
 
-## group Event
+## Group Event
 
 | 收件名   | 描述             | 参数         |
 | -------- | ---------------- | ------------ |
 | onChange | 当前值发生变化时 | 当前选中的值 |
 
-## radio Props
+## Radio Props
 
 | 参数    | 类型            | 默认值    | 可选值     | 说明               |
 | ------- | --------------- | --------- | ---------- | ------------------ |
