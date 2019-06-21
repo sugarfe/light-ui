@@ -3,6 +3,7 @@ module.exports = {
 	description: ' ',
 	dest: './dist',
 	port: 9527,
+	base: '/light-ui/',
 	themeConfig: {
 		nav: [
 			{ text: '组件', link: '/api/' },
@@ -29,7 +30,12 @@ module.exports = {
 				},
 				{
 					title: '弹出',
-					children: ['popup/popup', 'popup/dialog']
+					children: [
+						'popup/popup',
+						'popup/dialog',
+						'popup/actionSheet',
+						'popup/picker'
+					]
 				},
 				{
 					title: '滚动',

@@ -1,14 +1,14 @@
-.run-navbar {
+.l-navbar {
 	height: 44px;
 	position: relative;
-	.run-navbar-title {
+	.l-navbar-title {
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		color: $l-color-gray-dark;
 	}
-	.run-navbar-icon {
+	.l-navbar-icon {
 		@include display-flex;
 		@include align-items(center);
 		height: 100%;

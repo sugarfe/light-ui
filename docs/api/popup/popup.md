@@ -6,6 +6,12 @@
 
 采用构造函数的方式调用`new $Popup()`。需要两个参数。第一个参数为一个组件对象`(VueComponent)`，也就是弹出时展示的内容。第二个参数也是一个对象`(option)`为配置参数。
 
+## 说明
+
+`Popup`组件本质上是`new`了一个新的`Vue`实例，并使用`render`函数来定义模板。所以这里涉及到两个组件。一个是父组件`PopupView`，一个是传入的组件`MyComponent`。
+
+其中`position`、`isMaskClose`、`isMask`、`onClose`为保留字段，用来配置父组件。其他传入的字段都会作用到子组件也就是调用时传入的组件中。基本原则为:以`on`开头为事件,其他为`Props`
+
 ## 示例
 
 ```javascript

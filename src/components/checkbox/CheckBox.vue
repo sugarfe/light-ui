@@ -13,7 +13,7 @@
 	</div>
 </template>
 <script>
-import { mixinProps } from '@runSrc/components/mixin.js'
+import { mixinProps } from '@/components/mixin.js'
 export default {
 	name: 'checkbox',
 	mixins: [mixinProps],

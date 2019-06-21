@@ -1,82 +1,82 @@
-@import "./checkbox.variables.scss";
+@import './checkbox.variables.scss';
 .l-checkbox-group {
-    &.flex-column {
-        padding: 0 5px;
-        .l-checkbox:not(:last-child)::before {
-            @include border-1px($run-color-light, bottom, 0)
-        }
-    }
-    &.flex-row {
-        .l-checkbox:not(:last-child) {
-            margin-right: 10px;
-        }
-    }
-    &-right .l-checkbox{
-        .l-checkbox-mark{
-            @include flex-order(2);
-        }
-        .l-checkbox-label{
-            @include flex(1);
-            margin: 0;
-        }
-    }
-    &-row-right .l-checkbox{
-        .l-checkbox-label{
-            margin-right: 5px;
-        }
-    }
+	&.flex-column {
+		padding: 0 5px;
+		.l-checkbox:not(:last-child)::before {
+			@include border-1px($l-color-light, bottom, 0);
+		}
+	}
+	&.flex-row {
+		.l-checkbox:not(:last-child) {
+			margin-right: 10px;
+		}
+	}
+	&-right .l-checkbox {
+		.l-checkbox-mark {
+			@include flex-order(2);
+		}
+		.l-checkbox-label {
+			@include flex(1);
+			margin: 0;
+		}
+	}
+	&-row-right .l-checkbox {
+		.l-checkbox-label {
+			margin-right: 5px;
+		}
+	}
 }
 
 .l-checkbox {
-    position: relative;
-    height: 36px;
-    &-disabled {
-        .l-checkbox-label,
-        .l-checkbox-mark {
-            opacity: .5;
-        }
-    }
-    &>input[type="checkbox"] {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        z-index: 1;
-    }
-    .l-checkbox-label {
-        font-size: 14px;
-        margin-left: 5px;
-        color: $l-color-gray-dark;
-    }
-    .l-checkbox-mark {
-        width: $l-checkbox-mark-size;
-        height: $l-checkbox-mark-size;
-        border-radius: 2px;
-        position: relative;
-        &::before {
-            @include border-1px($l-color-gray, all, 2px);
-        }
-        &::after {
-            content: "";
-            width: calc(100% - 8px);
-            height: calc(100% - 8px);
-            background-color: $l-theme-primary;
-            transform: scale(.3);
-            opacity: 0;
-            transition: all .2s;
-        }
-    }
-    &-checked {
-        .l-checkbox-mark {
-            &::before {
-                border-color: $l-theme-primary;
-            }
-            &::after {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-    }
+	position: relative;
+	height: 36px;
+	&-disabled {
+		.l-checkbox-label,
+		.l-checkbox-mark {
+			opacity: 0.5;
+		}
+	}
+	& > input[type='checkbox'] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 1;
+	}
+	.l-checkbox-label {
+		font-size: 14px;
+		margin-left: 5px;
+		color: $l-color-gray-dark;
+	}
+	.l-checkbox-mark {
+		width: $l-checkbox-mark-size;
+		height: $l-checkbox-mark-size;
+		border-radius: 2px;
+		position: relative;
+		&::before {
+			@include border-1px($l-color-gray, all, 2px);
+		}
+		&::after {
+			content: '';
+			width: calc(100% - 8px);
+			height: calc(100% - 8px);
+			background-color: $l-theme-primary;
+			transform: scale(0.3);
+			opacity: 0;
+			transition: all 0.2s;
+		}
+	}
+	&-checked {
+		.l-checkbox-mark {
+			&::before {
+				border-color: $l-theme-primary;
+			}
+			&::after {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	}
 }

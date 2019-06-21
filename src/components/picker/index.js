@@ -1,7 +1,6 @@
 import PickerTemplate from './Picker.vue'
 
 class Picker {
-	popup = undefined
 	constructor(option = {}) {
 		option.data = option.data.map(item => {
 			if (item.length > 0 && typeof item[0] !== 'object') {

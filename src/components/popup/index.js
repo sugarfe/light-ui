@@ -4,15 +4,7 @@ class Popup {
 	constructor(component = {}, option = {}) {
 		Popup.instance.push(this)
 		this.id = `popup-${Date.now()}`
-		this.popupViewOptionScope = [
-			'position',
-			'isMaskClose',
-			'isMask',
-			'distance',
-			'onClose',
-			'onAfterLeave',
-			'onAfterEnter'
-		]
+		this.popupViewOptionScope = ['position', 'isMaskClose', 'isMask', 'onClose']
 		this.option = this.initOption(option)
 		this.init(component, this.option, option)
 	}

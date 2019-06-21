@@ -1,15 +1,15 @@
 <template>
-  <div class="run-navbar flex-box flex-align-center">
+  <div class="l-navbar flex-box flex-align-center">
     <slot name="left">
       <div
-        class="run-navbar-icon"
+        class="l-navbar-icon"
         @click="back"
       >
         <i class="icon-arrow-back"></i>
       </div>
     </slot>
     <div class="flex-1">
-      <span class="run-navbar-title">
+      <span class="l-navbar-title">
         <slot></slot>
       </span>
     </div>

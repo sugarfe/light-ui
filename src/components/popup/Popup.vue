@@ -91,7 +91,7 @@ export default {
         case 'bottom':
           styleObject.push({
             width: '100%',
-            height: "auto",
+            height: 'auto',
             left: 0,
             [this.position]: 0
           })
@@ -100,7 +100,7 @@ export default {
         case 'right':
           styleObject.push({
             height: '100%',
-            width: "auto",
+            width: 'auto',
             top: 0,
             [this.position]: 0
           })
@@ -117,12 +117,9 @@ export default {
   },
   methods: {
     popupContainerAfterLeave() {
-      this.$emit('onAfterLeave')
       this.$destroy()
     },
-    popupContainerAfterEnter() {
-      this.$emit('onAfterEnter')
-    },
+    popupContainerAfterEnter() {},
     maskClickHanlde() {
       !!this.isMaskClose && this.close()
     },

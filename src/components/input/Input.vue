@@ -35,7 +35,7 @@
   </div>
 </template>
 <script>
-import { mixinProps } from '@runSrc/components/mixin.js'
+import { mixinProps } from '@/components/mixin.js'
 export default {
   name: 'input',
   mixins: [mixinProps],
@@ -83,7 +83,7 @@ export default {
       currentValue: ''
     }
   },
-  mounted() { },
+  mounted() {},
   methods: {
     onFocusHandle(e) {
       this.$emit('onFocus', e)

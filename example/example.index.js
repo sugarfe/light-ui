@@ -1,38 +1,38 @@
-import Vue from 'vue';
-import App from './App.vue';
-import VueRouter from 'vue-router';
-import "./index.scss";
+import Vue from 'vue'
+import App from './App.vue'
+import VueRouter from 'vue-router'
+import './index.scss'
 // import RUNUIX from '../node_modules/aaa/lightUI.js';
 // import '../library/lightUI.css';
 // import { Button } from 'aaa';
-import RUNUIX from '@runSrc/index.js';
-import routes from './router.js';
-import './style/index.scss';
-import store from './vuex/index.js';
-import ExampleGroup from './components/exampleGroup/ExampleGroup.vue';
+import RUNUIX from '@/index.js'
+import routes from './router.js'
+import './style/index.scss'
+import store from './vuex/index.js'
+import ExampleGroup from './components/exampleGroup/ExampleGroup.vue'
 let router = new VueRouter({
-	routes,
-});
-Vue.component(ExampleGroup.name, ExampleGroup);
+	routes
+})
+Vue.component(ExampleGroup.name, ExampleGroup)
 
-[VueRouter].map(plugin => {
-	Vue.use(plugin);
-});
+;[VueRouter].map(plugin => {
+	Vue.use(plugin)
+})
 Vue.use(RUNUIX, {
 	button: {
-		light: false,
+		light: false
 	},
 	toast: {
-		duration: 100,
+		duration: 100
 	},
 	dependence: {
 		store,
-		router,
+		router
 	},
 	toast: {
-		duration: 5000,
-	},
-});
+		duration: 5000
+	}
+})
 
 new Vue({
 	el: '#app',
@@ -40,5 +40,5 @@ new Vue({
 	store,
 	components: { App },
 	template: '<App/>',
-	created() { },
-});
+	created() {}
+})

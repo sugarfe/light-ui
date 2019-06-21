@@ -38,6 +38,7 @@
 </template>
 <script>
 import data from './picker.json'
+import { debuglog } from 'util'
 export default {
   data() {
     return {
@@ -61,15 +62,7 @@ export default {
   },
   watch: {
     column(column) {
-      switch (column) {
-        case 1:
-          this.value = []
-          break
-        case 2:
-        case 3:
-          this.value = []
-          break
-      }
+      this.value = []
       this.text = []
     }
   }

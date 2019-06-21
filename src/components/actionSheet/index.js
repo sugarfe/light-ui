@@ -3,14 +3,14 @@ class ActionSheet {
 	static isMaskClose = true
 	static dataText = 'text'
 	static dataValue = 'value'
-	static cancelTxt = '取消'
+	static cancelText = '取消'
 	constructor(option = {}) {
 		this.open(option)
 	}
 	open({
 		data = [],
 		title,
-		cancelTxt = ActionSheet.cancelTxt,
+		cancelText = ActionSheet.cancelText,
 		dataText = ActionSheet.dataText,
 		dataValue = ActionSheet.dataValue,
 		isMaskClose = ActionSheet.isMaskClose,
@@ -26,7 +26,7 @@ class ActionSheet {
 			title,
 			dataText,
 			dataValue,
-			cancelTxt,
+			cancelText,
 			itemBoxClass,
 			scopedSlots,
 			onSelect: value => {
