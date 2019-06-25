@@ -1,6 +1,5 @@
 import Tab from './Tab.vue'
 import TabItem from './TabItem.vue'
-console.log(Tab.name)
 Tab.install = Vue => {
 	Vue.component(Tab.name, Tab)
 }

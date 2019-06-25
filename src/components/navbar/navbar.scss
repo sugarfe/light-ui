@@ -1,18 +1,18 @@
 .l-navbar {
 	height: 44px;
+	color: #fff;
 	nav {
 		height: 44px;
 		position: relative;
 	}
-	.l-navbar-title {
+	&-title {
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		color: $l-color-gray-dark;
 		font-size: 16px;
 	}
-	.l-navbar-icon {
+	&-icon {
 		@include display-flex;
 		@include align-items(center);
 		height: 100%;
@@ -20,8 +20,31 @@
 	}
 	[class^='icon-'],
 	[class*=' icon-'] {
+		color: #fff;
+	}
+	&-theme-default {
+		background: #fff;
+		color: $l-color-gray-dark;
+		[class^='icon-'],
+		[class*=' icon-'] {
+			color: $l-color-gray-dark;
+		}
+	}
+	&-theme-primary {
+		background: $l-theme-primary;
+	}
+	&-theme-success {
+		background: $l-theme-success;
+	}
+	&-theme-warning {
+		background: $l-theme-warning;
+	}
+	&-theme-alert {
+		background: $l-theme-alert;
+	}
+	[class^='icon-'],
+	[class*=' icon-'] {
 		font-size: 22px;
 		position: relative;
-		color: $l-color-gray-dark;
 	}
 }

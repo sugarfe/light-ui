@@ -1,5 +1,8 @@
 <template>
-  <div class="l-navbar flex-box-column flex-justify-end">
+  <div
+    class="l-navbar flex-box-column flex-justify-end"
+    :class="`l-navbar-theme-${this.theme}`"
+  >
     <nav class="flex-box flex-align-center ">
       <slot name="left">
         <div
@@ -19,12 +22,17 @@
   </div>
 </template>
 <script>
-import { debuglog } from 'util'
 export default {
   name: 'navbar',
   props: {
     backHandle: {
       type: Function
+    },
+    theme: {
+      type: String,
+      default() {
+        return 'default'
+      }
     }
   },
   methods: {

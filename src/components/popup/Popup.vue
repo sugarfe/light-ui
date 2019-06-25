@@ -28,7 +28,6 @@
   </div>
 </template>
 <script>
-import { debuglog } from 'util'
 export default {
   name: 'l-popup',
   data() {

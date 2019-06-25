@@ -38,7 +38,6 @@
 </template>
 <script>
 import data from './picker.json'
-import { debuglog } from 'util'
 export default {
   data() {
     return {

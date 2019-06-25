@@ -4,7 +4,6 @@
   </div>
 </template>
 <script>
-import { setTimeout } from 'timers'
 export default {
   name: 'grid',
   props: {
@@ -16,7 +15,7 @@ export default {
     },
     spacing: {
       type: String,
-      default: 0
+      default: '0px'
     },
     vertical: {
       type: String,
@@ -32,7 +31,10 @@ export default {
   computed: {
     itemStyle() {
       return {
-        width: `calc((100% - ${this.spacing} * ${this.col - 1}) / ${this.col})` //`${Math.floor(100 / this.col)}%`//
+        width:
+          this.col === 1
+            ? '100%'
+            : `calc((100% - ${this.spacing} * ${this.col - 1}) / ${this.col})` //`${Math.floor(100 / this.col)}%`//
       }
     }
   },

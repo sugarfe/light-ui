@@ -41,9 +41,7 @@ export default {
             }
           }
         },
-        onChange: val => {
-          console.log(val)
-        }
+        onChange: val => {}
       })
     }
   }
