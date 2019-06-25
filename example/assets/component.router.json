@@ -1,38 +1,26 @@
 [
-    {
-        "name": "Form",
-        "items": [
-            "button",
-            "radio",
-            "checkbox",
-            "switch",
-            "input",
-            "calendar"
-        ]
-    },
-    {
-        "name": "Popup",
-        "items": [
-            "popup",
-            "toast",
-            "dialog",
-            "actionSheet",
-            "picker",
-            "datePicker",
-            "loading"
-        ]
-    },
-    {
-        "name": "Layout",
-        "items": [
-            "tab",
-            "grid"
-        ]
-    },
-    {
-        "name": "Scroll",
-        "items": [
-            "scroll"
-        ]
-    }
+	{
+		"name": "Form",
+		"items": ["button", "radio", "checkbox", "switch", "input", "calendar"]
+	},
+	{
+		"name": "Popup",
+		"items": [
+			"popup",
+			"toast",
+			"dialog",
+			"actionSheet",
+			"picker",
+			"datePicker",
+			"loading"
+		]
+	},
+	{
+		"name": "Layout",
+		"items": ["tab", "grid", "navbar"]
+	},
+	{
+		"name": "Scroll",
+		"items": ["scroll"]
+	}
 ]

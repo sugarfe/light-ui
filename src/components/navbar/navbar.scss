@@ -1,12 +1,16 @@
 .l-navbar {
 	height: 44px;
-	position: relative;
+	nav {
+		height: 44px;
+		position: relative;
+	}
 	.l-navbar-title {
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		color: $l-color-gray-dark;
+		font-size: 16px;
 	}
 	.l-navbar-icon {
 		@include display-flex;

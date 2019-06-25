@@ -4,10 +4,7 @@
     <example-group contentClass="group-content">
       default
       <template v-slot:content>
-        <l-tab
-          v-model="currentIndex"
-          currentBarClass="currentBarClass"
-        >
+        <l-tab v-model="currentIndex">
           <l-tab-item
             v-for="(item, index) in 7"
             :key="index"
@@ -23,7 +20,6 @@
         <l-tab
           :animation="animation"
           v-model="currentIndex2"
-          currentBarClass="currentBarClass"
         >
           <l-tab-item
             v-for="(item, index) in 7"
@@ -47,7 +43,6 @@
           :isDelay="true"
           :animation="animation"
           v-model="currentIndex3"
-          currentBarClass="currentBarClass"
         >
           <l-tab-item
             v-for="(item, index) in 4"
@@ -64,7 +59,6 @@
         <l-tab
           :scroll="true"
           v-model="currentIndex4"
-          currentBarClass="currentBarClass"
         >
           <l-tab-item
             class="l-tab-item1"
@@ -102,13 +96,4 @@ export default {
 </script>
 
 <style lang="scss">
-.currentBarClass {
-  span {
-    width: 50%;
-  }
-}
-.l-tab-item1 {
-  //   padding: 0 20px;
-  //   flex-wrap: nowrap;
-}
 </style>

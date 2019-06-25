@@ -1,19 +1,21 @@
 <template>
-  <div class="l-navbar flex-box flex-align-center">
-    <slot name="left">
-      <div
-        class="l-navbar-icon"
-        @click="back"
-      >
-        <i class="icon-arrow-back"></i>
+  <div class="l-navbar flex-box-column flex-justify-end">
+    <nav class="flex-box flex-align-center ">
+      <slot name="left">
+        <div
+          class="l-navbar-icon"
+          @click="back"
+        >
+          <i class="icon-arrow-back"></i>
+        </div>
+      </slot>
+      <div class="flex-1">
+        <span class="l-navbar-title">
+          <slot></slot>
+        </span>
       </div>
-    </slot>
-    <div class="flex-1">
-      <span class="l-navbar-title">
-        <slot></slot>
-      </span>
-    </div>
-    <slot name="right"></slot>
+      <slot name="right"></slot>
+    </nav>
   </div>
 </template>
 <script>
