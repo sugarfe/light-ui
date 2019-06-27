@@ -8,7 +8,7 @@
 		"items": [
 			"Popup",
 			"Toast",
-			"Ddialog",
+			"Dialog",
 			"AactionSheet",
 			"Picker",
 			"DatePicker",
