@@ -1,26 +1,26 @@
 [
 	{
 		"name": "Form",
-		"items": ["button", "radio", "checkbox", "switch", "input", "calendar"]
+		"items": ["Button", "Radio", "Checkbox", "Switch", "Input", "Calendar"]
 	},
 	{
 		"name": "Popup",
 		"items": [
-			"popup",
-			"toast",
-			"dialog",
-			"actionSheet",
-			"picker",
-			"datePicker",
-			"loading"
+			"Popup",
+			"Toast",
+			"Ddialog",
+			"AactionSheet",
+			"Picker",
+			"DatePicker",
+			"Loading"
 		]
 	},
 	{
 		"name": "Layout",
-		"items": ["tab", "grid", "navbar"]
+		"items": ["Tab", "Grid", "Flex", "Navbar"]
 	},
 	{
 		"name": "Scroll",
-		"items": ["scroll"]
+		"items": ["Scroll"]
 	}
 ]

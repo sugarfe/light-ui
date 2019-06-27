@@ -20,6 +20,8 @@ import ActionSheet from './actionSheet/index.js'
 import Loading from './loading/index.js'
 import Scroll from './scroll/Scroll.vue'
 import DatePicker from './datePicker/index.js'
+import Flex from './flex/Flex.vue'
+import FlexItem from './flexItem/FlexItem.vue'
 const components = [
 	Button,
 	Radio,
@@ -35,7 +37,9 @@ const components = [
 	TabItem,
 	Input,
 	Calendar,
-	Scroll
+	Scroll,
+	Flex,
+	FlexItem
 ].map(component => {
 	return {
 		...component,
