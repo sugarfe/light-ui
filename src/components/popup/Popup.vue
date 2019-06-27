@@ -6,7 +6,7 @@
     <transition name="l-mask">
       <div
         class="l-popup-mask"
-        v-if="isPageRead && displayMask"
+        v-if="isPageRead && isMask"
         @click.self="maskClickHanlde"
       ></div>
     </transition>
@@ -28,6 +28,7 @@
   </div>
 </template>
 <script>
+import { setTimeout } from 'timers'
 export default {
   name: 'l-popup',
   data() {
@@ -68,9 +69,6 @@ export default {
     }
   },
   computed: {
-    displayMask() {
-      return this.isMask
-    },
     isPageRead() {
       return this.state > -1
     },
