@@ -1,4 +1,3 @@
-const path = require('path')
 const webpackBaseConfig = require('./base.config.js')
 const merge = require('webpack-merge')
 const webpack = require('webpack')
@@ -26,18 +25,10 @@ module.exports = merge(webpackBaseConfig, {
 	devtool: 'source-map',
 	mode: 'development',
 	devServer: {
-		//启用gzip
 		compress: true,
 		host: '0.0.0.0',
 		stats: 'errors-only',
 		inline: true,
 		hot: true
-		// proxy: {
-		//     '/smart-recycle-api/*': {
-		//         target: 'https://smart-recycle.biminds.cn/',
-		//         secure: false,
-		//         changeOrigin: true
-		//     }
-		// }
 	}
 })

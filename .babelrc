@@ -12,10 +12,12 @@
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-proposal-class-properties",
     [
-      "import",
+      "component",
       {
         "libraryName": "aaa",
-        "libraryDirectory": "lib"
+        "libDir": "lib",
+        "camel2Dash": false,
+        "style": true
       }
     ],
     ["transform-vue-jsx"]
@@ -25,7 +27,8 @@
       "@babel/preset-env",
       {
         "modules": false,
-        "useBuiltIns": "usage"
+        "useBuiltIns": "usage",
+        "corejs": 2
       }
     ]
   ]

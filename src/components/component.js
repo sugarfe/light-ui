@@ -40,12 +40,7 @@ const components = [
 	Scroll,
 	Flex,
 	FlexItem
-].map(component => {
-	return {
-		...component,
-		name: `l-${component.name}`
-	}
-})
+]
 export default [
 	...components,
 	Popup,

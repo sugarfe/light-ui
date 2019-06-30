@@ -9,7 +9,7 @@
 			"Popup",
 			"Toast",
 			"Dialog",
-			"AactionSheet",
+			"ActionSheet",
 			"Picker",
 			"DatePicker",
 			"Loading"
