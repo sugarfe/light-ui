@@ -24,9 +24,9 @@ export default {
       let loading = new this.$Loading({
         text: '嘿嘿嘿'
       })
-      setTimeout(() => {
-        loading.close()
-      }, 2000)
+      // setTimeout(() => {
+      //   loading.close()
+      // }, 2000)
     }
   }
 }

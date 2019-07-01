@@ -42,12 +42,7 @@ const components = [
 	Flex,
 	FlexItem,
 	Watermark
-].map(component => {
-	return {
-		...component,
-		name: `l-${component.name}`
-	}
-})
+]
 export default [
 	...components,
 	Popup,

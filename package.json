@@ -7,7 +7,9 @@
     "dev": "webpack-dev-server --port 9090 --host 0.0.0.0  --progress --config  ./build/webpack/develop.config.js ",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "build": "node build/build.js",
+    "build": "cross-env build=Library node build/build.js ",
+    "build:publish": "cross-env build=Library node build/build.js && npm publish",
+    "build:example": "cross-env build=Example node build/build.js",
     "format": "prettier --config ./.prettierrc --write ./src/components/**/*.vue ./src/components/**/*.js ./src/components/*.js ./example/pages/**/*.vue"
   },
   "keywords": [],
@@ -31,6 +33,7 @@
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "chalk": "^2.4.1",
     "core-js": "^2.6.5",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "eslint": "^5.15.1",
     "eslint-friendly-formatter": "^4.0.1",

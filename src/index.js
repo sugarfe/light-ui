@@ -31,7 +31,9 @@ export default {
 				})
 				Vue.prototype[`$${module.name}`] = module.component
 			} else {
-				Vue.component(module.name, module)
+				let { prefix = '' } = option
+				!!prefix && (prefix = `${prefix}-`)
+				Vue.component(`${prefix}${module.name}`, module)
 			}
 		})
 	}

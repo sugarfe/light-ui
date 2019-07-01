@@ -6,6 +6,7 @@ const webpack = require('webpack')
 const webpackPublishConfig = require('./webpack/publish.config.js')
 const merge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 //删除并创建library文件夹
 let assetsPath = path.join(__dirname, '../library')
@@ -13,7 +14,33 @@ rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
 
 class BuildStart {
-	constructor(webpackConfig) {
+	constructor(webpackConfig, type) {
+		this[`build${type}`](webpackConfig)
+	}
+	buildExample(webpackConfig) {
+		let config = merge(webpackConfig, {
+			entry: './example/example.index.js',
+			output: {
+				path: path.resolve(__dirname, '../dist'),
+				filename: '[name][hash].js'
+			},
+			plugins: [
+				new MiniCssExtractPlugin({
+					filename: '[name][hash].css'
+				}),
+				new HtmlWebpackPlugin({
+					filename: 'index.html',
+					template: 'template/index.html',
+					inject: true
+				})
+			]
+		})
+		let assetsPath = path.join(__dirname, '../dist')
+		rm('-rf', assetsPath)
+		mkdir('-p', assetsPath)
+		this.build(config)
+	}
+	buildLibrary(webpackConfig) {
 		['modules', 'all'].map(item => {
 			let config
 			switch (item) {
@@ -96,4 +123,4 @@ class BuildStart {
 	}
 }
 
-new BuildStart(webpackPublishConfig)
+new BuildStart(webpackPublishConfig, process.env.build)
