@@ -1,0 +1,30 @@
+.l-watermark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	.l-watermark-content {
+		opacity: 0.8;
+	}
+	.l-watermark-background {
+		opacity: 0.5;
+		color: #e4e4e4;
+		overflow: hidden;
+		transform: rotate(-10deg);
+		.l-watermark-text {
+			text-align: center;
+			font-size: 16px;
+			transform: rotate(-15deg);
+		}
+	}
+}
+.l-watermark-background,
+.l-watermark-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

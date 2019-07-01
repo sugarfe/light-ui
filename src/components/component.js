@@ -22,6 +22,7 @@ import Scroll from './scroll/Scroll.vue'
 import DatePicker from './datePicker/index.js'
 import Flex from './flex/Flex.vue'
 import FlexItem from './flexItem/FlexItem.vue'
+import Watermark from './watermark/Watermark.vue'
 const components = [
 	Button,
 	Radio,
@@ -39,7 +40,8 @@ const components = [
 	Calendar,
 	Scroll,
 	Flex,
-	FlexItem
+	FlexItem,
+	Watermark
 ].map(component => {
 	return {
 		...component,

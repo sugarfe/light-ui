@@ -9,7 +9,7 @@
 			"Popup",
 			"Toast",
 			"Dialog",
-			"AactionSheet",
+			"ActionSheet",
 			"Picker",
 			"DatePicker",
 			"Loading"
@@ -17,7 +17,7 @@
 	},
 	{
 		"name": "Layout",
-		"items": ["Tab", "Grid", "Flex", "Navbar"]
+		"items": ["Tab", "Grid", "Flex", "Navbar", "Watermark"]
 	},
 	{
 		"name": "Scroll",
