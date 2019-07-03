@@ -1,33 +1,33 @@
 <template>
-  <l-page-content>
-    <l-navbar slot="header">tab</l-navbar>
+  <PageContent>
+    <Navbar slot="header">tab</Navbar>
     <example-group contentClass="group-content">
       default
       <template v-slot:content>
-        <l-tab v-model="currentIndex">
-          <l-tab-item
+        <tab v-model="currentIndex">
+          <tab-item
             v-for="(item, index) in 7"
             :key="index"
           >{{
             index
-            }}</l-tab-item>
-        </l-tab>
+            }}</tab-item>
+        </tab>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       select animation
       <template v-slot:content>
-        <l-tab
+        <tab
           :animation="animation"
           v-model="currentIndex2"
         >
-          <l-tab-item
+          <tab-item
             v-for="(item, index) in 7"
             :key="index"
           >{{
             index
-            }}</l-tab-item>
-        </l-tab>
+            }}</tab-item>
+        </tab>
         <select v-model="animation">
           <option value="general">general</option>
           <option value="none">none</option>
@@ -38,37 +38,37 @@
     <example-group contentClass="group-content">
       prevent isDelay
       <template v-slot:content>
-        <l-tab
+        <tab
           @selectIndex="selectIndex"
           :isDelay="true"
           :animation="animation"
           v-model="currentIndex3"
         >
-          <l-tab-item
+          <tab-item
             v-for="(item, index) in 4"
             :key="index"
           >{{
             index
-            }}</l-tab-item>
-        </l-tab>
+            }}</tab-item>
+        </tab>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       scroll
       <template v-slot:content>
-        <l-tab
+        <tab
           :scroll="true"
           v-model="currentIndex4"
         >
-          <l-tab-item
-            class="l-tab-item1"
+          <tab-item
+            class="tab-item1"
             v-for="(item, index) in 10"
             :key="index"
-          >{{ index }}</l-tab-item>
-        </l-tab>
+          >{{ index }}</tab-item>
+        </tab>
       </template>
     </example-group>
-  </l-page-content>
+    </PageContent>
 </template>
 
 <script>

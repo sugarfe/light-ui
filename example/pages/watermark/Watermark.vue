@@ -1,7 +1,7 @@
 <template>
-  <l-page-content contentClass="watermark-page">
-    <l-navbar slot="header">Watemark</l-navbar>
-    <l-watermark
+  <PageContent contentClass="Watermark-page">
+    <Navbar slot="header">Watemark</Navbar>
+    <Watermark
       :text="['老王','wang']"
       :row="5"
     >
@@ -15,8 +15,8 @@
           <div>老王</div>
         </div>
       </div>
-    </l-watermark>
-  </l-page-content>
+    </Watermark>
+  </PageContent>
 </template>
 <script>
 export default {
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.watermark-page {
+.Watermark-page {
   position: relative;
   .list {
     height: 100%;

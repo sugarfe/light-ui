@@ -1,33 +1,33 @@
 <template>
-  <l-page-content class="example-button-page">
-    <l-navbar slot="header">Navbar</l-navbar>
+  <PageContent class="example-button-page">
+    <Navbar slot="header">Navbar</Navbar>
     <example-group contentClass="group-content">
       theme
       <template v-slot:content>
-        <l-grid
+        <Grid
           :col="1"
           :square="false"
           vertical="2px"
         >
-          <l-grid-item>
-            <l-navbar>default</l-navbar>
-          </l-grid-item>
-          <l-grid-item>
-            <l-navbar theme="primary">primary</l-navbar>
-          </l-grid-item>
-          <l-grid-item>
-            <l-navbar theme="success">success</l-navbar>
-          </l-grid-item>
-          <l-grid-item>
-            <l-navbar theme="warning">warning</l-navbar>
-          </l-grid-item>
-          <l-grid-item>
-            <l-navbar theme="alert">alert</l-navbar>
-          </l-grid-item>
-        </l-grid>
+          <GridItem>
+            <Navbar>default</Navbar>
+          </GridItem>
+          <GridItem>
+            <Navbar theme="primary">primary</Navbar>
+          </GridItem>
+          <GridItem>
+            <Navbar theme="success">success</Navbar>
+          </GridItem>
+          <GridItem>
+            <Navbar theme="warning">warning</Navbar>
+          </GridItem>
+          <GridItem>
+            <Navbar theme="alert">alert</Navbar>
+          </GridItem>
+        </grid>
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {
@@ -42,12 +42,12 @@ export default {
 }
 </script>
 <style lang="scss">
-.navbar-theme-1 {
+.Navbar-theme-1 {
   background: #ffb403;
   .icon-arrow-back {
     color: #fff;
   }
-  .l-navbar-title {
+  .Navbar-title {
     color: #fff;
   }
 }

@@ -11,8 +11,7 @@
 <script>
 import { mixinProps } from '@/components/mixin.js'
 export default {
-  name: 'button',
-  mark: 'button',
+  name: 'Button',
   mixins: [mixinProps],
   props: {
     block: {
@@ -48,8 +47,8 @@ export default {
       value
         ? styleClassArray.push(mark)
         : (styleClassArray = styleClassArray.filter(item => {
-          return item !== mark
-        }))
+            return item !== mark
+          }))
     }
   },
   watch: {

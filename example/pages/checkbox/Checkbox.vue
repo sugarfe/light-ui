@@ -1,82 +1,82 @@
 <template>
-  <l-page-content>
-    <l-navbar slot="header">Checkbox</l-navbar>
+  <PageContent>
+    <Navbar slot="header">Checkbox</Navbar>
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
-        <l-checkbox-group v-model="value1">
-          <l-checkbox
+        <CheckboxGroup v-model="value1">
+          <Checkbox
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-checkbox>
-        </l-checkbox-group>
+          >{{ item.text }}</Checkbox>
+        </CheckboxGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       right
       <template v-slot:content>
-        <l-checkbox-group
+        <CheckboxGroup
           v-model="value2"
           right
         >
-          <l-checkbox
+          <Checkbox
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-checkbox>
-        </l-checkbox-group>
+          >{{ item.text }}</Checkbox>
+        </CheckboxGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       horizontal
       <template v-slot:content>
-        <l-checkbox-group
+        <CheckboxGroup
           v-model="value3"
           horizontal
         >
-          <l-checkbox
+          <Checkbox
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-checkbox>
-        </l-checkbox-group>
+          >{{ item.text }}</Checkbox>
+        </CheckboxGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       horizontal + right
       <template v-slot:content>
-        <l-checkbox-group
+        <CheckboxGroup
           v-model="value4"
           horizontal
           right
         >
-          <l-checkbox
+          <Checkbox
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-checkbox>
-        </l-checkbox-group>
+          >{{ item.text }}</Checkbox>
+        </CheckboxGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       horizontal + disabled
       <template v-slot:content>
-        <l-checkbox-group
+        <CheckboxGroup
           v-model="value5"
           horizontal
           right
         >
-          <l-checkbox
+          <Checkbox
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
             :disabled="index === 0"
-          >{{ item.text }}</l-checkbox>
-        </l-checkbox-group>
+          >{{ item.text }}</Checkbox>
+        </CheckboxGroup>
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {

@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'flexItem',
+  name: 'FlexItem',
   props: {
     order: {
       type: [Number, String],

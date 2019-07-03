@@ -1,19 +1,19 @@
 <template>
-  <l-page-content>
-    <l-navbar slot="header">Flex</l-navbar>
+  <PageContent>
+    <Navbar slot="header">Flex</Navbar>
     <example-group contentClass="group-content">
       baic
       <template v-slot:content>
-        <l-flex
+        <flex
           style="height:200px"
           column
         >
-          <l-flexItem :flex="1">111</l-flexItem>
-          <l-flexItem :flex="1">222</l-flexItem>
-        </l-flex>
+          <flexItem :flex="1">111</flexItem>
+          <flexItem :flex="1">222</flexItem>
+        </flex>
       </template>
     </example-group>
-  </l-page-content>
+    </PageContent>
 </template>
 <script>
 export default {

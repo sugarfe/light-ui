@@ -24,8 +24,7 @@ Vue.use(RUNUIX, {
 	dependence: {
 		store,
 		router
-	},
-	prefix: 'l'
+	}
 })
 
 new Vue({

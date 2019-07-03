@@ -1,28 +1,28 @@
 <template>
-  <l-page-content class="example-button-page">
-    <l-navbar slot="header">Input</l-navbar>
+  <PageContent class="example-button-page">
+    <Navbar slot="header">Input</Navbar>
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
-        <l-input></l-input>
+        <Input />
       </template>
     </example-group>
     <example-group contentClass="group-content">
       textarea
       <template v-slot:content>
-        <l-input
+        <Input
           v-model="value"
           textarea
-        ></l-input>
+        />
       </template>
     </example-group>
     <example-group contentClass="group-content">
       disabled
       <template v-slot:content>
-        <l-input disabled></l-input>
+        <Input disabled />
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {

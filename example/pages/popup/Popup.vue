@@ -1,34 +1,34 @@
 <template>
-  <l-page-content
+  <PageContent
     class="example-popup-page"
     contentClass="flex-box-column"
   >
-    <l-navbar slot="header">Popup</l-navbar>
+    <Navbar slot="header">Popup</Navbar>
     <div class="flex-1">
       <example-group contentClass="group-content">
         position
         <template v-slot:content>
-          <l-radio-group
+          <radio-group
             v-model="option.position"
             right
           >
-            <l-radio
+            <radio
               :value="item"
               v-for="(item, index) in optionData.position"
               :key="index"
-            >{{ item }}</l-radio>
-          </l-radio-group>
+            >{{ item }}</radio>
+          </radio-group>
         </template>
       </example-group>
     </div>
     <div class="action-panel">
-      <l-button
+      <Button
         block
         theme="primary"
         @click="open"
-      >打开</l-button>
+      >打开</Button>
     </div>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 import PopupModel from './PopupModel'

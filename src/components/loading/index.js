@@ -12,15 +12,19 @@ class Loading {
 			}
 		}
 		option.size = option.size || 'auto'
-		this.RunLoading = new this.$vue.prototype.$Popup(LoadingView, {
-			position: 'center', //动画方式
-			isMask: option.isMask === undefined ? true : option.isMask,
-			isMaskClose: false,
-			...option,
-			onCancel: val => {
-				option.cancel && option.cancel(val)
-			}
-		})
+		this.RunLoading = new this.$vue.prototype.$Popup(
+			LoadingView,
+			{
+				position: 'center', //动画方式
+				isMask: option.isMask === undefined ? true : option.isMask,
+				isMaskClose: false,
+				...option,
+				onCancel: val => {
+					option.cancel && option.cancel(val)
+				}
+			},
+			option.dom
+		)
 	}
 	close() {
 		this.RunLoading && this.RunLoading.close()

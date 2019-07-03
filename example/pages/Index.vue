@@ -1,5 +1,5 @@
 <template>
-  <l-page-content
+  <PageContent
     class="index-page"
     contentClass="index-page-component-list"
   >
@@ -14,23 +14,23 @@
     >
       {{group.name}}
       <template v-slot:content>
-        <l-grid
+        <Grid
           ref="grid"
           :col="3"
           :square="true"
           spacing="1px"
           vertical="1px"
         >
-          <l-grid-item
+          <GridItem
             v-for="(item,i) in group.items"
             :key="i"
             class="component-item flex-box-center"
             @click.native="navigateTo(item)"
-          >{{item}}</l-grid-item>
-        </l-grid>
+          >{{item}}</GridItem>
+        </grid>
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 import componentList from '@example/assets/component.router.json'

@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'grid-item',
+  name: 'GridItem',
   data() {
     return {
       height: 'auto',

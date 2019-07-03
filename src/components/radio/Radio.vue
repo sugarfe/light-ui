@@ -19,7 +19,7 @@
 <script>
 import { mixinProps } from '@/components/mixin.js'
 export default {
-  name: 'radio',
+  name: 'Radio',
   mixins: [mixinProps],
   props: {
     value: {

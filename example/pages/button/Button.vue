@@ -1,121 +1,121 @@
 <template>
-  <l-page-content class="example-button-page">
-    <l-navbar slot="header">Button</l-navbar>
+  <PageContent class="example-button-page">
+    <Navbar slot="header">Button</Navbar>
     <example-group contentClass="group-content">
       block + size
       <template v-slot:content>
-        <l-button
+        <Button
           block
           size="small"
-        >block small</l-button>
-        <l-button block>block default</l-button>
-        <l-button
+        >block small</Button>
+        <Button block>block default</Button>
+        <Button
           block
           size="large"
-        >block large</l-button>
+        >block large</Button>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       block + theme
       <template v-slot:content>
-        <l-button
+        <Button
           block
           theme="primary"
-        >primary</l-button>
-        <l-button
+        >primary</Button>
+        <Button
           block
           theme="success"
-        >success</l-button>
-        <l-button
+        >success</Button>
+        <Button
           block
           theme="warning"
-        >warning</l-button>
-        <l-button
+        >warning</Button>
+        <Button
           block
           theme="alert"
-        >alert</l-button>
+        >alert</Button>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       block + theme + light
       <template v-slot:content>
-        <l-button
+        <Button
           block
           light
-        >light default</l-button>
-        <l-button
+        >light default</Button>
+        <Button
           block
           light
           theme="primary"
-        >light primary</l-button>
-        <l-button
+        >light primary</Button>
+        <Button
           block
           light
           theme="success"
-        >light success</l-button>
-        <l-button
+        >light success</Button>
+        <Button
           block
           light
           theme="warning"
-        >light warning</l-button>
-        <l-button
+        >light warning</Button>
+        <Button
           block
           light
           theme="alert"
-        >light alert</l-button>
+        >light alert</Button>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       disabled
       <template v-slot:content>
-        <l-button
+        <Button
           block
           disabled
-        >disabled</l-button>
+        >disabled</Button>
       </template>
     </example-group>
 
     <example-group contentClass="group-content">
       size
       <template v-slot:content>
-        <l-button size="small">small</l-button>
-        <l-button>dufault</l-button>
-        <l-button size="large">large</l-button>
+        <Button size="small">small</Button>
+        <Button>dufault</Button>
+        <Button size="large">large</Button>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       theme
       <template v-slot:content>
-        <l-button>dufault</l-button>
-        <l-button theme="primary">primary</l-button>
-        <l-button theme="success">success</l-button>
-        <l-button theme="warning">warning</l-button>
-        <l-button theme="alert">alert</l-button>
+        <Button>dufault</Button>
+        <Button theme="primary">primary</Button>
+        <Button theme="success">success</Button>
+        <Button theme="warning">warning</Button>
+        <Button theme="alert">alert</Button>
       </template>
     </example-group>
     <example-group contentClass="group-content">
       theme + light
       <template v-slot:content>
-        <l-button light>dufault</l-button>
-        <l-button
+        <Button light>dufault</Button>
+        <Button
           theme="primary"
           light
-        >primary</l-button>
-        <l-button
+        >primary</Button>
+        <Button
           theme="success"
           light
-        >success</l-button>
-        <l-button
+        >success</Button>
+        <Button
           theme="warning"
           light
-        >warning</l-button>
-        <l-button
+        >warning</Button>
+        <Button
           theme="alert"
           light
-        >alert</l-button>
+        >alert</Button>
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {}

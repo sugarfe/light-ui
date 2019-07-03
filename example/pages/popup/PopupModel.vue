@@ -1,11 +1,10 @@
 <template>
-  <l-page-content class="popup-model flex-box flex-column flex-align-center">
-    <l-navbar>Content</l-navbar>
-    <l-button
+  <PageContent class="popup-model flex-box flex-column flex-align-center">
+    <Button
       theme="primary"
       @click="close"
-    >关闭</l-button>
-  </l-page-content>
+    >关闭</Button>
+  </PageContent>
 </template>
 <script>
 export default {

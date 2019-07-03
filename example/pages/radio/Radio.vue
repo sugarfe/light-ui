@@ -1,76 +1,76 @@
 <template>
-  <l-page-content>
-    <l-navbar slot="header">Radio</l-navbar>
+  <PageContent>
+    <Navbar slot="header">Radio</Navbar>
     <example-group contentClass="group-content">basic
       <template v-slot:content>
-        <l-radio-group v-model="value1">
-          <l-radio
+        <RadioGroup v-model="value1">
+          <Radio
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-radio>
-        </l-radio-group>
+          >{{ item.text }}</Radio>
+        </RadioGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">basic + right
       <template v-slot:content>
-        <l-radio-group
+        <RadioGroup
           v-model="value2"
           right
         >
-          <l-radio
+          <Radio
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-radio>
-        </l-radio-group>
+          >{{ item.text }}</Radio>
+        </RadioGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">horizontal
       <template v-slot:content>
-        <l-radio-group
+        <RadioGroup
           v-model="value3"
           horizontal
         >
-          <l-radio
+          <Radio
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-radio>
-        </l-radio-group>
+          >{{ item.text }}</Radio>
+        </RadioGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">horizontal + right
       <template v-slot:content>
-        <l-radio-group
+        <RadioGroup
           v-model="value4"
           horizontal
           right
         >
-          <l-radio
+          <Radio
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
-          >{{ item.text }}</l-radio>
-        </l-radio-group>
+          >{{ item.text }}</Radio>
+        </RadioGroup>
       </template>
     </example-group>
     <example-group contentClass="group-content">horizontal + disabled
       <template v-slot:content>
-        <l-radio-group
+        <RadioGroup
           v-model="value5"
           horizontal
         >
-          <l-radio
+          <Radio
             :value="item.value"
             v-for="(item, index) in data"
             :key="index"
             :disabled="index === 0"
-          >{{ item.text }}</l-radio>
-        </l-radio-group>
+          >{{ item.text }}</Radio>
+        </RadioGroup>
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {

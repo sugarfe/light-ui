@@ -1,17 +1,14 @@
 import ToastView from './toast.vue'
 
 class Toast {
-	static isMaskClose = false
-	static isMask = true
 	constructor(option = {}) {
 		this.open(option)
 	}
-	open({ time, text, isMaskClose = Toast.isMaskClose, isMask = Toast.isMask }) {
+	open({ time, text }) {
 		this.popup = new this.$vue.prototype.$Popup(ToastView, {
 			position: 'center',
 			text,
-			isMaskClose,
-			isMask,
+			isMask: false,
 			onMaskClose() {}
 		})
 		time > 0 &&
