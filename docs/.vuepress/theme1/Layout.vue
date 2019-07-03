@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/">home</router-link>
+    <router-link to="/api">home</router-link>
   </div>
 </template>
 <script>
@@ -8,7 +8,9 @@ export default {
   data() {
     return {}
   },
-  created() {},
+  created() {
+    console.log(this.$pagination,this.$site);
+  },
   methods: {}
 }
 </script>

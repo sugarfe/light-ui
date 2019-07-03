@@ -19,7 +19,16 @@ let sassLoader = [
 				path.resolve(__dirname, '../../src/style/variables/size.scss')
 			]
 		}
-	}
+  },
+  'stylus-loader',
+  {
+    loader: 'stylus-resources-loader',
+    options: {
+      resources: [
+        path.resolve(__dirname, '../../docs/.vuepress/theme/styles/color.styl')
+      ]
+    }
+  }
 ]
 
 module.exports = [
@@ -30,7 +39,23 @@ module.exports = [
 			loaders: {
 				scss: {
 					use: sassLoader
-				},
+        },
+        stylus:{
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader?minimize',
+            'postcss-loader',          
+            'stylus-loader',
+            {
+              loader: 'stylus-resources-loader',
+              options: {
+                resources: [
+                  path.resolve(__dirname, '../../docs/.vuepress/theme/styles/color.styl')
+                ]
+              }
+            }
+          ]
+        },
 				css: {
 					use: [
 						'css-loader',
@@ -69,4 +94,9 @@ module.exports = [
 			name: '[name].[hash:7].[ext]'
 		}
 	}
+  },
+  {
+    test:/\.styl$/,                             //add(stylus)
+    loader: sassLoader
+  }
 ]
