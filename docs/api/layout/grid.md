@@ -2,16 +2,16 @@
 
 网格布局
 
-共分为两个组件`<l-grid>`和`<l-grid-item>`
+共分为两个组件`<l-Grid>`和`<l-GridItem>`
 
 ## 示例
 
 ```html
 <l-grid ref="grid" :col="3" :square="true" spacing="1px" vertical="1px">
-	<l-grid-item>1</l-grid-item>
-	<l-grid-item>2</l-grid-item>
-	<l-grid-item>3</l-grid-item>
-	<l-grid-item>4</l-grid-item>
+	<l-GridItem>1</l-grid-item>
+	<l-GridItem>2</l-grid-item>
+	<l-GridItem>3</l-grid-item>
+	<l-GridItem>4</l-grid-item>
 </l-grid>
 ```
 

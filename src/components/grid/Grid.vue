@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'grid',
+  name: 'Grid',
   props: {
     col: {
       type: Number,

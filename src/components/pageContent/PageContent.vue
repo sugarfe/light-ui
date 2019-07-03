@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  name: 'page-content',
+  name: 'PageContent',
   props: {
     flex: {
       type: Boolean,

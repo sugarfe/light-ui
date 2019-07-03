@@ -1,5 +1,5 @@
 <template>
-  <l-scroll
+  <scroll
     ref="scroll"
     :data="list"
     @pullingDown="onPullingDown"
@@ -12,7 +12,7 @@
         {{ item }}
       </li>
     </ul>
-  </l-scroll>
+  </scroll>
 </template>
 <script>
 export default {

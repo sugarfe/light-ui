@@ -1,9 +1,9 @@
 <template>
-  <l-page-content
+  <PageContent
     class="example-dialog-page"
     contentClass="flex-box-column"
   >
-    <l-navbar slot="header">ActionSheet</l-navbar>
+    <Navbar slot="header">ActionSheet</Navbar>
     <div class="flex-1">
       <example-group contentClass="group-content">
         option
@@ -12,13 +12,13 @@
       </example-group>
     </div>
     <div class="action-panel">
-      <l-button
+      <Button
         block
         theme="primary"
         @click="open"
-      >打开</l-button>
+      >打开</Button>
     </div>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {

@@ -1,13 +1,13 @@
 <template>
-  <l-page-content>
-    <l-navbar slot="header">Calendar</l-navbar>
+  <PageContent>
+    <Navbar slot="header">Calendar</Navbar>
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
-        <l-calendar></l-calendar>
+        <calendar></calendar>
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {

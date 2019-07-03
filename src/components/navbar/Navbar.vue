@@ -23,7 +23,7 @@
 </template>
 <script>
 export default {
-  name: 'navbar',
+  name: 'Navbar',
   props: {
     backHandle: {
       type: Function

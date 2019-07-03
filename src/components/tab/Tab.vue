@@ -18,7 +18,7 @@
 <script>
 import BScroll from 'better-scroll'
 export default {
-  name: 'tab',
+  name: 'Tab',
   inheritAttrs: true,
   data() {
     return {

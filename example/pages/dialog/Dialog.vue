@@ -1,34 +1,34 @@
 <template>
-  <l-page-content
+  <PageContent
     class="example-dialog-page"
     contentClass="flex-box-column"
   >
-    <l-navbar slot="header">Dialog</l-navbar>
+    <Navbar slot="header">Dialog</Navbar>
     <div class="flex-1">
       <example-group contentClass="group-content">
         option
         <template v-slot:content>
-          <l-checkbox-group
+          <checkbox-group
             right
             v-model="values"
           >
-            <l-checkbox value="isMaskClose">isMaskClose</l-checkbox>
-            <l-checkbox value="confirm">confirm</l-checkbox>
-            <l-checkbox value="cancelText">cancelText</l-checkbox>
-            <l-checkbox value="okText">okText</l-checkbox>
-            <l-checkbox value="delayClose">delayClose</l-checkbox>
-          </l-checkbox-group>
+            <checkbox value="isMaskClose">isMaskClose</checkbox>
+            <checkbox value="confirm">confirm</checkbox>
+            <checkbox value="cancelText">cancelText</checkbox>
+            <checkbox value="okText">okText</checkbox>
+            <checkbox value="delayClose">delayClose</checkbox>
+          </checkbox-group>
         </template>
       </example-group>
     </div>
     <div class="action-panel">
-      <l-button
+      <Button
         block
         theme="primary"
         @click="open"
-      >打开</l-button>
+      >打开</Button>
     </div>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 let option = {

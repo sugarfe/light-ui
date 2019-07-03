@@ -37,7 +37,7 @@
 <script>
 import { mixinProps } from '@/components/mixin.js'
 export default {
-  name: 'input',
+  name: 'Input',
   mixins: [mixinProps],
   props: {
     value: {

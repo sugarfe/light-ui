@@ -1,18 +1,39 @@
 <template>
-  <div class="l-loading">
-    <img src="./bars.svg">
-  </div>
+  <svg
+    class="l-loading"
+    :class="{
+                [`l-loading-${size}`]: size,
+                [`l-loading-${theme}`]: theme,
+            }"
+    viewBox="25 25 50 50"
+  >
+    <circle
+      class="l-loading-path"
+      cx="50"
+      cy="50"
+      r="23"
+      fill="none"
+    />
+  </svg>
 </template>
+
 <script>
 export default {
-  data() {
-    return {}
-  },
+  name: 'loading',
   props: {
-    text: {
+    size: {
       type: String,
-      default: () => {
-        return '加载中'
+      default() {
+        return 'lg'
+      }
+    },
+    theme: {
+      type: String,
+      validator(value) {
+        return ['primary', 'secondary'].indexOf(value) > -1
+      },
+      default() {
+        return 'primary'
       }
     }
   }

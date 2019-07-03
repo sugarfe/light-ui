@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'tab-item',
+  name: 'TabItem',
   data() {
     return {
       id: '999', // 下标 唯一识别符

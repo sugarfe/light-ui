@@ -1,11 +1,50 @@
 .l-loading {
-	&-default img {
-		width: 80px;
+	width: 60px;
+	animation: rotate 2s linear infinite;
+}
+
+.l-loading-path {
+	stroke-dasharray: 1, 100;
+	stroke-dashoffset: 0;
+	stroke-linecap: round;
+	stroke: #d9d9d9;
+	stroke-width: 3;
+	animation: dash 1.5s ease-in-out infinite;
+}
+
+.l-loading-primary {
+	.loading-path {
+		stroke: #ffb403;
 	}
-	&-default img {
-		width: 80px;
+}
+
+.l-loading-secondary {
+	.loading-path {
+		stroke: #ff7043;
 	}
-	&-default img {
-		width: 80px;
+}
+
+.l-loading-sm {
+	width: 40px;
+}
+
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1, 150;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 90, 150;
+		stroke-dashoffset: -124;
 	}
 }

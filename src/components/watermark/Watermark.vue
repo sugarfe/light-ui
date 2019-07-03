@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: 'watermark',
+  name: 'Watermark',
   props: {
     text: {
       type: [String, Array],

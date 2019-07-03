@@ -1,16 +1,16 @@
 <template>
-  <l-page-content class="example-dialog-page">
-    <l-navbar>loading</l-navbar>
+  <PageContent class="example-dialog-page">
+    <Navbar>loading</Navbar>
     <example-group contentClass="group-content">
       default
       <template v-slot:content>
-        <l-button
+        <Button
           size="small"
           @click="click()"
-        >default</l-button>
+        >default</Button>
       </template>
     </example-group>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {
@@ -21,12 +21,10 @@ export default {
   mounted() {},
   methods: {
     click() {
-      let loading = new this.$Loading({
-        text: '嘿嘿嘿'
-      })
-      // setTimeout(() => {
-      //   loading.close()
-      // }, 2000)
+      let loading = new this.$Loading()
+      setTimeout(() => {
+        loading.close()
+      }, 2000)
     }
   }
 }

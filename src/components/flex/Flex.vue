@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'flex',
+  name: 'Flex',
   props: {
     row: {
       type: Boolean,

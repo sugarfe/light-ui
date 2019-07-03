@@ -1,7 +1,7 @@
-.example-button-page{
-    .group-content button{
-        &:not(:last-child){
-            margin-bottom:10px;
-        }
-    }
+.example-button-page {
+	.group-content button {
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
 }

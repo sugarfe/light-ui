@@ -1,9 +1,9 @@
 <template>
-  <l-page-content
+  <PageContent
     class="example-popup-page"
     contentClass="flex-box-column"
   >
-    <l-navbar slot="header">Popup</l-navbar>
+    <Navbar slot="header">Toast</Navbar>
     <div class="flex-1">
       <example-group contentClass="group-content">
         basic
@@ -11,13 +11,13 @@
       </example-group>
     </div>
     <div class="action-panel">
-      <l-button
+      <Button
         block
         theme="primary"
         @click="open"
-      >打开</l-button>
+      >打开</Button>
     </div>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {
@@ -30,7 +30,7 @@ export default {
   methods: {
     open(position) {
       new this.$Toast({
-        text: '你好',
+        text: '请填写相关内容',
         time: 2000
       })
     }

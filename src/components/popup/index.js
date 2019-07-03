@@ -1,11 +1,12 @@
 import PopupView from './Popup.vue'
 class Popup {
 	static instance = []
-	constructor(component = {}, option = {}) {
+	constructor(component = {}, option = {}, dom = document.body) {
 		Popup.instance.push(this)
 		this.id = `popup-${Date.now()}`
 		this.popupViewOptionScope = ['position', 'isMaskClose', 'isMask', 'onClose']
 		this.option = this.initOption(option)
+		this.dom = dom
 		this.init(component, this.option, option)
 	}
 	init(component, option, { render, scopedSlots }) {
@@ -27,7 +28,7 @@ class Popup {
 			}
 		})
 		this.componentInstance = this.instance.$children[0]
-		document.body.appendChild(this.instance.$el)
+		this.dom.appendChild(this.instance.$el)
 	}
 	initOption(option) {
 		let popupOption = {},

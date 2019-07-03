@@ -1,32 +1,32 @@
 <template>
-  <l-page-content
+  <PageContent
     class="example-button-page"
     contentClass="content flex-box-column"
   >
-    <l-navbar slot="header">DatePicker</l-navbar>
+    <Navbar slot="header">DatePicker</Navbar>
     <div class="flex-1">
       <example-group contentClass="group-content">
         scope
         <template v-slot:content>
-          <l-radio-group
+          <radio-group
             v-model="scope"
             right
           >
-            <l-radio :value="1">年</l-radio>
-            <l-radio :value="2">月</l-radio>
-            <l-radio :value="3">日</l-radio>
-          </l-radio-group>
+            <radio :value="1">年</radio>
+            <radio :value="2">月</radio>
+            <radio :value="3">日</radio>
+          </radio-group>
         </template>
       </example-group>
     </div>
     <div class="action-panel">
-      <l-button
+      <Button
         block
         theme="primary"
         @click="open"
-      >打开</l-button>
+      >打开</Button>
     </div>
-  </l-page-content>
+  </PageContent>
 </template>
 <script>
 export default {
