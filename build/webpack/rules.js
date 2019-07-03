@@ -20,15 +20,15 @@ let sassLoader = [
 			]
 		}
   },
-  'stylus-loader',
-  {
-    loader: 'stylus-resources-loader',
-    options: {
-      resources: [
-        path.resolve(__dirname, '../../docs/.vuepress/theme/styles/color.styl')
-      ]
-    }
-  }
+  // 'stylus-loader',
+  // {
+  //   loader: 'stylus-resources-loader',
+  //   options: {
+  //     resources: [
+  //       path.resolve(__dirname, '../../docs/.vuepress/theme/styles/color.styl')
+  //     ]
+  //   }
+  // }
 ]
 
 module.exports = [
@@ -41,20 +41,7 @@ module.exports = [
 					use: sassLoader
         },
         stylus:{
-          use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader?minimize',
-            'postcss-loader',          
-            'stylus-loader',
-            {
-              loader: 'stylus-resources-loader',
-              options: {
-                resources: [
-                  path.resolve(__dirname, '../../docs/.vuepress/theme/styles/color.styl')
-                ]
-              }
-            }
-          ]
+          use: sassLoader
         },
 				css: {
 					use: [
@@ -93,7 +80,6 @@ module.exports = [
 			limit: 10000,
 			name: '[name].[hash:7].[ext]'
 		}
-	}
   },
   {
     test:/\.styl$/,                             //add(stylus)

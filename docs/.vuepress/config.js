@@ -5,6 +5,7 @@ module.exports = {
 	port: 9527,
 	base: '/light-ui/',
   theme:'index.js',
+  
 	themeConfig: {
 		nav: [
 			{ text: '组件', link: '/api/' },
@@ -12,7 +13,10 @@ module.exports = {
 				text: 'Github',
 				link: 'https://github.com/sugarfe/light-ui'
 			}
-		],
+    ],
+    "frontmatter": {
+      home:true
+    },
     // 为以下路由添加侧边栏
 		sidebar: {
 			'/api/': [

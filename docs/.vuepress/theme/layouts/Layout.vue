@@ -42,7 +42,7 @@
       <slot
         name="page-top"
         slot="top"
-      />
+      ></slot>
       <slot
         name="page-bottom"
         slot="bottom"
@@ -117,6 +117,7 @@ export default {
   },
 
   mounted () {
+    console.log(this.$page)
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
