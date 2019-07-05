@@ -37,7 +37,7 @@ export default {
         scopedSlots(h) {
           return {
             default: props => {
-              return <div>{props.item.label}</div>
+              return h('div', props.item.label)
             }
           }
         },

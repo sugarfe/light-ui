@@ -6,19 +6,19 @@
 
 基本
 
-```html
+```vue
 <l-input></l-input>
 ```
 
 多行文本域
 
-```html
+```vue
 <l-input textarea></l-input>
 ```
 
 ## Props
 
-| 参数     | 类型            | 默认值 | 可选值     | 说明           |
+| 名称     | 类型            | 默认值 | 可选值     | 说明           |
 | -------- | --------------- | ------ | ---------- | -------------- |
 | v-model  | [String,Number] |        |            | 双向绑定       |
 | disable  | Boolean         | false  | true/false | 是否不可用     |

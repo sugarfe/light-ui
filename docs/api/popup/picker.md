@@ -2,7 +2,7 @@
 
 在使用`use`方法导入组件库或单一组件时会把`Picker`类绑定到`Vue`原型链中，属性名为：`$Picker`
 
-采用构造函数的方式调用`new $Picker()`。需要一个参数`(option)`为配置对象。
+采用构造函数的方式调用`new $Picker()`。需要一个名称`(option)`为配置对象。
 
 ## 示例
 
@@ -11,7 +11,7 @@
 ### 单列
 
 ```javascript
-new $Picker(MyComponent, {
+new $Picker({
 	data: [
 		[
 			{
@@ -42,7 +42,7 @@ new $Picker(MyComponent, {
 ### 多列
 
 ```javascript
-new $Picker(MyComponent, {
+new $Picker({
 	data: [
 		[
 			{
@@ -90,16 +90,16 @@ new $Picker(MyComponent, {
 
 ## Option
 
-| 参数        | 类型    | 默认值  | 可选值     | 说明                                    |
+| 名称        | 类型    | 默认值  | 可选值     | 说明                                    |
 | ----------- | ------- | ------- | ---------- | --------------------------------------- |
 | data        | Array   | []      |            | 2 维数组                                |
 | value       | Array   | []      |            | 数组每一项代表一个列的选中值            |
-| dataValue   | String  | "value" |            | `data`参数的数组对象中`value`属性的名字 |
+| dataValue   | String  | "value" |            | `data`名称的数组对象中`value`属性的名字 |
 | cancelText  | String  | "取消"  |            | 取消按钮的名称                          |
 | isMaskClose | Boolean | true    | true/false | 点击遮罩是否关闭                        |
 
 ## Event
 
-| 收件名 | 描述     | 参数                                                                             |
+| 事件名 | 描述     | 名称                                                                             |
 | ------ | -------- | -------------------------------------------------------------------------------- |
 | onOk   | 确定事件 | `values`选中的值(数组), `text`选中的 text(数组), `selectedIndex`选中的索引(数组) |

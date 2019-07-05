@@ -37,9 +37,7 @@ export default {
   },
   methods: {
     back() {
-      typeof this.backHandle === 'function'
-        ? this.backHandle()
-        : this.$router.go(-1)
+      typeof this.backHandle === 'function' ? this.backHandle() : history.go(-1)
     }
   }
 }

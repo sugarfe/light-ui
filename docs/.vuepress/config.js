@@ -4,36 +4,35 @@ module.exports = {
 	dest: './dist',
 	port: 9527,
 	base: '/light-ui/',
-  theme:'index.js',
-  
+	theme: 'index.js',
+
 	themeConfig: {
 		nav: [
-			{ text: '组件', link: '/api/' },
+			{ text: '组件', link: '/api/introduce' },
 			{
 				text: 'Github',
 				link: 'https://github.com/sugarfe/light-ui'
 			}
-    ],
-    "frontmatter": {
-      home:true
-    },
-    // 为以下路由添加侧边栏
+		],
+		frontmatter: {
+			home: true
+		},
+		// 为以下路由添加侧边栏
 		sidebar: {
 			'/api/': [
+				'introduce',
 				{
-          title: '布局',
-          collapsable:false,
+					title: '布局',
 					children: ['layout/grid', 'layout/navbar']
 				},
 				{
-          title: '表单',
-          collapsable:false,
+					title: '表单',
 					children: [
 						'form/button',
 						'form/radio',
 						'form/checkbox',
 						'form/switch'
-					],
+					]
 				},
 				{
 					title: '弹出',
@@ -45,20 +44,18 @@ module.exports = {
 					]
 				},
 				{
-          title: '滚动',
-          collapsable:false,
+					title: '滚动',
 					children: []
 				}
 			]
 		}
-  },
-  header: {
-    background: {
-      // url: '/assets/img/bg.jpg',
-      useGeo: true,
-    },
-    showTitle: false,
-  },
+	},
+	header: {
+		background: {
+			useGeo: true
+		},
+		showTitle: false
+	},
 	markdown: {
 		anchor: {
 			permalink: true
