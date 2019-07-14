@@ -76,6 +76,12 @@
         </CheckboxGroup>
       </template>
     </example-group>
+    <example-group contentClass="group-content">
+      single
+      <template v-slot:content>
+        <Checkbox v-model="value6">single</Checkbox>
+      </template>
+    </example-group>
   </PageContent>
 </template>
 <script>
@@ -88,6 +94,7 @@ export default {
       value3: [1],
       value4: [1],
       value5: [1],
+      value6: '001',
       data: [
         {
           text: 'JavaScript',
