@@ -13,8 +13,9 @@ const jsCallComponent = [
 export default {
 	install: (Vue, option = {}) => {
 		components.map(module => {
-			if (!!module.mark && !!option[module.mark]) {
-				let obj = option[module.mark]
+			let name = module.name.toLowerCase()
+			if (!!name && !!option[name]) {
+				let obj = option[name]
 				for (let o in obj) {
 					module.props[o].default = () => {
 						return obj[o]
