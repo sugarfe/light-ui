@@ -1,29 +1,33 @@
 import components from './components/component.js'
 import './style/index.scss'
 const jsCallComponent = [
-	'Popup',
-	'Toast',
-	'Dialog',
-	'Picker',
-	'ActionSheet',
-	'Loading',
-	'DatePicker'
+	'popup',
+	'toast',
+	'dialog',
+	'picker',
+	'actionSheet',
+	'loading',
+	'datePicker'
 ]
 
 export default {
 	install: (Vue, option = {}) => {
 		components.map(module => {
-			let name = module.name.toLowerCase()
+			let name = module.name.replace(/^\S/, function(s) {
+				return s.toLowerCase()
+			})
 			if (!!name && !!option[name]) {
 				let obj = option[name]
 				for (let o in obj) {
-					module.props[o].default = () => {
-						return obj[o]
+					if (module.props) {
+						module.props[o].default = () => {
+							return obj[o]
+						}
 					}
 				}
 			}
-			if (jsCallComponent.includes(module.name)) {
-				let componentOption = option[module.name.toLowerCase()] || {}
+			if (jsCallComponent.includes(name)) {
+				let componentOption = option[name] || {}
 				module.install(Vue, {
 					...componentOption,
 					dependence: {
