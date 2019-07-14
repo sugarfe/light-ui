@@ -19,16 +19,7 @@ let sassLoader = [
 				path.resolve(__dirname, '../../src/style/variables/size.scss')
 			]
 		}
-  },
-  // 'stylus-loader',
-  // {
-  //   loader: 'stylus-resources-loader',
-  //   options: {
-  //     resources: [
-  //       path.resolve(__dirname, '../../docs/.vuepress/theme/styles/color.styl')
-  //     ]
-  //   }
-  // }
+	}
 ]
 
 module.exports = [
@@ -39,10 +30,10 @@ module.exports = [
 			loaders: {
 				scss: {
 					use: sassLoader
-        },
-        stylus:{
-          use: sassLoader
-        },
+				},
+				stylus: {
+					use: sassLoader
+				},
 				css: {
 					use: [
 						'css-loader',
@@ -80,9 +71,5 @@ module.exports = [
 			limit: 10000,
 			name: '[name].[hash:7].[ext]'
 		}
-  },
-  {
-    test:/\.styl$/,                             //add(stylus)
-    loader: sassLoader
-  }
+	}
 ]

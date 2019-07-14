@@ -1,10 +1,8 @@
 <template>
   <svg
     class="l-loading"
-    :class="{
-                [`l-loading-${size}`]: size,
-                [`l-loading-${theme}`]: theme,
-            }"
+    :class="dynamicClass"
+    :style="dynamicStyle"
     viewBox="25 25 50 50"
   >
     <circle
@@ -30,13 +28,26 @@ export default {
     theme: {
       type: String,
       validator(value) {
-        return ['primary', 'secondary'].indexOf(value) > -1
+        return ['primary', 'secondary'].includes(value)
       },
       default() {
         return 'primary'
       }
     }
-  }
+  },
+  computed: {
+    dynamicClass() {
+      let styleClassArray = [];
+      this.theme && styleClassArray.push(`l-loading-${this.theme}`);
+      ['lg', 'sm'].includes(this.size) && styleClassArray.push(`l-loading-${this.size}`);
+      return styleClassArray
+    },
+    dynamicStyle() {
+      let styleArray = {};
+      !['lg', 'sm'].includes(this.size) && (styleArray.width = this.size);
+      return styleArray
+    }
+  },
 }
 </script>
 <style lang="scss">

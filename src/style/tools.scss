@@ -64,13 +64,13 @@
 
 .flex-box-column {
 	@include display-flex();
-	@extend .flex-column;
+	@include flex-direction(column);
 }
 
 .flex-box-center {
-	@extend .flex-box;
-	@extend .flex-align-center;
-	@extend .flex-justify-center;
+	@include display-flex();
+	@include align-items(center);
+	@include justify-content(center);
 }
 
 .flex-1 {
