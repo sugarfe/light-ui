@@ -129,4 +129,11 @@
 	&-light-theme-alert:active {
 		background-color: $l-theme-alert-active;
 	}
+	&-async {
+		opacity: 0.8;
+		.l-button-loading {
+			opacity: 1;
+			margin-left: 10px;
+		}
+	}
 }

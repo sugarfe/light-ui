@@ -71,6 +71,13 @@
         <Button
           block
           disabled
+          theme="primary"
+        >disabled</Button>
+        <Button
+          block
+          disabled
+          light
+          theme="primary"
         >disabled</Button>
       </template>
     </example-group>
@@ -115,10 +122,28 @@
         >alert</Button>
       </template>
     </example-group>
+    <example-group contentClass="group-content">
+      async
+      <template v-slot:content>
+        <Button
+          block
+          async
+          @click="clickHandle"
+        >async</Button>
+      </template>
+    </example-group>
   </PageContent>
 </template>
 <script>
-export default {}
+export default {
+  methods: {
+    clickHandle(done) {
+      setTimeout(() => {
+        done();
+      }, 3 * 1000)
+    }
+  }
+}
 </script>
 <style lang="scss">
 @import './button.scss';
