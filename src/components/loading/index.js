@@ -1,4 +1,4 @@
-import LoadingView from './loading.vue'
+import LoadingView from './Loading.vue'
 
 class Loading {
 	constructor(option = {}) {
