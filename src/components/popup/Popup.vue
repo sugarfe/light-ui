@@ -1,12 +1,13 @@
 <template>
   <div
+    v-show="isPageRead || state === 0"
     class="l-popup"
     :class="this.position == 'center' ? 'center' : ''"
   >
     <transition name="l-mask">
       <div
         class="l-popup-mask"
-        v-if="isPageRead && isMask"
+        v-show="isPageRead && isMask"
         @click.self="maskClickHanlde"
       ></div>
     </transition>
@@ -20,7 +21,7 @@
         class="l-popup-container"
         @click.self="maskClickHanlde"
         :style="dynamicStyle"
-        v-if="isPageRead"
+        v-show="isPageRead"
       >
         <slot></slot>
       </div>
@@ -28,12 +29,12 @@
   </div>
 </template>
 <script>
-import { setTimeout } from 'timers'
 export default {
   name: 'l-popup',
   data() {
     return {
-      state: -1
+      state: -1,
+      isClose: false
     }
   },
   props: {
@@ -41,12 +42,6 @@ export default {
       type: String,
       default() {
         return 'center'
-      }
-    },
-    size: {
-      type: String,
-      default() {
-        return 'full'
       }
     },
     isMaskClose: {
@@ -66,23 +61,23 @@ export default {
       default() {
         return 'center'
       }
+    },
+    autoShow: {
+      type: Boolean,
+      default() {
+        return true
+      }
     }
   },
   computed: {
     isPageRead() {
-      return this.state > -1
+      return this.state > 0
     },
     dynamicClass() {
       return ['l-popup-' + this.position]
     },
     dynamicStyle() {
-      let styleObject = [],
-        size
-      if (this.size && this.size !== 'full') {
-        size = this.size
-      } else if (this.size === 'full') {
-        size = '100%'
-      }
+      let styleObject = []
       switch (this.position) {
         case 'top':
         case 'bottom':
@@ -107,21 +102,29 @@ export default {
     }
   },
   mounted() {
-    this.state = 1
+    this.autoShow && (this.state = 1)
   },
   destroyed() {
     this.$el.remove()
   },
   methods: {
     popupContainerAfterLeave() {
-      this.$destroy()
+      this.isClose && this.$destroy()
+      this.state = -1
     },
     popupContainerAfterEnter() {},
     maskClickHanlde() {
       !!this.isMaskClose && this.close()
     },
+    show() {
+      this.state = 1
+    },
+    hide() {
+      this.state = 0
+    },
     close() {
-      this.state = -1
+      this.hide()
+      this.isClose = true
       this.$emit('onClose')
     },
     positionStyle() {

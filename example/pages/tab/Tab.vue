@@ -1,99 +1,64 @@
 <template>
   <PageContent>
-    <Navbar slot="header">tab</Navbar>
+    <Navbar slot="header">Tab</Navbar>
+
     <example-group contentClass="group-content">
       default
       <template v-slot:content>
-        <tab v-model="currentIndex">
-          <tab-item
-            v-for="(item, index) in 7"
-            :key="index"
-          >{{
-            index
-            }}</tab-item>
+        <tab
+          v-model="currentIndex"
+          :data="data"
+        >
         </tab>
       </template>
     </example-group>
     <example-group contentClass="group-content">
-      select animation
+      small
       <template v-slot:content>
         <tab
-          :animation="animation"
-          v-model="currentIndex2"
+          v-model="currentIndex"
+          small
+          :data="data"
         >
-          <tab-item
-            v-for="(item, index) in 7"
-            :key="index"
-          >{{
-            index
-            }}</tab-item>
-        </tab>
-        <select v-model="animation">
-          <option value="general">general</option>
-          <option value="none">none</option>
-          <option value="earthworm">earthworm</option>
-        </select>
-      </template>
-    </example-group>
-    <example-group contentClass="group-content">
-      prevent isDelay
-      <template v-slot:content>
-        <tab
-          @selectIndex="selectIndex"
-          :isDelay="true"
-          :animation="animation"
-          v-model="currentIndex3"
-        >
-          <tab-item
-            v-for="(item, index) in 4"
-            :key="index"
-          >{{
-            index
-            }}</tab-item>
         </tab>
       </template>
     </example-group>
     <example-group contentClass="group-content">
-      scroll
+      custom item
       <template v-slot:content>
         <tab
-          :scroll="true"
-          v-model="currentIndex4"
+          v-model="currentIndex"
+          :data="data"
+          :isScrollBar="false"
+          class="custom-tab"
+          small
         >
-          <tab-item
-            class="tab-item1"
-            v-for="(item, index) in 10"
-            :key="index"
-          >{{ index }}</tab-item>
+          <template v-slot:default="slotProps">
+            <div
+              class="custom-item l-tab-item"
+              :class="{'custom-item-active':slotProps.item.isActive}"
+            >
+              {{slotProps.item.text}}
+            </div>
+          </template>
         </tab>
       </template>
     </example-group>
-    </PageContent>
+  </PageContent>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      currentIndex: 6, // 选中下标
-      currentIndex2: 1, // 选中下标
-      currentIndex3: 0,
-      currentIndex4: 9,
-      animation: 'earthworm' //动画切换
+      data: ['热门', '娱乐', '体育'],
+      currentIndex: 0,
+      animation: 'earthworm'
     }
   },
-  methods: {
-    selectIndex(val) {
-      setTimeout(() => {
-        this.currentIndex3 = val
-      }, 500)
-    }
-  },
-  watch: {
-    currentIndex(value) {}
-  }
+  methods: {}
 }
 </script>
-
 <style lang="scss">
+@import './tab.scss';
 </style>

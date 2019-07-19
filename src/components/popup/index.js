@@ -4,7 +4,13 @@ class Popup {
 	constructor(component = {}, option = {}, dom = document.body) {
 		Popup.instance.push(this)
 		this.id = `popup-${Date.now()}`
-		this.popupViewOptionScope = ['position', 'isMaskClose', 'isMask', 'onClose']
+		this.popupViewOptionScope = [
+			'position',
+			'isMaskClose',
+			'isMask',
+			'onClose',
+			'autoShow'
+		]
 		this.option = this.initOption(option)
 		this.dom = dom
 		this.init(component, this.option, option)
@@ -50,6 +56,9 @@ class Popup {
 			})
 			this.close()
 		}
+		componentOption.on['popup-hide'] = () => {
+			this.hide()
+		}
 		function sorting(data) {
 			let props = {}
 			let on = {}
@@ -67,6 +76,12 @@ class Popup {
 			popupOption,
 			componentOption
 		}
+	}
+	show() {
+		this.componentInstance && this.componentInstance.show()
+	}
+	hide() {
+		this.componentInstance && this.componentInstance.hide()
 	}
 	close() {
 		this.componentInstance && this.componentInstance.close()

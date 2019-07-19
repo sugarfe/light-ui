@@ -1,5 +1,9 @@
 @import './checkbox.variables.scss';
 .l-checkbox-group {
+	.l-checkbox-label {
+		@include flex(1);
+		text-align: right;
+	}
 	&.flex-column {
 		padding: 0 5px;
 		.l-checkbox:not(:last-child)::before {
@@ -16,8 +20,8 @@
 			@include flex-order(2);
 		}
 		.l-checkbox-label {
-			@include flex(1);
 			margin: 0;
+			text-align: left;
 		}
 	}
 	&-row-right .l-checkbox {

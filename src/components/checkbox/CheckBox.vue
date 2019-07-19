@@ -17,7 +17,7 @@
 </template>
 <script>
 import { mixinProps } from '@/components/mixin.js'
-import { debuglog } from 'util';
+import { debuglog } from 'util'
 export default {
   name: 'Checkbox',
   mixins: [mixinProps],
@@ -37,7 +37,9 @@ export default {
   },
   computed: {
     checked() {
-      return !this.isSingle ? this.$parent.values.includes(this.value) : !!this.value
+      return !this.isSingle
+        ? this.$parent.values.includes(this.value)
+        : !!this.value
     },
     dynamicClass() {
       return {
@@ -47,18 +49,18 @@ export default {
     }
   },
   mounted() {
-    this.isSingle = this.$parent && !~this.$parent.$el.className.indexOf("l-checkbox-group")
+    this.isSingle =
+      this.$parent && !~this.$parent.$el.className.indexOf('l-checkbox-group')
     if (this.isSingle) {
-      this.singleValue = this.value;
-      this.$el.querySelector("input").checked = !!this.singleValue;
+      this.singleValue = this.value
+      this.$el.querySelector('input').checked = !!this.singleValue
     }
   },
   methods: {
     change(e) {
-      debugger
       if (this.isSingle) {
-        this.$emit("input", e.target.checked ? this.singleValue : undefined)
-        return;
+        this.$emit('input', e.target.checked ? this.singleValue : undefined)
+        return
       }
       try {
         this.$parent.change({

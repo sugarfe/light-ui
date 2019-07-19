@@ -1,45 +1,40 @@
 .l-tab {
-	@include display-flex;
 	position: relative;
-
-	.l-tab-item {
+	&-list {
+		@include display-flex;
+	}
+	&-item {
 		@include flex;
 		text-align: center;
-		line-height: 45px;
-
-		.active-item-calss {
+		height: 40px;
+		line-height: 40px;
+		font-size: 14px;
+	}
+	&-item-active {
+		color: $l-theme-primary;
+	}
+	&-size-small {
+		.l-tab-list > * {
+			height: 30px;
+			line-height: 30px;
 		}
 	}
-
-	.l-scroll-bar {
+	&-scroll-bar {
 		position: absolute;
-		left: 0;
-		bottom: 0;
-		right: 75%;
-		text-align: center;
-
-		// 动画
-		&-general {
-			// 一般动画
+		bottom: -2px;
+		height: 2px;
+		background: $l-theme-primary;
+		&-ani-general {
 			transition: all 0.3s ease;
 		}
-
-		&-earthworm-forward {
-			// 蚂蚁爬动画
+		&-ani-earthworm-forward {
 			transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1),
 				left 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.06s;
 		}
 
-		&-earthworm-back {
+		&-ani-earthworm-back {
 			transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.06s,
 				left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
 		}
 	}
-}
-
-.l-scroll-bar-chilren {
-	background-color: $l-theme-primary;
-	width: 100%;
-	height: 2px;
-	display: inline-block;
 }

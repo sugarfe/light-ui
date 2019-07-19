@@ -11,7 +11,7 @@ class Loading {
 				}
 			}
 		}
-		option.size = option.size || 'auto'
+		option.size = option.size || 'lg'
 		this.RunLoading = new this.$vue.prototype.$Popup(
 			LoadingView,
 			{

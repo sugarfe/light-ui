@@ -37,17 +37,19 @@ export default {
   },
   computed: {
     dynamicClass() {
-      let styleClassArray = [];
-      this.theme && styleClassArray.push(`l-loading-${this.theme}`);
-      ['lg', 'sm'].includes(this.size) && styleClassArray.push(`l-loading-${this.size}`);
+      let styleClassArray = []
+      this.theme && styleClassArray.push(`l-loading-${this.theme}`)
+      ;['lg', 'sm'].includes(this.size) &&
+        styleClassArray.push(`l-loading-${this.size}`)
       return styleClassArray
     },
     dynamicStyle() {
-      let styleArray = {};
-      !['lg', 'sm'].includes(this.size) && (styleArray.width = this.size);
+      let styleArray = {}
+      !['lg', 'sm'].includes(this.size) && (styleArray.width = this.size)
+      console.log(styleArray, this.size)
       return styleArray
     }
-  },
+  }
 }
 </script>
 <style lang="scss">
