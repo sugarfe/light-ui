@@ -23,6 +23,8 @@ import DatePicker from './datePicker/index.js'
 import Flex from './flex/Flex.vue'
 import FlexItem from './flexItem/FlexItem.vue'
 import Watermark from './watermark/Watermark.vue'
+import GroupList from './groupList/GroupList.vue'
+import GroupItem from './groupItem/GroupItem.vue'
 const components = [
 	Button,
 	Radio,
@@ -41,7 +43,9 @@ const components = [
 	Scroll,
 	Flex,
 	FlexItem,
-	Watermark
+	Watermark,
+	GroupList,
+	GroupItem
 ]
 export default [
 	...components,
