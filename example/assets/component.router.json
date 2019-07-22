@@ -21,6 +21,6 @@
 	},
 	{
 		"name": "Scroll",
-		"items": ["Scroll"]
+		"items": ["Scroll", "GroupList"]
 	}
 ]

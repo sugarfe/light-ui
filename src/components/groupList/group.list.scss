@@ -1,0 +1,37 @@
+.l-group-list {
+	position: relative;
+	height: 100%;
+	&-warp {
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	.group-list-bar {
+		padding: 16px 16px;
+		font-size: 14px;
+		color: #999;
+		background: #f7f7f7;
+	}
+	.group-list-item {
+		position: relative;
+		height: 50px;
+		line-height: 50px;
+		padding: 0 16px;
+		font-size: 14px;
+		color: #333;
+	}
+	&-nav {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		& > li {
+			padding: 3px;
+			color: $l-color-gray;
+		}
+	}
+	.l-nav-active {
+		color: $l-theme-primary;
+	}
+}
