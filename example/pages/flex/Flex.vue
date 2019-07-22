@@ -4,16 +4,13 @@
     <example-group contentClass="group-content">
       baic
       <template v-slot:content>
-        <flex
-          style="height:200px"
-          column
-        >
+        <flex>
           <flexItem :flex="1">111</flexItem>
-          <flexItem :flex="1">222</flexItem>
+          <flexItem>222</flexItem>
         </flex>
       </template>
     </example-group>
-    </PageContent>
+  </PageContent>
 </template>
 <script>
 export default {

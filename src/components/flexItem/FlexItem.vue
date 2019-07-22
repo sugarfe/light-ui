@@ -19,7 +19,7 @@ export default {
     flex: {
       type: [Number, String],
       default() {
-        return 0
+        return undefined
       }
     }
   },
@@ -31,14 +31,18 @@ export default {
       return {
         '-webkit-order': this.order,
         '-ms-flex-order': this.order,
-        order: this.order,
         '-webkit-box-ordinal-group': this.order,
-        '-webkit-box-flex': this.flex,
-        '-webkit-flex': this.flex,
-        '-moz-box-flex': this.flex,
-        '-moz-flex': this.flex,
-        '-ms-flex': this.flex,
-        flex: this.flex
+        order: this.order,
+        ...(this.flex
+          ? {
+              '-webkit-box-flex': this.flex,
+              '-webkit-flex': this.flex,
+              '-moz-box-flex': this.flex,
+              '-moz-flex': this.flex,
+              '-ms-flex': this.flex,
+              flex: this.flex
+            }
+          : {})
       }
     }
   },
