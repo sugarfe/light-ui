@@ -1,0 +1,28 @@
+.l-clip-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	.l-clip-contant {
+		overflow: hidden;
+		position: relative;
+		.clip-canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.l-clip-image {
+		}
+	}
+	.l-clip-tool {
+		height: 50px;
+		padding: 0 10px;
+		font-size: 15px;
+		&-ok {
+			color: $l-theme-primary;
+		}
+		&-cancel {
+			color: $l-theme-success;
+		}
+	}
+}
