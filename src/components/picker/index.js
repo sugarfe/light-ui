@@ -1,5 +1,4 @@
 import PickerTemplate from './Picker.vue'
-
 class Picker {
 	constructor(option = {}) {
 		option.data = option.data.map(item => {

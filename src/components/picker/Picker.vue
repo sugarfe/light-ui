@@ -69,7 +69,9 @@ export default {
     }
   },
   mounted() {
-    this.data.length && this.init()
+    setTimeout(() => {
+      this.data.length && this.init()
+    })
   },
   destroyed() {
     option.wheels.forEach(scrollInstance => {
@@ -84,15 +86,8 @@ export default {
           this.$refs['l-picker-scroll-wrapper'].children[index],
           {
             wheel: {
-              selectedIndex: option.selectedIndex[index]
-            },
-            pullUpLoad: {
-              threshold: 50
-            },
-            pullingUp: () => {
-              console.log(pullingUp)
-            },
-            probeType: 3
+              selectedIndex: 0
+            }
           }
         )
       })
