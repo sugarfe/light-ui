@@ -7,12 +7,15 @@
     >
       <slot></slot>
     </div>
-    <ul class="l-group-list-nav">
+    <ul
+      class="l-group-list-nav"
+      @touchstart="touchstart"
+      @touchmove.stop.prevent="touchmove"
+    >
       <li
         v-for="(item,i) in nav"
         :key="i"
         :class="{'l-nav-active':i === activeIndex}"
-        @click="scrollTo(i)"
       >
         {{item}}
       </li>
@@ -21,7 +24,7 @@
 </template>
 <script>
 export default {
-  name: "GroupList",
+  name: 'GroupList',
   props: {
     nav: {
       type: Array,
@@ -33,23 +36,43 @@ export default {
   data() {
     return {
       scrollTop: 0,
-      activeIndex: 0
+      activeIndex: 0,
+      navWarpTop: 0
     }
   },
-  computed: {
+  mounted() {
+    this.init()
   },
   methods: {
+    init() {
+      this.navWarpTop = document.querySelector('.l-group-list-nav').offsetTop
+    },
     onScroll(e) {
-      this.scrollTop = e.target.scrollTop;
+      this.scrollTop = e.target.scrollTop
     },
     changeActiveIndex(i) {
-      this.activeIndex = i || this.$children.findIndex((item) => {
-        return item.isScrollInner
-      })
+      this.activeIndex =
+        i !== undefined
+          ? i
+          : this.$children.findIndex(item => {
+              return item.isScrollInner
+            })
     },
     scrollTo(i) {
-      this.$refs['scrollWarp'].scrollTo(0, this.$children[i].scrollBegin);
-      this.changeActiveIndex(i);
+      if (this.$children[i]) {
+        this.$refs['scrollWarp'].scrollTo(0, this.$children[i].scrollBegin)
+        this.changeActiveIndex(i)
+      }
+    },
+    touchstart(e) {
+      this.touchmove(e)
+    },
+    touchmove(e) {
+      this.scrollTo(this.getNavIndex(e.touches[0].pageY))
+    },
+    getNavIndex(pageY) {
+      let i = Math.ceil((pageY - this.navWarpTop + 10) / 22)
+      return (i < 0 ? 0 : i > this.nav.length ? this.nav.length : i) - 1
     }
   }
 }
