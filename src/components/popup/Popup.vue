@@ -67,6 +67,12 @@ export default {
       default() {
         return true
       }
+    },
+    size: {
+      type: String,
+      default() {
+        return undefined
+      }
     }
   },
   computed: {
@@ -83,7 +89,7 @@ export default {
         case 'bottom':
           styleObject.push({
             width: '100%',
-            height: 'auto',
+            height: this.size || 'auto',
             left: 0,
             [this.position]: 0
           })
@@ -92,7 +98,7 @@ export default {
         case 'right':
           styleObject.push({
             height: '100%',
-            width: 'auto',
+            width: this.size || 'auto',
             top: 0,
             [this.position]: 0
           })

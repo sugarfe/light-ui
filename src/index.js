@@ -7,7 +7,8 @@ const jsCallComponent = [
 	'picker',
 	'actionSheet',
 	'loading',
-	'datePicker'
+	'datePicker',
+	'clipImage'
 ]
 
 export default {

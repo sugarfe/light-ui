@@ -25,6 +25,7 @@ import FlexItem from './flexItem/FlexItem.vue'
 import Watermark from './watermark/Watermark.vue'
 import GroupList from './groupList/GroupList.vue'
 import GroupItem from './groupItem/GroupItem.vue'
+import ClipImage from './clipImage/index.js'
 const components = [
 	Button,
 	Radio,
@@ -55,5 +56,6 @@ export default [
 	Picker,
 	ActionSheet,
 	Loading,
-	DatePicker
+	DatePicker,
+	ClipImage
 ]
