@@ -20,9 +20,7 @@ export default {
     style() {
       return {
         ...(this.$parent.itemStyle || {}),
-        height: this.height,
-        marginRight: this.index % this.col ? this.spacing : 0,
-        marginBottom: this.marginBottom
+        height: this.square ? `${this.itemWidht}px` : 'auto',
       }
     },
     square() {
@@ -39,18 +37,14 @@ export default {
     },
     row() {
       return this.$parent.row
+    },
+    itemWidht() {
+      return this.$parent.itemWidht
     }
   },
   methods: {
     init() {
       this.height = this.square ? `${this.$parent.itemWidht}px` : 'auto'
-      this.marginBottom =
-        this.vertical && Math.ceil(this.index / this.col) < this.row
-          ? this.vertical
-          : 0
-    },
-    setIndex(index) {
-      this.index = index
     }
   }
 }
