@@ -76,9 +76,3 @@
 .flex-1 {
 	@include flex();
 }
-
-.l-scroll-y {
-	overflow-x: hidden;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
-}

@@ -53,10 +53,14 @@ export default {
         ? this.$children[0].$el.offsetWidth
         : 0
       this.row = Math.ceil(this.$children.length / this.col)
-      this.$children.map((item, index) => {
-        item.setIndex && item.setIndex(index + 1)
-        item.init()
-      })
+      let children = [...this.$el.children]
+      children.forEach((item, index) => {
+        let i = (index + 1);
+        item.style.marginRight = i % this.col ? this.spacing : 0;
+        item.style.marginBottom = this.vertical && Math.ceil(i / this.col) < this.row
+          ? this.vertical
+          : 0
+      });
     },
     refresh() {
       this.$nextTick(() => {

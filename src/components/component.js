@@ -26,6 +26,7 @@ import Watermark from './watermark/Watermark.vue'
 import GroupList from './groupList/GroupList.vue'
 import GroupItem from './groupItem/GroupItem.vue'
 import ClipImage from './clipImage/index.js'
+import BrowseImage from './browseImage/BrowseImage.vue'
 const components = [
 	Button,
 	Radio,
@@ -46,7 +47,8 @@ const components = [
 	FlexItem,
 	Watermark,
 	GroupList,
-	GroupItem
+	GroupItem,
+	BrowseImage
 ]
 export default [
 	...components,

@@ -5,7 +5,7 @@
   >
     <slot name="header"></slot>
     <div
-      class="l-page-content flex-1 l-scroll-y"
+      class="l-page-content flex-1"
       :class="contentClass"
     >
       <slot></slot>
@@ -52,7 +52,7 @@ export default {
       }
     }
   },
-  created() {},
+  created() { },
   methods: {}
 }
 </script>

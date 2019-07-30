@@ -1,7 +1,15 @@
 [
 	{
 		"name": "Form",
-		"items": ["Button", "Radio", "Checkbox", "Switch", "Input", "Calendar"]
+		"items": [
+			"Button",
+			"Radio",
+			"Checkbox",
+			"Switch",
+			"Input",
+			"Calendar",
+			"BrowseImage"
+		]
 	},
 	{
 		"name": "Popup",
