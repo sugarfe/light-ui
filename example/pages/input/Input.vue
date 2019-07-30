@@ -4,7 +4,7 @@
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
-        <Input />
+        <Input v-model="value" />
       </template>
     </example-group>
     <example-group contentClass="group-content">
@@ -29,7 +29,7 @@ export default {
   components: {},
   data() {
     return {
-      value: ''
+      value: '213123'
     }
   },
   created() {},

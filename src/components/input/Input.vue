@@ -90,8 +90,12 @@ export default {
     }
   },
   watch: {
-    value(value) {
-      this.currentValue = value
+    value: {
+      immediate: true,
+      handler(value) {
+        this.currentValue = value
+        console.log('currentValue', this.currentValue)
+      }
     },
     currentValue(value) {
       this.$emit('input', value)
