@@ -17,11 +17,7 @@ export default {
     }
   },
   watch: {
-    'value'() {
-      console.log(this.value.map((item) => {
-        return item.name
-      }))
-    }
+    value() {}
   }
 }
 </script>

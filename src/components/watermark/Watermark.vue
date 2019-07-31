@@ -54,10 +54,7 @@ export default {
     this.init()
   },
   methods: {
-    init() {
-      //   this.height = this.$refs['background'].offsetHeight / this.row
-      //   console.log(this.$refs['background'].offsetHeight, this.height)
-    }
+    init() {}
   }
 }
 </script>

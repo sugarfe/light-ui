@@ -8,7 +8,7 @@
     class="l-browse-image"
   >
     <GridItem
-      v-for="(item,i) in data"
+      v-for="(item,i) in originalItmes"
       :key="i"
       class="l-browse-item"
     >
@@ -16,6 +16,12 @@
         :src="item"
         v-if="item"
       >
+      <div
+        class="l-browse-item-remove flex-box-center"
+        @click="removeItemByOriginal(index)"
+      >
+        <i class="icon-close"></i>
+      </div>
     </GridItem>
     <GridItem
       v-for="(item,index) in items"
@@ -45,9 +51,9 @@
   </grid>
 </template>
 <script>
-let reader;
-import Grid from "@/components/grid/Grid.vue"
-import GridItem from "@/components/gridItem/GridItem.vue"
+let reader
+import Grid from '@/components/grid/Grid.vue'
+import GridItem from '@/components/gridItem/GridItem.vue'
 export default {
   name: 'BrowseImage',
   props: {
@@ -66,7 +72,7 @@ export default {
     value: {
       type: Array,
       default() {
-        return [];
+        return []
       }
     }
   },
@@ -76,7 +82,8 @@ export default {
   },
   data() {
     return {
-      items: []
+      items: [],
+      originalItmes: []
     }
   },
   created() {
@@ -93,10 +100,10 @@ export default {
       }
     },
     change(e) {
-      let { target } = e;
+      let { target } = e
       let [files] = target.files
-      let name = files.name.split(".");
-      name.pop();
+      let name = files.name.split('.')
+      name.pop()
       this.items.push({
         name: name.join(''),
         size: files.size,
@@ -105,29 +112,42 @@ export default {
       files && reader.readAsDataURL(files)
       target.value = ''
     },
+    getOriginalValue() {
+      return [...this.originalItmes]
+    },
     removeItem(index) {
       this.items.splice(index, 1)
       this.emitInput()
     },
+    removeItemByOriginal(i) {
+      this.originalItmes.splice(i, 1)
+    },
     emitInput() {
-      this.$emit('input', this.items.map((item) => {
-        return {
-          ...item,
-          base64: item.base64.split(",")[1]
-        }
-      }))
+      this.$emit(
+        'input',
+        this.items.map(item => {
+          return {
+            ...item,
+            base64: item.base64.split(',')[1]
+          }
+        })
+      )
     }
   },
   watch: {
-    'items'() {
+    items() {
       this.$nextTick(() => {
-        this.$refs['grid'].refresh();
+        this.$refs['grid'].refresh()
       })
+    },
+    data: {
+      immediate: true,
+      handler() {
+        this.originalItmes = [...this.data]
+      }
     }
   },
-  directives: {
-
-  }
+  directives: {}
 }
 </script>
 <style lang="scss">

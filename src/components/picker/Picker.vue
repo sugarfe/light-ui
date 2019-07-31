@@ -82,7 +82,6 @@ export default {
     init() {
       this.initSelectedIndex()
       this.data.forEach((item, index) => {
-        console.log(item)
         option.wheels[index] = new BScroll(
           this.$refs['l-picker-scroll-wrapper'].children[index],
           {

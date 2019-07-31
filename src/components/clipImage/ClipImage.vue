@@ -102,7 +102,6 @@ export default {
           requestAnimationFrame(() => {
             x > thresholds.maxLeft && (x = thresholds.maxLeft)
             x < -thresholds.maxLeft && (x = -thresholds.maxLeft)
-            console.log(x, y)
             this.transformX = x
             this.transformY = y
           })
@@ -163,7 +162,6 @@ export default {
         height
       )
       let result = canvas.toDataURL()
-      console.log(result)
     }
   }
 }

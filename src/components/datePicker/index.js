@@ -13,11 +13,8 @@ class DatePicker {
 		this.data = generateData(this.option)
 		new Picker({
 			data: this.data,
-			onOk: (...a) => {
-				console.log(a)
-			}
+			onOk: (...a) => {}
 		})
-		// console.log(pickerInstance.popup.instance.$children[0].$children[0])
 	}
 }
 

@@ -46,7 +46,6 @@ export default {
     dynamicStyle() {
       let styleArray = {}
       !['lg', 'sm'].includes(this.size) && (styleArray.width = this.size)
-      console.log(styleArray, this.size)
       return styleArray
     }
   }

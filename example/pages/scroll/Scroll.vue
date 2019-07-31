@@ -34,7 +34,6 @@ export default {
   methods: {
     onPullingDown() {
       // 更新数据
-      console.log('pulling up and load data')
       setTimeout(() => {
         if (Math.random() > 0.5) {
           // 如果有新数据
@@ -54,7 +53,6 @@ export default {
     },
     onPullingUp() {
       // 更新数据
-      console.log('pulling up and load data')
       setTimeout(() => {
         if (Math.random() > 0.5) {
           // 如果有新数据

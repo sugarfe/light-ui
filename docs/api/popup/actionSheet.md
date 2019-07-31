@@ -19,9 +19,7 @@ new $ActionSheet({
 			value: 0
 		}
 	],
-	onChange: item => {
-		console.log(item)
-	}
+	onChange: item => {}
 })
 ```
 

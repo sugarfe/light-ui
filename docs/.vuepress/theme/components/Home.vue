@@ -63,7 +63,6 @@ export default {
 
   computed: {
     data() {
-      console.log(this.$page.frontmatter)
       return this.$page.frontmatter
     },
 

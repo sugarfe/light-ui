@@ -94,7 +94,6 @@ export default {
       immediate: true,
       handler(value) {
         this.currentValue = value
-        console.log('currentValue', this.currentValue)
       }
     },
     currentValue(value) {
