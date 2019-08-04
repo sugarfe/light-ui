@@ -1,13 +1,13 @@
 <template>
-  <div class="l-calendar">
-    <div class="calendar-toolbar flex-box">
+  <div class="l-calendar flex-box-column">
+    <!-- <div class="calendar-toolbar flex-box">
       <div class></div>
       <div class="flex-1"></div>
       <div class></div>
       <div class="calendar-title flex-box-center">
         {{ `${currentDate.fullYear}-${currentDate.month}` }}
       </div>
-    </div>
+    </div> -->
     <ul class="calendar-week-header flex-box flex-justify-space-around">
       <li
         v-for="(w, index) in week"
@@ -15,21 +15,15 @@
         v-text="w.text"
       ></li>
     </ul>
-    <div
-      class="calendar-contant"
-      ref="calendar"
-    >
-      <div
-        class="calendar-contant-scroll-warp"
-        ref="calendar-warp"
-      >
+    <div class="calendar-contant flex-1">
+      <div class="calendar-contant-scroll-warp">
         <CalendarItem
-          :style="dynamicStyle"
-          v-for="(item, pageIndex) in pages"
+          v-for="(item, pageIndex) in monthList"
           :key="pageIndex"
           :year="item.year"
           :month="item.month"
-          :currentDay="todayString"
+          :startDate="startDate"
+          :endDate="endDate"
           @onSelected="onSelectedHandle"
         ></CalendarItem>
       </div>
@@ -45,8 +39,6 @@ import {
   getDateInfo,
   getMonthList
 } from './calendar.service.js'
-import BScroll from 'better-scroll'
-let scroll
 export default {
   name: 'calendar',
   components: {
@@ -75,18 +67,32 @@ export default {
   data() {
     return {
       week,
-      pages: [],
+      monthList: [],
       currentDate: {
         fullYear: undefined,
         month: undefined,
         day: undefined,
         week: undefined,
-        string: undefined
+        string: undefined,
+        timeStamp: undefined
+      },
+      startDate: {
+        fullYear: undefined,
+        month: undefined,
+        day: undefined,
+        week: undefined,
+        string: undefined,
+        timeStamp: undefined
+      },
+      endDate: {
+        fullYear: undefined,
+        month: undefined,
+        day: undefined,
+        week: undefined,
+        string: undefined,
+        timeStamp: undefined
       },
       selectedDay: '',
-      dynamicStyle: {
-        width: 'auto'
-      },
       activeIndex: 1,
       currentPageIndex: 0
     }
@@ -102,69 +108,30 @@ export default {
   methods: {
     init() {
       this.currentDate = getDateInfo(this.value)
-      // this.generationCurrentMonthData(
-      //   this.currentDate.fullYear,
-      //   this.currentDate.month - 1
-      // );
-      // this.generationCurrentMonthData(
-      //   this.currentDate.fullYear,
-      //   this.currentDate.month
-      // );
-      // this.generationCurrentMonthData(
-      //   this.currentDate.fullYear,
-      //   this.currentDate.month + 1
-      // );
       let initMonthList = [
-        ...getMonthList(
-          this.currentDate.fullYear,
-          this.currentDate.month,
-          0,
-          3
-        ),
-        [this.currentDate.fullYear, this.currentDate.month],
-        ...getMonthList(this.currentDate.fullYear, this.currentDate.month, 1, 3)
+        ...getMonthList(this.currentDate.fullYear, this.currentDate.month, 1, 12)
       ]
       initMonthList.map(item => {
         this.generationCurrentMonthData(item)
       })
-      getMonthList(2019, 4, 0, 6)
-      getMonthList(2019, 4, 1, 12)
-      this.$nextTick(() => {
-        let width = this.$refs['calendar'].offsetWidth
-        this.dynamicStyle.width = `${width}px`
-        this.setCalendarWarpWidth(width)
-        this.initScroll()
-      })
-    },
-    initScroll() {
-      scroll = new BScroll(this.$refs['calendar'], {
-        scrollX: true,
-        scrollY: false,
-        momentum: false,
-        bounce: false,
-        // eventPassthrough: this.allowVertical ? "vertical" : "",
-        snap: {
-          loop: false,
-          threshold: 0.3,
-          speed: 400
-        },
-        click: true,
-        observeDOM: false
-      })
-    },
-    setCalendarWarpWidth(width) {
-      this.$refs['calendar-warp'].style.width = `${(
-        this.pages.length * width
-      ).toFixed(2)}px`
     },
     generationCurrentMonthData(item) {
-      this.pages.push({
+      this.monthList.push({
         year: item[0],
         month: item[1]
       })
     },
     onSelectedHandle({ year, month, day }) {
-      this.currentDate = getDateInfo(new Date(year, month - 1, day))
+      let dateInfo = getDateInfo(new Date(year, month - 1, day))
+      if (!this.startDate.timeStamp || (this.startDate.timeStamp && this.endDate.timeStamp)) {
+        this.startDate = { ...dateInfo }
+        this.endDate.timeStamp = undefined;
+      } else if (this.startDate.timeStamp < dateInfo.timeStamp) {
+        this.endDate = { ...dateInfo }
+      } else if (this.startDate.timeStamp > dateInfo.timeStamp) {
+        this.endDate = { ...this.startDate }
+        this.startDate = { ...dateInfo }
+      }
     }
   },
   watch: {

@@ -36,6 +36,10 @@ let getMonthFullData = (year, month) => {
 		})
 		++day
 	}
+	data = data.map(item => {
+		item.timeStamp = new Date(item.year, item.month - 1, item.day).getTime()
+		return item
+	})
 	day = 1
 	let list = []
 	while (day <= 6) {
@@ -52,6 +56,7 @@ let getDateInfo = date => {
 		month: date.getMonth() + 1,
 		day: date.getDate(),
 		week: date.getDay(),
+		timeStamp: date.getTime(),
 		string: dateFormat(date, 'yyyy-MM-dd')
 	}
 }
