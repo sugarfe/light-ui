@@ -13,7 +13,7 @@ class DatePicker {
 		this.data = generateData(this.option)
 		new Picker({
 			data: this.data,
-			onOk: (...a) => {}
+			onOk: () => {}
 		})
 	}
 }

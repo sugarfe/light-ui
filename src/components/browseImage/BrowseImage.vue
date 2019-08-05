@@ -7,38 +7,47 @@
     vertical="10px"
     class="l-browse-image"
   >
-    <GridItem
+    <slot
+      name="original"
       v-for="(item,i) in originalItmes"
-      :key="i"
-      class="l-browse-item"
+      :item="{...item,i}"
     >
-      <img
-        :src="item"
-        v-if="item"
+      <GridItem
+        :key="i"
+        class="l-browse-item"
       >
-      <div
-        class="l-browse-item-remove flex-box-center"
-        @click="removeItemByOriginal(index)"
-      >
-        <i class="icon-close"></i>
-      </div>
-    </GridItem>
-    <GridItem
+        <img
+          :src="item"
+          v-if="item"
+        >
+        <div
+          class="l-browse-item-remove flex-box-center"
+          @click="removeItemByOriginal(index)"
+        >
+          <i class="icon-close"></i>
+        </div>
+      </GridItem>
+    </slot>
+    <slot
       v-for="(item,index) in items"
-      :key="index"
-      class="l-browse-item"
+      :item="{...item,index}"
     >
-      <img
-        :src="item.base64"
-        v-if="item.base64"
+      <GridItem
+        :key="index"
+        class="l-browse-item"
       >
-      <div
-        class="l-browse-item-remove flex-box-center"
-        @click="removeItem(index)"
-      >
-        <i class="icon-close"></i>
-      </div>
-    </GridItem>
+        <img
+          :src="item.base64"
+          v-if="item.base64"
+        >
+        <div
+          class="l-browse-item-remove flex-box-center"
+          @click="removeItem(index)"
+        >
+          <i class="icon-close"></i>
+        </div>
+      </GridItem>
+    </slot>
     <GridItem class="l-browse-item l-browse-item-push flex-box-center">
       <i class="icon-add"></i>
       <input
@@ -83,7 +92,8 @@ export default {
   data() {
     return {
       items: [],
-      originalItmes: []
+      originalItmes: [],
+      deleteOriginalList: []
     }
   },
   created() {
@@ -102,12 +112,11 @@ export default {
     change(e) {
       let { target } = e
       let [files] = target.files
-      let name = files.name.split('.')
-      name.pop()
       this.items.push({
-        name: name.join(''),
+        name: files.name,
         size: files.size,
-        base64: undefined
+        base64: undefined,
+        suffix: files.name.split('.').pop()
       })
       files && reader.readAsDataURL(files)
       target.value = ''
@@ -115,11 +124,15 @@ export default {
     getOriginalValue() {
       return [...this.originalItmes]
     },
+    getOriginalDeleteList() {
+      return [...this.deleteOriginalList]
+    },
     removeItem(index) {
       this.items.splice(index, 1)
       this.emitInput()
     },
     removeItemByOriginal(i) {
+      this.deleteOriginalList.push({ ...this.originalItmes[i] })
       this.originalItmes.splice(i, 1)
     },
     emitInput() {

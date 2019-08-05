@@ -23,7 +23,7 @@ export default {
         stop: 40
       },
       pullUpLoad: {
-        threshold: 0
+        threshold: -50
       },
       list: []
     }
