@@ -59,6 +59,9 @@ export default {
         title: '提示',
         text: 'dialog',
         ...this.options,
+        render: () => {
+          return <div class="aaa">aaaa</div>
+        },
         onOk: this.handle,
         onCancel: this.handle,
         onHandle: this.handle

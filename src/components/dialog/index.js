@@ -19,7 +19,8 @@ class Dialog {
 		delayClose = Dialog.delayClose,
 		onOk,
 		onCancel,
-		onHandle
+		onHandle,
+		render
 	}) {
 		this.popup = new this.$vue.prototype.$Popup(DialogView, {
 			position: 'center',
@@ -29,6 +30,7 @@ class Dialog {
 			confirm,
 			cancelText,
 			okText,
+			render,
 			onHandle: res => {
 				let done = delayClose ? this.close.bind(this) : undefined
 				res && onOk && onOk(done)
