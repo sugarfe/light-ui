@@ -41,7 +41,9 @@ export default {
         position: ['top', 'bottom', 'left', 'right', 'center']
       },
       option: {
-        position: 'top'
+        position: 'top',
+        size: '100%',
+        isMask: false
       }
     }
   },

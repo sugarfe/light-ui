@@ -56,6 +56,12 @@
 </CheckboxGroup>
 ```
 
+- 单例
+
+```vue
+<Checkbox v-model="value">CSS</Checkbox>
+```
+
 ## Group Props
 
 | 名称       | 类型            | 默认值 | 可选值     | 说明         |

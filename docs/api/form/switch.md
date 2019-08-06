@@ -7,7 +7,7 @@
 - 基本
 
 ```vue
-<Switch></Switch>
+<SwitchCase></SwitchCase>
 ```
 
 ## Props

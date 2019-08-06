@@ -1,11 +1,11 @@
 <template>
   <PageContent>
-    <Navbar slot="header">Switch</Navbar>
+    <Navbar slot="header">SwitchCase</Navbar>
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
         <div class="river">
-          <Switch v-model="valueDefault"></Switch>
+          <SwitchCase v-model="valueDefault"></SwitchCase>
         </div>
       </template>
     </example-group>
@@ -13,10 +13,10 @@
       disabled
       <template v-slot:content>
         <div class="river">
-          <Switch
+          <SwitchCase
             v-model="valueDisable"
             :disabled="disabled"
-          ></Switch>
+          ></SwitchCase>
         </div>
       </template>
     </example-group>

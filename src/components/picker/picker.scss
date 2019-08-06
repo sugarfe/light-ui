@@ -1,7 +1,10 @@
 .l-picker {
 	background-color: #fff;
 	height: 200px;
-
+	&-title {
+		font-size: 16px;
+		text-align: center;
+	}
 	.l-picker-top {
 		padding: 0 10px;
 		height: 44px;
@@ -12,10 +15,6 @@
 		& > span {
 			&:nth-child(1) {
 				color: $l-color-gray;
-			}
-
-			&:nth-child(2) {
-				text-align: center;
 			}
 
 			&:nth-child(3) {

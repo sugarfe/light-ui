@@ -6,11 +6,15 @@
 		position: relative;
 	}
 	&-title {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		font-size: 16px;
+		position: relative;
+		& > span {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 16px;
+			text-align: center;
+		}
 	}
 	&-icon {
 		@include display-flex;

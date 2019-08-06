@@ -77,7 +77,7 @@
       </template>
     </example-group>
     <example-group contentClass="group-content">
-      single
+      single {{value6}}
       <template v-slot:content>
         <Checkbox v-model="value6">single</Checkbox>
       </template>

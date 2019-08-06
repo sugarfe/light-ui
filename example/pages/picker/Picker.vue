@@ -52,6 +52,10 @@ export default {
       new this.$Picker({
         data: data.slice(0, this.column),
         value: this.value,
+        title: {
+          text: 'aaaaa',
+          class: 'dsfasfsadf'
+        },
         onOk: (values, text, selectedIndex) => {
           this.value = values
           this.text = text

@@ -1,12 +1,7 @@
 <template>
   <PageContent>
     <Navbar slot="header">Calendar</Navbar>
-    <example-group contentClass="group-content">
-      basic
-      <template v-slot:content>
-        <calendar></calendar>
-      </template>
-    </example-group>
+    <calendar></calendar>
   </PageContent>
 </template>
 <script>

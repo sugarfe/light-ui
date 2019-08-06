@@ -1,76 +1,158 @@
-@import "./calendar.variables.scss";
+@import './calendar.variables.scss';
 
 .l-calendar {
-    .calendar-toolbar {
-        height: $l-calendar-toolbar-height;
-        background-color: $l-calendar-toolbar-bg-color;
-        color: #fff;
-        margin-bottom: $l-calendar-spacin;
-        position: relative;
+	height: 100%;
+	.calendar-toolbar {
+		height: $l-calendar-toolbar-height;
+		background-color: $l-calendar-toolbar-bg-color;
+		color: #fff;
+		margin-bottom: $l-calendar-spacin;
+		position: relative;
 
-        .calendar-title {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-    }
+		.calendar-title {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+	}
 
-    .calendar-week-header {}
+	.calendar-week-header {
+		padding: 10px 0;
+		font-size: 12px;
+	}
 
-    .calendar-contant {
-        .calendar-contant-scroll-warp {
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
+	.calendar-contant {
+		overflow-x: hidden;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		.calendar-contant-scroll-warp {
+			position: relative;
+			overflow: hidden;
+			white-space: nowrap;
 
-            .calendar-page {
-                float: left;
-            }
-        }
+			.calendar-month-warp {
+				&:last-child {
+					padding-bottom: 10px;
+				}
+				.calendar-month-title {
+					padding: 10px;
+					font-size: 14px;
+					background: #fbfbfb;
+					margin: 30px 0;
+				}
+			}
+		}
 
-        .calendar-item {
-            &:not(:last-child) {
-                margin-bottom: $l-calendar-spacin;
-            }
+		.calendar-row {
+			&:not(:last-child) {
+				margin-bottom: $l-calendar-spacin;
+			}
 
-            &:first-child {
-                margin-top: $l-calendar-spacin;
-            }
+			&:first-child {
+				margin-top: $l-calendar-spacin;
+			}
 
-            .calendar-day {
-                text-align: center;
-                position: relative;
-                color: #D8D8D8;
-
-                &::before {
-                    transform: translate(-50%, -50%) scale(0);
-                    transition-property: transform;
-                    transition-duration: .5s;
-                }
-
-                &-current-month {
-                    color: #222;
-                }
-
-                &-selected {
-                    color: #fff;
-                    font-weight: 600;
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%, -50%) scale(1);
-                        height: 30px;
-                        width: 30px;
-                        border-radius: 50%;
-                        background-color: $l-calendar-toolbar-bg-color;
-                        z-index: -1;
-                    }
-                }
-
-            }
-        }
-    }
+			.calendar-day {
+				text-align: center;
+				position: relative;
+				color: #d8d8d8;
+				font-size: 14px;
+				visibility: hidden;
+				&::before {
+					visibility: hidden;
+					transform: translate(-50%, -50%) scale(0);
+					transition-property: transform;
+					transition-duration: 0.5s;
+				}
+				&-current-month {
+					color: #222;
+					visibility: visible;
+					&::before {
+						visibility: visible;
+					}
+				}
+				&-selected {
+					color: #fff;
+					font-weight: 600;
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%) scale(1);
+						height: 30px;
+						width: 30px;
+						border-radius: 50%;
+						background-color: $l-calendar-toolbar-bg-color;
+						z-index: -1;
+					}
+				}
+				&-start {
+					color: #fff;
+					font-weight: 600;
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%) scale(1);
+						height: 30px;
+						width: 30px;
+						border-radius: 50%;
+						background-color: $l-calendar-toolbar-bg-color;
+						z-index: -1;
+					}
+					&::after {
+						content: '起';
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						font-size: 12px;
+						bottom: -24px;
+						color: $l-calendar-toolbar-bg-color;
+					}
+				}
+				&-end {
+					color: #fff;
+					font-weight: 600;
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%) scale(1);
+						height: 30px;
+						width: 30px;
+						border-radius: 50%;
+						background-color: $l-calendar-toolbar-bg-color;
+						z-index: -1;
+					}
+					&::after {
+						content: '止';
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						font-size: 12px;
+						bottom: -24px;
+						color: $l-calendar-toolbar-bg-color;
+					}
+				}
+				&-in {
+					color: #fff;
+					font-weight: 600;
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%) scale(1);
+						height: 30px;
+						width: 90px;
+						background-color: $l-calendar-toolbar-bg-color;
+						z-index: -1;
+					}
+				}
+			}
+		}
+	}
 }

@@ -12,8 +12,8 @@
           <i class="icon-arrow-back"></i>
         </div>
       </slot>
-      <div class="flex-1">
-        <span class="l-navbar-title">
+      <div class="flex-1 l-navbar-title">
+        <span>
           <slot></slot>
         </span>
       </div>

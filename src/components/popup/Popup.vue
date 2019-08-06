@@ -21,7 +21,7 @@
         class="l-popup-container"
         @click.self="maskClickHanlde"
         :style="dynamicStyle"
-        v-show="isPageRead"
+        v-if="isPageRead"
       >
         <slot></slot>
       </div>
@@ -54,12 +54,6 @@ export default {
       type: Boolean,
       default() {
         return true
-      }
-    },
-    distance: {
-      type: String,
-      default() {
-        return 'center'
       }
     },
     autoShow: {
@@ -132,22 +126,6 @@ export default {
       this.hide()
       this.isClose = true
       this.$emit('onClose')
-    },
-    positionStyle() {
-      if (this.distance == '') {
-        return ''
-      } else {
-        switch (this.distance) {
-          case 'top':
-            return 'top:50px'
-          case 'center':
-            return 'top:50%;transform: translate(-50%,-50%)'
-          case 'bottom':
-            return 'top:calc(100% - 50px)'
-          default:
-            return 'top:' + this.distance
-        }
-      }
     }
   }
 }

@@ -2,7 +2,12 @@
   <div class="l-picker flex-box-column">
     <div class="l-picker-top flex-box flex-align-center">
       <span @click="cancel">取消</span>
-      <span class="l-picker-title flex-1"></span>
+      <span
+        class="l-picker-title flex-1"
+        :class="titleOption.class"
+      >
+        {{titleOption.text}}
+      </span>
       <span @click="ok">确定</span>
     </div>
     <div
@@ -56,10 +61,21 @@ export default {
       default() {
         return undefined
       }
+    },
+    title: {
+      type: [String, Object],
+      default() {
+        return ''
+      }
     }
   },
   data() {
-    return {}
+    return {
+      titleOption: {
+        text: '',
+        class: ''
+      }
+    }
   },
   created() {
     option = {
@@ -128,6 +144,24 @@ export default {
     },
     getWheelsInstance() {
       return option.wheels
+    }
+  },
+  watch: {
+    title: {
+      immediate: true,
+      deep: true,
+      handler(value) {
+        if (typeof value === 'stirng') {
+          this.titleOption.text = value
+        } else if (
+          Object.prototype.toString.call(value) === '[object Object]'
+        ) {
+          this.titleOption = {
+            text: value.text,
+            class: value.class
+          }
+        }
+      }
     }
   }
 }
