@@ -1,0 +1,78 @@
+.flex-box {
+	@include display-flex();
+}
+
+.flex-row {
+	@include flex-direction();
+}
+
+.flex-row-reverse {
+	@include flex-direction(row-reverse);
+}
+
+.flex-column {
+	@include flex-direction(column);
+}
+
+.flex-column-reverse {
+	@include flex-direction(column-reverse);
+}
+
+.flex-nowrap {
+	@include flex-wrap(nowrap);
+}
+
+.flex-wrap {
+	@include flex-wrap(wrap);
+}
+
+.flex-wrap-reverse {
+	@include flex-wrap(wrap-reverse);
+}
+
+.flex-justify-center {
+	@include justify-content(center);
+}
+
+.flex-justify-end {
+	@include justify-content(flex-end);
+}
+
+.flex-justify-space-between {
+	@include justify-content(space-between);
+}
+
+.flex-justify-space-around {
+	@include justify-content(space-around);
+}
+
+.flex-align-start {
+	@include align-items(flex-start);
+}
+
+.flex-align-center {
+	@include align-items(center);
+}
+
+.flex-align-end {
+	@include align-items(flex-end);
+}
+
+.flex-align-baseline {
+	@include align-items(baseline);
+}
+
+.flex-box-column {
+	@include display-flex();
+	@include flex-direction(column);
+}
+
+.flex-box-center {
+	@include display-flex();
+	@include align-items(center);
+	@include justify-content(center);
+}
+
+.flex-1 {
+	@include flex();
+}
