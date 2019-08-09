@@ -40,6 +40,9 @@
 					background: #fbfbfb;
 					margin: 30px 0;
 				}
+				&:first-child .calendar-month-title {
+					margin-top: 0;
+				}
 			}
 		}
 

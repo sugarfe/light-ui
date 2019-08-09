@@ -6,7 +6,8 @@
     <header
       class="l-dialog-header"
       v-if="title"
-    >{{ title }}</header>
+      v-html="title"
+    ></header>
     <section>
       <slot>
         {{ text }}
