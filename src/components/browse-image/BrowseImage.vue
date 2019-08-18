@@ -62,7 +62,7 @@
 <script>
 let reader
 import Grid from '@/components/grid/Grid.vue'
-import GridItem from '@/components/gridItem/GridItem.vue'
+import GridItem from '@/components/grid-item/GridItem.vue'
 export default {
   name: 'BrowseImage',
   props: {

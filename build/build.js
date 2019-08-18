@@ -55,7 +55,7 @@ class BuildStart {
 						},
 						plugins: [
 							new MiniCssExtractPlugin({
-								filename: '[name]/[name].css'
+								filename: '[name]/style.css'
 							})
 						]
 					})
@@ -63,7 +63,8 @@ class BuildStart {
 				case 'all':
 					config = merge(webpackConfig, {
 						entry: {
-							light: path.join(__dirname, '../src/index.js')
+							light: path.join(__dirname, '../src/index.js'),
+							common: path.join(__dirname, '../src/style/common/common.scss')
 						},
 						output: {
 							path: path.resolve(__dirname, '../library'),
@@ -103,6 +104,7 @@ class BuildStart {
 					return
 				}
 				this.outputMessage(err, stats)
+				rm('-rf', path.join(__dirname, '../library/common.js'))
 				resolve()
 			})
 		})
