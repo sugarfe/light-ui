@@ -1,13 +1,5 @@
 <template>
   <div class="l-calendar flex-box-column">
-    <!-- <div class="calendar-toolbar flex-box">
-      <div class></div>
-      <div class="flex-1"></div>
-      <div class></div>
-      <div class="calendar-title flex-box-center">
-        {{ `${currentDate.fullYear}-${currentDate.month}` }}
-      </div>
-    </div> -->
     <ul class="calendar-week-header flex-box flex-justify-space-around">
       <li
         v-for="(w, index) in week"
@@ -109,7 +101,12 @@ export default {
     init() {
       this.currentDate = getDateInfo(this.value)
       let initMonthList = [
-        ...getMonthList(this.currentDate.fullYear, this.currentDate.month, 1, 12)
+        ...getMonthList(
+          this.currentDate.fullYear,
+          this.currentDate.month,
+          1,
+          12
+        )
       ]
       initMonthList.map(item => {
         this.generationCurrentMonthData(item)
@@ -123,9 +120,12 @@ export default {
     },
     onSelectedHandle({ year, month, day }) {
       let dateInfo = getDateInfo(new Date(year, month - 1, day))
-      if (!this.startDate.timeStamp || (this.startDate.timeStamp && this.endDate.timeStamp)) {
+      if (
+        !this.startDate.timeStamp ||
+        (this.startDate.timeStamp && this.endDate.timeStamp)
+      ) {
         this.startDate = { ...dateInfo }
-        this.endDate.timeStamp = undefined;
+        this.endDate.timeStamp = undefined
       } else if (this.startDate.timeStamp < dateInfo.timeStamp) {
         this.endDate = { ...dateInfo }
       } else if (this.startDate.timeStamp > dateInfo.timeStamp) {

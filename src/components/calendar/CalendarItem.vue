@@ -53,18 +53,26 @@ export default {
   },
   methods: {
     init() {
-      this.items = getMonthFullData(this.year, this.month).filter((item) => {
-        return item.filter(({ month }) => {
-          return this.isCurrentMonth(month)
-        }).length > 0
+      this.items = getMonthFullData(this.year, this.month).filter(item => {
+        return (
+          item.filter(({ month }) => {
+            return this.isCurrentMonth(month)
+          }).length > 0
+        )
       })
     },
     dynamicClass({ year, month, day, timeStamp }) {
+      let isStartDay = timeStamp === this.startDate.timeStamp
+      let isEndDay = timeStamp === this.endDate.timeStamp
       return {
         // 'calendar-day-selected': this.isCurrentDay(year, month, day),
-        'calendar-day-start': timeStamp === this.startDate.timeStamp,
-        'calendar-day-end': timeStamp === this.endDate.timeStamp,
-        'calendar-day-in': timeStamp > this.startDate.timeStamp && timeStamp < this.endDate.timeStamp,
+        'calendar-day-start': isStartDay,
+        'calendar-day-end': isEndDay,
+        'calendar-day-in-start': isStartDay && this.endDate.timeStamp,
+        //选中的日期时间段
+        'calendar-day-in':
+          timeStamp > this.startDate.timeStamp &&
+          timeStamp < this.endDate.timeStamp,
         'calendar-day-current-month': this.isCurrentMonth(month)
       }
     },
