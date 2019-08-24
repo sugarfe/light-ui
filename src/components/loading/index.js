@@ -1,8 +1,18 @@
 import LoadingView from './Loading.vue'
-
+import { Popup } from '../popup/index.js'
 class Loading {
+	static instance = []
+	static show = ({ single = false, ...option } = {}) => {
+		if ((!Loading.instance.length && single === true) || single === false) {
+			new Loading(option)
+		}
+	}
+	static clear = () => {
+		while (Loading.instance.length > 0) {
+			Loading.instance.splice(0, 1)[0].close()
+		}
+	}
 	constructor(option = {}) {
-		//全局参数
 		if (this.$option) {
 			let o = this.$option
 			for (var key in o) {
@@ -12,10 +22,10 @@ class Loading {
 			}
 		}
 		option.size = option.size || 'lg'
-		this.RunLoading = new this.$vue.prototype.$Popup(
+		this.popupInstance = new Popup(
 			LoadingView,
 			{
-				position: 'center', //动画方式
+				position: 'center',
 				isMask: option.isMask === undefined ? true : option.isMask,
 				isMaskClose: false,
 				...option,
@@ -25,9 +35,16 @@ class Loading {
 			},
 			option.dom
 		)
+		Loading.instance.push(this.popupInstance)
 	}
 	close() {
-		this.RunLoading && this.RunLoading.close()
+		let i = Loading.instance.findIndex(item => {
+			return item.id === this.popupInstance.id
+		})
+		if (~i) {
+			Loading.instance[i].close()
+			Loading.instance.splice(i, 1)
+		}
 	}
 }
 

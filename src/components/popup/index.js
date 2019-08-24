@@ -89,6 +89,8 @@ class Popup {
 	}
 }
 
+export { Popup }
+
 export default {
 	name: 'Popup',
 	component: Popup,

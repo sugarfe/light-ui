@@ -21,9 +21,9 @@ export default {
   mounted() {},
   methods: {
     click() {
-      let loading = new this.$Loading()
+      this.$Loading.show({ single: true })
       setTimeout(() => {
-        loading.close()
+        this.$Loading.clear()
       }, 2000)
     }
   }
