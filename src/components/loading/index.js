@@ -2,8 +2,12 @@ import LoadingView from './Loading.vue'
 import { Popup } from '../popup/index.js'
 class Loading {
 	static instance = []
-	static show = ({ single = false, ...option } = {}) => {
-		if ((!Loading.instance.length && single === true) || single === false) {
+	static single = true
+	static show = (option = {}) => {
+		if (
+			(!Loading.instance.length && Loading.single === true) ||
+			Loading.single === false
+		) {
 			new Loading(option)
 		}
 	}
