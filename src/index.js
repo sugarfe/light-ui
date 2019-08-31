@@ -8,7 +8,8 @@ const jsCallComponent = [
 	'actionSheet',
 	'loading',
 	'datePicker',
-	'clipImage'
+	'clipImage',
+	'calendar'
 ]
 
 export default {

@@ -1,27 +1,41 @@
 <template>
-  <div class="l-calendar flex-box-column">
-    <ul class="calendar-week-header flex-box flex-justify-space-around">
-      <li
-        v-for="(w, index) in week"
-        :key="index"
-        v-text="w.text"
-      ></li>
-    </ul>
-    <div class="calendar-contant flex-1">
-      <div class="calendar-contant-scroll-warp">
-        <CalendarItem
-          v-for="(item, pageIndex) in monthList"
-          :key="pageIndex"
-          :year="item.year"
-          :month="item.month"
-          :startDate="startDate"
-          :endDate="endDate"
-          @onSelected="onSelectedHandle"
-        ></CalendarItem>
+  <PageContent class="calendar-warp">
+    <Navbar
+      slot="header"
+      :backHandle="backHandle"
+    >
+      日期选择
+      <span
+        slot="right"
+        class="l-calendar-ok"
+        @click="ok"
+      >确定</span>
+    </Navbar>
+    <div class="l-calendar flex-box-column">
+      <ul class="calendar-week-header flex-box flex-justify-space-around">
+        <li
+          v-for="(w, index) in week"
+          :key="index"
+          v-text="w.text"
+        ></li>
+      </ul>
+      <div class="calendar-contant flex-1">
+        <div class="calendar-contant-scroll-warp">
+          <CalendarItem
+            v-for="(item, pageIndex) in monthList"
+            :key="pageIndex"
+            :year="item.year"
+            :month="item.month"
+            :startDate="startDate"
+            :endDate="endDate"
+            @onSelected="onSelectedHandle"
+          ></CalendarItem>
+        </div>
       </div>
+      <div class="calendar-fooder"></div>
     </div>
-    <div class="calendar-fooder"></div>
-  </div>
+  </PageContent>
+
 </template>
 <script>
 import CalendarItem from './CalendarItem.vue'
@@ -32,7 +46,7 @@ import {
   getMonthList
 } from './calendar.service.js'
 export default {
-  name: 'calendar',
+  name: 'calendarView',
   components: {
     CalendarItem
   },
@@ -86,20 +100,21 @@ export default {
       },
       selectedDay: '',
       activeIndex: 1,
-      currentPageIndex: 0
+      currentPageIndex: 0,
+      currentValue: []
     }
   },
   computed: {
-    todayString() {
-      return `${this.currentDate.fullYear}${this.currentDate.month}${this.currentDate.day}`
-    }
+    // todayString() {
+    //   return `${this.currentDate.fullYear}${this.currentDate.month}${this.currentDate.day}`
+    // }
   },
   mounted() {
     this.init()
   },
   methods: {
     init() {
-      this.currentDate = getDateInfo(this.value)
+      this.currentDate = getDateInfo(new Date())
       let initMonthList = [
         ...getMonthList(
           this.currentDate.fullYear,
@@ -111,6 +126,20 @@ export default {
       initMonthList.map(item => {
         this.generationCurrentMonthData(item)
       })
+      this.setValue()
+    },
+    setValue() {
+      if (this.range) {
+        debugger
+        let [start, end] = Array.isArray(this.value) ? this.value : []
+        Object.prototype.toString.call(start) === '[object Date]' &&
+          (this.startDate = getDateInfo(start))
+        Object.prototype.toString.call(end) === '[object Date]' &&
+          (this.endDate = getDateInfo(end))
+      }
+      this.currentValue = Array.isArray(this.value)
+        ? [...this.value]
+        : this.value || new Date()
     },
     generationCurrentMonthData(item) {
       this.monthList.push({
@@ -132,6 +161,15 @@ export default {
         this.endDate = { ...this.startDate }
         this.startDate = { ...dateInfo }
       }
+    },
+    ok() {
+      if (this.range && this.startDate.timeStamp && this.endDate.timeStamp) {
+        this.$emit('onOk', [this.startDate, this.endDate])
+        this.$emit('popup-close')
+      }
+    },
+    backHandle() {
+      this.$emit('popup-close')
     }
   },
   watch: {

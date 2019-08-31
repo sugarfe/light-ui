@@ -1,14 +1,31 @@
 <template>
   <PageContent>
     <Navbar slot="header">Calendar</Navbar>
-    <calendar></calendar>
+    <Button
+      block
+      @click="open"
+    >打开</Button>
   </PageContent>
 </template>
 <script>
 export default {
   components: {},
   data() {
-    return {}
+    return {
+      value: undefined
+    }
+  },
+  methods: {
+    open() {
+      new this.$Calendar({
+        value: this.value,
+        onComplete: value => {
+          this.value = value.map(item => {
+            return new Date(item.timeStamp)
+          })
+        }
+      })
+    }
   }
 }
 </script>

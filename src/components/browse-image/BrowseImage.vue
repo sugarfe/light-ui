@@ -48,7 +48,10 @@
         </div>
       </GridItem>
     </slot>
-    <GridItem class="l-browse-item l-browse-item-push flex-box-center">
+    <GridItem
+      class="l-browse-item l-browse-item-push flex-box-center"
+      v-if="maxDisplay"
+    >
       <i class="icon-add"></i>
       <input
         type="file"
@@ -83,11 +86,27 @@ export default {
       default() {
         return []
       }
+    },
+    max: {
+      type: Number,
+      default() {
+        return -1
+      }
     }
   },
   components: {
     Grid,
     GridItem
+  },
+  computed: {
+    maxDisplay() {
+      console.log(
+        this.max,
+        this.items.length,
+        (this.max > 0 && this.max > this.items.length) || this.max <= 0
+      )
+      return (this.max > 0 && this.max > this.items.length) || this.max <= 0
+    }
   },
   data() {
     return {

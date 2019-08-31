@@ -4,12 +4,11 @@
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
-        <BrowseImage v-model="value">
-          <template v-slot:default="slotProps">
-            <GridItem class="l-browse-item">
-              <img :src="slotProps.item.base64">
-            </GridItem>
-          </template>
+        <BrowseImage
+          v-model="value"
+          :max="1"
+        >
+
         </BrowseImage>
       </template>
     </example-group>

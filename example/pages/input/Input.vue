@@ -29,7 +29,7 @@ export default {
   components: {},
   data() {
     return {
-      value: '213123'
+      value: ''
     }
   },
   created() {},

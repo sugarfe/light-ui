@@ -13,7 +13,7 @@
         :key="j"
         @click="selected(d)"
       >
-        {{ d.day }}
+        <span> {{ d.day }}</span>
       </li>
     </ul>
   </div>

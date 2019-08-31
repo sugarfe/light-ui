@@ -12,6 +12,7 @@ import Tab from './tab/Tab.vue'
 import TabItem from './tab-item/TabItem.vue'
 import Input from './input/Input.vue'
 import Calendar from './calendar/Calendar.vue'
+import CalendarJsCall from './calendar/calendar.js'
 import Popup from './popup/index.js'
 import Toast from './toast/index.js'
 import Dialog from './dialog/index.js'
@@ -59,5 +60,6 @@ export default [
 	ActionSheet,
 	Loading,
 	DatePicker,
-	ClipImage
+	ClipImage,
+	CalendarJsCall
 ]
