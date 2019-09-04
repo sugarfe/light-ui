@@ -1,6 +1,6 @@
 {
   "name": "light-ui-m",
-  "version": "0.0.1-beta35",
+  "version": "0.0.1-beta36",
   "description": "vue2.0 mobile components",
   "main": "library/light.js",
   "scripts": {

@@ -24,11 +24,15 @@ export default {
   props: {
     year: {
       type: Number,
-      default: 0
+      default() {
+        return 0
+      }
     },
     month: {
       type: Number,
-      default: 0
+      default() {
+        return 0
+      }
     },
     startDate: {
       type: Object,
@@ -40,6 +44,12 @@ export default {
       type: Object,
       default() {
         return {}
+      }
+    },
+    days: {
+      type: Number,
+      default() {
+        return undefined
       }
     }
   },
@@ -62,17 +72,32 @@ export default {
       })
     },
     dynamicClass({ year, month, day, timeStamp }) {
-      let isStartDay = timeStamp === this.startDate.timeStamp
-      let isEndDay = timeStamp === this.endDate.timeStamp
+      let isStartDay = false,
+        isEndDay = false,
+        isEndDayPrevious = false
+      if (this.startDate.timeStamp) {
+        isStartDay = timeStamp === this.startDate.timeStamp
+      }
+      if (this.endDate.timeStamp) {
+        isEndDay = timeStamp === this.endDate.timeStamp
+        isEndDayPrevious = this.endDate.timeStamp - 86400000 === timeStamp
+      }
       return {
         // 'calendar-day-selected': this.isCurrentDay(year, month, day),
         'calendar-day-start': isStartDay,
-        'calendar-day-end': isEndDay,
-        'calendar-day-in-start': isStartDay && this.endDate.timeStamp,
+        'calendar-day-end': isEndDay && this.days !== 1,
+        'calendar-day-end-one-day': isEndDay && this.days === 1,
+        'calendar-day-in-start':
+          isStartDay && this.endDate.timeStamp && this.days > 2,
+        'calendar-day-in-two-day':
+          timeStamp > this.startDate.timeStamp &&
+          timeStamp < this.endDate.timeStamp &&
+          this.days === 2,
         //选中的日期时间段
         'calendar-day-in':
           timeStamp > this.startDate.timeStamp &&
           timeStamp < this.endDate.timeStamp,
+        'calendar-day-end-previous': isEndDayPrevious && this.days > 2,
         'calendar-day-current-month': this.isCurrentMonth(month)
       }
     },

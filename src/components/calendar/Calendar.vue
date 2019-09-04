@@ -12,6 +12,19 @@
       >确定</span>
     </Navbar>
     <div class="l-calendar flex-box-column">
+      <div class="select-date flex-box flex-align-center">
+        <ul class="select-date-info flex-1">
+          <li>开始</li>
+          <li>{{startDate.timeStamp?startDate.string : '-'}}</li>
+        </ul>
+        <div class="select-date-step">
+          {{days ? `${days}日`:''}}
+        </div>
+        <ul class="select-date-info flex-1">
+          <li>结束</li>
+          <li>{{endDate.timeStamp?endDate.string : '-'}}</li>
+        </ul>
+      </div>
       <ul class="calendar-week-header flex-box flex-justify-space-around">
         <li
           v-for="(w, index) in week"
@@ -19,18 +32,21 @@
           v-text="w.text"
         ></li>
       </ul>
-      <div class="calendar-contant flex-1">
-        <div class="calendar-contant-scroll-warp">
-          <CalendarItem
-            v-for="(item, pageIndex) in monthList"
-            :key="pageIndex"
-            :year="item.year"
-            :month="item.month"
-            :startDate="startDate"
-            :endDate="endDate"
-            @onSelected="onSelectedHandle"
-          ></CalendarItem>
-        </div>
+      <div
+        class="calendar-contant flex-1"
+        ref="scroll"
+        @scroll="onScroll"
+      >
+        <CalendarItem
+          v-for="(item, pageIndex) in monthList"
+          :key="pageIndex"
+          :year="item.year"
+          :month="item.month"
+          :startDate="startDate"
+          :endDate="endDate"
+          :days="days"
+          @onSelected="onSelectedHandle"
+        ></CalendarItem>
       </div>
       <div class="calendar-fooder"></div>
     </div>
@@ -45,6 +61,8 @@ import {
   getDateInfo,
   getMonthList
 } from './calendar.service.js'
+let scrollHeight = 0,
+  isLoadData = false
 export default {
   name: 'calendarView',
   components: {
@@ -74,14 +92,6 @@ export default {
     return {
       week,
       monthList: [],
-      currentDate: {
-        fullYear: undefined,
-        month: undefined,
-        day: undefined,
-        week: undefined,
-        string: undefined,
-        timeStamp: undefined
-      },
       startDate: {
         fullYear: undefined,
         month: undefined,
@@ -105,32 +115,36 @@ export default {
     }
   },
   computed: {
-    // todayString() {
-    //   return `${this.currentDate.fullYear}${this.currentDate.month}${this.currentDate.day}`
-    // }
+    days() {
+      return this.startDate.timeStamp && this.endDate.timeStamp
+        ? (this.endDate.timeStamp - this.startDate.timeStamp) / 86400000
+        : undefined
+    }
   },
   mounted() {
     this.init()
   },
   methods: {
     init() {
-      this.currentDate = getDateInfo(new Date())
-      let initMonthList = [
-        ...getMonthList(
-          this.currentDate.fullYear,
-          this.currentDate.month,
-          1,
-          12
-        )
-      ]
-      initMonthList.map(item => {
-        this.generationCurrentMonthData(item)
-      })
       this.setValue()
+      let { fullYear, month } = getDateInfo(new Date())
+      this.loadData(fullYear, month)
+    },
+    loadData(year, month) {
+      ;[...getMonthList(year, month - 1, 1, 6)].map(([year, month]) => {
+        this.monthList.push({
+          year,
+          month
+        })
+      })
+      this.$nextTick(() => {
+        scrollHeight =
+          this.$refs.scroll.scrollHeight - this.$refs.scroll.clientHeight
+        isLoadData = false
+      })
     },
     setValue() {
       if (this.range) {
-        debugger
         let [start, end] = Array.isArray(this.value) ? this.value : []
         Object.prototype.toString.call(start) === '[object Date]' &&
           (this.startDate = getDateInfo(start))
@@ -140,12 +154,6 @@ export default {
       this.currentValue = Array.isArray(this.value)
         ? [...this.value]
         : this.value || new Date()
-    },
-    generationCurrentMonthData(item) {
-      this.monthList.push({
-        year: item[0],
-        month: item[1]
-      })
     },
     onSelectedHandle({ year, month, day }) {
       let dateInfo = getDateInfo(new Date(year, month - 1, day))
@@ -170,13 +178,16 @@ export default {
     },
     backHandle() {
       this.$emit('popup-close')
+    },
+    onScroll(e) {
+      if (scrollHeight - e.target.scrollTop < 50 && !isLoadData) {
+        isLoadData = true
+        let { year, month } = this.monthList[this.monthList.length - 1]
+        this.loadData(year, month)
+      }
     }
   },
-  watch: {
-    // "currentDate.month"() {
-    //   this.generationCurrentMonthData();
-    // }
-  }
+  watch: {}
 }
 </script>
 <style lang="scss">

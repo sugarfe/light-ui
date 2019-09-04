@@ -1,6 +1,7 @@
 <template>
   <PageContent>
     <Navbar slot="header">Calendar</Navbar>
+    {{text}}
     <Button
       block
       @click="open"
@@ -12,7 +13,8 @@ export default {
   components: {},
   data() {
     return {
-      value: undefined
+      value: undefined,
+      text: undefined
     }
   },
   methods: {
@@ -23,6 +25,11 @@ export default {
           this.value = value.map(item => {
             return new Date(item.timeStamp)
           })
+          this.text = value
+            .map(item => {
+              return item.string
+            })
+            .join(' - ')
         }
       })
     }

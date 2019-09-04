@@ -9,33 +9,50 @@
 		font-size: 16px;
 		color: $l-theme-primary;
 	}
+	.select-date {
+		padding: 10px 0;
+		background: #fbfbfb;
+		&-info {
+			text-align: center;
+			& > li {
+				&:nth-child(1) {
+					font-size: 15px;
+					color: $l-color-gray;
+				}
+				&:nth-child(2) {
+					font-size: 14px;
+					margin-top: 5px;
+					color: $l-color-gray-dark;
+					font-weight: 500;
+				}
+			}
+		}
+		&-step {
+			width: 50px;
+			text-align: center;
+			font-size: 14px;
+		}
+	}
 	.calendar-week-header {
 		padding: 10px 0;
 		font-size: 12px;
 	}
-
 	.calendar-contant {
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
-		.calendar-contant-scroll-warp {
-			position: relative;
-			overflow: hidden;
-			white-space: nowrap;
-
-			.calendar-month-warp {
-				&:last-child {
-					padding-bottom: 10px;
-				}
-				.calendar-month-title {
-					padding: 10px;
-					font-size: 14px;
-					background: #fbfbfb;
-					margin: 30px 0;
-				}
-				&:first-child .calendar-month-title {
-					margin-top: 0;
-				}
+		.calendar-month-warp {
+			&:last-child {
+				padding-bottom: 10px;
+			}
+			.calendar-month-title {
+				padding: 10px;
+				font-size: 14px;
+				background: #fbfbfb;
+				margin: 30px 0;
+			}
+			&:first-child .calendar-month-title {
+				margin-top: 0;
 			}
 		}
 
@@ -136,6 +153,22 @@
 						color: $l-calendar-toolbar-bg-color;
 					}
 				}
+				&-end-one-day {
+					@extend .calendar-day-end;
+					&::before {
+						border-radius: 50%;
+					}
+				}
+				&-end-previous::after {
+					content: '';
+					position: absolute;
+					height: 30px;
+					top: 50%;
+					transform: translateY(-50%);
+					right: calc((30px - 100%) / 2);
+					width: calc((100% - 30px) / 2);
+					background: $l-calendar-toolbar-bg-color;
+				}
 				&-in {
 					color: #fff;
 					font-weight: 600;
@@ -164,6 +197,16 @@
 						width: calc((100% - 30px) / 2);
 						background: $l-calendar-toolbar-bg-color;
 					}
+				}
+				&-in-two-day::after {
+					content: '';
+					position: absolute;
+					height: 30px;
+					top: 50%;
+					transform: translateY(-50%);
+					left: -50%;
+					width: calc((300% + 60px) / 2);
+					background: $l-calendar-toolbar-bg-color;
 				}
 			}
 		}
