@@ -14,7 +14,10 @@
       </slot>
     </div>
     <div>
-      <slot v-for="(item,index) in data">
+      <slot
+        v-for="(item,index) in data"
+        :row="item"
+      >
         <div
           class="group-list-item"
           :key="index"
@@ -27,7 +30,7 @@
 </template>
 <script>
 export default {
-  name: "GroupItem",
+  name: 'GroupItem',
   props: {
     data: {
       type: Array,
@@ -38,28 +41,37 @@ export default {
     title: {
       type: String,
       default() {
-        return ""
+        return ''
       }
     }
   },
   computed: {
     parentScrollTop() {
-      return this.$parent.scrollTop;
+      return this.$parent.scrollTop
     },
     isScrollInner() {
-      return this.parentScrollTop > 0 && this.scrollBegin < this.parentScrollTop && this.parentScrollTop < this.scrollEnd
+      return (
+        this.parentScrollTop > 0 &&
+        this.scrollBegin < this.parentScrollTop &&
+        this.parentScrollTop < this.scrollEnd
+      )
     },
     dynamicStyle() {
-      return { 'padding-top': this.isScrollInner ? `${this.itemBarHeight}px` : 0 }
+      return {
+        'padding-top': this.isScrollInner ? `${this.itemBarHeight}px` : 0
+      }
     },
     dynamicDistanceBar() {
       return this.parentScrollTop - this.scrollEnd
     },
     dynamicStyleItemBar() {
       let result = Math.abs(this.dynamicDistanceBar)
-      result = result != 0 && result < this.itemBarHeight ? -(this.dynamicDistanceBar + this.itemBarHeight) : 0
+      result =
+        result != 0 && result < this.itemBarHeight
+          ? -(this.dynamicDistanceBar + this.itemBarHeight)
+          : 0
       return {
-        'transform': ` translateY(${result}}px)`,
+        transform: ` translateY(${result}}px)`,
         '-webkit-transform': ` translateY(${result}px)`
       }
     }
@@ -72,18 +84,18 @@ export default {
     }
   },
   mounted() {
-    this.init();
+    this.init()
   },
   methods: {
     init() {
-      this.scrollBegin = this.$el.offsetTop;
-      this.scrollEnd = this.scrollBegin + this.$el.offsetHeight;
-      this.itemBarHeight = this.$refs['item-bar'].offsetHeight;
+      this.scrollBegin = this.$el.offsetTop
+      this.scrollEnd = this.scrollBegin + this.$el.offsetHeight
+      this.itemBarHeight = this.$refs['item-bar'].offsetHeight
     }
   },
   watch: {
-    'isScrollInner'(value) {
-      value && this.$parent.changeActiveIndex();
+    isScrollInner(value) {
+      value && this.$parent.changeActiveIndex()
     }
   }
 }
