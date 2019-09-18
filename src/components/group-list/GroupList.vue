@@ -1,5 +1,8 @@
 <template>
-  <div class="l-group-list">
+  <div
+    ref="l-group-list"
+    class="l-group-list"
+  >
     <div
       class="l-group-list-warp"
       ref="scrollWarp"
@@ -23,6 +26,8 @@
   </div>
 </template>
 <script>
+let navWarpTop = 0,
+  groupWarpTop = 0
 export default {
   name: 'GroupList',
   props: {
@@ -36,8 +41,7 @@ export default {
   data() {
     return {
       scrollTop: 0,
-      activeIndex: 0,
-      navWarpTop: 0
+      activeIndex: 0
     }
   },
   mounted() {
@@ -45,7 +49,10 @@ export default {
   },
   methods: {
     init() {
-      this.navWarpTop = document.querySelector('.l-group-list-nav').offsetTop
+      let navDom = document.querySelector('.l-group-list-nav')
+      let groupDom = this.$refs['l-group-list']
+      navWarpTop = (groupDom.offsetHeight - navDom.offsetHeight) / 2
+      groupWarpTop = groupDom.offsetTop
     },
     onScroll(e) {
       this.scrollTop = e.target.scrollTop
@@ -68,10 +75,11 @@ export default {
       this.touchmove(e)
     },
     touchmove(e) {
-      this.scrollTo(this.getNavIndex(e.touches[0].pageY))
+      let i = this.getNavIndex(e.touches[0].pageY)
+      this.scrollTo(i)
     },
     getNavIndex(pageY) {
-      let i = Math.ceil((pageY - this.navWarpTop + 10) / 22)
+      let i = Math.ceil((pageY - navWarpTop - groupWarpTop) / 22)
       return (i < 0 ? 0 : i > this.nav.length ? this.nav.length : i) - 1
     }
   }
