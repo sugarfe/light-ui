@@ -10,6 +10,7 @@
       :disabled="disabled"
       :readonly="readonly"
       @focus="onFocusHandle"
+      @blur="onBlurHandle"
       class="l-input flex-1"
       v-model="currentValue"
       v-if="!textarea"
@@ -25,6 +26,8 @@
         :readonly="readonly"
         :placeholder="placeholder"
         v-model="currentValue"
+        @focus="onFocusHandle"
+        @blur="onBlurHandle"
         class="l-textarea"
       ></textarea>
       <pre class="l-textarea-block">%{{ currentValue }}</pre>
@@ -87,6 +90,9 @@ export default {
   methods: {
     onFocusHandle(e) {
       this.$emit('onFocus', e)
+    },
+    onBlurHandle(e) {
+      this.$emit('onBlur', e)
     }
   },
   watch: {

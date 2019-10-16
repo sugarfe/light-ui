@@ -12,10 +12,10 @@
           <i class="icon-arrow-back"></i>
         </div>
       </slot>
-      <div class="flex-1 l-navbar-title">
-        <span>
-          <slot></slot>
-        </span>
+      <div class="flex-1">
+      </div>
+      <div class="l-navbar-title">
+        <slot></slot>
       </div>
       <slot name="right"></slot>
     </nav>

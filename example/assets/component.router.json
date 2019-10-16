@@ -25,7 +25,7 @@
 	},
 	{
 		"name": "Layout",
-		"items": ["Tab", "Grid", "Flex", "Navbar", "Watermark"]
+		"items": ["Tab", "Grid", "Flex", "Navbar", "Watermark", "Cell"]
 	},
 	{
 		"name": "Scroll",

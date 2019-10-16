@@ -51,6 +51,12 @@ export default {
       default() {
         return undefined
       }
+    },
+    currentDay: {
+      type: Object,
+      default() {
+        return {}
+      }
     }
   },
   data() {
@@ -83,26 +89,41 @@ export default {
         isEndDayPrevious = this.endDate.timeStamp - 86400000 === timeStamp
       }
       return {
-        // 'calendar-day-selected': this.isCurrentDay(year, month, day),
-        'calendar-day-start': isStartDay,
-        'calendar-day-end': isEndDay && this.days !== 1,
-        'calendar-day-end-one-day': isEndDay && this.days === 1,
+        'calendar-day-selected':
+          this.isCurrentDay(year, month, day) &&
+          !(
+            this.currentDay.timeStamp > this.startDate.timeStamp &&
+            this.currentDay.timeStamp < this.endDate.timeStamp
+          ),
+        'calendar-day-start':
+          isStartDay && this.startDate.timeStamp !== this.endDate.timeStamp,
+        'calendar-day-end':
+          isEndDay &&
+          this.startDate.timeStamp !== this.endDate.timeStamp &&
+          this.days !== 2,
+        'calendar-day-end-one-day': isEndDay && this.days === 2,
         'calendar-day-in-start':
-          isStartDay && this.endDate.timeStamp && this.days > 2,
+          isStartDay && this.endDate.timeStamp && this.days > 3,
         'calendar-day-in-two-day':
           timeStamp > this.startDate.timeStamp &&
           timeStamp < this.endDate.timeStamp &&
-          this.days === 2,
+          this.days === 3,
         //选中的日期时间段
         'calendar-day-in':
           timeStamp > this.startDate.timeStamp &&
           timeStamp < this.endDate.timeStamp,
-        'calendar-day-end-previous': isEndDayPrevious && this.days > 2,
-        'calendar-day-current-month': this.isCurrentMonth(month)
+        'calendar-day-end-previous': isEndDayPrevious && this.days > 3,
+        'calendar-day-current-month': this.isCurrentMonth(month),
+        'calendar-day-start-and-end':
+          this.startDate.timeStamp === timeStamp &&
+          this.startDate.timeStamp === this.endDate.timeStamp
       }
     },
     isCurrentDay(y, m, d) {
-      return `${y}${m}${d}` === this.currentDay
+      return (
+        `${y}${m}${d}` ===
+        `${this.currentDay.fullYear}${this.currentDay.month}${this.currentDay.day}`
+      )
     },
     isCurrentMonth(m) {
       return m === this.month

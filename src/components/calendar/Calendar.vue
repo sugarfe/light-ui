@@ -45,6 +45,7 @@
           :startDate="startDate"
           :endDate="endDate"
           :days="days"
+          :currentDay="currentDay"
           @onSelected="onSelectedHandle"
         ></CalendarItem>
       </div>
@@ -111,13 +112,14 @@ export default {
       selectedDay: '',
       activeIndex: 1,
       currentPageIndex: 0,
-      currentValue: []
+      currentValue: [],
+      currentDay: getDateInfo(new Date())
     }
   },
   computed: {
     days() {
       return this.startDate.timeStamp && this.endDate.timeStamp
-        ? (this.endDate.timeStamp - this.startDate.timeStamp) / 86400000
+        ? (this.endDate.timeStamp - this.startDate.timeStamp) / 86400000 + 1
         : undefined
     }
   },
@@ -168,6 +170,8 @@ export default {
       } else if (this.startDate.timeStamp > dateInfo.timeStamp) {
         this.endDate = { ...this.startDate }
         this.startDate = { ...dateInfo }
+      } else if (this.startDate.timeStamp === dateInfo.timeStamp) {
+        this.endDate = { ...dateInfo }
       }
     },
     ok() {

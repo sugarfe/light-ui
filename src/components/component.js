@@ -28,6 +28,7 @@ import GroupList from './group-list/GroupList.vue'
 import GroupItem from './group-item/GroupItem.vue'
 import ClipImage from './clipImage/index.js'
 import BrowseImage from './browse-image/BrowseImage.vue'
+import Cell from './cell/Cell.vue'
 const components = [
 	Button,
 	Radio,
@@ -49,7 +50,8 @@ const components = [
 	Watermark,
 	GroupList,
 	GroupItem,
-	BrowseImage
+	BrowseImage,
+	Cell
 ]
 export default [
 	...components,

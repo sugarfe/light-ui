@@ -82,6 +82,7 @@
 					transition-property: transform;
 					transition-duration: 0.5s;
 				}
+
 				&-current-month {
 					color: #222;
 					visibility: visible;
@@ -91,7 +92,7 @@
 					}
 				}
 				&-selected {
-					color: #fff;
+					color: $l-calendar-toolbar-bg-color;
 					font-weight: 600;
 					&::before {
 						content: '';
@@ -102,7 +103,17 @@
 						height: 30px;
 						width: 30px;
 						border-radius: 50%;
-						background-color: $l-calendar-toolbar-bg-color;
+						box-sizing: border-box;
+						border: 1px solid $l-calendar-toolbar-bg-color;
+					}
+					&::after {
+						content: '今天';
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						font-size: 12px;
+						bottom: -8px;
+						color: $l-calendar-toolbar-bg-color;
 					}
 				}
 				&-start {
@@ -207,6 +218,30 @@
 					left: -50%;
 					width: calc((300% + 60px) / 2);
 					background: $l-calendar-toolbar-bg-color;
+				}
+				&-start-and-end {
+					color: #fff;
+					&::before {
+						content: '';
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%) scale(1);
+						height: 30px;
+						width: 30px;
+						border-radius: 50%;
+						background-color: $l-calendar-toolbar-bg-color;
+					}
+					&::after {
+						content: '起/止';
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						font-size: 12px;
+						bottom: -8px;
+						color: $l-calendar-toolbar-bg-color;
+						white-space: nowrap;
+					}
 				}
 			}
 		}
