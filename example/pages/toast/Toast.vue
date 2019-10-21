@@ -26,13 +26,10 @@ export default {
     return {}
   },
   props: {},
-  mounted() {},
+  mounted() { },
   methods: {
-    open(position) {
-      new this.$Toast({
-        text: '请填写相关内容',
-        time: 2000
-      })
+    open() {
+      new this.$Toast()
     }
   }
 }

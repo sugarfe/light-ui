@@ -19,7 +19,8 @@ Vue.use(RUNUIX, {
 		light: false
 	},
 	toast: {
-		duration: 100
+		duration: 2000,
+		text: '请等待...'
 	},
 	dependence: {
 		store,
