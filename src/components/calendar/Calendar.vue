@@ -187,7 +187,7 @@ export default {
       if (scrollHeight - e.target.scrollTop < 50 && !isLoadData) {
         isLoadData = true
         let { year, month } = this.monthList[this.monthList.length - 1]
-        this.loadData(year, month)
+        this.loadData(year, month + 1)
       }
     }
   },
