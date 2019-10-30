@@ -5,17 +5,12 @@
   >
     <Navbar slot="header">Toast</Navbar>
     <div class="flex-1">
-      <example-group contentClass="group-content">
-        basic
-        <template v-slot:content> </template>
-      </example-group>
-    </div>
-    <div class="action-panel">
-      <Button
-        block
-        theme="primary"
-        @click="open"
-      >打开</Button>
+      <Cell @click="open">
+        Basic
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
     </div>
   </PageContent>
 </template>
@@ -26,7 +21,7 @@ export default {
     return {}
   },
   props: {},
-  mounted() { },
+  mounted() {},
   methods: {
     open() {
       new this.$Toast()

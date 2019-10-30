@@ -1,11 +1,13 @@
 <template>
   <PageContent>
     <Navbar slot="header">Calendar</Navbar>
-    {{text}}
-    <Button
-      block
-      @click="open"
-    >打开</Button>
+    <Cell @click="open">
+      basic
+      <template slot="value">
+        {{text}}
+        <i class="iconfont icon-arrow-forward"></i>
+      </template>
+    </Cell>
   </PageContent>
 </template>
 <script>

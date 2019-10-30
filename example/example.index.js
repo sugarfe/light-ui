@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import './index.scss'
-import RUNUIX from '@/index.js'
+import LightUI from '@/index.js'
 import routes from './router.js'
 import './style/index.scss'
 import store from './vuex/index.js'
@@ -14,7 +14,7 @@ Vue.component(ExampleGroup.name, ExampleGroup)
 ;[VueRouter].map(plugin => {
 	Vue.use(plugin)
 })
-Vue.use(RUNUIX, {
+Vue.use(LightUI, {
 	button: {
 		light: false
 	},

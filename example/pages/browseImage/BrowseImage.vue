@@ -1,15 +1,11 @@
 <template>
   <PageContent>
     <Navbar slot="header">BrowseImage</Navbar>
+
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
-        <BrowseImage
-          v-model="value"
-          :max="1"
-        >
-
-        </BrowseImage>
+        <BrowseImage compressed></BrowseImage>
       </template>
     </example-group>
   </PageContent>

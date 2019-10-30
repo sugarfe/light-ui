@@ -1,105 +1,98 @@
 <template>
-  <div
-    class="l-group-item-warp"
-    :class="{'l-group-item-inner':isScrollInner}"
-    :style="dynamicStyle"
-  >
-    <div
-      class="group-list-bar"
-      ref="item-bar"
-      :style="dynamicStyleItemBar"
-    >
-      <slot name="title">
-        {{title}}
-      </slot>
-    </div>
-    <div>
-      <slot
-        v-for="(item,index) in data"
-        :row="item"
+  <ul class="run-list-item-warp">
+    <li class="run-list-item">
+      <div class="run-list-group-bar">
+        <slot name="title"></slot>
+      </div>
+      <ul
+        class="run-list-group-item"
+        ref="group-item"
+        v-if="autoIteration"
+        v-show="isExpand"
       >
-        <div
-          class="group-list-item"
-          :key="index"
-        >
-          {{item.text}}
-        </div>
-      </slot>
-    </div>
-  </div>
+        <slot
+          v-for="item in data"
+          :row="item"
+        ></slot>
+      </ul>
+      <ul
+        class="run-list-group-item"
+        ref="group-item"
+        v-show="isExpand"
+        :style="{ height: gheight }"
+        v-else
+      >
+        <slot
+          name="group-item"
+          :rows="data"
+        ></slot>
+      </ul>
+    </li>
+  </ul>
 </template>
 <script>
 export default {
   name: 'GroupItem',
+  components: {},
   props: {
+    //PS修改：添加type类型String, Object, Array
     data: {
-      type: Array,
+      type: [String, Object, Array],
       default() {
-        return []
+        return ''
       }
     },
-    title: {
+    nav: {
       type: String,
       default() {
         return ''
       }
-    }
-  },
-  computed: {
-    parentScrollTop() {
-      return this.$parent.scrollTop
     },
-    isScrollInner() {
-      return (
-        this.parentScrollTop > 0 &&
-        this.scrollBegin < this.parentScrollTop &&
-        this.parentScrollTop < this.scrollEnd
-      )
-    },
-    dynamicStyle() {
-      return {
-        'padding-top': this.isScrollInner ? `${this.itemBarHeight}px` : 0
+    autoIteration: {
+      type: Boolean,
+      default() {
+        return true
       }
     },
-    dynamicDistanceBar() {
-      return this.parentScrollTop - this.scrollEnd
+    folding: {
+      type: Boolean,
+      default() {
+        return false
+      }
     },
-    dynamicStyleItemBar() {
-      let result = Math.abs(this.dynamicDistanceBar)
-      result =
-        result != 0 && result < this.itemBarHeight
-          ? -(this.dynamicDistanceBar + this.itemBarHeight)
-          : 0
-      return {
-        transform: ` translateY(${result}}px)`,
-        '-webkit-transform': ` translateY(${result}px)`
+    defaultExpand: {
+      type: Boolean,
+      default() {
+        return true
       }
     }
   },
   data() {
     return {
-      scrollBegin: 0,
-      scrollEnd: 0,
-      itemBarHeight: 0
+      height: 0,
+      isExpand: true
     }
   },
-  mounted() {
-    this.init()
+  computed: {},
+  created: function() {
+    this.isExpand = this.defaultExpand
   },
+  beforeMount: function() {},
+  mounted: function() {
+    this.height = this.$refs['group-item'].offsetHeight
+  },
+  beforeDestroy: function() {},
+  destroyed: function() {},
   methods: {
-    init() {
-      this.scrollBegin = this.$el.offsetTop
-      this.scrollEnd = this.scrollBegin + this.$el.offsetHeight
-      this.itemBarHeight = this.$refs['item-bar'].offsetHeight
+    //PS修改：toggleHideHanlde方法的折叠为控制display显示影藏
+    toggleHideHanlde() {
+      // let el = this.$refs['group-item'];
+      // el.style.display = el.offsetHeight > 0 ? 'none' : 'block';
+      // this.isExpand = !this.isExpand
+      // this.$forceUpdate()
     }
   },
-  watch: {
-    isScrollInner(value) {
-      value && this.$parent.changeActiveIndex()
-    }
-  }
+  watch: {},
+  directives: {}
 }
 </script>
-<style lang="scss">
-@import './group.item.scss';
-</style>

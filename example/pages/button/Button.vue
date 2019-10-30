@@ -122,7 +122,7 @@
         >alert</Button>
       </template>
     </example-group>
-    <example-group contentClass="group-content">
+    <!-- <example-group contentClass="group-content">
       async
       <template v-slot:content>
         <Button
@@ -131,7 +131,7 @@
           @click="clickHandle"
         >async</Button>
       </template>
-    </example-group>
+    </example-group> -->
   </PageContent>
 </template>
 <script>
@@ -139,7 +139,7 @@ export default {
   methods: {
     clickHandle(done) {
       setTimeout(() => {
-        done();
+        done()
       }, 3 * 1000)
     }
   }

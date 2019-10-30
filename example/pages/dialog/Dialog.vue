@@ -12,11 +12,11 @@
             right
             v-model="values"
           >
-            <checkbox value="isMaskClose">isMaskClose</checkbox>
-            <checkbox value="confirm">confirm</checkbox>
-            <checkbox value="cancelText">cancelText</checkbox>
-            <checkbox value="okText">okText</checkbox>
-            <checkbox value="delayClose">delayClose</checkbox>
+            <checkbox value="confirm">Confirm</checkbox>
+            <checkbox value="cancelText">CancelText</checkbox>
+            <checkbox value="okText">OkText</checkbox>
+            <checkbox value="delayClose">DelayClose</checkbox>
+            <checkbox value="render">Render</checkbox>
           </checkbox-group>
         </template>
       </example-group>
@@ -30,13 +30,15 @@
     </div>
   </PageContent>
 </template>
+import 
 <script>
 let option = {
   isMaskClose: true,
   confirm: true,
   cancelText: 'cancel',
   okText: 'ok',
-  delayClose: true
+  delayClose: true,
+  render: true
 }
 export default {
   data() {
@@ -59,9 +61,11 @@ export default {
         title: '提示',
         text: 'dialog',
         ...this.options,
-        render: () => {
-          return <div class="aaa">aaaa</div>
-        },
+        render: this.options.render
+          ? () => {
+              return <input class="dialog-input" placeholder="请输入" />
+            }
+          : undefined,
         onOk: this.handle,
         onCancel: this.handle,
         onHandle: this.handle
@@ -76,3 +80,11 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.dialog-input {
+  border: 1px solid #f0f0f0;
+  height: 32px;
+  width: 100%;
+  padding: 0 10px;
+}
+</style>

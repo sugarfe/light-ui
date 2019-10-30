@@ -5,28 +5,54 @@
   >
     <Navbar slot="header">Popup</Navbar>
     <div class="flex-1">
-      <example-group contentClass="group-content">
-        position
-        <template v-slot:content>
-          <radio-group
-            v-model="option.position"
-            right
-          >
-            <radio
-              :value="item"
-              v-for="(item, index) in optionData.position"
-              :key="index"
-            >{{ item }}</radio>
-          </radio-group>
+      <Cell @click="open({position:'top'})">
+        Top
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
         </template>
-      </example-group>
-    </div>
-    <div class="action-panel">
-      <Button
-        block
-        theme="primary"
-        @click="open"
-      >打开</Button>
+      </Cell>
+      <Cell @click="open({position:'bottom'})">
+        Bottom
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
+      <Cell @click="open({position:'left'})">
+        Left
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
+      <Cell @click="open({position:'right'})">
+        Right
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
+      <Cell @click="open({position:'center',isMask:true})">
+        Center
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
+      <Cell @click="open({position:'left',size:'300px'})">
+        Left - 300px
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
+      <Cell @click="open({position:'bottom',size:'200px',isMask:true})">
+        Bottom - 200px - Mask
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
+      <Cell @click="open({position:'left',open:true})">
+        Open
+        <template slot="value">
+          <i class="iconfont icon-arrow-forward"></i>
+        </template>
+      </Cell>
     </div>
   </PageContent>
 </template>
@@ -35,11 +61,6 @@ import PopupModel from './PopupModel'
 export default {
   data() {
     return {
-      positionIndex: 0,
-      sizeIndex: 0,
-      optionData: {
-        position: ['top', 'bottom', 'left', 'right', 'center']
-      },
       option: {
         position: 'top',
         size: '100%',
@@ -48,9 +69,10 @@ export default {
     }
   },
   methods: {
-    open() {
+    open(option) {
       new this.$Popup(PopupModel, {
-        ...this.option
+        ...this.option,
+        ...option
       })
     }
   },

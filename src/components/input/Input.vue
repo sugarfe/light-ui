@@ -30,7 +30,8 @@
         @blur="onBlurHandle"
         class="l-textarea"
       ></textarea>
-      <pre class="l-textarea-block">%{{ currentValue }}</pre>
+      <pre class="l-textarea-block">{{ currentValue }}
+</pre>
     </div>
     <div class="l-input-tool flex-box flex-align-center">
       <slot></slot>

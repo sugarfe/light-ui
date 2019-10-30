@@ -7,7 +7,10 @@
         :key="index"
         :data="item.data"
       >
-        <span slot="title">{{item.name}}</span>
+        <div
+          slot="title"
+          class="title"
+        >{{item.name}}</div>
         <div slot-scope="param">
           <div class="group-list-item">
             {{param.row.text}}
@@ -35,5 +38,20 @@ export default {
   methods: {}
 }
 </script>
-<style lang="scss" >
+<style lang="scss" scoped>
+.title {
+  height: 38px;
+  line-height: 38px;
+  padding-left: 10px;
+  background-color: #cacaca;
+  color: #fff;
+}
+.group-list-item {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  padding: 0 10px;
+  position: relative;
+}
 </style>

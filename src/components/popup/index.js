@@ -1,6 +1,16 @@
 import PopupView from './Popup.vue'
 class Popup {
 	static instance = []
+	static clear = (index = -1) => {
+		if (index === -1) {
+			Popup.instance.map(item => {
+				item.close()
+			})
+		} else {
+			let instance = Popup.instance[index]
+			instance && instance.close()
+		}
+	}
 	constructor(component = {}, option = {}, dom = document.body) {
 		Popup.instance.push(this)
 		this.id = `popup-${Date.now()}`
@@ -52,9 +62,6 @@ class Popup {
 		popupOption = sorting(popupOption)
 		componentOption = sorting(componentOption)
 		componentOption.on['popup-close'] = () => {
-			Popup.instance = Popup.instance.filter(item => {
-				return item.id !== this.id
-			})
 			this.close()
 		}
 		componentOption.on['popup-hide'] = () => {
@@ -86,6 +93,9 @@ class Popup {
 	}
 	close() {
 		this.componentInstance && this.componentInstance.close()
+		Popup.instance = Popup.instance.filter(item => {
+			return item.id !== this.id
+		})
 	}
 }
 

@@ -37,6 +37,7 @@
         class="l-browse-item"
       >
         <img
+          :id="item.id"
           :src="item.base64"
           v-if="item.base64"
         >
@@ -92,6 +93,27 @@ export default {
       default() {
         return -1
       }
+    },
+    compressed: {
+      type: Boolean,
+      default() {
+        return false
+      }
+    },
+    size: {
+      type: Object,
+      default() {
+        return {
+          width: 300,
+          height: 300
+        }
+      }
+    },
+    quality: {
+      type: Number,
+      default() {
+        return 1
+      }
     }
   },
   components: {
@@ -100,11 +122,6 @@ export default {
   },
   computed: {
     maxDisplay() {
-      console.log(
-        this.max,
-        this.items.length,
-        (this.max > 0 && this.max > this.items.length) || this.max <= 0
-      )
       return (this.max > 0 && this.max > this.items.length) || this.max <= 0
     }
   },
@@ -116,24 +133,71 @@ export default {
     }
   },
   created() {
+    console.log(this.compressed, this.quality)
     this.init()
   },
   methods: {
     init() {
       reader = new FileReader()
       reader.onload = e => {
+        debugger
+        console.log(this.compressed, this.quality, this)
         this.$nextTick(() => {
-          this.items[this.items.length - 1].base64 = e.target.result
-          this.emitInput()
+          this.fileHandle(e)
         })
       }
     },
+    fileHandle(e) {
+      debugger
+      let item = this.items[this.items.length - 1]
+      console.log(this.compressed, this.quality)
+      if (!this.compressed) {
+        item.base64 = e.target.result
+        return
+      }
+      let img = document.createElement('img')
+      img.src = e.target.result
+      img.onload = e => {
+        let { width, height } = this.getCompressedOption(e.target)
+        let canvas = document.createElement('canvas')
+        let ctx = canvas.getContext('2d')
+        canvas.width = width
+        canvas.height = height
+        ctx.clearRect(0, 0, width, height)
+        ctx.drawImage(img, 0, 0, width, height)
+        this.items[this.items.length - 1].base64 = canvas.toDataURL(
+          'image/jpeg',
+          this.quality
+        )
+        this.emitInput()
+      }
+    },
+    //获取压缩参数
+    getCompressedOption({ width: originWidth, height: originHeight }) {
+      if (originWidth < this.size.width && originHeight < this.size.height) {
+        return { width: originWidth, height: originHeight }
+      }
+      let width, height
+      if (originWidth / originHeight > this.size.width / this.size.height) {
+        // 更宽，按照宽度限定尺寸
+        width = this.size.width
+        height = Math.round(this.size.width * (originHeight / originWidth))
+      } else {
+        height = this.size.height
+        width = Math.round(this.size.height * (originWidth / originHeight))
+      }
+      return { width, height }
+    },
     change(e) {
+      debugger
+      console.log(this.compressed, this.quality)
       let { target } = e
       let [files] = target.files
       this.items.push({
+        id: `img-${new Date().getTime()}`,
         name: files.name,
         size: files.size,
+        base64: undefined,
         base64: undefined,
         suffix: files.name.split('.').pop()
       })

@@ -1,37 +1,89 @@
-.l-group-list {
+.run-list-warp {
 	position: relative;
 	height: 100%;
-	&-warp {
+	overflow: hidden;
+	background: #fff;
+	.native-scroll {
 		height: 100%;
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 	}
-	.group-list-bar {
-		padding: 16px 16px;
-		font-size: 14px;
-		color: #999;
-		background: #f7f7f7;
-	}
-	.group-list-item {
-		position: relative;
-		height: 50px;
-		line-height: 50px;
-		padding: 0 16px;
-		font-size: 14px;
-		color: #333;
-	}
-	&-nav {
+	.run-item-active {
 		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+	.run-list-nav-warp {
+		position: absolute;
+		z-index: 1;
 		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		& > li {
-			padding: 3px;
-			color: $l-color-gray;
+		font-family: Helvetica;
+		color: #aaa;
+		& > ul {
+			& > li {
+				padding: 3px;
+				font-size: 12px;
+				line-height: 1;
+				text-align: center;
+			}
+		}
+		.run-list-nav-active {
+			color: #ffb403;
 		}
 	}
-	.l-nav-active {
-		color: $l-theme-primary;
+	.run-list-item {
+		.run-list-group-bar {
+			position: relative;
+			& > .group-bar-arrow {
+				color: #3c3b3b;
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				width: 20px;
+				height: 20px;
+				transform: translateY(-50%) rotate(-180deg);
+				-webkit-transform: translateY(-50%) rotate(-180deg);
+				transition: transform 0.3s;
+				-webkit-transition: transform 0.3s;
+				-webkit-transition: -webkit-transform 0.3s;
+				&-expand {
+					transform: translate(0, -50%) rotate(0deg);
+					-webkit-transform: translate(0, -50%) rotate(0deg);
+				}
+				background-position: 4.545% 71.984%;
+				background-size: 222.22% 2810.81%;
+				// &::before{
+				//   content: "";
+				//   border:1px solid $run-color-gray-light-sss;
+				//   border-radius: 50%;
+				//   position: absolute;
+				//   width: 20px;
+				//   height:20px;
+				//   box-sizing: border-box;
+				//   top: 50%;
+				//   left: 50%;
+				//   transform: translate3d(-50%,-50%,0);
+				// }
+				// &::after{
+				//   content: "";
+				//   position: absolute;
+				//   left: -10px;
+				//   top: -10px;
+				//   right: -10px;
+				//   bottom: -10px;
+				// }
+				& > i {
+					color: #aaa;
+					font-size: 12px;
+				}
+			}
+		}
+		.run-list-group-item {
+			overflow: hidden;
+		}
 	}
 }
