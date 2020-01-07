@@ -55,10 +55,12 @@
     >
       <i class="icon-add"></i>
       <input
+        ref="input"
         type="file"
         :multiple="multiple"
         accept="image/*"
         @change="change"
+        :capture="capture"
       >
     </GridItem>
   </grid>
@@ -114,6 +116,12 @@ export default {
       default() {
         return 1
       }
+    },
+    capture: {
+      type: String,
+      default() {
+        return ''
+      }
     }
   },
   components: {
@@ -133,26 +141,22 @@ export default {
     }
   },
   created() {
-    console.log(this.compressed, this.quality)
     this.init()
   },
   methods: {
     init() {
       reader = new FileReader()
       reader.onload = e => {
-        debugger
-        console.log(this.compressed, this.quality, this)
         this.$nextTick(() => {
           this.fileHandle(e)
         })
       }
     },
     fileHandle(e) {
-      debugger
       let item = this.items[this.items.length - 1]
-      console.log(this.compressed, this.quality)
       if (!this.compressed) {
         item.base64 = e.target.result
+        this.emitInput()
         return
       }
       let img = document.createElement('img')
@@ -189,8 +193,6 @@ export default {
       return { width, height }
     },
     change(e) {
-      debugger
-      console.log(this.compressed, this.quality)
       let { target } = e
       let [files] = target.files
       this.items.push({
@@ -228,6 +230,9 @@ export default {
           }
         })
       )
+    },
+    browse() {
+      this.$refs['input'].click()
     }
   },
   watch: {

@@ -94,7 +94,7 @@ export default {
       value3: [1],
       value4: [1],
       value5: [1],
-      value6: '001',
+      value6: true,
       data: [
         {
           text: 'JavaScript',

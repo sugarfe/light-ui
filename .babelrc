@@ -14,8 +14,8 @@
     [
       "component",
       {
-        "libraryName": "aaa",
-        "libDir": "lib",
+        "libraryName": "light-ui-m",
+        "libDir": "library",
         "camel2Dash": false,
         "style": true
       }

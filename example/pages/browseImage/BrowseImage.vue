@@ -5,7 +5,13 @@
     <example-group contentClass="group-content">
       basic
       <template v-slot:content>
-        <BrowseImage compressed></BrowseImage>
+        <BrowseImage
+          ref="browseImage"
+          multiple
+          v-model="value"
+          compressed
+        ></BrowseImage>
+        <!-- <Button @click="browse">browse</Button> -->
       </template>
     </example-group>
   </PageContent>
@@ -17,10 +23,16 @@ export default {
       value: []
     }
   },
+  methods: {
+    browse() {
+      this.$refs['browseImage'].browse()
+    }
+  },
   watch: {
-    value() {}
+    value() {
+      console.log(this.value.length)
+    }
   }
 }
 </script>
-<style lang="scss" >
-</style>
+<style lang="scss"></style>

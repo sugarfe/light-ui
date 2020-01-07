@@ -23,7 +23,7 @@ export default {
   mixins: [mixinProps],
   props: {
     value: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       default() {
         return undefined
       }
@@ -59,6 +59,7 @@ export default {
   methods: {
     change(e) {
       if (this.isSingle) {
+        this.singleValue = !this.singleValue
         this.$emit('input', e.target.checked ? this.singleValue : undefined)
         return
       }

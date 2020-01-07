@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import { setTimeout } from 'timers';
+import { setTimeout } from 'timers'
 export default {
   name: 'toast',
   data() {
@@ -34,12 +34,12 @@ export default {
     }
   },
   created() {
-    this.init();
+    this.init()
   },
   methods: {
     init() {
       setTimeout(() => {
-        this.$emit('popup-close')
+        this.$emit('onComplete')
       }, this.duration)
     }
   }
