@@ -60,13 +60,11 @@
         :multiple="multiple"
         accept="image/*"
         @change="change"
-        :capture="capture"
       >
     </GridItem>
   </grid>
 </template>
 <script>
-let reader
 import Grid from '@/components/grid/Grid.vue'
 import GridItem from '@/components/grid-item/GridItem.vue'
 export default {
@@ -137,7 +135,10 @@ export default {
     return {
       items: [],
       originalItmes: [],
-      deleteOriginalList: []
+      deleteOriginalList: [],
+      reader: undefined,
+      tempList: [],
+      currentFileCount: 0
     }
   },
   created() {
@@ -145,36 +146,42 @@ export default {
   },
   methods: {
     init() {
-      reader = new FileReader()
-      reader.onload = e => {
+      this.reader = new FileReader()
+      this.reader.onload = e => {
         this.$nextTick(() => {
-          this.fileHandle(e)
+          this.fileHandle(e).then(() => {
+            this.tempList.length === 0
+              ? this.emitInput()
+              : this.browseCompleted()
+          })
         })
       }
     },
-    fileHandle(e) {
+    async fileHandle(e) {
       let item = this.items[this.items.length - 1]
       if (!this.compressed) {
         item.base64 = e.target.result
-        this.emitInput()
-        return
+        this.tempList.length === 0 && this.emitInput()
+        return Promise.resolve()
       }
       let img = document.createElement('img')
       img.src = e.target.result
-      img.onload = e => {
-        let { width, height } = this.getCompressedOption(e.target)
-        let canvas = document.createElement('canvas')
-        let ctx = canvas.getContext('2d')
-        canvas.width = width
-        canvas.height = height
-        ctx.clearRect(0, 0, width, height)
-        ctx.drawImage(img, 0, 0, width, height)
-        this.items[this.items.length - 1].base64 = canvas.toDataURL(
-          'image/jpeg',
-          this.quality
-        )
-        this.emitInput()
-      }
+      await new Promise(resolve => {
+        img.onload = e => {
+          let { width, height } = this.getCompressedOption(e.target)
+          let canvas = document.createElement('canvas')
+          let ctx = canvas.getContext('2d')
+          canvas.width = width
+          canvas.height = height
+          ctx.clearRect(0, 0, width, height)
+          ctx.drawImage(img, 0, 0, width, height)
+          this.items[this.items.length - 1].base64 = canvas.toDataURL(
+            'image/jpeg',
+            this.quality
+          )
+          resolve()
+        }
+      })
     },
     //获取压缩参数
     getCompressedOption({ width: originWidth, height: originHeight }) {
@@ -194,7 +201,14 @@ export default {
     },
     change(e) {
       let { target } = e
-      let [files] = target.files
+      // let [files] = target.files
+      this.tempList = [...target.files]
+      this.currentFileCount = this.tempList.length
+      target.value = ''
+      this.browseCompleted()
+    },
+    browseCompleted() {
+      let [files] = this.tempList.splice(0, 1)
       this.items.push({
         id: `img-${new Date().getTime()}`,
         name: files.name,
@@ -203,8 +217,7 @@ export default {
         base64: undefined,
         suffix: files.name.split('.').pop()
       })
-      files && reader.readAsDataURL(files)
-      target.value = ''
+      files && this.reader.readAsDataURL(files)
     },
     getOriginalValue() {
       return [...this.originalItmes]
@@ -214,13 +227,19 @@ export default {
     },
     removeItem(index) {
       this.items.splice(index, 1)
-      this.emitInput()
+      this.emitInput(true)
     },
     removeItemByOriginal(i) {
       this.deleteOriginalList.push({ ...this.originalItmes[i] })
       this.originalItmes.splice(i, 1)
     },
-    emitInput() {
+    emitInput(isDelete) {
+      if (!isDelete) {
+        this.$emit(
+          'onSuccess',
+          this.items.slice(this.items.length - this.currentFileCount)
+        )
+      }
       this.$emit(
         'input',
         this.items.map(item => {
