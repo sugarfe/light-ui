@@ -6,7 +6,7 @@ class Toast {
 	constructor(option = {}) {
 		this.open(option)
 	}
-	open({ duration, text, onComplete }) {
+	open({ duration, text, onComplete } = {}) {
 		this.popup = new this.$vue.prototype.$Popup(ToastView, {
 			position: 'center',
 			text: text || Toast.text,

@@ -1,33 +1,33 @@
 <template>
-  <PageContent>
-    <Navbar slot="header">Flex</Navbar>
-    <example-group contentClass="group-content">
-      baic
-      <template v-slot:content>
-        <flex>
-          <flexItem :flex="1">111</flexItem>
-          <flexItem>222</flexItem>
-        </flex>
-      </template>
-    </example-group>
-  </PageContent>
+	<PageContent>
+		<Navbar slot="header">Flex</Navbar>
+		<example-group contentClass="group-content">
+			baic
+			<template v-slot:content>
+				<flex>
+					<flexItem :flex="1">111</flexItem>
+					<flexItem>222</flexItem>
+				</flex>
+			</template>
+		</example-group>
+	</PageContent>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      data: 10,
-      option: {
-        col: 2,
-        square: [1]
-      }
-    }
-  }
+	data() {
+		return {
+			data: 10,
+			option: {
+				col: 2,
+				square: [1]
+			}
+		}
+	}
 }
 </script>
-<style lang="scss" >
+<style lang="scss">
 .grid-item {
-  background-color: #ffb403;
-  color: #fff;
+	background-color: #ffb403;
+	color: #fff;
 }
 </style>

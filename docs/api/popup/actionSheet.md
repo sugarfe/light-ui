@@ -2,8 +2,6 @@
 
 在使用`use`方法导入组件库或单一组件时会把`ActionSheet`类绑定到`Vue`原型链中，属性名为：`$ActionSheet`
 
-采用构造函数的方式调用`new $ActionSheet()`。需要一个名称`(option)`为配置对象。
-
 ## 示例
 
 ```javascript
@@ -62,6 +60,6 @@ new $ActionSheet({
 
 ## Event
 
-| 收件名   | 描述     | 名称           |
+| 收件名   | 名称     | 描述           |
 | -------- | -------- | -------------- |
 | onChange | 选中事件 | `item`选中的项 |

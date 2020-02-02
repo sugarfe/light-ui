@@ -17,10 +17,60 @@
 ## 示例
 
 ```javascript
-new $Popup(MyComponent, {
+new this.$Popup(MyComponent, {
 	position: 'top',
 	size: '300px'
 })
+```
+
+## 关闭弹窗
+
+- 实例方法关闭
+
+```javascript
+let popup = new this.$Popup(MyComponent, {
+	position: 'top',
+	size: '300px'
+})
+
+popup.close()
+```
+
+- 静态方法关闭
+
+```javascript
+this.$Popup.clear()
+```
+
+`clear`函数默认会关闭所有弹窗层（如果有多个的话）。如果需要关闭指定弹窗，可以传递参数，
+参数为数组索引。
+
+```javascript
+this.$Popup.clear(0)
+```
+
+- 在子组件内部关闭
+
+```javascript
+//MyComponent
+this.$emit('popup-close')
+```
+
+在子组件内部发送`popup-close`事件，可以关闭当前弹窗。
+
+## 挂载
+
+新的`vue`实例会默认挂载到 body 中，如果需要挂载到自定义的 dom 节点中可以在构造函数中传递第三个参数。
+
+```javascript
+new this.$Popup(
+	MyComponent,
+	{
+		position: 'top',
+		size: '300px'
+	},
+	document.querySelector('.domClass')
+)
 ```
 
 ## Option
@@ -34,6 +84,6 @@ new $Popup(MyComponent, {
 
 ## Event
 
-| 收件名  | 描述     | 名称 |
+| 收件名  | 名称     | 描述 |
 | ------- | -------- | ---- |
 | onClose | 关闭事件 |      |

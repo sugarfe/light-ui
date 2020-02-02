@@ -20,6 +20,7 @@
 			"ActionSheet",
 			"Picker",
 			"DatePicker",
+			"Select",
 			"Loading"
 		]
 	},

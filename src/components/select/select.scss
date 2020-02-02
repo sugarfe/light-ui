@@ -1,0 +1,9 @@
+.l-select {
+	background-color: #fff;
+	height: 100%;
+	.l-select-list {
+		overflow-y: auto;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+	}
+}

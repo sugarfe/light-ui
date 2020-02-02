@@ -2,8 +2,8 @@
 /*选中的颜色*/
 .l-switch {
 	position: relative;
-	width: $switch-width + 2;
-	height: $switch-height + 2;
+	width: $switch-width;
+	height: $switch-height;
 	border: 1px solid currentcolor;
 	outline: 0;
 	overflow: hidden;
@@ -17,7 +17,7 @@
 }
 /*未选中的颜色*/
 .l-switch:before {
-	content: ' ';
+	content: '';
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -53,12 +53,12 @@
 	transform: translateX($switch-width - $switch-height);
 }
 .l-switch:disabled {
-	opacity: 0.8;
+	opacity: 0.5;
 }
 .l-switch-wrap {
 	position: relative;
-	width: $switch-width + 2;
-	height: $switch-height + 2;
+	width: $switch-width;
+	height: $switch-height;
 	.preventDefault {
 		position: absolute;
 		left: 0;

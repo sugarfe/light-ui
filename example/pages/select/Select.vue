@@ -1,6 +1,6 @@
 <template>
 	<PageContent class="example-dialog-page" contentClass="flex-box-column">
-		<Navbar slot="header">Dialog</Navbar>
+		<Navbar slot="header">Select</Navbar>
 		<div class="flex-1">
 			<example-group contentClass="group-content">
 				option
@@ -16,12 +16,12 @@
 			</example-group>
 		</div>
 		<div class="action-panel">
-			<Button block theme="primary" @click="open">open</Button>
+			<Button block theme="primary" @click="open">打开</Button>
 		</div>
 	</PageContent>
 </template>
-import
 <script>
+import data from './data.json'
 let option = {
 	isMaskClose: true,
 	confirm: true,
@@ -47,23 +47,15 @@ export default {
 	},
 	methods: {
 		open() {
-			new this.$Dialog({
-				title: '提示',
-				text: 'dialog',
+			console.log(data)
+			new this.$Select({
 				...this.options,
-				render: this.options.render
-					? h => {
-							return h('input', {
-								class: 'dialog-input',
-								domProps: {
-									placeholder: '请输入'
-								}
-							})
-					  }
-					: undefined,
-				onOk: this.handle,
-				onCancel: this.handle,
-				onHandle: this.handle
+				data: data,
+				parentId: 'pId',
+				root({ pId } = {}) {
+					return pId === -100
+				},
+				rules
 			})
 		},
 		handle(done) {

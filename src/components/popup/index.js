@@ -20,7 +20,8 @@ class Popup {
 			'isMask',
 			'onClose',
 			'autoShow',
-			'size'
+			'size',
+			'offset'
 		]
 		this.option = this.initOption(option)
 		this.dom = dom

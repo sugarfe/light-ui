@@ -29,6 +29,7 @@ import GroupItem from './group-item/GroupItem.vue'
 import ClipImage from './clipImage/index.js'
 import BrowseImage from './browse-image/BrowseImage.vue'
 import Cell from './cell/Cell.vue'
+import Select from './select/index.js'
 const components = [
 	Button,
 	Radio,
@@ -63,5 +64,6 @@ export default [
 	Loading,
 	DatePicker,
 	ClipImage,
-	CalendarJsCall
+	CalendarJsCall,
+	Select
 ]

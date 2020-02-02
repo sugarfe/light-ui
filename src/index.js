@@ -9,7 +9,8 @@ const jsCallComponent = [
 	'loading',
 	'datePicker',
 	'clipImage',
-	'calendar'
+	'calendar',
+	'select'
 ]
 
 export default {
