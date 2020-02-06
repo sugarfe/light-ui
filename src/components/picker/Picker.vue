@@ -1,18 +1,18 @@
 <template>
 	<div class="l-picker flex-box-column">
 		<div class="l-picker-top flex-box flex-align-center">
-			<span @click="cancel">取消</span>
+			<span class="l-picker-button" @click="cancel">取消</span>
 			<span class="l-picker-title flex-1" :class="titleOption.class">
 				{{ titleOption.text }}
 			</span>
-			<span @click="ok">确定</span>
+			<span class="l-picker-button" @click="ok">确定</span>
 		</div>
 		<div
 			class="l-picker-contant flex-1 flex-box"
 			ref="l-picker-scroll-wrapper"
-			v-show="data.length > 0"
+			v-show="wheelList.length > 0"
 		>
-			<div v-for="(item, index) in data" :key="index">
+			<div v-for="(item, index) in wheelList" :key="index">
 				<ul class="l-picker-wheel-scroll">
 					<li
 						v-for="(o, i) in item"
@@ -61,6 +61,18 @@ export default {
 			default() {
 				return ''
 			}
+		},
+		cascade: {
+			type: Boolean,
+			default() {
+				return false
+			}
+		},
+		rule: {
+			type: Function,
+			default() {
+				return undefined
+			}
 		}
 	},
 	data() {
@@ -68,7 +80,8 @@ export default {
 			titleOption: {
 				text: '',
 				class: ''
-			}
+			},
+			wheelList: []
 		}
 	},
 	created() {
@@ -79,9 +92,7 @@ export default {
 		}
 	},
 	mounted() {
-		setTimeout(() => {
-			this.data.length && this.init()
-		})
+		this.data.length && this.init()
 	},
 	destroyed() {
 		option.wheels.forEach(scrollInstance => {
@@ -90,18 +101,60 @@ export default {
 	},
 	methods: {
 		init() {
+			this.wheelList = this.data
 			this.initSelectedIndex()
-			this.data.forEach((item, index) => {
-				option.wheels[index] = new BScroll(
-					this.$refs['l-picker-scroll-wrapper'].children[index],
-					{
-						wheel: {
-							selectedIndex: option.selectedIndex[index]
-						}
-					}
-				)
+			setTimeout(() => {
+				this.wheelList.forEach((item, index) => {
+					this.initWheel(index)
+				})
+				this.$emit('onFinish', option.wheels)
 			})
-			this.$emit('onFinish', option.wheels)
+		},
+		initWheel(index) {
+			if (option.wheels[index] instanceof BScroll) {
+				option.wheels[index].destroy()
+			}
+			option.wheels[index] = new BScroll(
+				this.$refs['l-picker-scroll-wrapper'].children[index],
+				{
+					wheel: {
+						selectedIndex: option.selectedIndex[index],
+						observeDOM: false
+					}
+				}
+			)
+			option.wheels[index].on('scrollEnd', () => {
+				this.$emit('onScrollEnd', {
+					column: index,
+					selectedIndex: option.wheels[index].getSelectedIndex()
+				})
+				let i = index + 1
+				if (this.cascade && i < this.data.length) {
+					while (i < this.data.length) {
+						let selectedIndex = option.wheels[i - 1].getSelectedIndex()
+						this.refillColumn(
+							i,
+							this.rule({
+								column: i - 1,
+								selectedIndex,
+								value: this.data[i - 1][selectedIndex][this.dataValue]
+							})
+						)
+						option.wheels[i].wheelTo(0)
+						++i
+					}
+				}
+			})
+		},
+		refillColumn(index, data) {
+			// option.wheels[index].destroy()
+			// this.wheelList[index] = data
+			this.$set(this.wheelList, index, data)
+			// this.$forceUpdate()
+			option.selectedIndex[index] = 0
+			this.$nextTick(() => {
+				this.initWheel(index)
+			})
 		},
 		initSelectedIndex() {
 			let values = []
@@ -110,7 +163,7 @@ export default {
 			} else if (typeof this.value === 'object') {
 				values = [...this.value]
 			}
-			this.data.forEach((item, index) => {
+			this.wheelList.forEach((item, index) => {
 				let i = item.findIndex(o => {
 					return o[this.dataValue] === values[index]
 				})
@@ -122,10 +175,10 @@ export default {
 				option.selectedIndex[i] = scrollInstance.getSelectedIndex()
 			})
 			let values = option.selectedIndex.map((selectedIndex, i) => {
-				return this.data[i][selectedIndex][this.dataValue]
+				return this.wheelList[i][selectedIndex][this.dataValue]
 			})
 			let text = option.selectedIndex.map((selectedIndex, i) => {
-				return this.data[i][selectedIndex][this.dataText]
+				return this.wheelList[i][selectedIndex][this.dataText]
 			})
 			this.$emit('onOk', {
 				values,

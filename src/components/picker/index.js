@@ -21,8 +21,9 @@ class Picker {
 			...this.option,
 			onFinish: () => {},
 			onOk: ({ values, text, selectedIndex }) => {
-				typeof this.option.onOk === 'function' &&
+				if (typeof this.option.onOk === 'function') {
 					this.option.onOk([...values], [...text], [...selectedIndex])
+				}
 				this.popup.close()
 			}
 		})

@@ -1,52 +1,4962 @@
 [
-    [
-        {
-            "text": "Javascript",
-            "value": "javascript"
-        },
-        {
-            "text": "Html",
-            "value": "html"
-        },
-        {
-            "text": "Css",
-            "value": "css"
-        }
-    ],
-    [
-        {
-            "text": "北京",
-            "value": "beijing"
-        },
-        {
-            "text": "上海",
-            "value": "shanghai"
-        },
-        {
-            "text": "广州",
-            "value": "guangzhou"
-        },
-        {
-            "text": "深圳",
-            "value": "shenzhen"
-        }
-    ],
-    [
-        {
-            "text": "技术",
-            "value": "technology"
-        },
-        {
-            "text": "产品",
-            "value": "product"
-        },
-        {
-            "text": "测试",
-            "value": "test"
-        },
-        {
-            "text": "设计",
-            "value": "design"
-        }
-    ]
+	{
+		"text": "河北",
+		"value": "province_2",
+		"parentId": 0
+	},
+	{
+		"text": "山西",
+		"value": "province_3",
+		"parentId": 0
+	},
+	{
+		"text": "内蒙古",
+		"value": "province_4",
+		"parentId": 0
+	},
+	{
+		"text": "辽宁",
+		"value": "province_5",
+		"parentId": 0
+	},
+	{
+		"text": "吉林",
+		"value": "province_6",
+		"parentId": 0
+	},
+	{
+		"text": "黑龙江",
+		"value": "province_7",
+		"parentId": 0
+	},
+	{
+		"text": "江苏",
+		"value": "province_9",
+		"parentId": 0
+	},
+	{
+		"text": "北京",
+		"value": "city_999999",
+		"parentId": "province_0"
+	},
+	{
+		"text": "天津",
+		"value": "city_1000000",
+		"parentId": "province_1"
+	},
+	{
+		"text": "石家庄",
+		"value": "city_1000001",
+		"parentId": "province_2"
+	},
+	{
+		"text": "唐山",
+		"value": "city_1000002",
+		"parentId": "province_2"
+	},
+	{
+		"text": "秦皇岛",
+		"value": "city_1000003",
+		"parentId": "province_2"
+	},
+	{
+		"text": "邯郸",
+		"value": "city_1000004",
+		"parentId": "province_2"
+	},
+	{
+		"text": "邢台",
+		"value": "city_1000005",
+		"parentId": "province_2"
+	},
+	{
+		"text": "保定",
+		"value": "city_1000006",
+		"parentId": "province_2"
+	},
+	{
+		"text": "张家口",
+		"value": "city_1000007",
+		"parentId": "province_2"
+	},
+	{
+		"text": "承德",
+		"value": "city_1000008",
+		"parentId": "province_2"
+	},
+	{
+		"text": "沧州",
+		"value": "city_1000009",
+		"parentId": "province_2"
+	},
+	{
+		"text": "廊坊",
+		"value": "city_1000010",
+		"parentId": "province_2"
+	},
+	{
+		"text": "衡水",
+		"value": "city_1000011",
+		"parentId": "province_2"
+	},
+	{
+		"text": "太原",
+		"value": "city_1000002",
+		"parentId": "province_3"
+	},
+	{
+		"text": "大同",
+		"value": "city_1000003",
+		"parentId": "province_3"
+	},
+	{
+		"text": "阳泉",
+		"value": "city_1000004",
+		"parentId": "province_3"
+	},
+	{
+		"text": "长治",
+		"value": "city_1000005",
+		"parentId": "province_3"
+	},
+	{
+		"text": "晋城",
+		"value": "city_1000006",
+		"parentId": "province_3"
+	},
+	{
+		"text": "朔州",
+		"value": "city_1000007",
+		"parentId": "province_3"
+	},
+	{
+		"text": "忻州",
+		"value": "city_1000008",
+		"parentId": "province_3"
+	},
+	{
+		"text": "吕梁",
+		"value": "city_1000009",
+		"parentId": "province_3"
+	},
+	{
+		"text": "晋中",
+		"value": "city_1000010",
+		"parentId": "province_3"
+	},
+	{
+		"text": "临汾",
+		"value": "city_1000011",
+		"parentId": "province_3"
+	},
+	{
+		"text": "运城",
+		"value": "city_1000012",
+		"parentId": "province_3"
+	},
+	{
+		"text": "呼和浩特",
+		"value": "city_1000003",
+		"parentId": "province_4"
+	},
+	{
+		"text": "包头",
+		"value": "city_1000004",
+		"parentId": "province_4"
+	},
+	{
+		"text": "乌海",
+		"value": "city_1000005",
+		"parentId": "province_4"
+	},
+	{
+		"text": "赤峰",
+		"value": "city_1000006",
+		"parentId": "province_4"
+	},
+	{
+		"text": "呼伦贝尔",
+		"value": "city_1000007",
+		"parentId": "province_4"
+	},
+	{
+		"text": "兴安盟",
+		"value": "city_1000008",
+		"parentId": "province_4"
+	},
+	{
+		"text": "通辽",
+		"value": "city_1000009",
+		"parentId": "province_4"
+	},
+	{
+		"text": "锡林郭勒盟",
+		"value": "city_1000010",
+		"parentId": "province_4"
+	},
+	{
+		"text": "乌兰察布盟",
+		"value": "city_1000011",
+		"parentId": "province_4"
+	},
+	{
+		"text": "伊克昭盟",
+		"value": "city_1000012",
+		"parentId": "province_4"
+	},
+	{
+		"text": "巴彦淖尔盟",
+		"value": "city_1000013",
+		"parentId": "province_4"
+	},
+	{
+		"text": "阿拉善盟",
+		"value": "city_1000014",
+		"parentId": "province_4"
+	},
+	{
+		"text": "沈阳",
+		"value": "city_1000004",
+		"parentId": "province_5"
+	},
+	{
+		"text": "大连",
+		"value": "city_1000005",
+		"parentId": "province_5"
+	},
+	{
+		"text": "鞍山",
+		"value": "city_1000006",
+		"parentId": "province_5"
+	},
+	{
+		"text": "抚顺",
+		"value": "city_1000007",
+		"parentId": "province_5"
+	},
+	{
+		"text": "本溪",
+		"value": "city_1000008",
+		"parentId": "province_5"
+	},
+	{
+		"text": "丹东",
+		"value": "city_1000009",
+		"parentId": "province_5"
+	},
+	{
+		"text": "锦州",
+		"value": "city_1000010",
+		"parentId": "province_5"
+	},
+	{
+		"text": "营口",
+		"value": "city_1000011",
+		"parentId": "province_5"
+	},
+	{
+		"text": "阜新",
+		"value": "city_1000012",
+		"parentId": "province_5"
+	},
+	{
+		"text": "辽阳",
+		"value": "city_1000013",
+		"parentId": "province_5"
+	},
+	{
+		"text": "盘锦",
+		"value": "city_1000014",
+		"parentId": "province_5"
+	},
+	{
+		"text": "铁岭",
+		"value": "city_1000015",
+		"parentId": "province_5"
+	},
+	{
+		"text": "朝阳",
+		"value": "city_1000016",
+		"parentId": "province_5"
+	},
+	{
+		"text": "葫芦岛",
+		"value": "city_1000017",
+		"parentId": "province_5"
+	},
+	{
+		"text": "其他",
+		"value": "city_1000018",
+		"parentId": "province_5"
+	},
+	{
+		"text": "长春",
+		"value": "city_1000005",
+		"parentId": "province_6"
+	},
+	{
+		"text": "吉林",
+		"value": "city_1000006",
+		"parentId": "province_6"
+	},
+	{
+		"text": "四平",
+		"value": "city_1000007",
+		"parentId": "province_6"
+	},
+	{
+		"text": "辽源",
+		"value": "city_1000008",
+		"parentId": "province_6"
+	},
+	{
+		"text": "通化",
+		"value": "city_1000009",
+		"parentId": "province_6"
+	},
+	{
+		"text": "白山",
+		"value": "city_1000010",
+		"parentId": "province_6"
+	},
+	{
+		"text": "松原",
+		"value": "city_1000011",
+		"parentId": "province_6"
+	},
+	{
+		"text": "白城",
+		"value": "city_1000012",
+		"parentId": "province_6"
+	},
+	{
+		"text": "延边朝鲜族自治州",
+		"value": "city_1000013",
+		"parentId": "province_6"
+	},
+	{
+		"text": "其他",
+		"value": "city_1000014",
+		"parentId": "province_6"
+	},
+	{
+		"text": "哈尔滨",
+		"value": "city_1000006",
+		"parentId": "province_7"
+	},
+	{
+		"text": "齐齐哈尔",
+		"value": "city_1000007",
+		"parentId": "province_7"
+	},
+	{
+		"text": "鹤岗",
+		"value": "city_1000008",
+		"parentId": "province_7"
+	},
+	{
+		"text": "双鸭山",
+		"value": "city_1000009",
+		"parentId": "province_7"
+	},
+	{
+		"text": "鸡西",
+		"value": "city_1000010",
+		"parentId": "province_7"
+	},
+	{
+		"text": "大庆",
+		"value": "city_1000011",
+		"parentId": "province_7"
+	},
+	{
+		"text": "伊春",
+		"value": "city_1000012",
+		"parentId": "province_7"
+	},
+	{
+		"text": "牡丹江",
+		"value": "city_1000013",
+		"parentId": "province_7"
+	},
+	{
+		"text": "佳木斯",
+		"value": "city_1000014",
+		"parentId": "province_7"
+	},
+	{
+		"text": "七台河",
+		"value": "city_1000015",
+		"parentId": "province_7"
+	},
+	{
+		"text": "黑河",
+		"value": "city_1000016",
+		"parentId": "province_7"
+	},
+	{
+		"text": "绥化",
+		"value": "city_1000017",
+		"parentId": "province_7"
+	},
+	{
+		"text": "大兴安岭地区",
+		"value": "city_1000018",
+		"parentId": "province_7"
+	},
+	{
+		"text": "其他",
+		"value": "city_1000019",
+		"parentId": "province_7"
+	},
+	{
+		"text": "南京",
+		"value": "city_1000008",
+		"parentId": "province_9"
+	},
+	{
+		"text": "苏州",
+		"value": "city_1000009",
+		"parentId": "province_9"
+	},
+	{
+		"text": "无锡",
+		"value": "city_1000010",
+		"parentId": "province_9"
+	},
+	{
+		"text": "常州",
+		"value": "city_1000011",
+		"parentId": "province_9"
+	},
+	{
+		"text": "镇江",
+		"value": "city_1000012",
+		"parentId": "province_9"
+	},
+	{
+		"text": "南通",
+		"value": "city_1000013",
+		"parentId": "province_9"
+	},
+	{
+		"text": "泰州",
+		"value": "city_1000014",
+		"parentId": "province_9"
+	},
+	{
+		"text": "扬州",
+		"value": "city_1000015",
+		"parentId": "province_9"
+	},
+	{
+		"text": "盐城",
+		"value": "city_1000016",
+		"parentId": "province_9"
+	},
+	{
+		"text": "连云港",
+		"value": "city_1000017",
+		"parentId": "province_9"
+	},
+	{
+		"text": "徐州",
+		"value": "city_1000018",
+		"parentId": "province_9"
+	},
+	{
+		"text": "淮安",
+		"value": "city_1000019",
+		"parentId": "province_9"
+	},
+	{
+		"text": "宿迁",
+		"value": "city_1000020",
+		"parentId": "province_9"
+	},
+	{
+		"text": "其他",
+		"value": "city_1000021",
+		"parentId": "province_9"
+	},
+	{
+		"text": "东城区",
+		"value": "area_9999999",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "西城区",
+		"value": "area_10000000",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "崇文区",
+		"value": "area_10000001",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "宣武区",
+		"value": "area_10000002",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "朝阳区",
+		"value": "area_10000003",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "丰台区",
+		"value": "area_10000004",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "石景山区",
+		"value": "area_10000005",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "海淀区",
+		"value": "area_10000006",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "门头沟区",
+		"value": "area_10000007",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "房山区",
+		"value": "area_10000008",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "通州区",
+		"value": "area_10000009",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "顺义区",
+		"value": "area_10000010",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "昌平区",
+		"value": "area_10000011",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "大兴区",
+		"value": "area_10000012",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "平谷区",
+		"value": "area_10000013",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "怀柔区",
+		"value": "area_10000014",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "密云县",
+		"value": "area_10000015",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "延庆县",
+		"value": "area_10000016",
+		"parentId": "city_999999"
+	},
+	{
+		"text": "和平区",
+		"value": "area_10000000",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "河东区",
+		"value": "area_10000001",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "河西区",
+		"value": "area_10000002",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "南开区",
+		"value": "area_10000003",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "河北区",
+		"value": "area_10000004",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "红桥区",
+		"value": "area_10000005",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "塘沽区",
+		"value": "area_10000006",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "汉沽区",
+		"value": "area_10000007",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "大港区",
+		"value": "area_10000008",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "东丽区",
+		"value": "area_10000009",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "西青区",
+		"value": "area_10000010",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "津南区",
+		"value": "area_10000011",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "北辰区",
+		"value": "area_10000012",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "武清区",
+		"value": "area_10000013",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "宝坻区",
+		"value": "area_10000014",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "宁河县",
+		"value": "area_10000015",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "静海县",
+		"value": "area_10000016",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "蓟  县",
+		"value": "area_10000017",
+		"parentId": "city_1000000"
+	},
+	{
+		"text": "长安区",
+		"value": "area_10000001",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "桥东区",
+		"value": "area_10000002",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "桥西区",
+		"value": "area_10000003",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "新华区",
+		"value": "area_10000004",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "郊  区",
+		"value": "area_10000005",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "井陉矿区",
+		"value": "area_10000006",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "井陉县",
+		"value": "area_10000007",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "正定县",
+		"value": "area_10000008",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "栾城县",
+		"value": "area_10000009",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "行唐县",
+		"value": "area_10000010",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "灵寿县",
+		"value": "area_10000011",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "高邑县",
+		"value": "area_10000012",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "深泽县",
+		"value": "area_10000013",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "赞皇县",
+		"value": "area_10000014",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "无极县",
+		"value": "area_10000015",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "平山县",
+		"value": "area_10000016",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "元氏县",
+		"value": "area_10000017",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "赵  县",
+		"value": "area_10000018",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "辛集市",
+		"value": "area_10000019",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "藁",
+		"value": "area_10000020",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "晋州市",
+		"value": "area_10000021",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "新乐市",
+		"value": "area_10000022",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "鹿泉市",
+		"value": "area_10000023",
+		"parentId": "city_1000001"
+	},
+	{
+		"text": "路南区",
+		"value": "area_10000002",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "路北区",
+		"value": "area_10000003",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "古冶区",
+		"value": "area_10000004",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "开平区",
+		"value": "area_10000005",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "新  区",
+		"value": "area_10000006",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "丰润县",
+		"value": "area_10000007",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "滦  县",
+		"value": "area_10000008",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "滦南县",
+		"value": "area_10000009",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "乐亭县",
+		"value": "area_10000010",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "迁西县",
+		"value": "area_10000011",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "玉田县",
+		"value": "area_10000012",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "唐海县",
+		"value": "area_10000013",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "遵化市",
+		"value": "area_10000014",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "丰南市",
+		"value": "area_10000015",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "迁安市",
+		"value": "area_10000016",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "海港区",
+		"value": "area_10000003",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "山海关区",
+		"value": "area_10000004",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "北戴河区",
+		"value": "area_10000005",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "青龙满族自治县",
+		"value": "area_10000006",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "昌黎县",
+		"value": "area_10000007",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "抚宁县",
+		"value": "area_10000008",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "卢龙县",
+		"value": "area_10000009",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "邯山区",
+		"value": "area_10000004",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "丛台区",
+		"value": "area_10000005",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "复兴区",
+		"value": "area_10000006",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "峰峰矿区",
+		"value": "area_10000007",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "邯郸县",
+		"value": "area_10000008",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "临漳县",
+		"value": "area_10000009",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "成安县",
+		"value": "area_10000010",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "大名县",
+		"value": "area_10000011",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "涉  县",
+		"value": "area_10000012",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "磁  县",
+		"value": "area_10000013",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "肥乡县",
+		"value": "area_10000014",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "永年县",
+		"value": "area_10000015",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "邱  县",
+		"value": "area_10000016",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "鸡泽县",
+		"value": "area_10000017",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "广平县",
+		"value": "area_10000018",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "馆陶县",
+		"value": "area_10000019",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "魏  县",
+		"value": "area_10000020",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "曲周县",
+		"value": "area_10000021",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "武安市",
+		"value": "area_10000022",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "桥东区",
+		"value": "area_10000005",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "桥西区",
+		"value": "area_10000006",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "邢台县",
+		"value": "area_10000007",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "临城县",
+		"value": "area_10000008",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "内丘县",
+		"value": "area_10000009",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "柏乡县",
+		"value": "area_10000010",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "隆尧县",
+		"value": "area_10000011",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "任  县",
+		"value": "area_10000012",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "南和县",
+		"value": "area_10000013",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "宁晋县",
+		"value": "area_10000014",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "巨鹿县",
+		"value": "area_10000015",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "新河县",
+		"value": "area_10000016",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "广宗县",
+		"value": "area_10000017",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "平乡县",
+		"value": "area_10000018",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "威  县",
+		"value": "area_10000019",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "清河县",
+		"value": "area_10000020",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "临西县",
+		"value": "area_10000021",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "南宫市",
+		"value": "area_10000022",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "沙河市",
+		"value": "area_10000023",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "新市区",
+		"value": "area_10000006",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "北市区",
+		"value": "area_10000007",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "南市区",
+		"value": "area_10000008",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "满城县",
+		"value": "area_10000009",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "清苑县",
+		"value": "area_10000010",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "涞水县",
+		"value": "area_10000011",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "阜平县",
+		"value": "area_10000012",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "徐水县",
+		"value": "area_10000013",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "定兴县",
+		"value": "area_10000014",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "唐  县",
+		"value": "area_10000015",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "高阳县",
+		"value": "area_10000016",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "容城县",
+		"value": "area_10000017",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "涞源县",
+		"value": "area_10000018",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "望都县",
+		"value": "area_10000019",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "安新县",
+		"value": "area_10000020",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "易  县",
+		"value": "area_10000021",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "曲阳县",
+		"value": "area_10000022",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "蠡  县",
+		"value": "area_10000023",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "顺平县",
+		"value": "area_10000024",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "博野",
+		"value": "area_10000025",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "雄县",
+		"value": "area_10000026",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "涿州市",
+		"value": "area_10000027",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "定州市",
+		"value": "area_10000028",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "安国市",
+		"value": "area_10000029",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "高碑店市",
+		"value": "area_10000030",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "桥东区",
+		"value": "area_10000007",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "桥西区",
+		"value": "area_10000008",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "宣化区",
+		"value": "area_10000009",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "下花园区",
+		"value": "area_10000010",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "宣化县",
+		"value": "area_10000011",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "张北县",
+		"value": "area_10000012",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "康保县",
+		"value": "area_10000013",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "沽源县",
+		"value": "area_10000014",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "尚义县",
+		"value": "area_10000015",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "蔚  县",
+		"value": "area_10000016",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "阳原县",
+		"value": "area_10000017",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "怀安县",
+		"value": "area_10000018",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "万全县",
+		"value": "area_10000019",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "怀来县",
+		"value": "area_10000020",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "涿鹿县",
+		"value": "area_10000021",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "赤城县",
+		"value": "area_10000022",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "崇礼县",
+		"value": "area_10000023",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "双桥区",
+		"value": "area_10000008",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "双滦区",
+		"value": "area_10000009",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "鹰手营子矿区",
+		"value": "area_10000010",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "承德县",
+		"value": "area_10000011",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "兴隆县",
+		"value": "area_10000012",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "平泉县",
+		"value": "area_10000013",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "滦平县",
+		"value": "area_10000014",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "隆化县",
+		"value": "area_10000015",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "丰宁满族自治县",
+		"value": "area_10000016",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "宽城满族自治县",
+		"value": "area_10000017",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "围场满族蒙古族自治县",
+		"value": "area_10000018",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "新华区",
+		"value": "area_10000009",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "运河区",
+		"value": "area_10000010",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "沧  县",
+		"value": "area_10000011",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "青  县",
+		"value": "area_10000012",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "东光县",
+		"value": "area_10000013",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "海兴县",
+		"value": "area_10000014",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "盐山县",
+		"value": "area_10000015",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "肃宁县",
+		"value": "area_10000016",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "南皮县",
+		"value": "area_10000017",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "吴桥县",
+		"value": "area_10000018",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "献  县",
+		"value": "area_10000019",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "孟村回族自治县",
+		"value": "area_10000020",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "泊头市",
+		"value": "area_10000021",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "任丘市",
+		"value": "area_10000022",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "黄骅市",
+		"value": "area_10000023",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "河间市",
+		"value": "area_10000024",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "安次区",
+		"value": "area_10000010",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "固安县",
+		"value": "area_10000011",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "永清县",
+		"value": "area_10000012",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "香河县",
+		"value": "area_10000013",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "大城县",
+		"value": "area_10000014",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "文安县",
+		"value": "area_10000015",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "大厂回族自治县",
+		"value": "area_10000016",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "霸州市",
+		"value": "area_10000017",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "三河市",
+		"value": "area_10000018",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "桃城区",
+		"value": "area_10000011",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "枣强县",
+		"value": "area_10000012",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "武邑县",
+		"value": "area_10000013",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "武强县",
+		"value": "area_10000014",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "饶阳县",
+		"value": "area_10000015",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "安平县",
+		"value": "area_10000016",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "故城县",
+		"value": "area_10000017",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "景  县",
+		"value": "area_10000018",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "阜城县",
+		"value": "area_10000019",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "冀州市",
+		"value": "area_10000020",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "深州市",
+		"value": "area_10000021",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "小店区",
+		"value": "area_10000002",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "迎泽区",
+		"value": "area_10000003",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "杏花岭区",
+		"value": "area_10000004",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "尖草坪区",
+		"value": "area_10000005",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "万柏林区",
+		"value": "area_10000006",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "晋源区",
+		"value": "area_10000007",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "清徐县",
+		"value": "area_10000008",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "阳曲县",
+		"value": "area_10000009",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "娄烦县",
+		"value": "area_10000010",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "古交市",
+		"value": "area_10000011",
+		"parentId": "city_1000002"
+	},
+	{
+		"text": "城  区",
+		"value": "area_10000003",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "矿  区",
+		"value": "area_10000004",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "南郊区",
+		"value": "area_10000005",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "新荣区",
+		"value": "area_10000006",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "阳高县",
+		"value": "area_10000007",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "天镇县",
+		"value": "area_10000008",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "广灵县",
+		"value": "area_10000009",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "灵丘县",
+		"value": "area_10000010",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "浑源县",
+		"value": "area_10000011",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "左云县",
+		"value": "area_10000012",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "大同县",
+		"value": "area_10000013",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "城  区",
+		"value": "area_10000004",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "矿  区",
+		"value": "area_10000005",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "郊  区",
+		"value": "area_10000006",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "平定县",
+		"value": "area_10000007",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "盂  县",
+		"value": "area_10000008",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "城  区",
+		"value": "area_10000005",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "郊  区",
+		"value": "area_10000006",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "长治县",
+		"value": "area_10000007",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "襄垣县",
+		"value": "area_10000008",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "屯留县",
+		"value": "area_10000009",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "平顺县",
+		"value": "area_10000010",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "黎城县",
+		"value": "area_10000011",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "壶关县",
+		"value": "area_10000012",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "长子县",
+		"value": "area_10000013",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "武乡县",
+		"value": "area_10000014",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "沁  县",
+		"value": "area_10000015",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "沁源县",
+		"value": "area_10000016",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "潞城市",
+		"value": "area_10000017",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "城  区",
+		"value": "area_10000006",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "沁水县",
+		"value": "area_10000007",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "阳城县",
+		"value": "area_10000008",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "陵川县",
+		"value": "area_10000009",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "泽州县",
+		"value": "area_10000010",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "高平市",
+		"value": "area_10000011",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "朔城区",
+		"value": "area_10000007",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "平鲁区",
+		"value": "area_10000008",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "山阴县",
+		"value": "area_10000009",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "应  县",
+		"value": "area_10000010",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "右玉县",
+		"value": "area_10000011",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "怀仁县",
+		"value": "area_10000012",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "忻府区",
+		"value": "area_10000008",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "原平市",
+		"value": "area_10000009",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "定襄县",
+		"value": "area_10000010",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "五台县",
+		"value": "area_10000011",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "代  县",
+		"value": "area_10000012",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "繁峙县",
+		"value": "area_10000013",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "宁武县",
+		"value": "area_10000014",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "静乐县",
+		"value": "area_10000015",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "神池县",
+		"value": "area_10000016",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "五寨县",
+		"value": "area_10000017",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "岢岚县",
+		"value": "area_10000018",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "河曲县",
+		"value": "area_10000019",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "保德县",
+		"value": "area_10000020",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "偏关县",
+		"value": "area_10000021",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "离石区",
+		"value": "area_10000009",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "孝义市",
+		"value": "area_10000010",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "汾阳市",
+		"value": "area_10000011",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "文水县",
+		"value": "area_10000012",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "交城县",
+		"value": "area_10000013",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "兴  县",
+		"value": "area_10000014",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "临  县",
+		"value": "area_10000015",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "柳林县",
+		"value": "area_10000016",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "石楼县",
+		"value": "area_10000017",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "岚  县",
+		"value": "area_10000018",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "方山县",
+		"value": "area_10000019",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "中阳县",
+		"value": "area_10000020",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "交口县",
+		"value": "area_10000021",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "榆次市",
+		"value": "area_10000010",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "介休市",
+		"value": "area_10000011",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "榆社县",
+		"value": "area_10000012",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "左权县",
+		"value": "area_10000013",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "和顺县",
+		"value": "area_10000014",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "昔阳县",
+		"value": "area_10000015",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "寿阳县",
+		"value": "area_10000016",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "太谷县",
+		"value": "area_10000017",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "祁  县",
+		"value": "area_10000018",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "平遥县",
+		"value": "area_10000019",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "灵石县",
+		"value": "area_10000020",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "临汾市",
+		"value": "area_10000011",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "侯马市",
+		"value": "area_10000012",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "霍州市",
+		"value": "area_10000013",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "曲沃县",
+		"value": "area_10000014",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "翼城县",
+		"value": "area_10000015",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "襄汾县",
+		"value": "area_10000016",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "洪洞县",
+		"value": "area_10000017",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "古  县",
+		"value": "area_10000018",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "安泽县",
+		"value": "area_10000019",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "浮山县",
+		"value": "area_10000020",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "吉  县",
+		"value": "area_10000021",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "乡宁县",
+		"value": "area_10000022",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "蒲  县",
+		"value": "area_10000023",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "大宁县",
+		"value": "area_10000024",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "永和县",
+		"value": "area_10000025",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "隰  县",
+		"value": "area_10000026",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "汾西县",
+		"value": "area_10000027",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "运城市",
+		"value": "area_10000012",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "永济市",
+		"value": "area_10000013",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "河津市",
+		"value": "area_10000014",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "芮城县",
+		"value": "area_10000015",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "临猗县",
+		"value": "area_10000016",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "万荣县",
+		"value": "area_10000017",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "新绛县",
+		"value": "area_10000018",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "稷山县",
+		"value": "area_10000019",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "闻喜县",
+		"value": "area_10000020",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "夏  县",
+		"value": "area_10000021",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "绛  县",
+		"value": "area_10000022",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "平陆县",
+		"value": "area_10000023",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "垣曲县",
+		"value": "area_10000024",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "新城区",
+		"value": "area_10000003",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "回民区",
+		"value": "area_10000004",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "玉泉区",
+		"value": "area_10000005",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "郊  区",
+		"value": "area_10000006",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "土默特左旗",
+		"value": "area_10000007",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "托克托县",
+		"value": "area_10000008",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "和林格尔县",
+		"value": "area_10000009",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "清水河县",
+		"value": "area_10000010",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "武川县",
+		"value": "area_10000011",
+		"parentId": "city_1000003"
+	},
+	{
+		"text": "东河区",
+		"value": "area_10000004",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "昆都伦区",
+		"value": "area_10000005",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "青山区",
+		"value": "area_10000006",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "石拐矿区",
+		"value": "area_10000007",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "白云矿区",
+		"value": "area_10000008",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "郊  区",
+		"value": "area_10000009",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "土默特右旗",
+		"value": "area_10000010",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "固阳县",
+		"value": "area_10000011",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "达尔罕茂明安联合旗",
+		"value": "area_10000012",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "海勃湾区",
+		"value": "area_10000005",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "海南区",
+		"value": "area_10000006",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "乌达区",
+		"value": "area_10000007",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "红山区",
+		"value": "area_10000006",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "元宝山区",
+		"value": "area_10000007",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "松山区",
+		"value": "area_10000008",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "阿鲁科尔沁旗",
+		"value": "area_10000009",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "巴林左旗",
+		"value": "area_10000010",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "巴林右旗",
+		"value": "area_10000011",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "林西县",
+		"value": "area_10000012",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "克什克腾旗",
+		"value": "area_10000013",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "翁牛特旗",
+		"value": "area_10000014",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "喀喇沁旗",
+		"value": "area_10000015",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "宁城县",
+		"value": "area_10000016",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "敖汉旗",
+		"value": "area_10000017",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "海拉尔市",
+		"value": "area_10000007",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "满洲里市",
+		"value": "area_10000008",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "扎兰屯市",
+		"value": "area_10000009",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "牙克石市",
+		"value": "area_10000010",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "根河市",
+		"value": "area_10000011",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "额尔古纳市",
+		"value": "area_10000012",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "阿荣旗",
+		"value": "area_10000013",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "莫力达瓦达斡尔族自治旗",
+		"value": "area_10000014",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "鄂伦春自治旗",
+		"value": "area_10000015",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "鄂温克族自治旗",
+		"value": "area_10000016",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "新巴尔虎右旗",
+		"value": "area_10000017",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "新巴尔虎左旗",
+		"value": "area_10000018",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "陈巴尔虎旗",
+		"value": "area_10000019",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "乌兰浩特市",
+		"value": "area_10000008",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "阿尔山市",
+		"value": "area_10000009",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "科尔沁右翼前旗",
+		"value": "area_10000010",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "科尔沁右翼中旗",
+		"value": "area_10000011",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "扎赉特旗",
+		"value": "area_10000012",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "突泉县",
+		"value": "area_10000013",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "科尔沁区",
+		"value": "area_10000009",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "霍林郭勒市",
+		"value": "area_10000010",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "科尔沁左翼中旗",
+		"value": "area_10000011",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "科尔沁左翼后旗",
+		"value": "area_10000012",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "开鲁县",
+		"value": "area_10000013",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "库伦旗",
+		"value": "area_10000014",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "奈曼旗",
+		"value": "area_10000015",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "扎鲁特旗",
+		"value": "area_10000016",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "二连浩特市",
+		"value": "area_10000010",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "锡林浩特市",
+		"value": "area_10000011",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "阿巴嘎旗",
+		"value": "area_10000012",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "苏尼特左旗",
+		"value": "area_10000013",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "苏尼特右旗",
+		"value": "area_10000014",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "东乌珠穆沁旗",
+		"value": "area_10000015",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "西乌珠穆沁旗",
+		"value": "area_10000016",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "太仆寺旗",
+		"value": "area_10000017",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "镶黄旗",
+		"value": "area_10000018",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "正镶白旗",
+		"value": "area_10000019",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "正蓝旗",
+		"value": "area_10000020",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "多伦县",
+		"value": "area_10000021",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "集宁市",
+		"value": "area_10000011",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "丰镇市",
+		"value": "area_10000012",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "卓资县",
+		"value": "area_10000013",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "化德县",
+		"value": "area_10000014",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "商都县",
+		"value": "area_10000015",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "兴和县",
+		"value": "area_10000016",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "凉城县",
+		"value": "area_10000017",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "察哈尔右翼前旗",
+		"value": "area_10000018",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "察哈尔右翼中旗",
+		"value": "area_10000019",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "察哈尔右翼后旗",
+		"value": "area_10000020",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "四子王旗",
+		"value": "area_10000021",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "东胜市",
+		"value": "area_10000012",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "达拉特旗",
+		"value": "area_10000013",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "准格尔旗",
+		"value": "area_10000014",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "鄂托克前旗",
+		"value": "area_10000015",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "鄂托克旗",
+		"value": "area_10000016",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "杭锦旗",
+		"value": "area_10000017",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "乌审旗",
+		"value": "area_10000018",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "伊金霍洛旗",
+		"value": "area_10000019",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "临河市",
+		"value": "area_10000013",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "五原县",
+		"value": "area_10000014",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "磴口县",
+		"value": "area_10000015",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "乌拉特前旗",
+		"value": "area_10000016",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "乌拉特中旗",
+		"value": "area_10000017",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "乌拉特后旗",
+		"value": "area_10000018",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "杭锦后旗",
+		"value": "area_10000019",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "阿拉善左旗",
+		"value": "area_10000014",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "阿拉善右旗",
+		"value": "area_10000015",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "额济纳旗",
+		"value": "area_10000016",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "沈河区",
+		"value": "area_10000004",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "皇姑区",
+		"value": "area_10000005",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "和平区",
+		"value": "area_10000006",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "大东区",
+		"value": "area_10000007",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "铁西区",
+		"value": "area_10000008",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "苏家屯区",
+		"value": "area_10000009",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "东陵区",
+		"value": "area_10000010",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "于洪区",
+		"value": "area_10000011",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "新民市",
+		"value": "area_10000012",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "法库县",
+		"value": "area_10000013",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "辽中县",
+		"value": "area_10000014",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "康平县",
+		"value": "area_10000015",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "新城子区",
+		"value": "area_10000016",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000017",
+		"parentId": "city_1000004"
+	},
+	{
+		"text": "西岗区",
+		"value": "area_10000005",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "中山区",
+		"value": "area_10000006",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "沙河口区",
+		"value": "area_10000007",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "甘井子区",
+		"value": "area_10000008",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "旅顺口区",
+		"value": "area_10000009",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "金州区",
+		"value": "area_10000010",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "瓦房店市",
+		"value": "area_10000011",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "普兰店市",
+		"value": "area_10000012",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "庄河市",
+		"value": "area_10000013",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "长海县",
+		"value": "area_10000014",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000015",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "铁东区",
+		"value": "area_10000006",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "铁西区",
+		"value": "area_10000007",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "立山区",
+		"value": "area_10000008",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "千山区",
+		"value": "area_10000009",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "海城市",
+		"value": "area_10000010",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "台安县",
+		"value": "area_10000011",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "岫岩满族自治县",
+		"value": "area_10000012",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000013",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "顺城区",
+		"value": "area_10000007",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "新抚区",
+		"value": "area_10000008",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "东洲区",
+		"value": "area_10000009",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "望花区",
+		"value": "area_10000010",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "抚顺县",
+		"value": "area_10000011",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "清原满族自治县",
+		"value": "area_10000012",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "新宾满族自治县",
+		"value": "area_10000013",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000014",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "平山区",
+		"value": "area_10000008",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "明山区",
+		"value": "area_10000009",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "溪湖区",
+		"value": "area_10000010",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "南芬区",
+		"value": "area_10000011",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "本溪满族自治县",
+		"value": "area_10000012",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "桓仁满族自治县",
+		"value": "area_10000013",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000014",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "振兴区",
+		"value": "area_10000009",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "元宝区",
+		"value": "area_10000010",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "振安区",
+		"value": "area_10000011",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "东港市",
+		"value": "area_10000012",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "凤城市",
+		"value": "area_10000013",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "宽甸满族自治县",
+		"value": "area_10000014",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000015",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "太和区",
+		"value": "area_10000010",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "古塔区",
+		"value": "area_10000011",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "凌河区",
+		"value": "area_10000012",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "凌海市",
+		"value": "area_10000013",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "黑山县",
+		"value": "area_10000014",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "义县",
+		"value": "area_10000015",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "北宁市",
+		"value": "area_10000016",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000017",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "站前区",
+		"value": "area_10000011",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "西市区",
+		"value": "area_10000012",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "鲅鱼圈区",
+		"value": "area_10000013",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "老边区",
+		"value": "area_10000014",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "大石桥市",
+		"value": "area_10000015",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "盖州市",
+		"value": "area_10000016",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000017",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "海州区",
+		"value": "area_10000012",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "新邱区",
+		"value": "area_10000013",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "太平区",
+		"value": "area_10000014",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "清河门区",
+		"value": "area_10000015",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "细河区",
+		"value": "area_10000016",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "彰武县",
+		"value": "area_10000017",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "阜新蒙古族自治县",
+		"value": "area_10000018",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000019",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "白塔区",
+		"value": "area_10000013",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "文圣区",
+		"value": "area_10000014",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "宏伟区",
+		"value": "area_10000015",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "太子河区",
+		"value": "area_10000016",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "弓长岭区",
+		"value": "area_10000017",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "灯塔市",
+		"value": "area_10000018",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "辽阳县",
+		"value": "area_10000019",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000020",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "双台子区",
+		"value": "area_10000014",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "兴隆台区",
+		"value": "area_10000015",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "盘山县",
+		"value": "area_10000016",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "大洼县",
+		"value": "area_10000017",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000018",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "银州区",
+		"value": "area_10000015",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "清河区",
+		"value": "area_10000016",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "调兵山市",
+		"value": "area_10000017",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "开原市",
+		"value": "area_10000018",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "铁岭县",
+		"value": "area_10000019",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "昌图县",
+		"value": "area_10000020",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "西丰县",
+		"value": "area_10000021",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000022",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "双塔区",
+		"value": "area_10000016",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "龙城区",
+		"value": "area_10000017",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "凌源市",
+		"value": "area_10000018",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "北票市",
+		"value": "area_10000019",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "朝阳县",
+		"value": "area_10000020",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "建平县",
+		"value": "area_10000021",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "喀喇沁左翼蒙古族自治县",
+		"value": "area_10000022",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000023",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "龙港区",
+		"value": "area_10000017",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "南票区",
+		"value": "area_10000018",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "连山区",
+		"value": "area_10000019",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "兴城市",
+		"value": "area_10000020",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "绥中县",
+		"value": "area_10000021",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "建昌县",
+		"value": "area_10000022",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000023",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000018",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "朝阳区",
+		"value": "area_10000005",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "宽城区",
+		"value": "area_10000006",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "二道区",
+		"value": "area_10000007",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "南关区",
+		"value": "area_10000008",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "绿园区",
+		"value": "area_10000009",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "双阳区",
+		"value": "area_10000010",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "九台市",
+		"value": "area_10000011",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "榆树市",
+		"value": "area_10000012",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "德惠市",
+		"value": "area_10000013",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "农安县",
+		"value": "area_10000014",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000015",
+		"parentId": "city_1000005"
+	},
+	{
+		"text": "船营区",
+		"value": "area_10000006",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "昌邑区",
+		"value": "area_10000007",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "龙潭区",
+		"value": "area_10000008",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "丰满区",
+		"value": "area_10000009",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "舒兰市",
+		"value": "area_10000010",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "桦甸市",
+		"value": "area_10000011",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "蛟河市",
+		"value": "area_10000012",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "磐石市",
+		"value": "area_10000013",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "永吉县",
+		"value": "area_10000014",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000015",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "铁西区",
+		"value": "area_10000007",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "铁东区",
+		"value": "area_10000008",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "公主岭市",
+		"value": "area_10000009",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "双辽市",
+		"value": "area_10000010",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "梨树县",
+		"value": "area_10000011",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "伊通满族自治县",
+		"value": "area_10000012",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000013",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "龙山区",
+		"value": "area_10000008",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "西安区",
+		"value": "area_10000009",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "东辽县",
+		"value": "area_10000010",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "东丰县",
+		"value": "area_10000011",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000012",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "东昌区",
+		"value": "area_10000009",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "二道江区",
+		"value": "area_10000010",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "梅河口市",
+		"value": "area_10000011",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "集安市",
+		"value": "area_10000012",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "通化县",
+		"value": "area_10000013",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "辉南县",
+		"value": "area_10000014",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "柳河县",
+		"value": "area_10000015",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000016",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "八道江区",
+		"value": "area_10000010",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "江源区",
+		"value": "area_10000011",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "临江市",
+		"value": "area_10000012",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "靖宇县",
+		"value": "area_10000013",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "抚松县",
+		"value": "area_10000014",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "长白朝鲜族自治县",
+		"value": "area_10000015",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000016",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "宁江区",
+		"value": "area_10000011",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "乾安县",
+		"value": "area_10000012",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "长岭县",
+		"value": "area_10000013",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "扶余县",
+		"value": "area_10000014",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "前郭尔罗斯蒙古族自治县",
+		"value": "area_10000015",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000016",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "洮北区",
+		"value": "area_10000012",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "大安市",
+		"value": "area_10000013",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "洮南市",
+		"value": "area_10000014",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "镇赉县",
+		"value": "area_10000015",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "通榆县",
+		"value": "area_10000016",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000017",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "延吉市",
+		"value": "area_10000013",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "图们市",
+		"value": "area_10000014",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "敦化市",
+		"value": "area_10000015",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "龙井市",
+		"value": "area_10000016",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "珲春市",
+		"value": "area_10000017",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "和龙市",
+		"value": "area_10000018",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "安图县",
+		"value": "area_10000019",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "汪清县",
+		"value": "area_10000020",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000021",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000014",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "松北区",
+		"value": "area_10000006",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "道里区",
+		"value": "area_10000007",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "南岗区",
+		"value": "area_10000008",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "平房区",
+		"value": "area_10000009",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "香坊区",
+		"value": "area_10000010",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "道外区",
+		"value": "area_10000011",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "呼兰区",
+		"value": "area_10000012",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "阿城区",
+		"value": "area_10000013",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "双城市",
+		"value": "area_10000014",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "尚志市",
+		"value": "area_10000015",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "五常市",
+		"value": "area_10000016",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "宾县",
+		"value": "area_10000017",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "方正县",
+		"value": "area_10000018",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "通河县",
+		"value": "area_10000019",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "巴彦县",
+		"value": "area_10000020",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "延寿县",
+		"value": "area_10000021",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "木兰县",
+		"value": "area_10000022",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "依兰县",
+		"value": "area_10000023",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000024",
+		"parentId": "city_1000006"
+	},
+	{
+		"text": "龙沙区",
+		"value": "area_10000007",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "昂昂溪区",
+		"value": "area_10000008",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "铁锋区",
+		"value": "area_10000009",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "建华区",
+		"value": "area_10000010",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "富拉尔基区",
+		"value": "area_10000011",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "碾子山区",
+		"value": "area_10000012",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "梅里斯达斡尔族区",
+		"value": "area_10000013",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "讷河市",
+		"value": "area_10000014",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "富裕县",
+		"value": "area_10000015",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "拜泉县",
+		"value": "area_10000016",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "甘南县",
+		"value": "area_10000017",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "依安县",
+		"value": "area_10000018",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "克山县",
+		"value": "area_10000019",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "泰来县",
+		"value": "area_10000020",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "克东县",
+		"value": "area_10000021",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "龙江县",
+		"value": "area_10000022",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000023",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "兴山区",
+		"value": "area_10000008",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "工农区",
+		"value": "area_10000009",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "南山区",
+		"value": "area_10000010",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "兴安区",
+		"value": "area_10000011",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "向阳区",
+		"value": "area_10000012",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "东山区",
+		"value": "area_10000013",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "萝北县",
+		"value": "area_10000014",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "绥滨县",
+		"value": "area_10000015",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000016",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "尖山区",
+		"value": "area_10000009",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "岭东区",
+		"value": "area_10000010",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "四方台区",
+		"value": "area_10000011",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "宝山区",
+		"value": "area_10000012",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "集贤县",
+		"value": "area_10000013",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "宝清县",
+		"value": "area_10000014",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "友谊县",
+		"value": "area_10000015",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "饶河县",
+		"value": "area_10000016",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000017",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "鸡冠区",
+		"value": "area_10000010",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "恒山区",
+		"value": "area_10000011",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "城子河区",
+		"value": "area_10000012",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "滴道区",
+		"value": "area_10000013",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "梨树区",
+		"value": "area_10000014",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "麻山区",
+		"value": "area_10000015",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "密山市",
+		"value": "area_10000016",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "虎林市",
+		"value": "area_10000017",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "鸡东县",
+		"value": "area_10000018",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000019",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "萨尔图区",
+		"value": "area_10000011",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "红岗区",
+		"value": "area_10000012",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "龙凤区",
+		"value": "area_10000013",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "让胡路区",
+		"value": "area_10000014",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "大同区",
+		"value": "area_10000015",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "林甸县",
+		"value": "area_10000016",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "肇州县",
+		"value": "area_10000017",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "肇源县",
+		"value": "area_10000018",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "杜尔伯特蒙古族自治县",
+		"value": "area_10000019",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000020",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "伊春区",
+		"value": "area_10000012",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "带岭区",
+		"value": "area_10000013",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "南岔区",
+		"value": "area_10000014",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "金山屯区",
+		"value": "area_10000015",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "西林区",
+		"value": "area_10000016",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "美溪区",
+		"value": "area_10000017",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "乌马河区",
+		"value": "area_10000018",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "翠峦区",
+		"value": "area_10000019",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "友好区",
+		"value": "area_10000020",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "上甘岭区",
+		"value": "area_10000021",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "五营区",
+		"value": "area_10000022",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "红星区",
+		"value": "area_10000023",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "新青区",
+		"value": "area_10000024",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "汤旺河区",
+		"value": "area_10000025",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "乌伊岭区",
+		"value": "area_10000026",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "铁力市",
+		"value": "area_10000027",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "嘉荫县",
+		"value": "area_10000028",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000029",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "爱民区",
+		"value": "area_10000013",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "东安区",
+		"value": "area_10000014",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "阳明区",
+		"value": "area_10000015",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "西安区",
+		"value": "area_10000016",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "绥芬河市",
+		"value": "area_10000017",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "宁安市",
+		"value": "area_10000018",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "海林市",
+		"value": "area_10000019",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "穆棱市",
+		"value": "area_10000020",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "林口县",
+		"value": "area_10000021",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "东宁县",
+		"value": "area_10000022",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000023",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "向阳区",
+		"value": "area_10000014",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "前进区",
+		"value": "area_10000015",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "东风区",
+		"value": "area_10000016",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "郊区",
+		"value": "area_10000017",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "同江市",
+		"value": "area_10000018",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "富锦市",
+		"value": "area_10000019",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "桦川县",
+		"value": "area_10000020",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "抚远县",
+		"value": "area_10000021",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "桦南县",
+		"value": "area_10000022",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "汤原县",
+		"value": "area_10000023",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000024",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "桃山区",
+		"value": "area_10000015",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "新兴区",
+		"value": "area_10000016",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "茄子河区",
+		"value": "area_10000017",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "勃利县",
+		"value": "area_10000018",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000019",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "爱辉区",
+		"value": "area_10000016",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "北安市",
+		"value": "area_10000017",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "五大连池市",
+		"value": "area_10000018",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "逊克县",
+		"value": "area_10000019",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "嫩江县",
+		"value": "area_10000020",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "孙吴县",
+		"value": "area_10000021",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000022",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "北林区",
+		"value": "area_10000017",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "安达市",
+		"value": "area_10000018",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "肇东市",
+		"value": "area_10000019",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "海伦市",
+		"value": "area_10000020",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "绥棱县",
+		"value": "area_10000021",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "兰西县",
+		"value": "area_10000022",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "明水县",
+		"value": "area_10000023",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "青冈县",
+		"value": "area_10000024",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "庆安县",
+		"value": "area_10000025",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "望奎县",
+		"value": "area_10000026",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000027",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "呼玛县",
+		"value": "area_10000018",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "塔河县",
+		"value": "area_10000019",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "漠河县",
+		"value": "area_10000020",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "大兴安岭辖区",
+		"value": "area_10000021",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000022",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000019",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "黄浦区",
+		"value": "area_10000007",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "卢湾区",
+		"value": "area_10000008",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "徐汇区",
+		"value": "area_10000009",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "长宁区",
+		"value": "area_10000010",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "静安区",
+		"value": "area_10000011",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "普陀区",
+		"value": "area_10000012",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "闸北区",
+		"value": "area_10000013",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "虹口区",
+		"value": "area_10000014",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "杨浦区",
+		"value": "area_10000015",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "宝山区",
+		"value": "area_10000016",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "闵行区",
+		"value": "area_10000017",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "嘉定区",
+		"value": "area_10000018",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "松江区",
+		"value": "area_10000019",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "金山区",
+		"value": "area_10000020",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "青浦区",
+		"value": "area_10000021",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "南汇区",
+		"value": "area_10000022",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "奉贤区",
+		"value": "area_10000023",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "浦东新区",
+		"value": "area_10000024",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "崇明县",
+		"value": "area_10000025",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000026",
+		"parentId": "city_1000007"
+	},
+	{
+		"text": "玄武区",
+		"value": "area_10000008",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "白下区",
+		"value": "area_10000009",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "秦淮区",
+		"value": "area_10000010",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "建邺区",
+		"value": "area_10000011",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "鼓楼区",
+		"value": "area_10000012",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "下关区",
+		"value": "area_10000013",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "栖霞区",
+		"value": "area_10000014",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "雨花台区",
+		"value": "area_10000015",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "浦口区",
+		"value": "area_10000016",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "江宁区",
+		"value": "area_10000017",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "六合区",
+		"value": "area_10000018",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "溧水县",
+		"value": "area_10000019",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "高淳县",
+		"value": "area_10000020",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000021",
+		"parentId": "city_1000008"
+	},
+	{
+		"text": "金阊区",
+		"value": "area_10000009",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "平江区",
+		"value": "area_10000010",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "沧浪区",
+		"value": "area_10000011",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "虎丘区",
+		"value": "area_10000012",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "吴中区",
+		"value": "area_10000013",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "相城区",
+		"value": "area_10000014",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "常熟市",
+		"value": "area_10000015",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "张家港市",
+		"value": "area_10000016",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "昆山市",
+		"value": "area_10000017",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "吴江市",
+		"value": "area_10000018",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "太仓市",
+		"value": "area_10000019",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000020",
+		"parentId": "city_1000009"
+	},
+	{
+		"text": "崇安区",
+		"value": "area_10000010",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "南长区",
+		"value": "area_10000011",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "北塘区",
+		"value": "area_10000012",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "滨湖区",
+		"value": "area_10000013",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "锡山区",
+		"value": "area_10000014",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "惠山区",
+		"value": "area_10000015",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "江阴市",
+		"value": "area_10000016",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "宜兴市",
+		"value": "area_10000017",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000018",
+		"parentId": "city_1000010"
+	},
+	{
+		"text": "钟楼区",
+		"value": "area_10000011",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "天宁区",
+		"value": "area_10000012",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "戚墅堰区",
+		"value": "area_10000013",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "新北区",
+		"value": "area_10000014",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "武进区",
+		"value": "area_10000015",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "金坛市",
+		"value": "area_10000016",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "溧阳市",
+		"value": "area_10000017",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000018",
+		"parentId": "city_1000011"
+	},
+	{
+		"text": "京口区",
+		"value": "area_10000012",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "润州区",
+		"value": "area_10000013",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "丹徒区",
+		"value": "area_10000014",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "丹阳市",
+		"value": "area_10000015",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "扬中市",
+		"value": "area_10000016",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "句容市",
+		"value": "area_10000017",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000018",
+		"parentId": "city_1000012"
+	},
+	{
+		"text": "崇川区",
+		"value": "area_10000013",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "港闸区",
+		"value": "area_10000014",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "通州市",
+		"value": "area_10000015",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "如皋市",
+		"value": "area_10000016",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "海门市",
+		"value": "area_10000017",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "启东市",
+		"value": "area_10000018",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "海安县",
+		"value": "area_10000019",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "如东县",
+		"value": "area_10000020",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000021",
+		"parentId": "city_1000013"
+	},
+	{
+		"text": "海陵区",
+		"value": "area_10000014",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "高港区",
+		"value": "area_10000015",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "姜堰市",
+		"value": "area_10000016",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "泰兴市",
+		"value": "area_10000017",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "靖江市",
+		"value": "area_10000018",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "兴化市",
+		"value": "area_10000019",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000020",
+		"parentId": "city_1000014"
+	},
+	{
+		"text": "广陵区",
+		"value": "area_10000015",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "维扬区",
+		"value": "area_10000016",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "邗江区",
+		"value": "area_10000017",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "江都市",
+		"value": "area_10000018",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "仪征市",
+		"value": "area_10000019",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "高邮市",
+		"value": "area_10000020",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "宝应县",
+		"value": "area_10000021",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000022",
+		"parentId": "city_1000015"
+	},
+	{
+		"text": "亭湖区",
+		"value": "area_10000016",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "盐都区",
+		"value": "area_10000017",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "大丰市",
+		"value": "area_10000018",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "东台市",
+		"value": "area_10000019",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "建湖县",
+		"value": "area_10000020",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "射阳县",
+		"value": "area_10000021",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "阜宁县",
+		"value": "area_10000022",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "滨海县",
+		"value": "area_10000023",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "响水县",
+		"value": "area_10000024",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000025",
+		"parentId": "city_1000016"
+	},
+	{
+		"text": "新浦区",
+		"value": "area_10000017",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "海州区",
+		"value": "area_10000018",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "连云区",
+		"value": "area_10000019",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "东海县",
+		"value": "area_10000020",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "灌云县",
+		"value": "area_10000021",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "赣榆县",
+		"value": "area_10000022",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "灌南县",
+		"value": "area_10000023",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000024",
+		"parentId": "city_1000017"
+	},
+	{
+		"text": "云龙区",
+		"value": "area_10000018",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "鼓楼区",
+		"value": "area_10000019",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "九里区",
+		"value": "area_10000020",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "泉山区",
+		"value": "area_10000021",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "贾汪区",
+		"value": "area_10000022",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "邳州市",
+		"value": "area_10000023",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "新沂市",
+		"value": "area_10000024",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "铜山县",
+		"value": "area_10000025",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "睢宁县",
+		"value": "area_10000026",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "沛县",
+		"value": "area_10000027",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "丰县",
+		"value": "area_10000028",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000029",
+		"parentId": "city_1000018"
+	},
+	{
+		"text": "清河区",
+		"value": "area_10000019",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "清浦区",
+		"value": "area_10000020",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "楚州区",
+		"value": "area_10000021",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "淮阴区",
+		"value": "area_10000022",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "涟水县",
+		"value": "area_10000023",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "洪泽县",
+		"value": "area_10000024",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "金湖县",
+		"value": "area_10000025",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "盱眙县",
+		"value": "area_10000026",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000027",
+		"parentId": "city_1000019"
+	},
+	{
+		"text": "宿城区",
+		"value": "area_10000020",
+		"parentId": "city_1000020"
+	},
+	{
+		"text": "宿豫区",
+		"value": "area_10000021",
+		"parentId": "city_1000020"
+	},
+	{
+		"text": "沭阳县",
+		"value": "area_10000022",
+		"parentId": "city_1000020"
+	},
+	{
+		"text": "泗阳县",
+		"value": "area_10000023",
+		"parentId": "city_1000020"
+	},
+	{
+		"text": "泗洪县",
+		"value": "area_10000024",
+		"parentId": "city_1000020"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000025",
+		"parentId": "city_1000020"
+	},
+	{
+		"text": "其他",
+		"value": "area_10000021",
+		"parentId": "city_1000021"
+	}
 ]

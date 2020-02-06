@@ -11,7 +11,7 @@
 		font-size: 16px;
 		color: $l-color-gray;
 		background-color: #fbfbfb;
-
+		position: relative;
 		& > span {
 			&:nth-child(1) {
 				color: $l-color-gray;
@@ -19,6 +19,17 @@
 
 			&:nth-child(3) {
 				color: $l-theme-primary;
+			}
+		}
+		.l-picker-button {
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				top: -10px;
+				bottom: -10px;
+				left: -10px;
+				right: -10px;
 			}
 		}
 	}
