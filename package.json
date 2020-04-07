@@ -1,6 +1,6 @@
 {
   "name": "light-ui-m",
-  "version": "0.0.1-beta54",
+  "version": "0.0.1-beta65",
   "description": "vue2.0 mobile components",
   "main": "library/light.js",
   "scripts": {
@@ -75,6 +75,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "autosize": "^4.0.2",
     "better-scroll": "^1.15.1",
+    "exif-js": "^2.3.0",
     "vconsole": "^3.3.4",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",

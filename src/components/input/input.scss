@@ -1,21 +1,26 @@
 @import './input.variables.scss';
 .l-input-warp {
 	position: relative;
-	&::before {
-		@include border-1px($l-input-border-color);
+	&-border {
+		&::before {
+			@include border-1px($l-input-border-color);
+		}
 	}
 	&-textarea {
-		padding: $l-input-padding;
-	}
-	input,
-	textarea {
-		font-size: $l-input-fontsize;
-		line-height: 20px;
+		padding: $l-textarea-padding 0;
 	}
 	.l-input {
 		min-height: $l-input-height;
 		padding: 0 $l-input-padding;
-		font-size: 14px;
+		font-size: $l-input-fontsize;
+		font-family: auto;
+		letter-spacing: $l-input-text-spacing;
+	}
+	.l-input,
+	.l-textarea {
+		&:disabled {
+			opacity: 0.5;
+		}
 	}
 	.l-input-textarea-wrapper {
 		position: relative;
@@ -23,6 +28,13 @@
 		margin: 0;
 		padding: 0;
 		line-height: normal;
+		.l-textarea-block,
+		.l-textarea {
+			padding: 0 $l-input-padding;
+			font-size: $l-input-fontsize;
+			font-family: auto;
+			letter-spacing: $l-input-text-spacing;
+		}
 		.l-textarea {
 			position: absolute;
 			width: 100%;
@@ -30,12 +42,14 @@
 			top: 0;
 			left: 0;
 			margin: 0;
-			padding: 0;
 			overflow: hidden;
 			background: transparent;
 			outline: 0 none;
 			border: none;
-			font-size: 14px;
+			padding: 0 $l-input-padding;
+			font-size: $l-input-fontsize;
+			font-family: auto;
+			letter-spacing: $l-input-text-spacing;
 		}
 		.l-textarea-block {
 			display: block;
@@ -44,13 +58,10 @@
 			visibility: hidden;
 			overflow: hidden;
 			margin: 0;
-			padding: 0;
 			box-sizing: border-box;
-			font-size: 14px;
-			line-height: 20px;
+			font-size: $l-input-fontsize;
 		}
 	}
 	.l-input-tool {
-		// padding:0 $l-input-padding;
 	}
 }

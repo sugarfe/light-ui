@@ -1,49 +1,95 @@
 <template>
-	<PageContent>
-		<Navbar slot="header">BrowseImage</Navbar>
-
-		<example-group contentClass="group-content">
-			basic
-			<template v-slot:content>
-				<BrowseImage
-					ref="browseImage"
-					v-model="value"
-					compressed
-					:quality="0.5"
-					:size="{ width: 800, height: 600 }"
-				></BrowseImage>
-				<BrowseImage
-					multiple
-					v-model="value"
-					:quality="0.5"
-					compressed
-					@onSuccess="onSuccess"
-				></BrowseImage>
-				<Button @click="browse">browse</Button>
-			</template>
-		</example-group>
-	</PageContent>
+  <PageContent class="browse-page">
+    <Navbar slot="header">BrowseImage</Navbar>
+    <Cell>
+      multiple
+      <template slot="value">
+        <l-switch v-model="multiple"></l-switch>
+      </template>
+    </Cell>
+    <example-group contentClass="group-content">
+      {{ option || 'basic' }}
+      <template v-slot:content>
+        <Grid
+          ref="grid"
+          :col="4"
+          :square="true"
+          :spacing="5"
+          :vertical="5"
+        >
+          <GridItem
+            v-for="(item, index) in list"
+            :key="index"
+            class="item"
+          >
+            <img
+              :src="item.tempUrl"
+              class="item-img"
+            />
+          </GridItem>
+          <GridItem class="item">
+            <BrowseImage
+              class="borwse flex-box-center"
+              ref="browseImage"
+              compressed
+              multiple
+              :quality="0.5"
+              :size="{ width: 800, height: 600 }"
+              :multiple="multiple"
+              @onSuccess="onSuccess"
+            >
+              +
+            </BrowseImage>
+          </GridItem>
+        </Grid>
+      </template>
+    </example-group>
+  </PageContent>
 </template>
 <script>
 export default {
-	data() {
-		return {
-			value: []
-		}
-	},
-	methods: {
-		browse() {
-			this.$refs['browseImage'].browse()
-		},
-		onSuccess(e) {
-			console.log('onSuccess', e)
-		}
-	},
-	watch: {
-		value() {
-			console.log(this.value.length)
-		}
-	}
+  data() {
+    return {
+      list: [],
+      multiple: false
+    }
+  },
+  computed: {
+    option() {
+      return ['multiple']
+        .filter(item => {
+          return this[item] === true
+        })
+        .map(item => {
+          return `【${item}】`
+        })
+        .join('')
+    }
+  },
+  methods: {
+    browse() {
+      this.$refs['browseImage'].browse()
+    },
+    onSuccess(res) {
+      this.list.push(res)
+    }
+  }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.browse-page {
+  .borwse {
+    width: 100%;
+    height: 100%;
+  }
+  .item {
+    box-sizing: border-box;
+    border: 1px solid #eee;
+  }
+  .item-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+</style>

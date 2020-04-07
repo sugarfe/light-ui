@@ -9,15 +9,19 @@
 	overflow: hidden;
 	z-index: $l-popup-zindex;
 
+	&-warp-center {
+		@include display-flex();
+		@include flex-direction();
+		@include flex-wrap(nowrap);
+		@include align-items(center);
+		@include justify-content(center);
+	}
 	.l-popup-mask {
 		height: 100%;
 		width: 100%;
 		background: rgba(0, 0, 0, 0.5);
 		transition: all 0.38s;
 		overflow: hidden;
-	}
-
-	.l-popup-mask-enter-active {
 	}
 
 	.l-mask-enter {
@@ -40,15 +44,14 @@
 		overflow: hidden;
 		max-width: 100%;
 		max-height: 100%;
-		transition-property: transform;
+		transition-property: transform opacity;
 		transition-duration: 0.38s;
 		transition-timing-function: cubic-bezier(0.395, 0.225, 0.17, 1);
 	}
 
-	.l-popup-null {
+	.l-popup-center {
+		position: static;
 	}
-
-	// center
 
 	.l-popup-center-enter-active {
 		transition-timing-function: cubic-bezier(0.395, 0.225, 0.17, 1.32);
@@ -58,12 +61,20 @@
 		transform: scale(0);
 	}
 
-	.l-popup-center-leave {
+	.l-popup-center-enter-to {
 		transform: scale(1);
 	}
 
+	.l-popup-center-leave-active {
+		transition-duration: 0.2s;
+	}
+	.l-popup-center-leave {
+		transform: scale(1);
+		opacity: 1;
+	}
+
 	.l-popup-center-leave-to {
-		transform: scale(0.5);
+		transform: scale(0.3);
 		opacity: 0;
 	}
 
@@ -129,13 +140,5 @@
 
 	.l-popup-bottom-leave-to {
 		transform: translate3d(0, 100%, 0);
-	}
-
-	&.center {
-		@include display-flex();
-		@include flex-direction();
-		@include flex-wrap(nowrap);
-		@include align-items(center);
-		@include justify-content(center);
 	}
 }

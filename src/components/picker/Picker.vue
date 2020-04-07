@@ -81,7 +81,8 @@ export default {
 				text: '',
 				class: ''
 			},
-			wheelList: []
+			wheelList: [],
+			lock: false
 		}
 	},
 	created() {
@@ -123,34 +124,74 @@ export default {
 					}
 				}
 			)
+			option.wheels[index].on('scrollStart', () => {
+				this.lock = true
+				console.log('scrollStart')
+			})
 			option.wheels[index].on('scrollEnd', () => {
 				this.$emit('onScrollEnd', {
 					column: index,
 					selectedIndex: option.wheels[index].getSelectedIndex()
 				})
 				let i = index + 1
+				let selectedIndexAll = this.getSelectedIndexAll()
 				if (this.cascade && i < this.data.length) {
 					while (i < this.data.length) {
 						let selectedIndex = option.wheels[i - 1].getSelectedIndex()
-						this.refillColumn(
-							i,
-							this.rule({
+						let newData = this.rule(
+							{
 								column: i - 1,
 								selectedIndex,
 								value: this.data[i - 1][selectedIndex][this.dataValue]
-							})
+							},
+							{
+								selectedIndexAll,
+								values: selectedIndexAll.map((selectedIndex, i) => {
+									return this.wheelList[i][selectedIndex][this.dataValue]
+								})
+							}
 						)
-						option.wheels[i].wheelTo(0)
-						++i
+						if (newData) {
+							let type = Object.prototype.toString.call(newData)
+							console.log(type)
+							let items, _selectedIndex
+							if (type === '[object Array]') {
+								items = newData
+								_selectedIndex = 0
+							} else if (type === '[object Object]') {
+								items = newData.data
+								_selectedIndex = newData.selectedIndex
+							}
+							this.refillColumn(i, items)
+							console.log(_selectedIndex)
+							option.selectedIndex[i] = _selectedIndex
+							// option.wheels[i].wheelTo(_selectedIndex)
+							++i
+						} else {
+							i = this.data.length
+						}
 					}
+					this.lock = false
+				} else {
+					this.lock = false
 				}
 			})
 		},
 		refillColumn(index, data) {
-			// option.wheels[index].destroy()
-			// this.wheelList[index] = data
-			this.$set(this.wheelList, index, data)
-			// this.$forceUpdate()
+			this.$set(
+				this.wheelList,
+				index,
+				data.map(item => {
+					if (typeof item !== 'object') {
+						return {
+							[this.dataText]: item,
+							[this.dataValue]: item
+						}
+					} else {
+						return item
+					}
+				})
+			)
 			option.selectedIndex[index] = 0
 			this.$nextTick(() => {
 				this.initWheel(index)
@@ -171,6 +212,9 @@ export default {
 			})
 		},
 		ok() {
+			if (this.lock) {
+				return
+			}
 			option.wheels.forEach((scrollInstance, i) => {
 				option.selectedIndex[i] = scrollInstance.getSelectedIndex()
 			})
@@ -191,6 +235,11 @@ export default {
 		},
 		getWheelsInstance() {
 			return option.wheels
+		},
+		getSelectedIndexAll() {
+			return option.wheels.map((item, index) => {
+				return option.wheels[index].getSelectedIndex()
+			})
 		}
 	},
 	watch: {

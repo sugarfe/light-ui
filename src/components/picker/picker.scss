@@ -1,6 +1,6 @@
 .l-picker {
 	background-color: #fff;
-	height: 200px;
+	height: 260px;
 	&-title {
 		font-size: 16px;
 		text-align: center;
@@ -46,7 +46,7 @@
 	.l-picker-wheel-scroll {
 		padding: 0;
 		list-style: none;
-		margin-top: 60px;
+		margin-top: 90px;
 
 		& > li {
 			height: 38px;
@@ -64,7 +64,7 @@
 			hsla(0, 0%, 100%, 0.8)
 		);
 		width: 100%;
-		height: 60px;
+		height: 90px;
 		z-index: 1;
 		pointer-events: none;
 		transform: translateZ(0);

@@ -1,12 +1,16 @@
 //左右padding
-$l-input-padding :10px;
+$l-input-padding: 5px;
 //默认高度
-$l-input-height:38px;
+$l-input-height: 32px;
 //large尺寸高度
-$l-input-height-large:46px;
+$l-input-height-large: 46px;
 //small尺寸高度
-$l-input-height-small:30px;
+$l-input-height-small: 30px;
 //默认边框色
-$l-input-border-color:#c7c7c7;
-//
-$l-input-fontsize:14px;
+$l-input-border-color: #c7c7c7;
+//字体size
+$l-input-fontsize: 14px;
+//字体间距
+$l-input-text-spacing: 1px;
+//textarea上下内边距
+$l-textarea-padding: 6px;

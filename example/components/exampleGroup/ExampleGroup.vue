@@ -13,24 +13,24 @@
 </template>
 <script>
 export default {
-  name: "example-group",
+  name: 'example-group',
   props: {
     contentClass: {
       type: [String, Object],
       default() {
-        return "";
+        return ''
       }
     }
   }
-};
+}
 </script>
-<style lang='scss'>
+<style lang="scss">
 .example-group {
   .example-group-title {
     height: 38px;
-    background-color: #f3f3f3;
+    background-color: #f7f7f7;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 500;
     padding: 0 5px;
   }
   .example-group-content {

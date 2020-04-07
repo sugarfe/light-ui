@@ -1,0 +1,12 @@
+.example-picker-page {
+	.value-item {
+		color: #fff;
+		background-color: #ffb403;
+		border-radius: 2px;
+		padding: 5px 10px;
+		font-size: 12px;
+		&:not(:last-child) {
+			margin-right: 5px;
+		}
+	}
+}

@@ -3,7 +3,7 @@
 .l-switch {
 	position: relative;
 	width: $switch-width;
-	height: $switch-height;
+	height: 25px;
 	border: 1px solid currentcolor;
 	outline: 0;
 	overflow: hidden;
@@ -57,8 +57,6 @@
 }
 .l-switch-wrap {
 	position: relative;
-	width: $switch-width;
-	height: $switch-height;
 	.preventDefault {
 		position: absolute;
 		left: 0;

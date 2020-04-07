@@ -1,6 +1,6 @@
 <template>
 	<PageContent
-		class="example-button-page"
+		class="example-picker-page"
 		contentClass="content flex-box-column"
 	>
 		<Navbar slot="header">Picker</Navbar>
@@ -16,10 +16,14 @@
 					<l-switch v-model="cascade"></l-switch>
 				</template>
 			</Cell>
-			<example-group contentClass="group-content">
-				Value:
-				<template v-slot:content>{{ value }}</template>
-			</example-group>
+			<Cell>
+				Value
+				<div slot="value" class="flex-box">
+					<div class="value-item" v-for="(item, index) in text" :key="index">
+						{{ item }}
+					</div>
+				</div>
+			</Cell>
 		</div>
 		<div class="action-panel">
 			<Button block theme="primary" @click="open">打开</Button>
@@ -70,8 +74,7 @@ export default {
 				onOk: (values, text, selectedIndex) => {
 					this.value = values
 					this.text = text
-				},
-				onScrollEnd: ({ column, selectedIndex }) => {}
+				}
 			})
 		}
 	},

@@ -1,49 +1,66 @@
 <template>
-	<div class="l-grid-item" :style="style">
-		<slot></slot>
-	</div>
+  <div
+    class="l-grid-item"
+    :style="style"
+  >
+    <slot></slot>
+  </div>
 </template>
 <script>
 export default {
-	name: 'GridItem',
-	data() {
-		return {
-			height: 'auto',
-			index: -1,
-			marginBottom: 0
-		}
-	},
-	computed: {
-		style() {
-			return {
-				...(this.$parent.itemStyle || {}),
-				height: this.square ? `${this.itemWidht}px` : 'auto'
-			}
-		},
-		square() {
-			return this.$parent.square || false
-		},
-		spacing() {
-			return this.$parent.spacing || 0
-		},
-		vertical() {
-			return this.$parent.vertical || 0
-		},
-		col() {
-			return this.$parent.col || 1
-		},
-		row() {
-			return this.$parent.row
-		},
-		itemWidht() {
-			return this.$parent.itemWidht
-		}
-	},
-	methods: {
-		init() {
-			this.height = this.square ? `${this.$parent.itemWidht}px` : 'auto'
-		}
-	}
+  name: 'GridItem',
+  data() {
+    return {
+      index: -1,
+      width: 0,
+      height: 'auto',
+      marginBottom: 0,
+      marginRight: 0
+    }
+  },
+  computed: {
+    style() {
+      return {
+        width: this.width,
+        height: this.height,
+        marginBottom: this.marginBottom,
+        marginRight: this.marginRight
+      }
+    }
+  },
+  mounted() {
+    this.init()
+  },
+  destroy() {
+    this.$parent.removeItem()
+  },
+  methods: {
+    init() {
+      this.$parent.addItem()
+    },
+    updateIndex() {
+      this.index = this.$parent.getIndex(this)
+    },
+    updateSize() {
+      let {
+        marginRight,
+        marginBottom,
+        width,
+        height
+      } = this.$parent.getItemSize(this.index)
+      this.marginRight = `${marginRight}px`
+      this.marginBottom = `${marginBottom}px`
+      this.width = width
+      this.height = height !== 0 ? `${height}px` : 'initial'
+    }
+  },
+  watch: {
+    index() {
+      this.$nextTick(() => {
+        this.updateSize()
+      })
+    }
+  }
 }
 </script>
 <style lang="scss">
