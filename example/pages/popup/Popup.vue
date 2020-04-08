@@ -31,8 +31,8 @@
             horizontal
           >
             <radio value="100%">100%</radio>
-            <radio value="150px">150px</radio>
             <radio value="200px">200px</radio>
+            <radio value="300px">300px</radio>
           </radio-group>
         </template>
       </example-group>
@@ -46,6 +46,12 @@
         isMaskClose
         <template slot="value">
           <l-switch v-model="option.isMaskClose"></l-switch>
+        </template>
+      </Cell>
+      <Cell>
+        transition
+        <template slot="value">
+          <l-switch v-model="option.transition"></l-switch>
         </template>
       </Cell>
       <Cell>
@@ -77,12 +83,14 @@ export default {
         size: '100%',
         isMask: false,
         isMaskClose: false,
+        transition: true,
         offset: '0px'
       }
     }
   },
   methods: {
     open(open = false) {
+      console.log({ ...this.option })
       new this.$Popup(PopupModel, {
         ...this.option,
         option: this.option,

@@ -12,7 +12,7 @@
       ></div>
     </transition>
     <transition
-      :name="'l-popup-' + position"
+      :name="transitionName"
       @after-leave="popupContainerAfterLeave"
       @after-enter="popupContainerAfterEnter"
     >
@@ -73,9 +73,16 @@ export default {
       default() {
         return undefined
       }
+    },
+    transition: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
+    transitionName() {
+      return this.transition ? `l-popup-${this.position}` : undefined
+    },
     isPageRead() {
       return this.state > 0
     },
@@ -108,6 +115,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.transitionName, this.transition)
     this.autoShow && (this.state = 1)
   },
   destroyed() {

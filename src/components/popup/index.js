@@ -21,7 +21,8 @@ class Popup {
 			'onClose',
 			'autoShow',
 			'size',
-			'offset'
+			'offset',
+			'transition'
 		]
 		this.option = this.initOption(option)
 		this.dom = dom
