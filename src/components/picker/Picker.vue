@@ -50,6 +50,18 @@ export default {
 				return 'value'
 			}
 		},
+		dataId: {
+			type: [String, Number],
+			default() {
+				return 'id'
+			}
+		},
+		dataParentId: {
+			type: [String, Number],
+			default() {
+				return 'parentId'
+			}
+		},
 		value: {
 			type: [String, Array],
 			default() {
@@ -67,6 +79,14 @@ export default {
 			default() {
 				return false
 			}
+		},
+		col: {
+			type: Number,
+			default: 1
+		},
+		rootRule: {
+			type: Function,
+			default: undefined
 		},
 		rule: {
 			type: Function,
@@ -102,14 +122,50 @@ export default {
 	},
 	methods: {
 		init() {
-			this.wheelList = this.data
-			this.initSelectedIndex()
+			this.wheelList = this.initData(this.wheelList)
 			setTimeout(() => {
 				this.wheelList.forEach((item, index) => {
 					this.initWheel(index)
 				})
 				this.$emit('onFinish', option.wheels)
 			})
+		},
+		initData(list = [], seletctItemId) {
+			if (this.cascade) {
+				let index = list.length
+				let currentColList = this.data.filter(
+					index === 0
+						? this.rootRule
+						: item => {
+								return item[this.dataParentId] === seletctItemId
+						  }
+				)
+				list.push(currentColList)
+				let seletctIndex = this.getSelectedIndex(index, currentColList)
+				option.selectedIndex[index] = seletctIndex
+				if (this.col > index + 1) {
+					this.initData(list, currentColList[seletctIndex][this.dataId])
+				}
+			} else {
+				let tempList = []
+				for (let item of this.data) {
+					item = item.map(function(item) {
+						if (Object.prototype.toString.call(item) !== '[object Object]') {
+							return {
+								[this.dataValue]: item,
+								[this.dataText]: item
+							}
+						}
+						return item
+					})
+					tempList.push(item)
+				}
+				tempList.map((item, index) => {
+					option.selectedIndex[index] = this.getSelectedIndex(index, item)
+				})
+				list = tempList
+			}
+			return list
 		},
 		initWheel(index) {
 			if (option.wheels[index] instanceof BScroll) {
@@ -126,58 +182,33 @@ export default {
 			)
 			option.wheels[index].on('scrollStart', () => {
 				this.lock = true
-				console.log('scrollStart')
 			})
 			option.wheels[index].on('scrollEnd', () => {
+				let selectedIndexList = this.getSelectedIndexAll()
+				let { values } = this.getValues()
 				this.$emit('onScrollEnd', {
 					column: index,
-					selectedIndex: option.wheels[index].getSelectedIndex()
+					values,
+					selectedIndex: selectedIndexList
 				})
-				let i = index + 1
-				let selectedIndexAll = this.getSelectedIndexAll()
-				if (this.cascade && i < this.data.length) {
-					while (i < this.data.length) {
-						let selectedIndex = option.wheels[i - 1].getSelectedIndex()
-						let newData = this.rule(
-							{
-								column: i - 1,
-								selectedIndex,
-								value: this.data[i - 1][selectedIndex][this.dataValue]
-							},
-							{
-								selectedIndexAll,
-								values: selectedIndexAll.map((selectedIndex, i) => {
-									return this.wheelList[i][selectedIndex][this.dataValue]
-								})
-							}
-						)
-						if (newData) {
-							let type = Object.prototype.toString.call(newData)
-							console.log(type)
-							let items, _selectedIndex
-							if (type === '[object Array]') {
-								items = newData
-								_selectedIndex = 0
-							} else if (type === '[object Object]') {
-								items = newData.data
-								_selectedIndex = newData.selectedIndex
-							}
-							this.refillColumn(i, items)
-							console.log(_selectedIndex)
-							option.selectedIndex[i] = _selectedIndex
-							// option.wheels[i].wheelTo(_selectedIndex)
-							++i
-						} else {
-							i = this.data.length
-						}
-					}
-					this.lock = false
-				} else {
-					this.lock = false
+				if (this.cascade && index + 1 < this.col) {
+					this.updateColumn(index, selectedIndexList[index])
 				}
+				this.lock = false
 			})
 		},
-		refillColumn(index, data) {
+		updateColumn(currentIndex, selectIndex) {
+			let currentItem = this.wheelList[currentIndex][selectIndex]
+			let list = this.data.filter(item => {
+				return item[this.dataParentId] === currentItem[this.dataId]
+			})
+			let nextIndex = currentIndex + 1
+			this.refillColumn(nextIndex, list)
+			if (nextIndex < this.col - 1) {
+				this.updateColumn(nextIndex, 0)
+			}
+		},
+		refillColumn(index, data, selectIndex = 0) {
 			this.$set(
 				this.wheelList,
 				index,
@@ -192,29 +223,35 @@ export default {
 					}
 				})
 			)
-			option.selectedIndex[index] = 0
+			option.selectedIndex[index] = selectIndex
 			this.$nextTick(() => {
 				this.initWheel(index)
 			})
 		},
-		initSelectedIndex() {
+		getSelectedIndex(index, list) {
 			let values = []
-			if (typeof this.value === 'string') {
-				values = [this.value]
-			} else if (typeof this.value === 'object') {
+			if (typeof this.value === 'object') {
 				values = [...this.value]
+			} else {
+				values = [this.value]
 			}
-			this.wheelList.forEach((item, index) => {
-				let i = item.findIndex(o => {
-					return o[this.dataValue] === values[index]
-				})
-				option.selectedIndex[index] = ~i ? i : 0
+			let i = list.findIndex(o => {
+				return o[this.dataValue] === values[index]
 			})
+			return ~i ? i : 0
 		},
 		ok() {
 			if (this.lock) {
 				return
 			}
+			let { values, text } = this.getValues()
+			this.$emit('onOk', {
+				values,
+				text,
+				selectedIndex: option.selectedIndex
+			})
+		},
+		getValues() {
 			option.wheels.forEach((scrollInstance, i) => {
 				option.selectedIndex[i] = scrollInstance.getSelectedIndex()
 			})
@@ -224,11 +261,7 @@ export default {
 			let text = option.selectedIndex.map((selectedIndex, i) => {
 				return this.wheelList[i][selectedIndex][this.dataText]
 			})
-			this.$emit('onOk', {
-				values,
-				text,
-				selectedIndex: option.selectedIndex
-			})
+			return { values, text }
 		},
 		cancel() {
 			this.$emit('popup-close')

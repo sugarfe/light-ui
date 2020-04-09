@@ -1,5 +1,6 @@
 import PickerTemplate from './Picker.vue'
 class Picker {
+	instance
 	constructor(option = {}) {
 		option.data = option.data.map(item => {
 			if (item.length > 0 && typeof item[0] !== 'object') {
@@ -27,6 +28,12 @@ class Picker {
 				this.popup.close()
 			}
 		})
+		this.popup.instance.$nextTick(() => {
+			this.instance = this.popup.instance.$children[0].$children[0]
+		})
+	}
+	refillColumn(index, data, selectIndex) {
+		this.instance.refillColumn(index, data, selectIndex)
 	}
 }
 

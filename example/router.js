@@ -9,6 +9,12 @@ export default [
 		path: '/',
 		component: Index
 	},
+	{
+		path: '/icon',
+		component: () => {
+			return import('./pages/icon/Icon.vue')
+		}
+	},
 	...pages.map(item => {
 		return {
 			path: `/${item}`,

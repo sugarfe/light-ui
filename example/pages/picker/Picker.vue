@@ -5,11 +5,15 @@
 	>
 		<Navbar slot="header">Picker</Navbar>
 		<div class="flex-1">
-			<radio-group v-model="column" right>
-				<radio :value="1">一列</radio>
-				<radio :value="2">二列</radio>
-				<radio :value="3">三列</radio>
-			</radio-group>
+			<Cell>
+				column
+				<template slot="value">
+					<radio-group v-model="column" right horizontal>
+						<radio :value="1">1</radio>
+						<radio :value="2">2</radio>
+					</radio-group>
+				</template>
+			</Cell>
 			<Cell>
 				cascade
 				<template slot="value">
@@ -32,44 +36,33 @@
 </template>
 <script>
 import data from './picker.json'
+import pickerMultiData from './pickerMulti.json'
 let list = []
 export default {
 	data() {
 		return {
 			value: [],
 			text: [],
-			column: 1,
-			cascade: false
+			column: 2,
+			cascade: true
 		}
 	},
 	mounted() {},
 	methods: {
 		open() {
-			list = []
-			let id
-			for (let i = 0; i < this.column; i++) {
-				if (this.value.length > 0) {
-					id = i === 0 ? 0 : this.value[i - 1]
-				} else {
-					id = i === 0 ? 0 : list[i - 1][0].value
-				}
-				list.push(
-					data.filter(item => {
-						return item.parentId === id
-					})
-				)
-			}
+			let list = []
 			new this.$Picker({
-				data: list,
+				data: this.cascade ? data : pickerMultiData.slice(0, this.column),
 				value: this.value,
 				title: {
 					text: '城市选择'
 				},
+				dataValue: 'id',
+				dataText: 'name',
 				cascade: this.cascade,
-				rule({ column, selectedIndex, value }) {
-					return data.filter(item => {
-						return item.parentId === value
-					})
+				col: 2,
+				rootRule: item => {
+					return item.parentId === '10000001'
 				},
 				onOk: (values, text, selectedIndex) => {
 					this.value = values

@@ -3,7 +3,9 @@
 		<label class="l-cell-label">
 			<slot></slot>
 		</label>
-		<div class="l-cell-value flex-1 flex-box flex-justify-end">
+		<div
+			class="l-cell-value flex-1 flex-box flex-justify-end flex-align-center"
+		>
 			<slot name="value"></slot>
 		</div>
 	</div>

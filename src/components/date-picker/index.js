@@ -20,32 +20,24 @@ class DatePicker {
 			.map(item => {
 				return Number(item)
 			})
-		console.log(value, this.data)
-		new Picker({
+		let picker = new Picker({
 			data: this.data,
 			value,
-			cascade: true,
-			rule({ column }, { values, selectedIndexAll }) {
-				if (column === 0 && values[1] === 2) {
-					return this.data[1]
-				} else if (column === 1) {
-					let data = getDayData(...values)
-					let maxSelectedIndex = data.length - 1
-					return {
-						data,
-						selectedIndex:
-							selectedIndexAll[2] < maxSelectedIndex
-								? selectedIndexAll[2]
-								: maxSelectedIndex
-					}
+			onScrollEnd: ({ column, selectedIndex, values }) => {
+				let [year, month, day] = values
+				if (month === 2 && column !== 2) {
+					let dayData = getDayData(year, month)
+					let selectedIndexDay = selectedIndex[2]
+					let maxIndex = dayData.length - 1
+					let index = maxIndex > selectedIndexDay ? selectedIndexDay : maxIndex
+					picker.refillColumn(2, dayData, index)
 				}
-				return undefined
 			},
 			onOk: (values, text, selectedIndex) => {
 				let date = new Date(values.join('/'))
-				console.log(date, values.join('/'))
-				typeof this.onOk === 'function' &&
+				if (typeof this.onOk === 'function') {
 					this.onOk(date, dateFormat('yyyy-MM-dd', date))
+				}
 			}
 		})
 	}

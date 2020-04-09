@@ -7,6 +7,10 @@ function generateData({
 } = {}) {
 	let minYear = typeof min === 'number' ? min : new Date().getFullYear()
 	let maxYear = typeof max === 'number' ? max : minYear + 10
+	let currentYear = new Date().getFullYear()
+	if (maxYear < currentYear) {
+		maxYear = currentYear
+	}
 	let valueList = dateFormat('yyyy-MM-dd', value)
 		.split('-')
 		.map(item => {

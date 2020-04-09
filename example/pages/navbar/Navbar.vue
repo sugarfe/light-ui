@@ -4,7 +4,7 @@
 		<example-group contentClass="group-content">
 			theme
 			<template v-slot:content>
-				<Grid :col="1" :square="false" vertical="2px">
+				<Grid :col="1" :square="false" :vertical="2">
 					<GridItem>
 						<Navbar>default</Navbar>
 					</GridItem>
