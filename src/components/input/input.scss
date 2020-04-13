@@ -1,6 +1,7 @@
 @import './input.variables.scss';
 .l-input-warp {
 	position: relative;
+	width: 100%;
 	&-border {
 		&::before {
 			@include border-1px($l-input-border-color);
