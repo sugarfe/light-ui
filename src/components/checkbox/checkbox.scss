@@ -34,12 +34,6 @@
 .l-checkbox {
 	position: relative;
 	height: 36px;
-	&-disabled {
-		.l-checkbox-label,
-		.l-checkbox-mark {
-			opacity: 0.5;
-		}
-	}
 	& > input[type='checkbox'] {
 		position: absolute;
 		top: 0;
@@ -80,6 +74,19 @@
 			&::after {
 				transform: scale(1);
 				opacity: 1;
+			}
+		}
+	}
+	&-disabled {
+		.l-checkbox-label {
+			opacity: 0.5;
+		}
+		.l-checkbox-mark {
+			&::before {
+				border-color: #ffd695;
+			}
+			&::after {
+				background-color: #ffd695;
 			}
 		}
 	}

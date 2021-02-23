@@ -32,6 +32,7 @@
 		.l-textarea-block,
 		.l-textarea {
 			padding: 0 $l-input-padding;
+			box-sizing: border-box;
 			font-size: $l-input-fontsize;
 			font-family: auto;
 			letter-spacing: $l-input-text-spacing;

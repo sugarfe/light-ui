@@ -18,7 +18,6 @@
 						<BrowseImage
 							class="borwse flex-box-center"
 							ref="browseImage"
-							compressed
 							:quality="0.5"
 							:size="{ width: 800, height: 600 }"
 							:multiple="multiple"
@@ -57,6 +56,7 @@ export default {
 			this.$refs['browseImage'].browse()
 		},
 		onSuccess(res) {
+			console.log(res)
 			this.list.push(res)
 		}
 	}

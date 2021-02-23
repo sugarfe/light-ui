@@ -28,7 +28,15 @@ function getPhotoOrientation(file) {
 	})
 }
 
-function rotateImage(image, orientation, width, height, quality = 1, callback) {
+function rotateImage(
+	image,
+	type,
+	orientation,
+	width,
+	height,
+	quality = 1,
+	callback
+) {
 	let canvas = document.createElement('canvas')
 	let ctx = canvas.getContext('2d')
 	switch (orientation) {
@@ -59,7 +67,8 @@ function rotateImage(image, orientation, width, height, quality = 1, callback) {
 	}
 	ctx.drawImage(image, 0, 0, width, height)
 	if (typeof callback === 'function') {
-		canvas.toBlob(callback, image.type, quality)
+		debugger
+		canvas.toBlob(callback, type, quality)
 	}
 }
 

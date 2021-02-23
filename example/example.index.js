@@ -8,7 +8,7 @@ import './style/index.scss'
 import store from './vuex/index.js'
 import ExampleGroup from './components/exampleGroup/ExampleGroup.vue'
 import vconsole from 'vconsole'
-// new vconsole()
+new vconsole()
 let router = new VueRouter({
 	routes
 })
