@@ -1,10 +1,5 @@
 import { dateFormat } from '@/utils/index.js'
-function generateData({
-	scope = ['yyyy-MM-dd'],
-	max,
-	min,
-	value = new Date()
-} = {}) {
+function generateData({ max, min, value = new Date() } = {}) {
 	let minYear = typeof min === 'number' ? min : new Date().getFullYear()
 	let maxYear = typeof max === 'number' ? max : minYear + 10
 	let currentYear = new Date().getFullYear()
@@ -21,10 +16,54 @@ function generateData({
 		generateDataByYear({
 			maxYear,
 			minYear
+		}).map(item => {
+			return {
+				text: `${item}年`,
+				value: item
+			}
 		})
 	)
-	data.push(Array.from({ length: 12 }, (v, k) => k + 1))
-	data.push(getDayData(...valueList))
+
+	data.push(
+		Array.from({ length: 12 }, (v, k) => k + 1).map(item => {
+			return {
+				text: `${item}月`,
+				value: item
+			}
+		})
+	)
+	data.push(
+		getDayData(...valueList).map(item => {
+			return {
+				text: `${item}日`,
+				value: item
+			}
+		})
+	)
+	data.push(
+		Array.from({ length: 24 }, (v, k) => k).map(item => {
+			return {
+				text: `${item}时`,
+				value: item
+			}
+		})
+	)
+	data.push(
+		Array.from({ length: 60 }, (v, k) => k).map(item => {
+			return {
+				text: `${item}分`,
+				value: item
+			}
+		})
+	)
+	data.push(
+		Array.from({ length: 60 }, (v, k) => k).map(item => {
+			return {
+				text: `${item}秒`,
+				value: item
+			}
+		})
+	)
 	return data
 }
 
